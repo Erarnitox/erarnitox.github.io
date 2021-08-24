@@ -81,11 +81,22 @@ nav{
     color: black;
     background: black;
     width: 100%;
-    height: 3em;
+    height: 2em;
     position: fixed;
     top: 0;
     left: 0;
     text-align: center;
+}
+
+@media (max-width: 600px){
+    nav{
+        height: 5em;
+    }
+    
+    .ContentBox{
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
 }
 
 footer{
