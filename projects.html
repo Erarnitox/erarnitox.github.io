@@ -7,32 +7,203 @@
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     </head>
     <body>
-        <nav>
-            <table>
-                <tr><td>
-                    <b><a id="Logo" href="index.html">Erarnitox</a></b>
-                </td>
-                <td>
-                    <a href="projects.html">Projects</a>
-                    <a href="https://dropsoft.org/about">DropSoft</a>
-                    <a href="contact.html">Contact</a>
-                </td></tr>
-            </table>
-        </nav>
+    	<header><nav>
+            <ul id="header">
+            	<li><b><a id="Logo" href="index.html">Erarnitox</a></b></li>
+            	<li><a href="projects.html">Projects</a></li>
+            	<li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav></header>
         <div class="Content" id="mainBackground">
 			<div class="ContentBox">
 				<h1>PlanB - FPS Game</h1>
-				PlanB is an easy to pick up FPS game</br>
-				perfect for LAN parties and casual players.</br>
-				</br>
-				I wrote a small <a href="https://dropsoft.org/posts/planb/">blog post</a> about the game.</br>
-				</br>
-				You can download it for free here:</br>
+				PlanB is an easy to pick up FPS game<br>
+				perfect for LAN parties and casual players.<br>
+				<br>
+				<h1>PlanB - Making of an Indie FPS</h1>
+                <p><img src="./res/thumb_620x2000/28-9-2018_0-6-1.png" alt="planb.png"></p>
+                <p>Hello there and welcome to the first real blog post on this very site.</p>
+                <p>Today I would like to talk about the making of the first game I developed.</p>
+                <p>Well the first game is not entirely true, I have written very very simple games</p>
+                <p>before I had started working on PlanB.</p>
+                <p>So I did have some very limited programming experience prior to PlanB.</p>
+                <h2 id="motivation">Motivation</h2>
+                <p>So what motivated me get into game development in the first place was that I loved shooter games.</p>
+                    <p>At the time I had two favourite games which where &ldquo;Call of Duty: Black Ops&rdquo; and &ldquo;Cube 2: Sauerbraten&rdquo;.</p>
+                    <p>I have always wondered how I could create my own maps and weapons for these games.</p>
+                <h2 id="more-story-time">More Story Time</h2>
+                    <p>I knew Sauerbraten is an open source game and even managed to compile it myself</p>
+                    <p>after a lot of fiddling around with CMake.</p>
+                    <p>However, I really wasn&rsquo;t ready to understand its source code.</p>
+                    <p>I only had very limited programming experience in AutoIt and BASIC.</p>
+                    <p>So I gave up on C++ and trying to understand the source then.</p>
+                    <p>After a while I discovered some other guys on YouTube using</p>
+                    <p>the Unity3D game engine to program their games in.</p>
+                    <p>One of the first guys where:</p>
+                    <ul>
+                    <li>
+                        <p><b>OneManArmy3d:</b></p>
+                        <p>who at the time was working on an FPS kit at the time and used COD models for preview in his videos</p>
+                    </li>
+                    <li>
+                        <p><b>DrunkenLizardGames:</b></p>
+                        <p>was working on an FPS that had a really cool animation system and parkour elements</p>
+                    </li>
+                    <li>
+                        <p><b>TheLegoBobafet:</b></p>
+                        <p>was working on an untitled FPS at the time. It is now released and titled Red Army</p>
+                    </li>
+                </ul>
+                <p>These inspired me to pick up the Unity3d game engine also,</p>
+                <p>which was in version 3.something the first time I picked it up.</p>
+                <p>For quite a while all I did in Unity was to play around with the bootcamp and the island FPS demo.</p>
+                <p>But after a while I joined OneManArmy&rsquo;s forum called armedunity.com</p>
+                <p>and used his FPS kit to learn from it and play around with it.</p>
+                <p>There where some really cool guys on youtube doing coding tutorials to teach a noob like me.</p>
+                <p>Most notable where:</p>
+                <ul>
+                    <li>
+                        <p><b>NarutoIsGreat12345:</b>
+                        Is now known as HyperShadeTutorials on youtube. Old content is lost :/</p>
+                    </li>
+                    <li>
+                        <p><b>Eetski Tutorials:</b>
+                        Now know as MasterIndie on youtube</p>
+                    </li>
+                </ul>
+                <p>But the most I have had learned from the ArmedUnity community.</p>
+                <p>(btw. it is meant to be understood as: &ldquo;armed with unity&rdquo;)</p>
+                <p>There where great people in the communty, too many to mention all of them here.</p>
+                <p>However, a guy named OcularCash helped me a couple of times directly.</p>
+                <p>Also I would like to mention theMars2011 here,</p>
+                <p>who joined the forum a little bit later than me</p>
+                <p>but is now working on a really impressive title with a small team of developers:</p>
+                <p><a href="https://youtu.be/-cW7sM-0jR8" class="no-style"><button>Watch his devlog</button></a></p>
+                <h2 id="development-of-planb">Development of PlanB</h2>
+                    <p>So after I figured that I have done enough ground work and know how a FPS works in theory</p>
+                    <p>I wanted to finally build my own fps pretty much from scratch.</p>
+                    <p>Most of the structure where inspired by OMA&rsquo;s FPS Kit and Guides by other people in the community.</p>
+                    <p>However, in the beginning I wanted to everything on my own (and i mostly did).</p>
+                    <p>So without much planing of what the goal of the game should be I started to code the character controller,</p>
+                    <p>weapon scripts etc., started modeling and animating the weapons.</p>
+                    <p>This was from what I remember done in a single week and out came this video:</p>
+                    <iframe width="100%" height="500px" src="https://www.youtube.com/embed/f8ZaMEcxTbc?list=PLTjUlazALHSAWEbmvilvWvrX66_qDRbwi" title="[Unity 3D] FPS - PlanB Update #1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p>Then I wanted PlanB to become a story based multiplayer FPS game.</p>
+                    <p>I wanted it to be a SciFi-WW2 shooter first and also already modeled weapons for that.</p>
+                    <p><img src="res/mp40_final.png" alt="Mp40.png"></p>
+                    <p>However, you can already guess that this is a very strange idea.</p>
+                    <p>Realizing that and that it doesn&rsquo;t make any sense I scrapped the whole story and models.</p>
+                    <p>Instead I decided to go for a full/simple multiplayer game in a fictional setting.</p>
+                    <p><img src="res/Helmet.png" alt="helmetDesign.png"></p>
+                    <p>So I ended up scrapping all of the previous player and weapon models and decided to design weapons</p>
+                    <p>by myself.</p>
+                    <p>Here you can see a Picture of the Designs that I came up with:</p>
+                    <p><img src="res/Designs.png" alt="WeaponDesigns.png"></p>
+                    <p>After designing the weapons, modeling them, texturing and recording sounds for them</p>
+                    <p>I ended up with a set of 10 weapons that I would keep.</p>
+                    <p>(About 5 weapon designs got scrapped.)</p>
+                    <p>Video of all weapons in the engine:</p>
+                    <iframe width="100%" height="500px" src="https://www.youtube.com/embed/nBXmhQrh4hk?list=PLTjUlazALHSAWEbmvilvWvrX66_qDRbwi" title="[Unity 3D] FPS - PlanB Update #8 (Weapon Sounds)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p>I wanted to focus on the gameplay for now and to test things out</p>
+                    <p>I implemented a simple zombie AI that would chase and attack the player.</p>
+                    <p>Also I wanted to be able to save settings, progress and other things in an easy manner.</p>
+                    <p>I figured that the tooling that was already there was insufficient for me and thus I created my own</p>
+                    <p>simple key-value database solution along with some editor scrips to go along with it:</p>
+                    <p>You can get the tool here: <a href="https://assetstore.unity.com/packages/tools/input-management/xenoprefs-91971" class="no-style"><button>Download XenoPrefs</button></a></p>
+                    <p>Around this time I also added a class editor into the game that would let you create</p>
+                    <p>&ldquo;classes&rdquo;, which are just a selection of preferred weapons, skins and perks:</p>
+                    <p><img src="res/Unbenannt.1.PNG" alt="classeditor.png"></p>
+                    <p>So after trying to polish most of the basic functionality I make this video:</p>
+                    <iframe width="100%" height="500px" src="https://www.youtube.com/embed/QsxkRkalPYs?si=gq1TOasc6T8MJv10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p>I thought I would like to have a Fallout like wasteland as a map</p>
+                    <p>and figured that I could probably save a lot of time with level design</p>
+                    <p>by just having everything procedurally generated.</p>
+                    <p>That means:</p>
+                    <ul>
+                        <li>automatically generating textures/terrain materials</li>
+                        <li>automatically generating terrain height maps</li>
+                        <li>automatically apply vegetation and textures to the map</li>
+                        <li>automatically build a border around the terrain and place prefabs like buildings</li>
+                    </ul>
+                    <p>So i first needed to write a tool to help me create seamless pbr materials.</p>
+                    <p>I ended up writing a simple java tool that uses some tricks but ends up with pretty nice results:</p>
+                    <p><b>Video Demo:</b></p>
+
+                    <iframe width="100%" height="500px" src="https://www.youtube.com/embed/yUWNrMGyGKs?si=k3t8VxntDKd-53QU" title="YouTube video player" frameborder="1rem" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    <p>So I made a trip to the woods and took photos of textures with my camera.</p>
+                    <p>Also I started to write some basic terrain generation script that generates a height map</p>
+                    <p>for the terrain to use by layering perlin noise with a different frequency and amplitude on top of each other.</p>
+                    <p>I also wanted to have a bigger terrain than what Unity supports by default. But there was an easy fix,</p>
+                    <p>I just stitched multiple terrains together. Using the size of the terrain so far an offset for the perlin</p>
+                    <p>noise function makes the terrains stitch together perfectly.</p>
+                    <p>After I had all that working I realized that this is not enough.</p>
+                    <p>The tiling in the terrain was too obvious, so I decided to write a custom terrain shader also,</p>
+                    <p>that would have harder blending between the textures and uses many cheap tricks to hide the tiling.</p>
+                    <p>Like overlaying a perlin noise texture to control the hue</p>
+                    <p>and blending with a bigger version of the same terrain texture based on the distance to the camera.</p>
+                    <p>That means if you are close to the texture it will display the scaled down version of the texture for detail,</p>
+                    <p>but if you are further away from the texture the opacity of the scaled up version increases</p>
+                    <p>to hide the seams and patterns of the detailed version of the texture.</p>
+                    <p>Now I only had to make a slight adjustment to correct the normals of the vertices of at the edges of</p>
+                    <p>the terrains that I have stitched together.</p>
+                    <p>Because there where no vertices to figure out the correct normal orientation these vertices created a seam</p>
+                    <p>where the terrains got stitched together.</p>
+                    <p>So that was working well:</p>
+                    <p><img src="res/28-9-2018_0-12-35.png" alt="terrain.png">
+                    <img src="res/8-10-2018_8-26-7.png" alt="terrain2.png"></p>
+                    <p>You can also get this tool for <b>free</b> here:</p>
+                    <a href="https://assetstore.unity.com/packages/tools/terrain/xenosandboxgenerator-132459" class="no-style"><button>Download XenoSandboxGenerator</button></a>
+                    <p>However, after a while I figured that I can surely generate huge maps with this tool,</p>
+                    <p>but the resulting map is boring to play on.</p>
+                    <p>Hence I decided to build out a map manually and with the help of the asset store and a friend</p>
+                    <p>I ended up with this map:</p>
+                    <p><img src="res/531d2348-fffa-4589-a62c-1330c3b40237.jpg" alt="map.png"></p>
+                    <p>Which also is the currently used map.</p>
+                    <p>Only some tweaks where left to do like enabling server configuration through a .conf file.</p>
+                    <p>And also removing claymore mines from the game.</p>
+                    <p><img src="res/MetalClaymore.PNG" alt="claymore.png"></p>
+                    <p>these things where buggy and useless in multiplayer, so I decided to just remove them.</p>
+                    <p>LAN Gameplay:</p>
+                    <p>So at the end this turned out to be really fun game for LAN parties</p>
+                    <p>and is available for Windows, Mac and Linux here:</p>
+                    <p><a href="http://planb.erarnitox.de" class="no-style"><button>Download PlanB</button></a></p>
+                    <p>I have also set up a simple official server, but it is a single core VPS</p>
+                    <p>so the performance of the &ldquo;official server&rdquo; is lacking a lot.</p>
+                    <p>However, it is really easy to host your own as described on the download page.</p>
+                    <p>I hope you can enjoy the game with some friends!</p>
+                    <h3 id="what-i-learned">What I learned:</h3>
+                        <p>Even though this game didn&rsquo;t tun out as the next COD,</p>
+                        <p>as I have wanted when I started as a teen, this game turned into</p>
+                        <p>a fun shooter to play at LAN parties.</p>
+                        <p>Also the real value this project gave me lies</p>
+                        <p>in the things I have learned along the way.</p>
+                        <p>This includes but is not limited to:</p>
+                        <ul>
+                            <li>How to program in general</li>
+                            <li>Using modeling software like blender</li>
+                            <li>How game engines work</li>
+                            <li>introduction to shader programming</li>
+                        </ul>
+				<br>
+				You can download it for free here:<br>
 				<iframe
 					src="https://itch.io/embed/1461146?bg_color=09101b&amp;fg_color=ffffff&amp;link_color=0f587a&amp;border_color=005f9e"
-					width="80%" height="50%" frameborder="0"><a href="https://erarnitox.itch.io/planb">PlanB by Erarnitox</a></iframe>
+					width="100%" height="auto" frameborder="1rem"><a href="https://erarnitox.itch.io/planb">PlanB by Erarnitox</a>
+                </iframe>
 			</div>
-			</br>
+            <div class="ContentBox">
+                <h2>More Projects</h2>
+                <p>
+                    I have a worked on many programs and other projects
+                    Most are not worth mentioning here.
+                </p>
+                <p>
+                    Some projects are open source and can be found on my GitHub Profile.<br>
+                    Feel free to check them out!
+                </p>
+                <a class="no-style" href="https://github.com/erarnitox"><button>GitHub Profile</button></a>
+            </div>
         </div>
         <footer>
             <a href="res/legalNotice.html">Legal Notice</a>
