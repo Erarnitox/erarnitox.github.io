@@ -1,75 +1,102 @@
 <!DOCTYPE html>
+<!--
+ *  (c) Copyright erarnitox.de - All rights reserved
+ *  Author: Erarnitox <david@erarnitox.de>
+ *  
+-->
 <html lang="en-US">
     <head>
-        <meta charset="UTF-8">
         <title>Erarnitox</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <meta name="title" content="Erarnitox" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta property="og:title" content="Erarnitox" />
+        <meta property="og:description" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://erarnitox.de/" /><meta property="og:site_name" content="Erarnitox" />
+
+        <link rel="canonical" href="https://erarnitox.de/" />
+        <link rel="alternate" type="application/json" href="/index.json" title="Erarnitox" />
+
+        <link rel="stylesheet" href="./style.css">
+        <script src="./login.js"></script>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+        <link rel="manifest" href="./site.webmanifest" />
     </head>
     <body>
-    	<header><nav>
-            <ul id="header">
-            	<li><b><a id="Logo" href="index.html">Erarnitox</a></b></li>
-            	<li><a href="projects.html">Projects</a></li>
-            	<li><a href="contact.html">Contact</a></li>
+        <header>
+            <nav>
+                <div class="flex-container-hz">
+                    <a href="./index.html"><img class="logo-img" src="./logo.png" alt="erarnitox logo"></a>
+                    <ul>
+                        <li><a href="./products/">Products</a></li>
+                        <li><a href="./pub/">Publications</a></li>
+                        <li><a href="./art/">Art</a></li>
+                    </ul>
+                    <!--<a href="./login" class="button" id="login-btn">Login</a>-->
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="flex-center-hz">
+                <h1 class="flex-center">
+                    <img style="height: 2rem; width: 8rem; display:inline; background-color: transparent;" src="./logo.png" alt="icon">'s home on the Internet
+                </h1>
+                <h4>C++ Developer | Reverse-Engineer | Artist</h4>
+            </div>
+
+            <div>
+                Passionate about game development and reverse engineering since early on.  After Initially beeing inspired by geohot's PS3 jailbreak in 2009, I explored game hacking, coding, and security.  
+                Now, I focus on creating high-quality software that prioritizes functionality and user experience.
+            </div>
+
+            <div class="flex-center-hz">
+                <a href="./products/" class="button">View Products</a>
+            </div>
+
+            <div class="home-container">
+                <div class="home-item">
+                    <h2>Find Me!</h2>
+                    You can find me in some places on the web. Among them are YouTube, where I upload videos about anything I am interested in.
+                    X, where I give updates about my projects. Github, where you can find all the code of projects I made open source. I do also have a small Discord server
+                    where I answer questions and also hang out to chat.
+                    <a class="button" href="https://www.youtube.com/@Erarnitox">YouTube Channel</a>
+                    <a class="button" href="https://x.com/erarnitox">X Profile</a>
+                    <a class="button" href="https://github.com/Erarnitox">GitHub Profile</a>
+                    <a class="button" href="https://discord.gg/MjkwgNpFWX">Discord Server</a>
+                </div>
+                
+                <div class="home-item">
+                    <h2>Guided Hacking</h2>
+                    You can also find me in other places on the web.
+                    Posting about programming and hacking.
+                    One of the most noteable is <a href="https://guidedhacking.com?referralcode=JM5dz">GuidedHacking</a> which is the best website to learn game hacking to date.
+                    <a class="button" href="https://guidedhacking.com/members/erarnitox.94488?referralcode=JM5dz">Profile on GuidedHacking</a>
+                    <a class="button" href="https://guidedhacking.com/threads/how-to-make-an-mmo-bot-mmorpg-bot-automation.15173?referralcode=JM5dz">MMO Hacking Guide</a>
+                    <a class="button" href="https://guidedhacking.com/threads/game-hacking-fundamentals-the-game-hacking-book.16550?referralcode=JM5dz">Game Hacking Fundamentals Book</a>
+                </div>
+                <div class="home-item">
+                    <h2>Contact</h2>
+                    Feel free to reach out for any inquiries, project requests, or support.
+                    Whether you're looking for collaboration, custom software solutions, 
+                    or help with existing projects, I'm here to assist! 
+                    I aim to respond promptly to all messages.
+                    
+                    <a class="button" href="mailto:david@erarnitox.de">Send E-Mail</a>
+                    <a class="button" href="https://discordapp.com/users/461930808479842304">Discord</a>
+                </div>
+            </div>
+        </main>
+        <footer id="home-footer">
+            <ul>
+                <li><a href="./legal/">Impressum</a></li>
             </ul>
-        </nav></header>
-        <div class="Content" id="mainBackground">
-            <div class="ContentBox" id="AboutContentBox">
-                <h1>Erarnitox's home on the Internet</h1>
-                Welcome to my website.<br>
-                I'm just a guy on the Internet<br>
-                who enjoys programming, reverse engineering and hacking.<br>
-                <br>
-                If you want to keep up to date on what I am working on<br>
-                you can follow me on GitHub and X (formerly Twitter)<br>
-                <a class="no-style" href="https://x.com/erarnitox"><button>Visit X Profile</button></a>
-                <a class="no-style" href="https://github.com/Erarnitox"><button>Visit GitHub Profile</button></a>
-            </div>
-            <div class="ContentBox">
-                <h2>I make Videos</h2>
-                I upload videos to <a href="https://www.youtube.com/channel/UCLoOPxAcvIbIGd9eWmNRtPg">my channel on
-                YouTube</a> about everything I'm interested in.<br>
-                This includes mostly hacking and game development.<br>
-                <a class="no-style" href="https://www.youtube.com/channel/UCLoOPxAcvIbIGd9eWmNRtPg"><button>Visit YouTube Channel</button></a>
-            </div>
-            <div class="ContentBox">
-                <h2>Dropsoft</h2>
-                I am also founder and proud member of a<br>
-                hacker collective called Dropsoft.<br>
-                We are constantly working on cool projects<br>
-                and looking for new talented members.<br>
-                <a class="no-style" href="https://dropsoft.org"><button>Visit Dropsoft.org</button></a>
-                <a class="no-style" href="https://discord.dropsoft.org"><button>Join the Dropsoft Discord Server</button></a>
-            </div>
-            <div class="ContentBox">
-                <h2>Guided Hacking</h2>
-                You can also find me in other places on the web.<br>
-                Posting about programming and hacking.<br><br>
-                One of the most noteable is <a href="https://guidedhacking.com">GuidedHacking</a> which is<br>
-                the best website to learn game hacking to date.<br>
-                <a class="no-style" href="https://guidedhacking.com/members/erarnitox.94488?referralcode=JM5dz"><button>Profile on GuidedHacking</button></a>
-                <a class="no-style" href="https://guidedhacking.com/threads/how-to-make-an-mmo-bot-mmorpg-bot-automation.15173?referralcode=JM5dz"><button>MMO Hacking Guide</button></a>
-                <a class="no-style" href="https://guidedhacking.com/threads/game-hacking-fundamentals-the-game-hacking-book.16550?referralcode=JM5dz"><button>Game Hacking Fundamentals Book</button></a>
-            </div>
-            <!--
-            <div class="ContentBox">
-                <h2>Support Me</h2>
-                If you want to say thank you<br>
-                You can leave me a small tip.<br>
-                Please don't overdo it though!<br>
-                <br>
-                My crypto addresses:<br>
-                <img src="res/btc.svg" alt="btc-logo" width=15 height=15>
-                <b>bc1qlw2l9ys7c2uy8azrnumacnwruej28wcysvrkrg</b><br>
-                <img src="res/xmr.svg" alt="monero_logo" width=15 height=15> 	
-                <b>44MbbNxGY9bQsD6dcVhpQxJDjtAp4SQPxB7WV1wTkkfsLvvvVga16hiVZneGBhwzgoeC15mSbnsxRKUEdqiH1UntKcV4Exf</b><br>
-            </div>
-            -->
-        </div>
-        <footer>
-            <a href="res/legalNotice.html">Legal Notice</a>
-            <a href="res/Impressum.html">Impressum</a>
+            <small>© 2024 Erarnitox</small> 
         </footer>
     </body>
 </html>
