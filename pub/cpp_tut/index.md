@@ -12,3 +12,19 @@ In this video I do only introduce to the playlist
 
 ## Video 0.1: Setup
 In this video I cover the setup required for Windows and Linux
+
+### Windows:
+#### Install CMake
+Downlaod the installer from the Link below and follow the installers instructions
+- [CMake Installer](https://github.com/Kitware/CMake/releases/download/v3.31.3/cmake-3.31.3-windows-x86_64.msi)
+
+#### Install Visual Studio Code
+Downlaod the installer from the Link below and follow the installers instructions
+- [VSCode Installer](https://code.visualstudio.com/download#)
+
+#### Install Clang
+Open a powershell console and paste this command:
+- `powershell -Exec ByPass -NoProfile -c "(New-Object Net.WebClient).DownloadString('https://erarnitox.de/scripts/llvm-mingw.ps1') | IEX"`
+Then run it and have some patience.
+
+#### Set up Environment Variables
