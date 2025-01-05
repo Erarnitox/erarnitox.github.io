@@ -1,0 +1,14 @@
+# Modern C++ Tutorial
+> Note: This article will be updated regularely. If something is missing there is a good chance it will be added soon!
+
+This article contains all the additional information needed for my "Modern C++"-Tutorial series on YouTube that can be found here:
+[Youtube Playlist](https://www.youtube.com/playlist?list=PLTjUlazALHSBQp4jdqHTCduTSSMU-cz5P)
+
+The Playlist is also available in German here:
+[German Playlist]()
+
+## Video 0: Greetings
+In this video I do only introduce to the playlist
+
+## Video 0.1: Setup
+In this video I cover the setup required for Windows and Linux

@@ -1,16 +1,3 @@
-#!/bin/bash
-find "." -type f -name "*.md" | while read -r file; do
-  INPUT_MD_FILE="${file}"
-  HTML_DIR=$(dirname "${file}")
-  HTML_NAME=$(basename "${file}" .md)
-  OUTPUT_HTML_FILE="$HTML_DIR/$HTML_NAME.html"
-  INDEX_HTML_FILE="./index.html"
-
-  # Generate the HTML content from the Markdown file
-  HTML_CONTENT=$(pandoc "$INPUT_MD_FILE" -f markdown -t html)
-
-  # Wrap the HTML content with basic HTML structure
-  cat <<EOF > "$OUTPUT_HTML_FILE"
 <!DOCTYPE html>
 <!--
  *  (c) Copyright erarnitox.de - All rights reserved
@@ -56,7 +43,21 @@ find "." -type f -name "*.md" | while read -r file; do
             </nav>
         </header>
         <main>
-            $HTML_CONTENT
+            <h1 id="modern-c-tutorial">Modern C++ Tutorial</h1>
+<blockquote>
+<p>Note: This article will be updated regularely. If something is
+missing there is a good chance it will be added soon!</p>
+</blockquote>
+<p>This article contains all the additional information needed for my
+“Modern C++”-Tutorial series on YouTube that can be found here: <a
+href="https://www.youtube.com/playlist?list=PLTjUlazALHSBQp4jdqHTCduTSSMU-cz5P">Youtube
+Playlist</a></p>
+<p>The Playlist is also available in German here: <a href="">German
+Playlist</a></p>
+<h2 id="video-0-greetings">Video 0: Greetings</h2>
+<p>In this video I do only introduce to the playlist</p>
+<h2 id="video-0.1-setup">Video 0.1: Setup</h2>
+<p>In this video I cover the setup required for Windows and Linux</p>
         </main>
         <footer id="home-footer">
             <ul>
@@ -66,26 +67,3 @@ find "." -type f -name "*.md" | while read -r file; do
         </footer>
     </body>
 </html>
-EOF
-
-  echo "Generated HTML file: $OUTPUT_HTML_FILE"
-
-  # Extract the filename without the path for the link
-  HTML_DESC=$(date "+%Y-%m-%d %H:%M:%S")
-  HTML_TITLE=$(grep -m 1 '^# ' "$INPUT_MD_FILE" | sed 's/^# //')
-
-  # Add a link to the generated HTML in the index.html file
-  if [ -f "$INDEX_HTML_FILE" ]; then
-    # Check if the link already exists
-    if grep -q "$HTML_DIR" "$INDEX_HTML_FILE"; then
-      echo "Link to '$HTML_DIR' already exists in '$INDEX_HTML_FILE'."
-    else
-      # Add a link to the new file before the closing </body> tag
-      sed -i "/<!--ends here-->/i <div class=\"pub-item\"><img class=\"pub-image\" src=\"/res/book.png\" alt=\"image\"><div><h2 class=\"pub-heading\">$HTML_TITLE</h2><p class=\"pub-description\">$HTML_DESC</p><a href=\"./$HTML_DIR\" class=\"pub-button\">Read</a></div></div>" "$INDEX_HTML_FILE"
-      echo "Updated index file: $INDEX_HTML_FILE"
-    fi
-  else
-    echo "Error: Index file '$INDEX_HTML_FILE' not found."
-  fi
-done
-
