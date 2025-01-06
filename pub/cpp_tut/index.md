@@ -5,7 +5,7 @@ This article contains all the additional information needed for my "Modern C++"-
 [Youtube Playlist](https://www.youtube.com/playlist?list=PLTjUlazALHSBQp4jdqHTCduTSSMU-cz5P)
 
 The Playlist is also available in German here:
-[German Playlist]()
+[German Playlist](https://www.youtube.com/playlist?list=PLTjUlazALHSCTEfMoxVq97K8PwjML3urS)
 
 ## Video 0: Greetings
 In this video I do only introduce to the playlist
@@ -28,3 +28,8 @@ Open a powershell console and paste this command:
 Then run it and have some patience.
 
 #### Set up Environment Variables
+
+### Linux
+In this video I use the manjaro (arch based distro) in the Xfce edition.
+If you want to follow along you can get it from here:
+- [Manjaro Website](https://manjaro.org/products/download/x86)
