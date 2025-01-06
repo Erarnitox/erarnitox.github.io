@@ -33,3 +33,15 @@ Then run it and have some patience.
 In this video I use the manjaro (arch based distro) in the Xfce edition.
 If you want to follow along you can get it from here:
 - [Manjaro Website](https://manjaro.org/products/download/x86)
+
+To install the tools needed provide the command:
+```
+sudo pacman -Syyu && sudo pacman -Sy code cmake clang
+```
+
+The visual studio code extensions I installed are:
+- Clangd
+- CMake
+- cmake-format
+- CMake-tools
+
