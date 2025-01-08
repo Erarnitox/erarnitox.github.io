@@ -8,7 +8,7 @@ If (!(Test-Path "$HOME\.utils")) {
 function Install-Ninja {
     Write-Host "Checking for Ninja build system..."
 
-    if (-Not (Get-Command ninja -ErrorAction SilentlyContinue)) {
+    if (-Not (Get-Command ninja.exe -ErrorAction SilentlyContinue)) {
         Write-Host "Ninja is not installed. Installing Ninja build system..."
          
         $ninjaZipPath = "$HOME\.utils\ninja.zip"
@@ -17,6 +17,10 @@ function Install-Ninja {
         # Extract Ninja
         Expand-Archive -LiteralPath $ninjaZipPath -DestinationPath "$HOME\.utils" -Force
         Remove-Item $ninjaZipPath -Force
+
+        # Move Ninja to the bin folder
+        $ninjaBinary = "$HOME\.utils\ninja.exe"
+        Move-Item -Path "$HOME\.utils\ninja" -Destination $ninjaBinary
 
         # Update PATH environment variable
         $envPathKey = "Registry::HKEY_CURRENT_USER\Environment"

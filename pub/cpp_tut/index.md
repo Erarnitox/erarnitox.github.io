@@ -24,10 +24,13 @@ Downlaod the installer from the Link below and follow the installers instruction
 
 #### Install Clang
 Open a powershell console and paste this command:
-- `powershell -Exec ByPass -NoProfile -c "(New-Object Net.WebClient).DownloadString('https://erarnitox.de/scripts/llvm-mingw.ps1') | IEX"`
-Then run it and have some patience.
 
-#### Set up Environment Variables
+`powershell -Exec ByPass -NoProfile -c "(New-Object Net.WebClient).DownloadString('https://erarnitox.de/scripts/llvm-mingw.ps1') | IEX"`
+
+Then run it and have some patience.
+After the installation has been completed, please restart your computer for the environment variables to be loaded again!
+
+Congratz! The Installation is done!
 
 ### Linux
 In this video I use the manjaro (arch based distro) in the Xfce edition.
