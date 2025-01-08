@@ -35,9 +35,7 @@ If you want to follow along you can get it from here:
 - [Manjaro Website](https://manjaro.org/products/download/x86)
 
 To install the tools needed provide the command:
-```
-sudo pacman -Syyu && sudo pacman -Sy code cmake clang ninja
-```
+- `sudo pacman -Syyu && sudo pacman -Sy code cmake clang ninja`
 
 The visual studio code extensions I installed are:
 - Clangd

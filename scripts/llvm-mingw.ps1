@@ -1,7 +1,5 @@
-# Fetch release data using Invoke-RestMethod (does not rely on Internet Explorer)
 $releaseList = Invoke-RestMethod -Uri "https://api.github.com/repos/mstorsjo/llvm-mingw/releases"
 
-# Ensure the .utils directory exists
 If (!(Test-Path "$HOME\.utils")) {
     New-Item -ItemType Directory -Path "$HOME\.utils" | Out-Null
 }
@@ -10,27 +8,15 @@ If (!(Test-Path "$HOME\.utils")) {
 function Install-Ninja {
     Write-Host "Checking for Ninja build system..."
 
-    # Check if Ninja exists
     if (-Not (Get-Command ninja -ErrorAction SilentlyContinue)) {
         Write-Host "Ninja is not installed. Installing Ninja build system..."
-        
-        $ninjaUrl = if ($IsWindows) {
-            "https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip"
-        } else {
-            "https://github.com/ninja-build/ninja/releases/latest/download/ninja-linux.zip"
-        }
-
-        # Download Ninja
+         
         $ninjaZipPath = "$HOME\.utils\ninja.zip"
-        Start-BitsTransfer -Source $ninjaUrl -Destination $ninjaZipPath
+        Start-BitsTransfer -Source "https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip" -Destination $ninjaZipPath
 
         # Extract Ninja
         Expand-Archive -LiteralPath $ninjaZipPath -DestinationPath "$HOME\.utils" -Force
         Remove-Item $ninjaZipPath -Force
-
-        # Move Ninja to the bin folder
-        $ninjaBinary = if ($IsWindows) { "$HOME\.utils\ninja.exe" } else { "$HOME\.utils\ninja" }
-        Move-Item -Path "$HOME\.utils\ninja" -Destination $ninjaBinary
 
         # Update PATH environment variable
         $envPathKey = "Registry::HKEY_CURRENT_USER\Environment"
