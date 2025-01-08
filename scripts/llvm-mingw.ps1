@@ -6,6 +6,49 @@ If (!(Test-Path "$HOME\.utils")) {
     New-Item -ItemType Directory -Path "$HOME\.utils" | Out-Null
 }
 
+# Function to install Ninja build system
+function Install-Ninja {
+    Write-Host "Checking for Ninja build system..."
+
+    # Check if Ninja exists
+    if (-Not (Get-Command ninja -ErrorAction SilentlyContinue)) {
+        Write-Host "Ninja is not installed. Installing Ninja build system..."
+        
+        $ninjaUrl = if ($IsWindows) {
+            "https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip"
+        } else {
+            "https://github.com/ninja-build/ninja/releases/latest/download/ninja-linux.zip"
+        }
+
+        # Download Ninja
+        $ninjaZipPath = "$HOME\.utils\ninja.zip"
+        Start-BitsTransfer -Source $ninjaUrl -Destination $ninjaZipPath
+
+        # Extract Ninja
+        Expand-Archive -LiteralPath $ninjaZipPath -DestinationPath "$HOME\.utils" -Force
+        Remove-Item $ninjaZipPath -Force
+
+        # Move Ninja to the bin folder
+        $ninjaBinary = if ($IsWindows) { "$HOME\.utils\ninja.exe" } else { "$HOME\.utils\ninja" }
+        Move-Item -Path "$HOME\.utils\ninja" -Destination $ninjaBinary
+
+        # Update PATH environment variable
+        $envPathKey = "Registry::HKEY_CURRENT_USER\Environment"
+        $currentPath = (Get-ItemProperty -Path $envPathKey -Name path).path
+        $newPath = "$currentPath;$HOME\.utils"
+        if (!$currentPath.Contains(".utils")) {
+            Set-ItemProperty -Path $envPathKey -Name path -Value $newPath
+        }
+
+        Write-Host "Ninja has been installed successfully!"
+    } else {
+        Write-Host "Ninja build system is already installed."
+    }
+}
+
+# Install Ninja build system
+Install-Ninja
+
 $nameList = @()
 
 # Collect release tag names

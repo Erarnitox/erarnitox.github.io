@@ -36,7 +36,7 @@ If you want to follow along you can get it from here:
 
 To install the tools needed provide the command:
 ```
-sudo pacman -Syyu && sudo pacman -Sy code cmake clang
+sudo pacman -Syyu && sudo pacman -Sy code cmake clang ninja
 ```
 
 The visual studio code extensions I installed are:
