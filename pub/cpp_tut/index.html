@@ -55,11 +55,19 @@ Playlist</a></p>
 <p>The Playlist is also available in German here: <a
 href="https://www.youtube.com/playlist?list=PLTjUlazALHSCTEfMoxVq97K8PwjML3urS">German
 Playlist</a></p>
-<h2 id="video-0-greetings">Video 0: Greetings</h2>
-<p>In this video I do only introduce to the playlist</p>
+<h2 id="video-0-learn-modern-c-in-2025-from-scratch">Video 0: Learn
+Modern C++ in 2025 (from Scratch)</h2>
+<p>In this video I do only introduce to the youtube playlist about
+modern C++. What I love about C++ is that is YOURs (I do also use Arch
+btw. for the same reason). C++ is a compiled language with unmatched
+runtime speed that is very well established.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2O3r5qqjyiY?si=_32WcTyPNHIYDeMZ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
 <h2 id="video-0.1-setup">Video 0.1: Setup</h2>
 <p>In this video I cover the setup required for Windows and Linux</p>
-<h3 id="windows">Windows:</h3>
+<h3
+id="windows-setup-clang-on-windows-for-c-in-visual-studio-code">Windows:
+Setup Clang on Windows (for C++ in Visual Studio Code)</h3>
 <h4 id="install-cmake">Install CMake</h4>
 <p>Downlaod the installer from the Link below and follow the installers
 instructions - <a
@@ -70,18 +78,525 @@ Installer</a></p>
 instructions - <a href="https://code.visualstudio.com/download#">VSCode
 Installer</a></p>
 <h4 id="install-clang">Install Clang</h4>
-<p>Open a powershell console and paste this command: -
-<code>powershell -Exec ByPass -NoProfile -c "(New-Object Net.WebClient).DownloadString('https://erarnitox.de/scripts/llvm-mingw.ps1') | IEX"</code>
-Then run it and have some patience.</p>
-<h4 id="set-up-environment-variables">Set up Environment Variables</h4>
-<h3 id="linux">Linux</h3>
+<p>Open a powershell console and paste this command:</p>
+<p><code>powershell -Exec ByPass -NoProfile -c "(New-Object Net.WebClient).DownloadString('https://erarnitox.de/scripts/llvm-mingw.ps1') | IEX"</code></p>
+<p>Then run it and have some patience. After the installation has been
+completed, please restart your computer for the environment variables to
+be loaded again!</p>
+<p>Congratz! The Installation is done!</p>
+<h3 id="linux-setup-modern-c-development-environment-on-linux">Linux:
+Setup Modern C++ Development Environment (on Linux)</h3>
 <p>In this video I use the manjaro (arch based distro) in the Xfce
 edition. If you want to follow along you can get it from here: - <a
 href="https://manjaro.org/products/download/x86">Manjaro Website</a></p>
-<p>To install the tools needed provide the command:</p>
-<pre><code>sudo pacman -Syyu &amp;&amp; sudo pacman -Sy code cmake clang</code></pre>
+<p>To install the tools needed provide the command: -
+<code>sudo pacman -Syyu &amp;&amp; sudo pacman -Sy code cmake clang ninja</code></p>
 <p>The visual studio code extensions I installed are: - Clangd - CMake -
 cmake-format - CMake-tools</p>
+<h2 id="video-1-hello-world-using-c23-modules-and-cmake">Video 1: “Hello
+World!” using C++23, Modules and CMake</h2>
+<ul>
+<li>use std::filesystem to rename files in bulk</li>
+</ul>
+<h2 id="video-2-basic-c-syntax">Video 2: Basic C++ Syntax</h2>
+<ul>
+<li>Variables</li>
+<li>DataTypes</li>
+<li>I/O</li>
+<li>auto</li>
+<li>almost always auto → there is no narrowing type convertion with
+auto</li>
+<li>conestexpr</li>
+<li>using</li>
+<li>your code should compile with:
+<ul>
+<li><code>clang++ -std=c++23 -03 -Werror -Wall -Wextra -Wconversion</code></li>
+</ul></li>
+</ul>
+<p>You can also find a good online book that covers all the basic C++
+concepts online here: - <a
+href="https://www.learncpp.com/">LearnCPP</a></p>
+<h2 id="video-2.1-general-tips">Video 2.1: General Tips</h2>
+<ul>
+<li>always initialize variables</li>
+<li>best code is the code you never write → figure out how to get it
+done with less code
+<ul>
+<li>but don’t try too hard to make compact. Rather keep it simple to
+follow</li>
+<li>clear code &gt; optimal code</li>
+</ul></li>
+<li>you can reuese others code, there is no shame in that (but make it
+your own)</li>
+<li>freshmeat.net</li>
+<li>never trust user input</li>
+<li>never ever use gets()</li>
+<li>use assertions
+<ul>
+<li>cassert</li>
+<li>static_assert</li>
+</ul></li>
+<li>always keep your design extendable</li>
+<li>always check for self assignment in assignment operators</li>
+</ul>
+<h2 id="video-2.3-scripting-in-c">Video 2.3: “Scripting” in C++</h2>
+<ul>
+<li>#include &lt;bits/stdc++.h&gt;</li>
+<li>my nvim config → shortcut to automatically compile and run</li>
+</ul>
+<h2 id="video-2.4-more-tips">Video 2.4: More Tips</h2>
+<ul>
+<li>prefer initialization over assignment
+<ul>
+<li>in constructors</li>
+<li>emplace_back over push_back</li>
+</ul></li>
+<li>never transfer ownership by/to a raw pointer
+<ul>
+<li>use an ownership pointer like unique_ptr</li>
+</ul></li>
+<li>declare a pointer that is not “optional” as not_null</li>
+<li>never pass an array as a pointer → use std::array&amp;</li>
+<li>use RAII
+<ul>
+<li>never a naked new</li>
+<li>never a naked delete</li>
+</ul></li>
+<li>unique_pt should be the preferred pointer type</li>
+<li>never use const_cast</li>
+<li>split multi step functions</li>
+<li>be aware of int overflows/underflows
+<ul>
+<li>what happens if your application might run for ages, does some
+counter overflow?</li>
+<li>are there rounding errors that accumulate over time?</li>
+</ul></li>
+</ul>
+<h2 id="video-2.5-c-code-smells">Video 2.5: C++ Code Smells</h2>
+<ul>
+<li>return std::move(x)</li>
+<li>const_cast (is often a logic error)</li>
+<li>static const → should be: constexpr</li>
+<li>extern const</li>
+<li>raw new/delete → should be: make_unique()</li>
+<li>using namespace in gloal scope</li>
+<li>std::endl in a loop → use instead</li>
+<li>for loop with index → range based for loop
+<ul>
+<li><code>for(const auto&amp; x : y){}</code></li>
+</ul></li>
+<li>[]operator inserts a new entry into a std::map</li>
+<li>not using const or assertions</li>
+<li>not using override</li>
+<li>raw pointers that own data</li>
+</ul>
+<h2 id="video-3-functions">Video 3: Functions</h2>
+<ul>
+<li>build a simple application using functions</li>
+<li>understand functions and std::function</li>
+<li>make structs for large parameter lists</li>
+</ul>
+<h2 id="video-4-modularize-encapsulation">Video 4: Modularize /
+Encapsulation</h2>
+<ul>
+<li>classes</li>
+<li>use const wherever you can</li>
+<li>also use const on methods that do not change the object</li>
+<li>Avoiding the preprocessor / modules &amp; headers (common
+pitfalls)</li>
+<li>Design Guidelines / how to write maintainable code / SOLID</li>
+</ul>
+<h2 id="video-4.1-class-with-value-semantics">Video 4.1: Class with
+value semantics</h2>
+<ul>
+<li>spaceship operator for comparisons</li>
+</ul>
+<h2 id="video-4.2-basic-inheritance">Video 4.2: Basic inheritance</h2>
+<ul>
+<li>virtual functions</li>
+<li>use the override keyword</li>
+<li>implement a list for a todo list</li>
+<li>double linked list can be achived by only storing a next^prev
+pointer in each node</li>
+</ul>
+<h2 id="video-5-working-with-files">Video 5: Working with Files</h2>
+<ul>
+<li>build modern file encapsulations to manage files</li>
+<li>how to use RAII</li>
+<li>build a csv file parser utility</li>
+</ul>
+<h2 id="video-5.1-memory-management-in-modern-c">Video 5.1: Memory
+Management in Modern C++</h2>
+<ul>
+<li>std::unique_ptr, std::make_unique</li>
+<li>custom deleters (to close a file using RAII)</li>
+<li>std::shared_ptr, std::make_shared</li>
+<li>std::weak_ptr</li>
+<li>only smakrt pointers should ever “own” data</li>
+</ul>
+<h2 id="video-6-unit-tests-using-ctest">Video 6: Unit Tests using
+CTest</h2>
+<ul>
+<li>#define private public → to be able to test for private members</li>
+<li>static_assert → for precondition and postcondition assumptions to
+catch unwanted bahaviour in time</li>
+</ul>
+<h2 id="video-7-cmake-what-you-need-to-know">Video 7: CMake: what you
+need to know</h2>
+<ul>
+<li><a
+href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake
+Tutorial</a></li>
+</ul>
+<h2 id="video-8-using-third-party-libraries">Video 8: Using third party
+libraries</h2>
+<ul>
+<li>CPM.cmake as a package manager</li>
+<li>use SDL3 and ImGUI to build a simple GUI-Application</li>
+</ul>
+<h2 id="video-8.1-libraries-to-try">Video 8.1: Libraries to try</h2>
+<ul>
+<li>GUI -&gt; use FLTK (+OpenGL) | wxWidgets, if you need more unusual
+widgts</li>
+<li>Sound -&gt; use PortAudio | OpenAL for Games</li>
+<li>Networking -&gt; simple: unix sockets | secure: openssl sockets |
+anonymous: minitor</li>
+<li>Math -&gt; glm | eigen</li>
+<li>libcurl - for web requests</li>
+<li>OpenSSL - for cryptography</li>
+</ul>
+<h2 id="video-9-github---version-control-and-cicd">Video 9: GitHub -
+Version Control and CI/CD</h2>
+<ul>
+<li>what is git</li>
+<li>how git works</li>
+<li>github</li>
+<li>github actions</li>
+<li>deployment to a discord webhook</li>
+</ul>
+<h2 id="video-10-get-to-know-the-stl-algorithm">Video 10: Get to know
+the STL &amp; <code>&lt;algorithm&gt;</code></h2>
+<ul>
+<li>common STL containers</li>
+<li>algorithm</li>
+<li>std::any</li>
+<li>std::partition</li>
+<li>std::sort</li>
+<li>std::set_intersection</li>
+<li>std::remove_if</li>
+<li>std::find_if</li>
+<li>build a storage / manager for heterogeneous data</li>
+</ul>
+<h2 id="video-10.1-ranges">Video 10.1: Ranges</h2>
+<ul>
+<li>std::ranges</li>
+<li>std::ranges::all_of</li>
+<li>std::ranges::any_of</li>
+</ul>
+<h2 id="video-11-error-handling-with-stdexpected">Video 11: Error
+handling with std::expected</h2>
+<ul>
+<li>experimental rn … let’s see</li>
+</ul>
+<h2 id="video-12-basics-of-asyncronouts-programming-coroutines">Video
+12: Basics of Asyncronouts Programming &amp; Coroutines</h2>
+<ul>
+<li>background worker jobs for an UI application</li>
+<li>std::generate</li>
+</ul>
+<h2 id="video-13-event-loops">Video 13: Event Loops</h2>
+<ul>
+<li>UI in imGui</li>
+<li>use libcurl (probably)</li>
+<li>use background workers</li>
+<li>just plot some data</li>
+<li>build a stock price tracker with UI</li>
+</ul>
+<h2 id="video-14-understanding-rest">Video 14: Understanding REST</h2>
+<ul>
+<li>build a postman like application to test APIs</li>
+</ul>
+<h2
+id="video-15-c-templates-in-action---writing-generic-code-that-rocks">Video
+15: C++ Templates in Action - Writing Generic Code that Rocks!</h2>
+<ul>
+<li>basics of Templates</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>T  function<span class="op">(</span>T arg<span class="op">){</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">//implementation</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> arg<span class="op">;</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>cool template tricks (like CRTP)</li>
+<li>concepts</li>
+<li>inheritance hirarchy using concepts</li>
+</ul>
+<h2 id="video-16-building-a-logger-library">Video 16: Building a logger
+library</h2>
+<ul>
+<li>use std::format (explore formatting options)</li>
+</ul>
+<h2 id="video-16.1-exploring-lifetimes">Video 16.1: Exploring
+Lifetimes</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Lifetime <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  Lifetime<span class="op">()</span> <span class="kw">noexcept</span> <span class="op">{</span> puts<span class="op">(</span><span class="st">&quot;Lifetime() [default constructor]&quot;</span><span class="op">);</span> <span class="op">}</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  Lifetime<span class="op">(</span><span class="at">const</span> Lifetime<span class="op">&amp;)</span> <span class="kw">noexcept</span> <span class="op">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>     puts<span class="op">(</span><span class="st">&quot;Lifetime(const Lifetime&amp;) [copy constructor]&quot;</span><span class="op">);</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  Lifetime<span class="op">(</span>Lifetime<span class="op">&amp;&amp;)</span> <span class="kw">noexcept</span> <span class="op">{</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    puts<span class="op">(</span><span class="st">&quot;Lifetime(Lifetime&amp;&amp;) [move constructor]&quot;</span><span class="op">);</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">~</span>Lifetime<span class="op">()</span> <span class="kw">noexcept</span> <span class="op">{</span> puts<span class="op">(</span><span class="st">&quot;~Lifetime() [destructor]&quot;</span><span class="op">);</span> <span class="op">}</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  Lifetime<span class="op">&amp;</span> <span class="kw">operator</span><span class="op">=(</span><span class="at">const</span> Lifetime<span class="op">&amp;)</span> <span class="kw">noexcept</span> <span class="op">{</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    puts<span class="op">(</span><span class="st">&quot;opereator=(const Lifetime&amp;) [copy assignment]&quot;</span><span class="op">);</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  Lifetime<span class="op">&amp;</span> <span class="kw">operator</span><span class="op">=(</span>Lifetime<span class="op">&amp;&amp;)</span> <span class="kw">noexcept</span> <span class="op">{</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    puts<span class="op">(</span><span class="st">&quot;operator=(Lifetime&amp;&amp;) [move assignment]&quot;</span><span class="op">);</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+<h2 id="video-17-parallel-algorithms-faster-data-processing">Video 17:
+Parallel Algorithms: Faster Data Processing</h2>
+<ul>
+<li>std::reduce</li>
+<li>std::transform</li>
+<li>execution policies</li>
+</ul>
+<p>Example:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>for_each<span class="op">(</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>execution::par_unseq<span class="op">,</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>begin<span class="op">(</span>data<span class="op">),</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>end<span class="op">(</span>data<span class="op">),</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">[]()</span> <span class="op">{</span> <span class="co">/* do something */</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">});</span></span></code></pre></div>
+<ul>
+<li>build an image manipulation program (using ImGUI)</li>
+</ul>
+<h2 id="video-18-libraries---writing-code-that-others-can-use">Video 18:
+Libraries - Writing code that others can use</h2>
+<ul>
+<li>cmake config files</li>
+<li>how to design APIs</li>
+<li>documentation</li>
+</ul>
+<h2 id="video-19-debugging-effectively">Video 19: Debugging
+effectively</h2>
+<ul>
+<li>lldb</li>
+<li>gdb</li>
+<li>x64dbg</li>
+<li>valgrind</li>
+</ul>
+<h2
+id="video-20-software-architecture---the-design-choices-behind-designing-a-simple-game-engine">Video
+20: Software Architecture - The Design choices behind designing a simple
+game engine</h2>
+<ul>
+<li>What is an ECS</li>
+<li>Gang of four</li>
+<li>Different programming paradigms that C++ offers</li>
+</ul>
+<p>You don’t need to implement everything yourself! You can find some
+interesting libraries in <a
+href="https://blog.brianna.town/c-custom-game-engine-libraries">this
+Article</a></p>
+<h2
+id="video-21-compression-serialization-and-encryption---building-a-safe-file-system">Video
+21: Compression, Serialization and Encryption - Building a Safe file
+system</h2>
+<ul>
+<li>openSSL</li>
+<li>cereal</li>
+<li>nlohmann/json</li>
+<li>zlib</li>
+</ul>
+<h2 id="video-22-writing-unit-tests-with-catch2">Video 22: Writing Unit
+Tests with Catch2</h2>
+<ul>
+<li>automate test execution with CMake</li>
+<li>let github actions run the tests</li>
+</ul>
+<h2 id="video-23-plugin-system-dynamic-libraries">Video 23: Plugin
+System &amp; Dynamic Libraries</h2>
+<h2 id="video-24-scripting---lua-vs-chai-a-comparison">Video 24:
+Scripting - Lua vs Chai a comparison</h2>
+<h2 id="video-25-gems-of-the-stl">Video 25: Gems of the STL</h2>
+<ul>
+<li>std::optinal</li>
+<li>std::variant</li>
+<li>how to use variant instead of inheritance</li>
+</ul>
+<h2 id="video-26-building-a-web-backend-in-modern-c">Video 26: Building
+a Web-Backend in modern C++</h2>
+<ul>
+<li>CRUD app for something</li>
+<li>probably useing Boost.Beast</li>
+</ul>
+<h2 id="video-27-our-own-stdfunction">Video 27: Our own
+std::function</h2>
+<ul>
+<li>how does function work in detail</li>
+<li>std::bind and std::invoke</li>
+<li>how to lamdas work</li>
+<li>building our own std::function</li>
+</ul>
+<h2 id="video-27.1-making-our-stdfunction-constexpr">Video 27.1: Making
+our std::function constexpr</h2>
+<h2 id="video-27.2-implementing-small-function-optimization">Video 27.2:
+Implementing small function optimization</h2>
+<h2 id="video-28-concurrency-deep-dive---exploring-the-options">Video
+28: Concurrency deep dive - Exploring the options</h2>
+<ul>
+<li>openMPI</li>
+<li>async</li>
+<li>threads</li>
+<li>forks (might be a bad practice and ignored)</li>
+<li>coroutines</li>
+<li>Asio</li>
+<li>std::mutex</li>
+<li>spin locks</li>
+<li>lock_guard</li>
+<li>semaphores
+<ul>
+<li>std::counting_semaphore</li>
+</ul></li>
+<li>std::atomic</li>
+<li>never use volatile values</li>
+<li>how to desing worker threads</li>
+<li>every access needs to be protected (with a mutex for example)</li>
+<li>you can use unique_lock to pass a mutex to a function and return it
+again</li>
+</ul>
+<h2 id="video-28.1-thead-safe-logger-singleton">Video 28.1: Thead safe
+logger singleton</h2>
+<h2 id="video-29-networking-deep-dive">Video 29: Networking deep
+dive</h2>
+<h2 id="video-30-build-a-web-game-using-emscripten">Video 30: Build a
+web-game using emscripten</h2>
+<h2 id="video-31-performance-deep-dive---building-a-profiler">Video 31:
+Performance Deep dive - building a profiler</h2>
+<ul>
+<li>std::chrono</li>
+</ul>
+<h2
+id="video-31.1-optimize-all-the-things-exploring-performance-hacks">Video
+31.1: Optimize all the things! Exploring performance hacks</h2>
+<h3 id="some-things-to-consider-checking-for">Some things to consider
+checking for</h3>
+<ul>
+<li>No unnecessary work
+<ul>
+<li>No unnecessary copying</li>
+<li>No unnecessary allocations</li>
+</ul></li>
+<li>Use all computing power
+<ul>
+<li>Use all cores</li>
+<li>Use SIMD</li>
+</ul></li>
+<li>Avoid waits and stalls
+<ul>
+<li>locklessdata structures</li>
+<li>Asynchronous APIs</li>
+<li>Job System</li>
+</ul></li>
+<li>Use hardware efficiently
+<ul>
+<li>Chache friendliness</li>
+<li>Well predictable code</li>
+</ul></li>
+<li>OS-level efficiency</li>
+<li>might consider “include OS”</li>
+<li>avoid chache misses</li>
+<li>never allocate on the heap (try alloca)</li>
+<li>consider using Variants or unions for polymorphism</li>
+<li>order member variables by size</li>
+<li>pass almost everything by const reference</li>
+<li>use move semantics correctly (no move in the return statement, this
+avoids RVO) ### Always test the result</li>
+<li>Always test the changes you have made for an result</li>
+<li>Always test performance in a production-like setting to get usable
+results</li>
+<li>use move mostly for big objects</li>
+<li>pass by non-const reference/pointer when needed</li>
+<li>use emplace_back instead of push_back</li>
+<li>use the return value of emplace_back</li>
+<li>move is a just a cast to R-Value</li>
+<li>right container for the right job (vector is a good default)</li>
+<li>use musttail when available</li>
+<li>use std::async and/or threads</li>
+<li>use std::string_view</li>
+<li>move semantics when possible</li>
+<li>use [[likely]] and [[unlikely]]</li>
+<li>use constexpr and consteval</li>
+<li>never use std::accumulate</li>
+</ul>
+<h3 id="branchless-programming">Branchless Programming</h3>
+<ul>
+<li>arithmetic operations on booleans to get rid of branches</li>
+<li>not worth it most of the time</li>
+<li>can increase speed a lot for many conditions</li>
+<li>know when to use it and look at generated assembly</li>
+</ul>
+<h3 id="clean-code">Clean Code</h3>
+<ul>
+<li>is faster in the long run</li>
+<li>have personal quality standards</li>
+<li>always use meaningful variable names</li>
+<li>rarely use comments, code should be readable by itself for the most
+part</li>
+<li>single resposibilty (one function/class -&gt; resposible for one
+thing)</li>
+<li>use asserts/tests and logging</li>
+</ul>
+<h2 id="video-32-video-game-ai-masterclass">Video 32: Video Game AI
+Masterclass</h2>
+<ul>
+<li>state machines</li>
+<li>genetic learning (NEAT)</li>
+<li>A*</li>
+<li>GOAP - Goal Oriented Action Planning</li>
+</ul>
+<h2
+id="video-33-cross-platform-applications-and-cross-compilation">Video
+33: Cross-Platform Applications and Cross-Compilation</h2>
+<ul>
+<li>Configure CMake for seamless builds accross platforms</li>
+<li>mingw cross compilers</li>
+<li>explore CMake toolset files</li>
+</ul>
+<h2 id="video-34-cpack---package-your-program-for-distribution">Video
+34: CPack - Package your Program for distribution</h2>
+<ul>
+<li>build an inisoft installer</li>
+</ul>
+<h2 id="video-35-how-to-read-the-old-crap">Video 35: How to read the old
+crap?</h2>
+<p>In this series we have been heavily focused on learning modern C++23,
+but in production you still need to be able to read “C with Classes” and
+know yourself around. This is why we will cover “all the old crap” in
+this video</p>
+<ul>
+<li>pointers</li>
+<li>malloc / calloc</li>
+<li>unions</li>
+</ul>
+<h2 id="video-35.1-code-review-cube2-sauerbraten">Video 35.1: Code
+Review: “Cube2: Sauerbraten”</h2>
+<ul>
+<li>understand a complex legacy C++ code base</li>
+<li>use clang-tidy modernize to see suggestions</li>
+<li>how to approach refactoring</li>
+</ul>
+<h2 id="video-35.2-understand-winapi-code">Video 35.2: Understand WinAPI
+Code</h2>
+<h2 id="video-35-review-road-ahead">Video 35: Review &amp; Road
+Ahead</h2>
         </main>
         <footer id="home-footer">
             <ul>
