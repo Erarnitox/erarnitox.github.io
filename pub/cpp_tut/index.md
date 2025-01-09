@@ -65,6 +65,8 @@ The visual studio code extensions I installed are:
 - Variables
 - DataTypes
 - I/O
+    - std::print - supports std::format style arguments
+    - std::println - overload of std::print with `\n` at the end
 - auto
 - almost always auto → there is no narrowing type convertion with auto
 - conestexpr
@@ -87,6 +89,19 @@ You can also find a good online book that covers all the basic C++ concepts onli
 - Avoiding the preprocessor / modules & headers (common pitfalls)
 - Design Guidelines / how to write maintainable code / SOLID
 
+## Video 7.1: Designated Initializers (for Structs and Classes):
+```cpp
+struct S {
+	int i;
+	int j;
+	float f;
+}
+
+int main(){
+	S s{.i = 2, .j = 42, .f = 2.34f };
+}
+```
+
 ## Video 8: Working with Files
 - build modern file encapsulations to manage files
 - how to use RAII
@@ -108,9 +123,21 @@ You can also find a good online book that covers all the basic C++ concepts onli
 - build a storage / manager for heterogeneous data
 
 ## Video 10: Ranges
+- kind of like a begin and end iterator pair
+- ranges are lazily evaluated
 - std::ranges
 - std::ranges::all_of
 - std::ranges::any_of
+- std::ranges::sort
+- std::ranges::count
+- std::ranges::find
+- std::ranges::find_if
+- interesting tricks
+```cpp
+// start iterating over the vec on the 3rd element
+for(const auto& val : vec | std::ranges::views::drop(2)) {
+}
+```
 
 ## Video 11: General Tips
 - always initialize variables
@@ -165,7 +192,21 @@ You can also find a good online book that covers all the basic C++ concepts onli
 - raw pointers that own data
 
 ## Video 15: Class with value semantics
+- Rule of 5
 - spaceship operator for comparisons
+```cpp
+#include <compare>
+
+struct S {
+	int i;
+	int j;
+	constexpr auto operator<=>(const S&) const = default;
+}
+
+bool compare(S left, S right){
+	return left == right;
+}
+```
 
 ## Video 16: Basic inheritance
 - virtual functions
@@ -212,6 +253,12 @@ You can also find a good online book that covers all the basic C++ concepts onli
 ## Video 24: Basics of Asyncronouts Programming & Coroutines
 - background worker jobs for an UI application
 - std::generate
+- a function with any of these is a coroutine:
+	- co_await : suspends coroutine while waiting for another computation to finish
+    - co_yield: returns a value from a coroutine to the caller and suspends the coroutine, subsequently calling the coroutine agian continues its execution
+	- co_return: returns from a coroutine (normal return is not allowed)
+- async
+- futures
 
 ## Video 25: Event Loops
 - UI in imGui
@@ -234,10 +281,32 @@ T  function(T arg){
 ```
 - cool template tricks (like CRTP)
 - concepts
+- concpets are named requirements to constrain template types
+```cpp
+template<typename T>
+concept Incrementable = requires(T x){ x++; ++x; };
+
+//using the concept:
+template<Incrementable I>
+void foo(I t);
+
+//or like this:
+void foo(Incrementable auto t);
+```
 - inheritance hirarchy using concepts
 
 ## Video 28: Building a logger library
 - use std::format (explore formatting options)
+```cpp
+#include <string>
+#include <format>
+
+int main(){
+	std::string s{ std::format("Some {} cool", 5) };
+}
+```
+- std::quoted to escapte strings (from the iomaip header)
+- source location header gives runtime information about source location
 
 ## Video 29: Exploring Lifetimes
 ```cpp
@@ -314,28 +383,80 @@ You can find some interesting libraries in [this Article](https://blog.brianna.t
 ## Video 38: Gems of the STL
 - std::optinal
 - std::variant
+- `<numbers>` for mathematical constants
 - how to use variant instead of inheritance
+- std::span - a read and write std::view
+    - std::mdspan for multidimentional data
+
+## Video 38.1: More Compile Time Programming
+- constinit to force static initialization
+    - `constinit auto a { 32 };
+- consteval
 
 ## Video 39: Building a Web-Backend in modern C++
 - CRUD app for something
 - probably useing Boost.Beast
 
+## Video 40: Lambdas
+- how to lamdas work
+- templated lambda expressions
+    - lambdas can have "auto" parameters that work equivalent to templated parameters
+- function attributes for lambda functions
+
 ## Video 40: Our own std::function
 - how does function work in detail
 - std::bind and std::invoke
-- how to lamdas work
 - building our own std::function
 
 ## Video 41: Making our std::function constexpr
 
 ## Video 42: Implementing small function optimization
 
-## Video 43: Concurrency deep dive - Exploring the options
+## Video 43: Concurrency deep dive - Exploring more Options
 - openMPI
-- async
 - threads
+    - jthread
 - forks (might be a bad practice and ignored)
 - coroutines
+```cpp
+#include <coroutine>
+
+struct Task {
+struct promise_type{
+	Task get_return_object() {
+		return {};
+	}
+	
+	std::suspend_never initial_suspend() {
+		return {};
+	}
+	
+	std::suspend_never final_suspend() noexcept {
+		return {};
+	}
+	
+	void return_void() {
+	}
+	void unhandled_exception() {
+	}
+};
+};
+
+Task myCorutine() {
+	co_return;
+}
+
+int main() {
+	auto c = myCoroutine();
+}
+```
+    - coroutines are like functions that can be paused and resumed
+    - co_yield or co_await pause a coroutine
+    - co_return ends/exits a coroutine
+    - no locks needed (the coroutines decides itself when it suspends)
+    - coroutine frame holds the information about the current state of the coroutine
+        - very likely stored on the heap
+    - could replace callbacks
 - Asio
 - std::mutex
 - spin locks
@@ -343,6 +464,7 @@ You can find some interesting libraries in [this Article](https://blog.brianna.t
 - semaphores
     - std::counting_semaphore
 - std::atomic
+- atomic_shared_ptr for threadsafe shared pointers
 - never use volatile values
 - how to desing worker threads
 - every access needs to be protected (with a mutex for example)
@@ -494,7 +616,8 @@ C++ is paradigm agnostic. To Master C++ you need to know and understand these, s
 - test driven
 - ...
 
-Familiarize yourself with the C++ Core Guidelines.
+Familiarize yourself with the C++ Core Guidelines:
+[Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
 Stay up to date on isocpp.org
 
