@@ -18,10 +18,6 @@ function Install-Ninja {
         Expand-Archive -LiteralPath $ninjaZipPath -DestinationPath "$HOME\.utils" -Force
         Remove-Item $ninjaZipPath -Force
 
-        # Move Ninja to the bin folder
-        $ninjaBinary = "$HOME\.utils\ninja.exe"
-        Move-Item -Path "$HOME\.utils\ninja" -Destination $ninjaBinary
-
         # Update PATH environment variable
         $envPathKey = "Registry::HKEY_CURRENT_USER\Environment"
         $currentPath = (Get-ItemProperty -Path $envPathKey -Name path).path
