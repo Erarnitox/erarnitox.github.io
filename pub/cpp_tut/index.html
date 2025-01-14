@@ -93,8 +93,8 @@ href="https://manjaro.org/products/download/x86">Manjaro Website</a></p>
 <code>sudo pacman -Syyu &amp;&amp; sudo pacman -Sy code cmake clang ninja</code></p>
 <p>The visual studio code extensions I installed are: - Clangd - CMake -
 cmake-format - CMake-tools</p>
-<h2 id="video-4-hello-world-using-c23-modules-and-cmake">Video 4: “Hello
-World!” using C++23, Modules and CMake</h2>
+<h2 id="video-4-hello-world-using-c23-and-cmake">Video 4: “Hello World!”
+using C++23 and CMake</h2>
 <h2 id="video-5-basics-of-modules-and-cmake">Video 5: Basics of Modules
 and CMake</h2>
 <ul>
@@ -246,13 +246,58 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#c
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(){</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    S s<span class="op">{.</span>i <span class="op">=</span> <span class="dv">2</span><span class="op">,</span> <span class="op">.</span>j <span class="op">=</span> <span class="dv">42</span><span class="op">,</span> <span class="op">.</span>f <span class="op">=</span> <span class="fl">2.34</span><span class="bu">f</span> <span class="op">};</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<h2 id="video-11-working-with-files">Video 11: Working with Files</h2>
+<h2
+id="video-11-c-templates-in-action---writing-generic-code-that-rocks">Video
+11: C++ Templates in Action - Writing Generic Code that Rocks!</h2>
+<ul>
+<li>basics of Templates</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>T  function<span class="op">(</span>T arg<span class="op">){</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">//implementation</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> arg<span class="op">;</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>when exporting templates from a module <code>export</code> goes
+infront of the template declaration:</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">export</span> <span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span><span class="co">//...</span></span></code></pre></div>
+<ul>
+<li><p>consider auto as function parameter instead of templates for a
+more “modern” look</p></li>
+<li><p>cool template tricks (like CRTP)</p></li>
+<li><p>concepts</p>
+<ul>
+<li>concepts that are ready to use from the standard:
+<ul>
+<li>https://en.cppreference.com/w/cpp/concepts</li>
+</ul></li>
+</ul></li>
+<li><p>concpets are named requirements to constrain template
+types</p></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">concept</span> Incrementable <span class="op">=</span> <span class="kw">requires</span><span class="op">(</span>T x<span class="op">){</span> x<span class="op">++;</span> <span class="op">++</span>x<span class="op">;</span> <span class="op">};</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">//using the concept:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span>Incrementable I<span class="op">&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> foo<span class="op">(</span>I t<span class="op">);</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">//or like this:</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> foo<span class="op">(</span>Incrementable <span class="kw">auto</span> t<span class="op">);</span></span></code></pre></div>
+<ul>
+<li>inheritance hirarchy using concepts</li>
+</ul>
+<h2 id="video-12-working-with-files">Video 12: Working with Files</h2>
 <ul>
 <li>build modern file encapsulations to manage files</li>
 <li>how to use RAII</li>
 <li>build a csv file parser utility</li>
 </ul>
-<h2 id="video-12-get-to-know-the-stl-algorithm">Video 12: Get to know
+<h2 id="video-13-get-to-know-the-stl-algorithm">Video 13: Get to know
 the STL &amp; <code>&lt;algorithm&gt;</code></h2>
 <ul>
 <li>common STL containers</li>
@@ -269,7 +314,7 @@ the STL &amp; <code>&lt;algorithm&gt;</code></h2>
 <li>std::find_if</li>
 <li>build a storage / manager for heterogeneous data</li>
 </ul>
-<h2 id="video-13-ranges">Video 13: Ranges</h2>
+<h2 id="video-14-ranges">Video 14: Ranges</h2>
 <ul>
 <li>kind of like a begin and end iterator pair</li>
 <li>ranges are lazily evaluated</li>
@@ -282,11 +327,109 @@ the STL &amp; <code>&lt;algorithm&gt;</code></h2>
 <li>std::ranges::find_if</li>
 <li>interesting tricks</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// start iterating over the vec on the 3rd element</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span><span class="at">const</span> <span class="kw">auto</span><span class="op">&amp;</span> val <span class="op">:</span> vec <span class="op">|</span> <span class="bu">std::</span>ranges::views::drop<span class="op">(</span><span class="dv">2</span><span class="op">))</span> <span class="op">{</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<h2 id="video-14-filler---general-tips">Video 14: Filler - General
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// start iterating over the vec on the 3rd element</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span><span class="at">const</span> <span class="kw">auto</span><span class="op">&amp;</span> val <span class="op">:</span> vec <span class="op">|</span> <span class="bu">std::</span>ranges::views::drop<span class="op">(</span><span class="dv">2</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="video-15-basic-inheritance">Video 15: Basic inheritance</h2>
+<ul>
+<li>virtual functions</li>
+<li>use the override keyword</li>
+<li>implement a list for a todo list</li>
+<li>double linked list can be achived by only storing a next^prev
+pointer in each node</li>
+</ul>
+<h2 id="video-16-unit-tests-using-ctest">Video 16: Unit Tests using
+CTest</h2>
+<ul>
+<li>test behavior not implementation</li>
+<li>tests have to fail/be able to fail</li>
+<li>you need to know why a test failed</li>
+<li>explicit test function names</li>
+<li>write end to end integration tests also</li>
+<li>#define private public → to be able to test for private members</li>
+<li>static_assert → for precondition and postcondition assumptions to
+catch unwanted bahaviour in time</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#...</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">enable_testing</span>()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">add_executable</span>(<span class="bn">tester</span> tester.cpp)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># tester.cpp → main function needs to return 0 to succeed</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">add_test</span>(Tester tester)</span></code></pre></div>
+<ul>
+<li>run tests with <code>ctest</code> command</li>
+</ul>
+<h2 id="video-17-cmake-what-you-need-to-know">Video 17: CMake: what you
+need to know</h2>
+<ul>
+<li><a
+href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake
+Tutorial</a></li>
+<li>cmake dependency providers</li>
+<li>file sets</li>
+</ul>
+<h2 id="video-18-using-third-party-libraries">Video 18: Using third
+party libraries</h2>
+<ul>
+<li>CPM.cmake as a package manager</li>
+<li>use SDL3 and ImGUI to build a simple GUI-Application</li>
+</ul>
+<h2 id="video-19-working-with-databases">Video 19: Working with
+Databases</h2>
+<ul>
+<li>pqxx setup</li>
+<li>simple example</li>
+</ul>
+<h2 id="video-20-memory-management-in-modern-c">Video 20: Memory
+Management in Modern C++</h2>
+<ul>
+<li>std::unique_ptr, std::make_unique</li>
+<li>custom deleters (to close a file using RAII)</li>
+<li>std::shared_ptr, std::make_shared</li>
+<li>std::weak_ptr</li>
+<li>only smakrt pointers should ever “own” data</li>
+</ul>
+<h2 id="video-21-libraries-to-try">Video 21: Libraries to try</h2>
+<ul>
+<li>GUI -&gt; use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more
+unusual widgts</li>
+<li>Rendering: Magnum graphics</li>
+<li>Sound -&gt; use PortAudio | OpenAL for Games</li>
+<li>Networking -&gt; simple: unix sockets | secure: openssl sockets |
+anonymous: minitor</li>
+<li>Math -&gt; glm | eigen</li>
+<li>libcurl - for web requests</li>
+<li>OpenSSL - for cryptography</li>
+</ul>
+<h2 id="video-22-github---version-control-and-cicd">Video 22: GitHub -
+Version Control and CI/CD</h2>
+<ul>
+<li>what is git</li>
+<li>how git works</li>
+<li>github</li>
+<li>github actions</li>
+<li>deployment to a discord webhook</li>
+</ul>
+<h2 id="video-23-class-with-value-semantics">Video 23: Class with value
+semantics</h2>
+<ul>
+<li>Rule of 5</li>
+<li>spaceship operator for comparisons</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;compare&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> S <span class="op">{</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> j<span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">constexpr</span> <span class="kw">auto</span> <span class="kw">operator</span><span class="op">&lt;=&gt;(</span><span class="at">const</span> S<span class="op">&amp;)</span> <span class="at">const</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> compare<span class="op">(</span>S left<span class="op">,</span> S right<span class="op">){</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> left <span class="op">==</span> right<span class="op">;</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="video-24-filler---general-tips">Video 24: Filler - General
 Tips</h2>
 <ul>
 <li>always initialize variables</li>
@@ -303,7 +446,7 @@ your own)</li>
 <li>but at the beginning: write everything yourself and make a lot of
 mistakes!</li>
 </ul>
-<h2 id="video-15-filler---more-general-tips">Video 15: Filler - More
+<h2 id="video-25-filler---more-general-tips">Video 25: Filler - More
 General Tips</h2>
 <ul>
 <li>never trust user input</li>
@@ -317,7 +460,7 @@ General Tips</h2>
 <li>always check for self assignment in assignment operators</li>
 <li>make everything const / constexpr by default</li>
 </ul>
-<h2 id="video-16-filler---even-more-general-tips">Video 16: Filler -
+<h2 id="video-26-filler---even-more-general-tips">Video 26: Filler -
 Even More General Tips</h2>
 <ul>
 <li>ownership model (there should always only be one owner of data)</li>
@@ -326,13 +469,13 @@ Even More General Tips</h2>
 <li>always check for null pointers</li>
 <li>always convert explicitly</li>
 </ul>
-<h2 id="video-17-filler---scripting-in-c">Video 17: Filler - “Scripting”
+<h2 id="video-27-filler---scripting-in-c">Video 27: Filler - “Scripting”
 in C++</h2>
 <ul>
 <li>#include &lt;bits/stdc++.h&gt;</li>
 <li>my nvim config → shortcut to automatically compile and run</li>
 </ul>
-<h2 id="video-18-filler---more-tips-yt-again">Video 18: Filler - More
+<h2 id="video-28-filler---more-tips-yt-again">Video 28: Filler - More
 Tips yt again!</h2>
 <ul>
 <li>prefer initialization over assignment
@@ -352,7 +495,7 @@ Tips yt again!</h2>
 <li>never a naked delete</li>
 </ul></li>
 </ul>
-<h2 id="video-19-filler---oh-no-even-more-tips">Video 19: Filler - Oh
+<h2 id="video-29-filler---oh-no-even-more-tips">Video 29: Filler - Oh
 no! Even more tips!</h2>
 <ul>
 <li>unique_pt should be the preferred pointer type</li>
@@ -366,15 +509,15 @@ counter overflow?</li>
 </ul></li>
 <li>structured bindings</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Point p1<span class="op">{</span><span class="dv">100</span><span class="op">,</span> <span class="dv">200</span><span class="op">};</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span><span class="op">[</span>a<span class="op">,</span>b<span class="op">]</span> <span class="op">=</span> p1<span class="op">;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ot">assert</span><span class="op">(</span>a <span class="op">==</span> <span class="dv">100</span> <span class="op">&amp;&amp;</span> b <span class="op">==</span> <span class="dv">200</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Point p1<span class="op">{</span><span class="dv">100</span><span class="op">,</span> <span class="dv">200</span><span class="op">};</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span><span class="op">[</span>a<span class="op">,</span>b<span class="op">]</span> <span class="op">=</span> p1<span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ot">assert</span><span class="op">(</span>a <span class="op">==</span> <span class="dv">100</span> <span class="op">&amp;&amp;</span> b <span class="op">==</span> <span class="dv">200</span><span class="op">);</span></span></code></pre></div>
 <ul>
 <li>use cout.setf(ios::unitbuf) to disable cout buffering in debug
 mode</li>
 </ul>
-<h2 id="video-20-filler---c-code-smells">Video 20: Filler - C++ Code
+<h2 id="video-30-filler---c-code-smells">Video 30: Filler - C++ Code
 Smells</h2>
 <ul>
 <li>return std::move(x)</li>
@@ -394,103 +537,6 @@ Smells</h2>
 <li>raw pointers that own data</li>
 <li>switch cases without break that are not marked with
 [[fallthrough]]</li>
-</ul>
-<h2 id="video-21-class-with-value-semantics">Video 21: Class with value
-semantics</h2>
-<ul>
-<li>Rule of 5</li>
-<li>spaceship operator for comparisons</li>
-</ul>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;compare&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> S <span class="op">{</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> j<span class="op">;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">constexpr</span> <span class="kw">auto</span> <span class="kw">operator</span><span class="op">&lt;=&gt;(</span><span class="at">const</span> S<span class="op">&amp;)</span> <span class="at">const</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> compare<span class="op">(</span>S left<span class="op">,</span> S right<span class="op">){</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> left <span class="op">==</span> right<span class="op">;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<h2 id="video-22-basic-inheritance">Video 22: Basic inheritance</h2>
-<ul>
-<li>virtual functions</li>
-<li>use the override keyword</li>
-<li>implement a list for a todo list</li>
-<li>double linked list can be achived by only storing a next^prev
-pointer in each node</li>
-</ul>
-<h2 id="video-23-unit-tests-using-ctest">Video 23: Unit Tests using
-CTest</h2>
-<ul>
-<li>test behavior not implementation</li>
-<li>tests have to fail/be able to fail</li>
-<li>you need to know why a test failed</li>
-<li>explicit test function names</li>
-<li>write end to end integration tests also</li>
-<li>#define private public → to be able to test for private members</li>
-<li>static_assert → for precondition and postcondition assumptions to
-catch unwanted bahaviour in time</li>
-</ul>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#...</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">enable_testing</span>()</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">add_executable</span>(<span class="bn">tester</span> tester.cpp)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># tester.cpp → main function needs to return 0 to succeed</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">add_test</span>(Tester tester)</span></code></pre></div>
-<ul>
-<li>run tests with <code>ctest</code> command</li>
-</ul>
-<h2 id="video-24-cmake-what-you-need-to-know">Video 24: CMake: what you
-need to know</h2>
-<ul>
-<li><a
-href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake
-Tutorial</a></li>
-<li>cmake dependency providers</li>
-<li>file sets</li>
-</ul>
-<h2 id="video-25-using-third-party-libraries">Video 25: Using third
-party libraries</h2>
-<ul>
-<li>CPM.cmake as a package manager</li>
-<li>use SDL3 and ImGUI to build a simple GUI-Application</li>
-</ul>
-<h2 id="video-26-memory-management-in-modern-c">Video 26: Memory
-Management in Modern C++</h2>
-<ul>
-<li>std::unique_ptr, std::make_unique</li>
-<li>custom deleters (to close a file using RAII)</li>
-<li>std::shared_ptr, std::make_shared</li>
-<li>std::weak_ptr</li>
-<li>only smakrt pointers should ever “own” data</li>
-</ul>
-<h2 id="video-27-libraries-to-try">Video 27: Libraries to try</h2>
-<ul>
-<li>GUI -&gt; use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more
-unusual widgts</li>
-<li>Rendering: Magnum graphics</li>
-<li>Sound -&gt; use PortAudio | OpenAL for Games</li>
-<li>Networking -&gt; simple: unix sockets | secure: openssl sockets |
-anonymous: minitor</li>
-<li>Math -&gt; glm | eigen</li>
-<li>libcurl - for web requests</li>
-<li>OpenSSL - for cryptography</li>
-</ul>
-<h2 id="video-28-github---version-control-and-cicd">Video 28: GitHub -
-Version Control and CI/CD</h2>
-<ul>
-<li>what is git</li>
-<li>how git works</li>
-<li>github</li>
-<li>github actions</li>
-<li>deployment to a discord webhook</li>
-</ul>
-<h2 id="video-30-error-handling-with-stdexpected">Video 30: Error
-handling with std::expected</h2>
-<ul>
-<li>experimental rn … let’s see</li>
 </ul>
 <h2 id="video-31-basics-of-asyncronouts-programming-coroutines">Video
 31: Basics of Asyncronouts Programming &amp; Coroutines</h2>
@@ -522,52 +568,7 @@ allowed)</li>
 <ul>
 <li>build a postman like application to test APIs</li>
 </ul>
-<h2
-id="video-34-c-templates-in-action---writing-generic-code-that-rocks">Video
-34: C++ Templates in Action - Writing Generic Code that Rocks!</h2>
-<ul>
-<li>basics of Templates</li>
-</ul>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>T  function<span class="op">(</span>T arg<span class="op">){</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">//implementation</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> arg<span class="op">;</span> </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<ul>
-<li>when exporting templates from a module <code>export</code> goes
-infront of the template declaration:</li>
-</ul>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">export</span> <span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span><span class="co">//...</span></span></code></pre></div>
-<ul>
-<li><p>consider auto as function parameter instead of templates for a
-more “modern” look</p></li>
-<li><p>cool template tricks (like CRTP)</p></li>
-<li><p>concepts</p>
-<ul>
-<li>concepts that are ready to use from the standard:
-<ul>
-<li>https://en.cppreference.com/w/cpp/concepts</li>
-</ul></li>
-</ul></li>
-<li><p>concpets are named requirements to constrain template
-types</p></li>
-</ul>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">concept</span> Incrementable <span class="op">=</span> <span class="kw">requires</span><span class="op">(</span>T x<span class="op">){</span> x<span class="op">++;</span> <span class="op">++</span>x<span class="op">;</span> <span class="op">};</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">//using the concept:</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span>Incrementable I<span class="op">&gt;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> foo<span class="op">(</span>I t<span class="op">);</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">//or like this:</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> foo<span class="op">(</span>Incrementable <span class="kw">auto</span> t<span class="op">);</span></span></code></pre></div>
-<ul>
-<li>inheritance hirarchy using concepts</li>
-</ul>
-<h2 id="video-35-building-a-logger-library">Video 35: Building a logger
+<h2 id="video-34-building-a-logger-library">Video 34: Building a logger
 library</h2>
 <ul>
 <li>Designing the logger
@@ -598,7 +599,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb14-1"><a href="#
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> my_func<span class="op">()</span> <span class="op">{</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>println<span class="op">(</span><span class="bu">std::</span>stacktrace::current<span class="op">())</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<h2 id="video-36-exploring-lifetimes">Video 36: Exploring Lifetimes</h2>
+<h2 id="video-35-exploring-lifetimes">Video 35: Exploring Lifetimes</h2>
 <div class="sourceCode" id="cb15"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Lifetime <span class="op">{</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  Lifetime<span class="op">()</span> <span class="kw">noexcept</span> <span class="op">{</span> puts<span class="op">(</span><span class="st">&quot;Lifetime() [default constructor]&quot;</span><span class="op">);</span> <span class="op">}</span></span>
@@ -618,7 +619,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    puts<span class="op">(</span><span class="st">&quot;operator=(Lifetime&amp;&amp;) [move assignment]&quot;</span><span class="op">);</span></span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
 <span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
-<h2 id="video-37-parallel-algorithms-faster-data-processing">Video 37:
+<h2 id="video-36-parallel-algorithms-faster-data-processing">Video 36:
 Parallel Algorithms: Faster Data Processing</h2>
 <ul>
 <li>std::reduce</li>
@@ -636,7 +637,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#
 <ul>
 <li>build an image manipulation program (using ImGUI)</li>
 </ul>
-<h2 id="video-38-libraries---writing-code-that-others-can-use">Video 38:
+<h2 id="video-37-libraries---writing-code-that-others-can-use">Video 37:
 Libraries - Writing code that others can use</h2>
 <ul>
 <li>cmake config files</li>
@@ -648,9 +649,12 @@ Libraries - Writing code that others can use</h2>
 used</li>
 <li>use as much consteval, constexpr, const as possilbe</li>
 </ul></li>
-<li>documentation</li>
+<li>documentation
+<ul>
+<li>doxygen</li>
+</ul></li>
 </ul>
-<h2 id="video-39-debugging-effectively">Video 39: Debugging
+<h2 id="video-38-debugging-effectively">Video 38: Debugging
 effectively</h2>
 <ul>
 <li>lldb</li>
@@ -684,6 +688,11 @@ variable</p></li>
 <li>strace</li>
 <li>x64dbg</li>
 <li>valgrind</li>
+</ul>
+<h2 id="video-39-error-handling-with-stdexpected">Video 39: Error
+Handling with std::expected</h2>
+<ul>
+<li>experimental for now… let’s see</li>
 </ul>
 <h2 id="video-40-software-design">Video 40: Software Design</h2>
 <ul>
@@ -938,14 +947,15 @@ if(EMSCRIPTEN)
 endif()
 ```
 - use `emcmake` instead of `cmake` to build</code></pre>
-<h2 id="video-58-performance-deep-dive---building-a-profiler">Video 58:
+<h2 id="video-58-android-ndk">Video 58: Android NDK</h2>
+<h2 id="video-59-performance-deep-dive---building-a-profiler">Video 59:
 Performance Deep dive - building a profiler</h2>
 <ul>
 <li>std::chrono</li>
 </ul>
 <h2
-id="video-59-optimize-all-the-things-exploring-performance-hacks">Video
-59: Optimize all the things! Exploring performance hacks</h2>
+id="video-60-optimize-all-the-things-exploring-performance-hacks">Video
+60: Optimize all the things! Exploring performance hacks</h2>
 <h3 id="some-things-to-consider-checking-for">Some things to consider
 checking for</h3>
 <ul>
@@ -1043,7 +1053,7 @@ results</li>
 <li>use constexpr and consteval</li>
 <li>never use std::accumulate</li>
 </ul>
-<h2 id="video-60-branchless-programming">Video 60: Branchless
+<h2 id="video-61-branchless-programming">Video 61: Branchless
 Programming</h2>
 <ul>
 <li>arithmetic operations on booleans to get rid of branches</li>
@@ -1051,7 +1061,7 @@ Programming</h2>
 <li>can increase speed a lot for many conditions</li>
 <li>know when to use it and look at generated assembly</li>
 </ul>
-<h3 id="video-61-clean-code">Video 61: Clean Code</h3>
+<h3 id="video-62-clean-code">Video 62: Clean Code</h3>
 <ul>
 <li>is faster in the long run</li>
 <li>have personal quality standards</li>
@@ -1062,7 +1072,7 @@ part</li>
 thing)</li>
 <li>use asserts/tests and logging</li>
 </ul>
-<h2 id="video-62-video-game-ai-masterclass">Video 62: Video Game AI
+<h2 id="video-63-video-game-ai-masterclass">Video 63: Video Game AI
 Masterclass</h2>
 <ul>
 <li>state machines</li>
@@ -1071,14 +1081,14 @@ Masterclass</h2>
 <li>GOAP - Goal Oriented Action Planning</li>
 </ul>
 <h2
-id="video-63-cross-platform-applications-and-cross-compilation">Video
-63: Cross-Platform Applications and Cross-Compilation</h2>
+id="video-64-cross-platform-applications-and-cross-compilation">Video
+64: Cross-Platform Applications and Cross-Compilation</h2>
 <ul>
 <li>Configure CMake for seamless builds accross platforms</li>
 <li>mingw cross compilers</li>
 <li>explore CMake toolset files</li>
 </ul>
-<h2 id="video-64-checklist-before-you-release">Video 64: Checklist
+<h2 id="video-65-checklist-before-you-release">Video 65: Checklist
 before you Release</h2>
 <ul>
 <li>Coninuous Build Environment
@@ -1138,12 +1148,13 @@ attack surface)</li>
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="video-65-cpack---package-your-program-for-distribution">Video
-65: CPack - Package your Program for distribution</h2>
+<h2 id="video-66-versioning---semver">Video 66: Versioning - Semver</h2>
+<h2 id="video-67-cpack---package-your-program-for-distribution">Video
+67: CPack - Package your Program for distribution</h2>
 <ul>
 <li>build an inisoft installer</li>
 </ul>
-<h2 id="video-66-how-to-read-the-old-crap">Video 66: How to read the old
+<h2 id="video-68-how-to-read-the-old-crap">Video 68: How to read the old
 crap?</h2>
 <p>In this series we have been heavily focused on learning modern C++23,
 but in production you still need to be able to read “C with Classes” and
@@ -1154,23 +1165,29 @@ this video</p>
 <li>malloc / calloc</li>
 <li>unions</li>
 </ul>
-<h2 id="video-67-bithacks">Video 67: Bithacks</h2>
+<h2 id="video-69-bithacks">Video 69: Bithacks</h2>
 <ul>
 <li>set 6th bit to 1 : x = (1&lt;&lt;6) | x</li>
 <li>clear 6th bit : x = ~(1 &lt;&lt; 6) &amp; x</li>
 <li>toggle 6th bit : x = ( 1 &lt;&lt; 6) ^ x</li>
 <li>masked copy from B to A: A = (B &amp; M) | (A &amp; ~M)</li>
 </ul>
-<h2 id="video-68-code-review-cube2-sauerbraten">Video 68: Code Review:
+<h2 id="video-70-code-review-cube2-sauerbraten">Video 70: Code Review:
 “Cube2: Sauerbraten”</h2>
 <ul>
 <li>understand a complex legacy C++ code base</li>
 <li>use clang-tidy modernize to see suggestions</li>
 <li>how to approach refactoring</li>
 </ul>
-<h2 id="video-69-understand-winapi-code">Video 69: Understand WinAPI
+<h2 id="video-71-clang-tidy-plugin-development">Video 71: clang-tidy
+plugin development</h2>
+<pre><code>- clang-query
+- AST matchers
+- fixit hints
+- Transformer/Rewrite Rules</code></pre>
+<h2 id="video-72-understand-winapi-code">Video 72: Understand WinAPI
 Code</h2>
-<h2 id="video-70-solid---design-principles">Video 70: SOLID - Design
+<h2 id="video-73-solid---design-principles">Video 73: SOLID - Design
 Principles</h2>
 <ul>
 <li>Single Responsibility
@@ -1209,7 +1226,7 @@ dependency works</li>
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="video-71-design-patterns">Video 71: Design Patterns</h2>
+<h2 id="video-74-design-patterns">Video 74: Design Patterns</h2>
 <ul>
 <li>imply structure not implementation</li>
 <li>Null Object Pattern
@@ -1247,30 +1264,30 @@ dependency works</li>
 <li>example implementation with Dependency injection</li>
 </ul></li>
 </ul>
-<h2 id="video-72-crtp---curiously-recurring-template-pattern">Video 72:
+<h2 id="video-75-crtp---curiously-recurring-template-pattern">Video 75:
 CRTP - Curiously Recurring Template Pattern</h2>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> Animal<span class="op">&gt;</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Flyer <span class="op">{</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span><span class="op">:</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        Flyer<span class="op">()</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>       <span class="op">~</span>Flyer<span class="op">()</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>       <span class="kw">friend</span> Animal<span class="op">;</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span><span class="op">:</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">void</span> fly<span class="op">()</span> <span class="at">const</span> <span class="op">{</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">static_cast</span><span class="op">&lt;</span>Animal <span class="at">const</span><span class="op">&amp;&gt;(*</span><span class="kw">this</span><span class="op">).</span>fly<span class="op">();</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal <span class="op">:</span> <span class="kw">public</span> Flyer<span class="op">&lt;</span>Animal<span class="op">&gt;</span> <span class="op">{</span></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span><span class="op">:</span></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> fly<span class="op">()</span> <span class="at">const</span> <span class="op">{</span></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">&quot;this animal custom flying</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
-<h2 id="video-73-event-driven-software-architecture">Video 73: Event
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> Animal<span class="op">&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Flyer <span class="op">{</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span><span class="op">:</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        Flyer<span class="op">()</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>       <span class="op">~</span>Flyer<span class="op">()</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>       <span class="kw">friend</span> Animal<span class="op">;</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span><span class="op">:</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">void</span> fly<span class="op">()</span> <span class="at">const</span> <span class="op">{</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">static_cast</span><span class="op">&lt;</span>Animal <span class="at">const</span><span class="op">&amp;&gt;(*</span><span class="kw">this</span><span class="op">).</span>fly<span class="op">();</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal <span class="op">:</span> <span class="kw">public</span> Flyer<span class="op">&lt;</span>Animal<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span><span class="op">:</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> fly<span class="op">()</span> <span class="at">const</span> <span class="op">{</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">&quot;this animal custom flying</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+<h2 id="video-76-event-driven-software-architecture">Video 76: Event
 Driven Software Architecture</h2>
 <ul>
 <li>Event Driven Architecture
@@ -1305,7 +1322,7 @@ Driven Software Architecture</h2>
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="video-74-review-road-ahead">Video 74: Review &amp; Road
+<h2 id="video-77-review-road-ahead">Video 77: Review &amp; Road
 Ahead</h2>
 <p>C++ is paradigm agnostic. To Master C++ you need to know and
 understand these, so you can always choose the right tool for the job: -

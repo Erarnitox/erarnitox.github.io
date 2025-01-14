@@ -58,7 +58,7 @@ The visual studio code extensions I installed are:
 - cmake-format
 - CMake-tools
 
-## Video 4: "Hello World!" using C++23, Modules and CMake
+## Video 4: "Hello World!" using C++23 and CMake
 
 ## Video 5: Basics of Modules and CMake 
 - What is CMake?
@@ -185,214 +185,7 @@ int main(){
 }
 ```
 
-## Video 11: Working with Files
-- build modern file encapsulations to manage files
-- how to use RAII
-- build a csv file parser utility
-
-## Video 12: Get to know the STL & `<algorithm>`
-- common STL containers
-- algorithm
-- std::any
-- std::partition
-- std::sort
-- std::set_intersection
-- std::count
-- std::count_if
-- std::remove
-- std::remove_if
-- std::find
-- std::find_if
-- build a storage / manager for heterogeneous data
-
-## Video 13: Ranges
-- kind of like a begin and end iterator pair
-- ranges are lazily evaluated
-- std::ranges
-- std::ranges::all_of
-- std::ranges::any_of
-- std::ranges::sort
-- std::ranges::count
-- std::ranges::find
-- std::ranges::find_if
-- interesting tricks
-```cpp
-// start iterating over the vec on the 3rd element
-for(const auto& val : vec | std::ranges::views::drop(2)) {
-}
-```
-
-## Video 14: Filler - General Tips
-- always initialize variables
-- best code is the code you never write → figure out how to get it done with less code
-    - but don't try too hard to make compact. Rather keep it simple to follow
-    - clear code > optimal code
-- you can reuese others code, there is no shame in that (but make it your own)
-- freshmeat.net
-- but at the beginning: write everything yourself and make a lot of mistakes!
-
-
-## Video 15: Filler - More General Tips
-- never trust user input
-- never ever use gets()
-- use assertions
-    - cassert
-    - static_assert
-- always keep your design extendable
-- always check for self assignment in assignment operators
-- make everything const / constexpr by default
-
-## Video 16: Filler - Even More General Tips
-- ownership model (there should always only be one owner of data)
-- always use at least: -Wall -Wpedantic -Werror -Wconversion
-- use smart pointers when you can!
-- always check for null pointers
-- always convert explicitly
-
-## Video 17: Filler - "Scripting" in C++
-- #include <bits/stdc++.h>
-- my nvim config → shortcut to automatically compile and run
-
-## Video 18: Filler - More Tips yt again!
-- prefer initialization over assignment
-    - in constructors
-    - emplace_back over push_back
-- never transfer ownership by/to a raw pointer
-    - use an ownership pointer like unique_ptr
-- declare a pointer that is not "optional" as not_null
-- never pass an array as a pointer → use std::array&
-- use RAII
-    - never a naked new
-    - never a naked delete
-
-## Video 19: Filler - Oh no! Even more tips!
-- unique_pt should be the preferred pointer type
-- never use const_cast
-- split multi step functions
-- be aware of int overflows/underflows
-    - what happens if your application might run for ages, does some counter overflow?
-    - are there rounding errors that accumulate over time?
-- structured bindings
-```cpp
-Point p1{100, 200};
-auto[a,b] = p1;
-assert(a == 100 && b == 200);
-```
-- use cout.setf(ios::unitbuf) to disable cout buffering in debug mode
-
-
-## Video 20: Filler - C++ Code Smells
-- return std::move(x)
-- const_cast (is often a logic error)
-- static const → should be: constexpr
-- extern const
-- raw new/delete → should be: make_unique()
-- using namespace in gloal scope
-- std::endl in a loop → use \n instead
-- for loop with index → range based for loop
-    - `for(const auto& x : y){}`
-- []operator inserts a new entry into a std::map
-- not using const or assertions
-- not using override
-- raw pointers that own data
-- switch cases without break that are not marked with [[fallthrough]]
-
-## Video 21: Class with value semantics
-- Rule of 5
-- spaceship operator for comparisons
-```cpp
-#include <compare>
-
-struct S {
-	int i;
-	int j;
-	constexpr auto operator<=>(const S&) const = default;
-}
-
-bool compare(S left, S right){
-	return left == right;
-}
-```
-
-## Video 22: Basic inheritance
-- virtual functions
-- use the override keyword
-- implement a list for a todo list
-- double linked list can be achived by only storing a next^prev pointer in each node
-
-## Video 23: Unit Tests using CTest
-- test behavior not implementation
-- tests have to fail/be able to fail
-- you need to know why a test failed
-- explicit test function names
-- write end to end integration tests also
-- #define private public → to be able to test for private members
-- static_assert → for precondition and postcondition assumptions to catch unwanted bahaviour in time
-```cmake
-#...
-enable_testing()
-add_executable(tester tester.cpp)
-# tester.cpp → main function needs to return 0 to succeed
-add_test(Tester tester)
-```
-- run tests with `ctest` command
-
-## Video 24: CMake: what you need to know
-- [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
-- cmake dependency providers
-- file sets
-
-## Video 25: Using third party libraries
-- CPM.cmake as a package manager
-- use SDL3 and ImGUI to build a simple GUI-Application
-
-## Video 26: Memory Management in Modern C++
-- std::unique_ptr, std::make_unique
-- custom deleters (to close a file using RAII)
-- std::shared_ptr, std::make_shared
-- std::weak_ptr
-- only smakrt pointers should ever "own" data
-
-## Video 27: Libraries to try
-- GUI -> use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts
-- Rendering: Magnum graphics
-- Sound -> use PortAudio | OpenAL for Games
-- Networking -> simple: unix sockets | secure:  openssl sockets | anonymous: minitor 
-- Math -> glm | eigen
-- libcurl - for web requests
-- OpenSSL - for cryptography
-
-## Video 28: GitHub - Version Control and CI/CD
-- what is git
-- how git works
-- github
-- github actions
-- deployment to a discord webhook
-
-## Video 30: Error handling with std::expected
-- experimental rn ... let's see
-
-## Video 31: Basics of Asyncronouts Programming & Coroutines
-- background worker jobs for an UI application
-- std::generate
-- a function with any of these is a coroutine:
-	- co_await : suspends coroutine while waiting for another computation to finish
-    - co_yield: returns a value from a coroutine to the caller and suspends the coroutine, subsequently calling the coroutine agian continues its execution
-	- co_return: returns from a coroutine (normal return is not allowed)
-- async
-- futures
-
-## Video 32: Event Loops
-- UI in imGui
-- use libcurl (probably)
-- use background workers
-- just plot some data
-- build a stock price tracker with UI
-
-## Video 33: Understanding REST
-- build a postman like application to test APIs
-
-## Video 34: C++ Templates in Action - Writing Generic Code that Rocks!
+## Video 11: C++ Templates in Action - Writing Generic Code that Rocks!
 - basics of Templates
 ```cpp
 template<typename T>
@@ -425,7 +218,214 @@ void foo(Incrementable auto t);
 ```
 - inheritance hirarchy using concepts
 
-## Video 35: Building a logger library
+## Video 12: Working with Files
+- build modern file encapsulations to manage files
+- how to use RAII
+- build a csv file parser utility
+
+## Video 13: Get to know the STL & `<algorithm>`
+- common STL containers
+- algorithm
+- std::any
+- std::partition
+- std::sort
+- std::set_intersection
+- std::count
+- std::count_if
+- std::remove
+- std::remove_if
+- std::find
+- std::find_if
+- build a storage / manager for heterogeneous data
+
+## Video 14: Ranges
+- kind of like a begin and end iterator pair
+- ranges are lazily evaluated
+- std::ranges
+- std::ranges::all_of
+- std::ranges::any_of
+- std::ranges::sort
+- std::ranges::count
+- std::ranges::find
+- std::ranges::find_if
+- interesting tricks
+```cpp
+// start iterating over the vec on the 3rd element
+for(const auto& val : vec | std::ranges::views::drop(2)) {
+}
+```
+
+## Video 15: Basic inheritance
+- virtual functions
+- use the override keyword
+- implement a list for a todo list
+- double linked list can be achived by only storing a next^prev pointer in each node
+
+## Video 16: Unit Tests using CTest
+- test behavior not implementation
+- tests have to fail/be able to fail
+- you need to know why a test failed
+- explicit test function names
+- write end to end integration tests also
+- #define private public → to be able to test for private members
+- static_assert → for precondition and postcondition assumptions to catch unwanted bahaviour in time
+```cmake
+#...
+enable_testing()
+add_executable(tester tester.cpp)
+# tester.cpp → main function needs to return 0 to succeed
+add_test(Tester tester)
+```
+- run tests with `ctest` command
+
+## Video 17: CMake: what you need to know
+- [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
+- cmake dependency providers
+- file sets
+
+## Video 18: Using third party libraries
+- CPM.cmake as a package manager
+- use SDL3 and ImGUI to build a simple GUI-Application
+
+## Video 19: Working with Databases
+- pqxx setup
+- simple example
+
+## Video 20: Memory Management in Modern C++
+- std::unique_ptr, std::make_unique
+- custom deleters (to close a file using RAII)
+- std::shared_ptr, std::make_shared
+- std::weak_ptr
+- only smakrt pointers should ever "own" data
+
+## Video 21: Libraries to try
+- GUI -> use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts
+- Rendering: Magnum graphics
+- Sound -> use PortAudio | OpenAL for Games
+- Networking -> simple: unix sockets | secure:  openssl sockets | anonymous: minitor 
+- Math -> glm | eigen
+- libcurl - for web requests
+- OpenSSL - for cryptography
+
+## Video 22: GitHub - Version Control and CI/CD
+- what is git
+- how git works
+- github
+- github actions
+- deployment to a discord webhook
+
+## Video 23: Class with value semantics
+- Rule of 5
+- spaceship operator for comparisons
+```cpp
+#include <compare>
+
+struct S {
+	int i;
+	int j;
+	constexpr auto operator<=>(const S&) const = default;
+}
+
+bool compare(S left, S right){
+	return left == right;
+}
+```
+
+## Video 24: Filler - General Tips
+- always initialize variables
+- best code is the code you never write → figure out how to get it done with less code
+    - but don't try too hard to make compact. Rather keep it simple to follow
+    - clear code > optimal code
+- you can reuese others code, there is no shame in that (but make it your own)
+- freshmeat.net
+- but at the beginning: write everything yourself and make a lot of mistakes!
+
+
+## Video 25: Filler - More General Tips
+- never trust user input
+- never ever use gets()
+- use assertions
+    - cassert
+    - static_assert
+- always keep your design extendable
+- always check for self assignment in assignment operators
+- make everything const / constexpr by default
+
+## Video 26: Filler - Even More General Tips
+- ownership model (there should always only be one owner of data)
+- always use at least: -Wall -Wpedantic -Werror -Wconversion
+- use smart pointers when you can!
+- always check for null pointers
+- always convert explicitly
+
+## Video 27: Filler - "Scripting" in C++
+- #include <bits/stdc++.h>
+- my nvim config → shortcut to automatically compile and run
+
+## Video 28: Filler - More Tips yt again!
+- prefer initialization over assignment
+    - in constructors
+    - emplace_back over push_back
+- never transfer ownership by/to a raw pointer
+    - use an ownership pointer like unique_ptr
+- declare a pointer that is not "optional" as not_null
+- never pass an array as a pointer → use std::array&
+- use RAII
+    - never a naked new
+    - never a naked delete
+
+## Video 29: Filler - Oh no! Even more tips!
+- unique_pt should be the preferred pointer type
+- never use const_cast
+- split multi step functions
+- be aware of int overflows/underflows
+    - what happens if your application might run for ages, does some counter overflow?
+    - are there rounding errors that accumulate over time?
+- structured bindings
+```cpp
+Point p1{100, 200};
+auto[a,b] = p1;
+assert(a == 100 && b == 200);
+```
+- use cout.setf(ios::unitbuf) to disable cout buffering in debug mode
+
+## Video 30: Filler - C++ Code Smells
+- return std::move(x)
+- const_cast (is often a logic error)
+- static const → should be: constexpr
+- extern const
+- raw new/delete → should be: make_unique()
+- using namespace in gloal scope
+- std::endl in a loop → use \n instead
+- for loop with index → range based for loop
+    - `for(const auto& x : y){}`
+- []operator inserts a new entry into a std::map
+- not using const or assertions
+- not using override
+- raw pointers that own data
+- switch cases without break that are not marked with [[fallthrough]]
+
+## Video 31: Basics of Asyncronouts Programming & Coroutines
+- background worker jobs for an UI application
+- std::generate
+- a function with any of these is a coroutine:
+	- co_await : suspends coroutine while waiting for another computation to finish
+    - co_yield: returns a value from a coroutine to the caller and suspends the coroutine, subsequently calling the coroutine agian continues its execution
+	- co_return: returns from a coroutine (normal return is not allowed)
+- async
+- futures
+
+## Video 32: Event Loops
+- UI in imGui
+- use libcurl (probably)
+- use background workers
+- just plot some data
+- build a stock price tracker with UI
+
+## Video 33: Understanding REST
+- build a postman like application to test APIs
+
+## Video 34: Building a logger library
 - Designing the logger
     - what kind of problems do we want to resolve
     - how did I get here?
@@ -451,7 +451,7 @@ void my_func() {
 }
 ```
 
-## Video 36: Exploring Lifetimes
+## Video 35: Exploring Lifetimes
 ```cpp
 struct Lifetime {
   Lifetime() noexcept { puts("Lifetime() [default constructor]"); }
@@ -473,7 +473,8 @@ struct Lifetime {
 };
 ```
 
-## Video 37: Parallel Algorithms: Faster Data Processing
+
+## Video 36: Parallel Algorithms: Faster Data Processing
 - std::reduce
 - std::transform
 - execution policies
@@ -490,7 +491,7 @@ std::for_each(
 
 - build an image manipulation program (using ImGUI)
 
-## Video 38: Libraries - Writing code that others can use
+## Video 37: Libraries - Writing code that others can use
 - cmake config files
 - how to design APIs
     - use good names
@@ -498,8 +499,9 @@ std::for_each(
     - use noexcept to help inidcate what kind of error handling is being used
     - use as much consteval, constexpr, const as possilbe
 - documentation
+    - doxygen
 
-## Video 39: Debugging effectively
+## Video 38: Debugging effectively
 - lldb
 - gdb
     - run - run program
@@ -529,6 +531,9 @@ std::for_each(
 - strace
 - x64dbg
 - valgrind
+
+## Video 39: Error Handling with std::expected
+- experimental for now... let's see
 
 ## Video 40: Software Design
 - structure code in small single purpose modules
@@ -730,11 +735,12 @@ int main() {
     ```
     - use `emcmake` instead of `cmake` to build
 
+## Video 58: Android NDK
 
-## Video 58: Performance Deep dive - building a profiler
+## Video 59: Performance Deep dive - building a profiler
 - std::chrono
 
-## Video 59: Optimize all the things! Exploring performance hacks
+## Video 60: Optimize all the things! Exploring performance hacks
 ### Some things to consider checking for
 - No unnecessary work
     - No unnecessary copying
@@ -799,13 +805,13 @@ int main() {
 - use constexpr and consteval
 - never use std::accumulate
 
-## Video 60: Branchless Programming
+## Video 61: Branchless Programming
 - arithmetic operations on booleans to get rid of branches
 - not worth it most of the time
 - can increase speed a lot for many conditions
 - know when to use it and look at generated assembly
 
-### Video 61: Clean Code
+### Video 62: Clean Code
 - is faster in the long run
 - have personal quality standards
 - always use meaningful variable names
@@ -814,18 +820,18 @@ int main() {
 - use asserts/tests and logging
 
 
-## Video 62: Video Game AI Masterclass
+## Video 63: Video Game AI Masterclass
 - state machines
 - genetic learning (NEAT)
 - A*
 - GOAP - Goal Oriented Action Planning
 
-## Video 63: Cross-Platform Applications and Cross-Compilation
+## Video 64: Cross-Platform Applications and Cross-Compilation
 - Configure CMake for seamless builds accross platforms
 - mingw cross compilers
 - explore CMake toolset files
 
-## Video 64: Checklist before you Release
+## Video 65: Checklist before you Release
 - Coninuous Build Environment
     - github
     - circle.ai
@@ -866,10 +872,13 @@ int main() {
         - -fsanitize-minmal-runtime (to use the minimal runtime for a smaller attack surface)
         - choose options wisely
 
-## Video 65: CPack - Package your Program for distribution
+## Video 66: Versioning - Semver
+
+## Video 67: CPack - Package your Program for distribution
 - build an inisoft installer
 
-## Video 66: How to read the old crap?
+
+## Video 68: How to read the old crap?
 In this series we have been heavily focused on learning modern C++23,
 but in production you still need to be able to read "C with Classes" and know yourself around.
 This is why we will cover "all the old crap" in this video
@@ -878,20 +887,26 @@ This is why we will cover "all the old crap" in this video
 - malloc / calloc
 - unions
 
-## Video 67: Bithacks
+## Video 69: Bithacks
 - set 6th bit to 1 :   x = (1<<6) | x
 - clear 6th bit :       x = ~(1 << 6) & x
 - toggle 6th bit :    x = ( 1 << 6) ^ x
 - masked copy from B to A:  A = (B & M) | (A & ~M)
 
-## Video 68: Code Review: "Cube2: Sauerbraten"
+## Video 70: Code Review: "Cube2: Sauerbraten"
 - understand a complex legacy C++ code base
 - use clang-tidy modernize to see suggestions
 - how to approach refactoring
 
-## Video 69: Understand WinAPI Code
+## Video 71: clang-tidy plugin development
+    - clang-query
+    - AST matchers
+    - fixit hints
+    - Transformer/Rewrite Rules
 
-## Video 70: SOLID - Design Principles
+## Video 72: Understand WinAPI Code
+
+## Video 73: SOLID - Design Principles
 - Single Responsibility
     - a function should only do one thing
 - Open/Closed
@@ -908,7 +923,7 @@ This is why we will cover "all the old crap" in this video
         - this means the external dependency can be updated or swapped out later easily
         - internal code does not have to care about how the external dependency works
 
-## Video 71: Design Patterns
+## Video 74: Design Patterns
 - imply structure not implementation
 - Null Object Pattern
     - retun an Object with default values instead of null
@@ -929,7 +944,7 @@ This is why we will cover "all the old crap" in this video
 - Strategy Pattern
     - example implementation with Dependency injection
 
-## Video 72: CRTP - Curiously Recurring Template Pattern
+## Video 75: CRTP - Curiously Recurring Template Pattern
 ```cpp
 template<typename Animal>
 class Flyer {
@@ -953,7 +968,7 @@ class Animal : public Flyer<Animal> {
 };
 ```
 
-## Video 73: Event Driven Software Architecture
+## Video 76: Event Driven Software Architecture
 - Event Driven Architecture
     - Event
         - Something that happens
@@ -976,7 +991,7 @@ class Animal : public Flyer<Animal> {
         - redundancy is important
 
 
-## Video 74: Review & Road Ahead
+## Video 77: Review & Road Ahead
 C++ is paradigm agnostic. To Master C++ you need to know and understand these, so you can always choose the right tool for the job:
 - imperative
 - functional
