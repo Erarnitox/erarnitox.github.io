@@ -7,6 +7,9 @@ This article contains all the additional information needed for my "Modern C++"-
 The Playlist is also available in German here:
 [German Playlist](https://www.youtube.com/playlist?list=PLTjUlazALHSCTEfMoxVq97K8PwjML3urS)
 
+All the code for the YouTube-Playlist can be found here:
+[GitHub Repository](https://github.com/Erarnitox/ModernCpp_Tutorial)
+
 ## Video 1: Learn Modern C++ in 2025 (from Scratch)
 In this video I do only introduce to the youtube playlist about modern C++.
 What I love about C++ is that is YOURs (I do also use Arch btw. for the same reason).
@@ -26,6 +29,16 @@ C++ is a compiled language with unmatched runtime speed that is very well establ
 In this video I cover the setup required for Windows and Linux
 
 ### Video 2: Setup Clang on Windows (for C++ in Visual Studio Code)
+
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/ClpmrxDnqjw?si=A7YbURm2ckFjnzF6" 
+    title="YouTube video player" 
+    frameborder="1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
 #### Install CMake
 Downlaod the installer from the Link below and follow the installers instructions
 - [CMake Installer](https://github.com/Kitware/CMake/releases/download/v3.31.3/cmake-3.31.3-windows-x86_64.msi)
@@ -49,6 +62,15 @@ In this video I use the manjaro (arch based distro) in the Xfce edition.
 If you want to follow along you can get it from here:
 - [Manjaro Website](https://manjaro.org/products/download/x86)
 
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/gWkAiexZGAU?si=_IZxKV-5y0stiXOX" 
+    title="YouTube video player" 
+    frameborder="1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
 To install the tools needed provide the command:
 - `sudo pacman -Syyu && sudo pacman -Sy code cmake clang ninja`
 
@@ -59,6 +81,16 @@ The visual studio code extensions I installed are:
 - CMake-tools
 
 ## Video 4: "Hello World!" using C++23 and CMake
+Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instead of `23`)
+
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/2m-96nNUjMw?si=P12QgE4xNxpL1vf6" 
+    title="YouTube video player" 
+    frameborder="1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
 
 ## Video 5: Basics of Modules and CMake 
 - What is CMake?
