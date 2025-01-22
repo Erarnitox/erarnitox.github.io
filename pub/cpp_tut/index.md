@@ -92,7 +92,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
     allowfullscreen>
 </iframe>
 
-## Video 5: Basics of Modules and CMake 
+## Video 5: C++ Modules Basics using CMake 
 - What is CMake?
 - Why Modules
     - What are Header files
@@ -173,7 +173,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
     - when mixing include and import - include all headers before any imports
 
 
-## Video 6: Renaming Files in Bulk using std::filesystem
+## Video 6: Cross-Platform File Management
 - use std::filesystem to rename files in bulk
 
 ## Video 7: Basic C++ Syntax
@@ -192,7 +192,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
 You can also find a good online book that covers all the basic C++ concepts online here:
 - [LearnCPP](https://www.learncpp.com/)
 
-## Video 8: Functions
+## Video 8: Demysitifying C++ Functions (what is std::function?)
 - build a simple application using functions
 - understand functions and std::function
 - make structs for large parameter lists
@@ -319,18 +319,65 @@ add_test(Tester tester)
 - CPM.cmake as a package manager
 - use SDL3 and ImGUI to build a simple GUI-Application
 
-## Video 19: Working with Databases
-- pqxx setup
-- simple example
+## Video 19: GitHub - Version Control and CI/CD
+- what is git
+- how git works
+- github
+- github actions
+- deployment to a discord webhook
 
 ## Video 20: Memory Management in Modern C++
 - std::unique_ptr, std::make_unique
 - custom deleters (to close a file using RAII)
 - std::shared_ptr, std::make_shared
 - std::weak_ptr
-- only smakrt pointers should ever "own" data
+- only smart pointers should ever "own" data
 
-## Video 21: Libraries to try
+## Video 21: Working with Databases
+- sqlite setup
+- pqxx setup
+- abstractions?
+- simple example
+
+## Video 22: Exploring Lifetimes
+```cpp
+struct Lifetime {
+  Lifetime() noexcept { puts("Lifetime() [default constructor]"); }
+  Lifetime(const Lifetime&) noexcept {
+     puts("Lifetime(const Lifetime&) [copy constructor]");
+
+  }
+
+  Lifetime(Lifetime&&) noexcept {
+    puts("Lifetime(Lifetime&&) [move constructor]");
+  }
+  ~Lifetime() noexcept { puts("~Lifetime() [destructor]"); }
+  Lifetime& operator=(const Lifetime&) noexcept {
+    puts("opereator=(const Lifetime&) [copy assignment]");
+  }
+  Lifetime& operator=(Lifetime&&) noexcept {
+    puts("operator=(Lifetime&&) [move assignment]");
+  }
+};
+```
+
+## Video 23: Lambdas
+- how do lamdas work
+- templated lambda expressions
+    - lambdas can have "auto" parameters that work equivalent to templated parameters
+- function attributes for lambda functions
+
+## Video 24: Basics of Asyncronouts Programming & Coroutines
+- background worker jobs for an UI application
+- std::generate
+- a function with any of these is a coroutine:
+	- co_await : suspends coroutine while waiting for another computation to finish
+    - co_yield: returns a value from a coroutine to the caller and suspends the coroutine, subsequently calling the coroutine agian continues its execution
+	- co_return: returns from a coroutine (normal return is not allowed)
+- async
+- futures
+
+## Video 25: Libraries to try
 - GUI -> use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts
 - Rendering: Magnum graphics
 - Sound -> use PortAudio | OpenAL for Games
@@ -339,14 +386,7 @@ add_test(Tester tester)
 - libcurl - for web requests
 - OpenSSL - for cryptography
 
-## Video 22: GitHub - Version Control and CI/CD
-- what is git
-- how git works
-- github
-- github actions
-- deployment to a discord webhook
-
-## Video 23: Class with value semantics
+## Video 26: Class with value semantics
 - Rule of 5
 - spaceship operator for comparisons
 ```cpp
@@ -363,7 +403,7 @@ bool compare(S left, S right){
 }
 ```
 
-## Video 24: Filler - General Tips
+## Video 27: Filler - General Tips
 - always initialize variables
 - best code is the code you never write → figure out how to get it done with less code
     - but don't try too hard to make compact. Rather keep it simple to follow
@@ -373,7 +413,7 @@ bool compare(S left, S right){
 - but at the beginning: write everything yourself and make a lot of mistakes!
 
 
-## Video 25: Filler - More General Tips
+## Video 28: Filler - More General Tips
 - never trust user input
 - never ever use gets()
 - use assertions
@@ -383,18 +423,18 @@ bool compare(S left, S right){
 - always check for self assignment in assignment operators
 - make everything const / constexpr by default
 
-## Video 26: Filler - Even More General Tips
+## Video 29: Filler - Even More General Tips
 - ownership model (there should always only be one owner of data)
 - always use at least: -Wall -Wpedantic -Werror -Wconversion
 - use smart pointers when you can!
 - always check for null pointers
 - always convert explicitly
 
-## Video 27: Filler - "Scripting" in C++
+## Video 30: Filler - "Scripting" in C++
 - #include <bits/stdc++.h>
 - my nvim config → shortcut to automatically compile and run
 
-## Video 28: Filler - More Tips yt again!
+## Video 31: Filler - More Tips yt again!
 - prefer initialization over assignment
     - in constructors
     - emplace_back over push_back
@@ -406,7 +446,7 @@ bool compare(S left, S right){
     - never a naked new
     - never a naked delete
 
-## Video 29: Filler - Oh no! Even more tips!
+## Video 32: Filler - Oh no! Even more tips!
 - unique_pt should be the preferred pointer type
 - never use const_cast
 - split multi step functions
@@ -421,7 +461,7 @@ assert(a == 100 && b == 200);
 ```
 - use cout.setf(ios::unitbuf) to disable cout buffering in debug mode
 
-## Video 30: Filler - C++ Code Smells
+## Video 33: Filler - C++ Code Smells
 - return std::move(x)
 - const_cast (is often a logic error)
 - static const → should be: constexpr
@@ -437,27 +477,17 @@ assert(a == 100 && b == 200);
 - raw pointers that own data
 - switch cases without break that are not marked with [[fallthrough]]
 
-## Video 31: Basics of Asyncronouts Programming & Coroutines
-- background worker jobs for an UI application
-- std::generate
-- a function with any of these is a coroutine:
-	- co_await : suspends coroutine while waiting for another computation to finish
-    - co_yield: returns a value from a coroutine to the caller and suspends the coroutine, subsequently calling the coroutine agian continues its execution
-	- co_return: returns from a coroutine (normal return is not allowed)
-- async
-- futures
-
-## Video 32: Event Loops
+## Video 34: Event Loops
 - UI in imGui
 - use libcurl (probably)
 - use background workers
 - just plot some data
 - build a stock price tracker with UI
 
-## Video 33: Understanding REST
+## Video 35: Understanding REST
 - build a postman like application to test APIs
 
-## Video 34: Building a logger library
+## Video 36: Building a logger library
 - Designing the logger
     - what kind of problems do we want to resolve
     - how did I get here?
@@ -483,30 +513,7 @@ void my_func() {
 }
 ```
 
-## Video 35: Exploring Lifetimes
-```cpp
-struct Lifetime {
-  Lifetime() noexcept { puts("Lifetime() [default constructor]"); }
-  Lifetime(const Lifetime&) noexcept {
-     puts("Lifetime(const Lifetime&) [copy constructor]");
-
-  }
-
-  Lifetime(Lifetime&&) noexcept {
-    puts("Lifetime(Lifetime&&) [move constructor]");
-  }
-  ~Lifetime() noexcept { puts("~Lifetime() [destructor]"); }
-  Lifetime& operator=(const Lifetime&) noexcept {
-    puts("opereator=(const Lifetime&) [copy assignment]");
-  }
-  Lifetime& operator=(Lifetime&&) noexcept {
-    puts("operator=(Lifetime&&) [move assignment]");
-  }
-};
-```
-
-
-## Video 36: Parallel Algorithms: Faster Data Processing
+## Video 37: Parallel Algorithms: Faster Data Processing
 - std::reduce
 - std::transform
 - execution policies
@@ -523,7 +530,7 @@ std::for_each(
 
 - build an image manipulation program (using ImGUI)
 
-## Video 37: Libraries - Writing code that others can use
+## Video 38: Libraries - Writing code that others can use
 - cmake config files
 - how to design APIs
     - use good names
@@ -533,7 +540,7 @@ std::for_each(
 - documentation
     - doxygen
 
-## Video 38: Debugging effectively
+## Video 39: Debugging effectively
 - lldb
 - gdb
     - run - run program
@@ -564,10 +571,10 @@ std::for_each(
 - x64dbg
 - valgrind
 
-## Video 39: Error Handling with std::expected
+## Video 40: Error Handling with std::expected
 - experimental for now... let's see
 
-## Video 40: Software Design
+## Video 41: Software Design
 - structure code in small single purpose modules
     - that are reusable
 - design for changes 
@@ -624,7 +631,7 @@ std::for_each(
 - More details in this awesome Book by Klaus Iglberger: https://amzn.eu/d/1ZK5vvy
 
 
-## Video 41: Software Architecture - The Design choices behind designing a simple game engine
+## Video 42: Software Architecture - The Design choices behind designing a simple game engine
 - What is an ECS
 - Gang of four
 - Different programming paradigms that C++ offers
@@ -632,21 +639,21 @@ std::for_each(
 You don't need to implement everything yourself!
 You can find some interesting libraries in [this Article](https://blog.brianna.town/c-custom-game-engine-libraries)
 
-## Video 42: Compression, Serialization and Encryption - Building a Safe file system
+## Video 43: Compression, Serialization and Encryption - Building a Safe file system
 - openSSL
 - cereal
 - nlohmann/json
 - zlib
 
-## Video 43: Writing Unit Tests with Catch2
+## Video 44: Writing Unit Tests with Catch2
 - automate test execution with CMake
 - let github actions run the tests
 
-## Video 44: Plugin System & Dynamic Libraries
+## Video 45: Plugin System & Dynamic Libraries
 
-## Video 45: Scripting - Lua vs Chai a comparison
+## Video 46: Scripting - Lua vs Chai a comparison
 
-## Video 46: Gems of the STL
+## Video 47: Gems of the STL
 - std::optinal
 - std::variant
 - `<numbers>` for mathematical constants
@@ -654,7 +661,7 @@ You can find some interesting libraries in [this Article](https://blog.brianna.t
 - std::span - a read and write std::view
     - std::mdspan for multidimentional data
 
-## Video 47: More Compile Time Programming
+## Video 48: More Compile Time Programming
 - constinit to force static initialization
     - `constinit auto a { 32 };`
 - consteval
@@ -664,15 +671,9 @@ if constexpr(is_something()) {
 
 }```
 
-## Video 48: Building a Web-Backend in modern C++
+## Video 49: Building a Web-Backend in modern C++
 - CRUD app for something
 - probably useing Boost.Beast
-
-## Video 49: Lambdas
-- how to lamdas work
-- templated lambda expressions
-    - lambdas can have "auto" parameters that work equivalent to templated parameters
-- function attributes for lambda functions
 
 ## Video 50: Our own std::function
 - how does function work in detail
