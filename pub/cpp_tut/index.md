@@ -1,6 +1,7 @@
 # Modern C++ Tutorial
 > Note: This article will be updated regularely. If something is missing there is a good chance it will be added soon!
 
+## General Information
 This article contains all the additional information needed for my "Modern C++"-Tutorial series on YouTube that can be found here:
 [Youtube Playlist](https://www.youtube.com/playlist?list=PLTjUlazALHSBQp4jdqHTCduTSSMU-cz5P)
 
@@ -9,6 +10,13 @@ The Playlist is also available in German here:
 
 All the code for the YouTube-Playlist can be found here:
 [GitHub Repository](https://github.com/Erarnitox/ModernCpp_Tutorial)
+
+## Support Me
+If you like the content on this page and want to say "Thank you!", please check out:
+- [This Article](../thanks/index.html)
+
+To find out how to best support me. Thank you!
+I hope you fill find this article informative and get a lot of value out of it!
 
 ## Video 1: Learn Modern C++ in 2025 (from Scratch)
 In this video I do only introduce to the youtube playlist about modern C++.
@@ -154,6 +162,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
 - Problems with Modules currently
     - import std; - does not work yet for me
     - we have to mix modules and header files for now
+    - IDE support not great yet
     ```cpp
     module;
 
@@ -412,7 +421,6 @@ bool compare(S left, S right){
 - freshmeat.net
 - but at the beginning: write everything yourself and make a lot of mistakes!
 
-
 ## Video 28: Filler - More General Tips
 - never trust user input
 - never ever use gets()
@@ -654,7 +662,7 @@ You can find some interesting libraries in [this Article](https://blog.brianna.t
 ## Video 46: Scripting - Lua vs Chai a comparison
 
 ## Video 47: Gems of the STL
-- std::optinal
+- std::optional
 - std::variant
 - `<numbers>` for mathematical constants
 - how to use variant instead of inheritance
@@ -852,7 +860,6 @@ int main() {
 - single resposibilty (one function/class -> resposible for one thing)
 - use asserts/tests and logging
 
-
 ## Video 63: Video Game AI Masterclass
 - state machines
 - genetic learning (NEAT)
@@ -909,7 +916,6 @@ int main() {
 
 ## Video 67: CPack - Package your Program for distribution
 - build an inisoft installer
-
 
 ## Video 68: How to read the old crap?
 In this series we have been heavily focused on learning modern C++23,
