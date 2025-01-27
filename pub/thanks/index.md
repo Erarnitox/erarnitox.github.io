@@ -8,7 +8,7 @@ Every Like, Comment and especially recommendation to a friend matters a lot to m
 ## Use Products made by me
 Please take your time to browse through [My Products](/products/index.html)!
 
-## Refferral Links
+## Referral Links
 I don't like donations, but if you want to spend a bit of money, here are some things you might like.
 On every sign up through the following links I will earn a commission.
 However, I will only list services here that I use myself and genuenly like.

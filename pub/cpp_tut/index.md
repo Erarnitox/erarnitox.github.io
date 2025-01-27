@@ -193,7 +193,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
     - std::println - overload of std::print with `\n` at the end
 - auto
 - almost always auto → there is no narrowing type convertion with auto
-- conestexpr
+- constexpr
 - using
 - your code should compile with:
     - `clang++ -std=c++23 -03 -Werror -Wall -Wextra -Wconversion`
