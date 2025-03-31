@@ -201,9 +201,12 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
 You can also find a good online book that covers all the basic C++ concepts online here:
 - [LearnCPP](https://www.learncpp.com/)
 
-## Video 8: Demysitifying C++ Functions (what is std::function?)
+## Video 8: Demystifying C++ Functions (what is std::function?)
 - build a simple application using functions
 - understand functions and std::function
+    - implementation of lambda and function will be covered in a later video in more detail
+    - std::function is a holder of a function (type-erased wrapper around a "callable")
+    - lambda is a construct for defining an anonymous function in C++
 - make structs for large parameter lists
 
 ## Video 9: Modularize / Encapsulation
@@ -219,7 +222,7 @@ struct S {
 	int i;
 	int j;
 	float f;
-}
+};
 
 int main(){
 	S s{.i = 2, .j = 42, .f = 2.34f };
@@ -279,6 +282,12 @@ void foo(Incrementable auto t);
 - std::find_if
 - build a storage / manager for heterogeneous data
 
+A great Overview of the STL algorithms taken from [hackingcpp.com](https://hackingcpp.com/index.html):
+![algorithms](./res/algorithms.png)
+
+- Great Overview on [cppreference.com](https://en.cppreference.com/w/cpp/algorithm)
+- a cool Cheat Sheet can be found here on: [Github](https://github.com/gibsjose/cpp-cheat-sheet/blob/master/Data%20Structures%20and%20Algorithms.md)
+
 ## Video 14: Ranges
 - kind of like a begin and end iterator pair
 - ranges are lazily evaluated
@@ -319,10 +328,19 @@ add_test(Tester tester)
 ```
 - run tests with `ctest` command
 
+## Video 16.1: Using CDash
+- https://cmake.org/cmake/help/book/mastering-cmake/chapter/CDash.html
+
 ## Video 17: CMake: what you need to know
 - [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
+- cmake targets and target based cmake workflow
 - cmake dependency providers
 - file sets
+- More about CMake: 
+    - [CMake YouTube-Playlist](https://www.youtube.com/watch?v=IZXNsim9TWI&list=PLvcRNX5OiSOoGXtLRTPyb9SNBKsw3Oucg)
+
+## Video 17.1: CMake: Modules Revisited
+
 
 ## Video 18: Using third party libraries
 - CPM.cmake as a package manager
@@ -493,7 +511,26 @@ assert(a == 100 && b == 200);
 - build a stock price tracker with UI
 
 ## Video 35: Understanding REST
-- build a postman like application to test APIs
+- Theory:
+    - GET - Retrieve a Resource
+    - POST - Create a new resource
+    - PUT - Update an existing resource entirely
+    - PATCH - Update an existing resouce partially
+    - DELETE - Delete a resource
+    - The URI / enpoint should represent the resource
+        - egs: /api/users
+    - Status Code:
+        - OK - 200
+        - Created - 201
+        - No Content - 204
+        - 400 - Bad requests
+        - 401 - Unauthorized
+        - 403 - Forbidden
+        - 404 - Not found
+        - 500 - Internal Server error
+    
+- Project:
+    - build a postman like application to test APIs
 
 ## Video 36: Building a logger library
 - Designing the logger
@@ -540,6 +577,106 @@ std::for_each(
 
 ## Video 38: Libraries - Writing code that others can use
 - cmake config files
+- Top Level CMakeLists.txt
+```cmake
+cmake_minimum_required(VERSION 3.30)
+project(MyLib LANGUAGES CXX)
+
+add_library(mylib 
+    "src/library.cpp"
+)
+
+set_target_properties(mylib
+    PROPERTIES 
+    CMAKE_CXX_STANDARD 23
+    CMAKE_CXX_STANDARD_REQUIRED ON
+    CMAKE_CXX_EXTENSIONS OFF
+)
+
+include(GNUInstallDirs)
+
+target_include_directories(mylib
+    PUBLIC
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
+    "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
+)
+
+install(TARGETS mylib 
+    EXPORT DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+
+install(FILES "src/library.hpp DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
+install(EXPORT mylibTargets
+    FILE mylibTargets.cmake
+    NAMESPACE mylib::
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/mylib"
+)
+
+include(CMakePackageConfigHelpers)
+
+configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/Config.cmake.in
+    "${CMAKE_CURRENT_BINARY_DIR}/mylibConfig.cmake"
+    INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/mylib"
+)
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/mylibConfig.cmake"
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/mylib"
+)
+```
+- Config.cmake.in
+```cmake
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/mylibTargets.cmake")
+
+chack_required_components(mylib)
+
+include(CMakeFindDependencyMacro)
+find_dependency(ZLIB REQUIRED)
+```
+- CMake Takeaways
+    - handle visibility well and in platform independent way.
+        - default should always be "hidden"
+        - make sure it is also set for "inlined"/template code (usually a different flag)
+        - CMakePresets snippet: ```cmake
+           "CMAKE_CXX_VISIBILITY_PRESET" : "hidden",
+           "CMAKE_VISIBILITY_INLINES_HIDDEN" : "YES"
+        ```
+        - you can generate an export header automatically:
+        ```cmake
+        incude(GenerateExportHeader)
+        generate_export_header(library_target)
+        ```
+            - you can then `#include "library_target_export.h"`
+            - and use `LIBRARY_TARGET_EXPORT` to annotate functions you want to export from your library
+    - set library version:
+    ```cmake
+    set_target_properties(
+        library_target PROPERTIES
+            SOVERSION 1
+            VERSION 1.2.5
+    )
+    ```
+    - generate Version file
+    ```cmake
+    include(CMakePackageConfigHelpers)
+
+    write_basic_package_version_file(
+        LibraryConfigVersion.cmake
+        VERSION 1.2.5
+        COMPATIBILITY SameMajorVersion
+    )
+    ```
+    - install targets
+    ```cmake
+    install(TARGETS library_target)
+    ```
+
 - how to design APIs
     - use good names
     - use `[[nodiscard]]` (provide a reason string)
@@ -640,8 +777,15 @@ std::for_each(
 
 
 ## Video 42: Software Architecture - The Design choices behind designing a simple game engine
+- Architecture Patterns
+    - layered architecture
+    - event driven architecture
+    - microkernel architecture
+    - microservice architecture
+    - monolithic architecture
+        - modular monolith
 - What is an ECS
-- Gang of four
+- Gang of four book patterns in C++
 - Different programming paradigms that C++ offers
 
 You don't need to implement everything yourself!
@@ -681,18 +825,30 @@ if constexpr(is_something()) {
 
 ## Video 49: Building a Web-Backend in modern C++
 - CRUD app for something
-- probably useing Boost.Beast
+- probably using Boost.Beast
+- Crow looks very cool and simple. Probably easier to use than beast
 
 ## Video 50: Our own std::function
 - how does function work in detail
 - std::bind and std::invoke
 - building our own std::function
 
+Simple impl:
+```cpp
+
+```
+
+Extra features:
+    - no locks
+    - no memory allocations
+    - move-only
+
 ## Video 51: Making our std::function constexpr
 
 ## Video 52: Implementing small function optimization
 
-## Video 53: Run code on the GPU using OpenCL
+## Video 53: Run code on the GPU (using OpenCL)
+
 
 ## Video 54: Concurrency deep dive - Exploring more Options
 - openMPI
