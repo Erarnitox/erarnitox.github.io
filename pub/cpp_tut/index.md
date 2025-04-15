@@ -317,6 +317,7 @@ for(const auto& val : vec | std::ranges::views::drop(2)) {
 - you need to know why a test failed
 - explicit test function names
 - write end to end integration tests also
+- if(BUILD_TESTING) → to check in Cmake if we should build tests
 - #define private public → to be able to test for private members
 - static_assert → for precondition and postcondition assumptions to catch unwanted bahaviour in time
 ```cmake
@@ -334,13 +335,31 @@ add_test(Tester tester)
 ## Video 17: CMake: what you need to know
 - [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
 - cmake targets and target based cmake workflow
+    - create target: add_library, add_eecutable, add_custom_target
+    - everything in modern cmake is target focused
 - cmake dependency providers
 - file sets
+- cmake is a full blown scripting language with if, else, elseif, foreach, while, macros and functions
+    - macros are like functions, but don't have their own function stack/scope
+- option creates a cache variable
+    - `option(USE_JPEG "Do you want to use the jpeg library")`
+    - `set(USE_JPEG ON CACHE BOOL "include jpeg support?")`
+
+```cmake
+# assume that FOO is set to ON in the cache
+
+set(FOO OFF)
+# sets foo to OFF for processing this CMakeLists file
+# and subdirectories; the value in the cache stays ON
+```
+
+- ChatGPT is fairly good at cmake scripting
 - More about CMake: 
     - [CMake YouTube-Playlist](https://www.youtube.com/watch?v=IZXNsim9TWI&list=PLvcRNX5OiSOoGXtLRTPyb9SNBKsw3Oucg)
 
-## Video 17.1: CMake: Modules Revisited
 
+## Video 17.1: Using CCmake
+- console equivalent to cmake gui to inspect and chance cmake cache variables in a build directory
 
 ## Video 18: Using third party libraries
 - CPM.cmake as a package manager
@@ -354,6 +373,9 @@ add_test(Tester tester)
 - deployment to a discord webhook
 
 ## Video 20: Memory Management in Modern C++
+### How does memory work
+
+### Modern C++
 - std::unique_ptr, std::make_unique
 - custom deleters (to close a file using RAII)
 - std::shared_ptr, std::make_shared
@@ -804,6 +826,7 @@ You can find some interesting libraries in [this Article](https://blog.brianna.t
 ## Video 45: Plugin System & Dynamic Libraries
 
 ## Video 46: Scripting - Lua vs Chai a comparison
+- Sol2
 
 ## Video 47: Gems of the STL
 - std::optional
@@ -827,6 +850,8 @@ if constexpr(is_something()) {
 - CRUD app for something
 - probably using Boost.Beast
 - Crow looks very cool and simple. Probably easier to use than beast
+- https://github.com/oatpp/oatpp - Oat++ (my favourite so far)
+- https://github.com/drogonframework/drogon
 
 ## Video 50: Our own std::function
 - how does function work in detail
