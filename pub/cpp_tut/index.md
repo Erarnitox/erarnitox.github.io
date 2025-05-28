@@ -18,18 +18,18 @@ I hope you fill find this article informative and get a lot of value out of it!
 ## Motivation
 Why learn C++ in 2025? Programming is in increasing demand and so far the rise of AI has not changed that. For the question "Why exactly C++?":
 
-- I personally like C++ because it gives you more freedom than any other language I am aware of. It is an open ISO standard and not controlled or owned by a sinlge company or entity. That also causes a competition in tooling. You have lots of IDEs and compilers to choose from (see https://isocpp.org/get-started).
+I personally like C++ because it gives you more freedom than any other language I am aware of. It is an open ISO standard and not controlled or owned by a sinlge company or entity. That also causes a competition in tooling. You have lots of IDEs and compilers to choose from (see https://isocpp.org/get-started).
 
-- Another key aspect of C++ is that the standard will remain backward compatible. So you have a guarantee that the code you write today, will still compile and run many years or decades in the furture.
+Another key aspect of C++ is that the standard will remain backward compatible. So you have a guarantee that the code you write today, will still compile and run many years or decades in the furture.
 
-- C++ also has a big standard library that:
-    - is fast
-    - can do everything
-    - can run everywhere
-    - will be maintained and runable in the far future
-    - becomes faster over time due to regular optimizatios
+C++ also has a big standard library that:
+ - is fast
+ - can do everything
+ - can run everywhere
+ - will be maintained and runable in the far future
+ - becomes faster over time due to regular optimizatios
 
-- More motivation will follow in the very first video! So: get some popcorn and enjoy!
+More motivation will follow in the very first video! So: get some popcorn and enjoy!
 
 ## Video 1: Learn Modern C++ in 2025 (from Scratch)
 In this video I do only introduce to the youtube playlist about modern C++.
