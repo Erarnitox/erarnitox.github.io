@@ -5,9 +5,6 @@
 This article contains all the additional information needed for my "Modern C++"-Tutorial series on YouTube that can be found here:
 [Youtube Playlist](https://www.youtube.com/playlist?list=PLTjUlazALHSBQp4jdqHTCduTSSMU-cz5P)
 
-The Playlist is also available in German here:
-[German Playlist](https://www.youtube.com/playlist?list=PLTjUlazALHSCTEfMoxVq97K8PwjML3urS)
-
 All the code for the YouTube-Playlist can be found here:
 [GitHub Repository](https://github.com/Erarnitox/ModernCpp_Tutorial)
 
@@ -17,6 +14,22 @@ If you like the content on this page and want to say "Thank you!", please check 
 
 To find out how to best support me. Thank you!
 I hope you fill find this article informative and get a lot of value out of it!
+
+## Motivation
+Why learn C++ in 2025? Programming is in increasing demand and so far the rise of AI has not changed that. For the question "Why exactly C++?":
+
+- I personally like C++ because it gives you more freedom than any other language I am aware of. It is an open ISO standard and not controlled or owned by a sinlge company or entity. That also causes a competition in tooling. You have lots of IDEs and compilers to choose from (see https://isocpp.org/get-started).
+
+- Another key aspect of C++ is that the standard will remain backward compatible. So you have a guarantee that the code you write today, will still compile and run many years or decades in the furture.
+
+- C++ also has a big standard library that:
+    - is fast
+    - can do everything
+    - can run everywhere
+    - will be maintained and runable in the far future
+    - becomes faster over time due to regular optimizatios
+
+- More motivation will follow in the very first video! So: get some popcorn and enjoy!
 
 ## Video 1: Learn Modern C++ in 2025 (from Scratch)
 In this video I do only introduce to the youtube playlist about modern C++.
@@ -373,7 +386,19 @@ set(FOO OFF)
 - deployment to a discord webhook
 
 ## Video 20: Memory Management in Modern C++
-### How does memory work
+### How Memory a works
+You can read all the in depth details in this article called "What every Programmer Should know about Memory".
+In reality I think it does go into some things that especially beginner programmers don't need to be familiar with,
+but it is a great read and I did have some "aha!" moments reading it:
+- https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
+
+### Save Memory usage in C++
+- don't write `new`
+- allocate on the stack if possible - try to avoid the heap
+- Avoid Polymorphism / Ineritance - prefer composition over inheritance
+- try to avoid exceptions -> if you use exceptions you HAVE to use smart pointers
+- try to work with `std::optional` or `std::expected` instead to return error codes
+- Can you make use of a custom manager / allocator / Pooling system to manage memory?
 
 ### Modern C++
 - std::unique_ptr, std::make_unique
