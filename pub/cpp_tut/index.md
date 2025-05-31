@@ -348,7 +348,7 @@ add_test(Tester tester)
 ## Video 17: CMake: what you need to know
 - [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
 - cmake targets and target based cmake workflow
-    - create target: add_library, add_eecutable, add_custom_target
+    - create target: add_library, add_executable, add_custom_target
     - everything in modern cmake is target focused
 - cmake dependency providers
 - file sets
@@ -608,6 +608,7 @@ void my_func() {
 ## Video 37: Parallel Algorithms: Faster Data Processing
 - std::reduce
 - std::transform
+- std::rotate
 - execution policies
 
 Example:
@@ -620,7 +621,7 @@ std::for_each(
 });
 ```
 
-- build an image manipulation program (using ImGUI)
+- build an image manipulation program (using Cairo)
 
 ## Video 38: Libraries - Writing code that others can use
 - cmake config files
@@ -822,6 +823,8 @@ find_dependency(ZLIB REQUIRED)
         - Make sure abstractions are owned by the high level, not by the low level
 - More details in this awesome Book by Klaus Iglberger: https://amzn.eu/d/1ZK5vvy
 
+## Video 41.2: Dependency Injection
+
 
 ## Video 42: Software Architecture - The Design choices behind designing a simple game engine
 - Architecture Patterns
@@ -873,7 +876,7 @@ if constexpr(is_something()) {
 
 ## Video 49: Building a Web-Backend in modern C++
 - CRUD app for something
-- probably using Boost.Beast
+- probably using Boost.Beast or POCO
 - Crow looks very cool and simple. Probably easier to use than beast
 - https://github.com/oatpp/oatpp - Oat++ (my favourite so far)
 - https://github.com/drogonframework/drogon
@@ -898,7 +901,6 @@ Extra features:
 ## Video 52: Implementing small function optimization
 
 ## Video 53: Run code on the GPU (using OpenCL)
-
 
 ## Video 54: Concurrency deep dive - Exploring more Options
 - openMPI
