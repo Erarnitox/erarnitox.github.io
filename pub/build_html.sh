@@ -34,7 +34,6 @@ find "." -type f -name "*.md" | while read -r file; do
         <link rel="alternate" type="application/json" href="../index.json" title="Erarnitox" />
 
         <link rel="stylesheet" href="/style.css">
-        <script src="/login.js"></script>
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -51,7 +50,6 @@ find "." -type f -name "*.md" | while read -r file; do
                         <li><a href="/pub/">Publications</a></li>
                         <li><a href="/art/">Art</a></li>
                     </ul>
-                    <a href="/login" class="button" id="login-btn">Login</a>
                 </div>
             </nav>
         </header>

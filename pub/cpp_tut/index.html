@@ -21,7 +21,6 @@
         <link rel="alternate" type="application/json" href="../index.json" title="Erarnitox" />
 
         <link rel="stylesheet" href="/style.css">
-        <script src="/login.js"></script>
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -38,7 +37,6 @@
                         <li><a href="/pub/">Publications</a></li>
                         <li><a href="/art/">Art</a></li>
                     </ul>
-                    <a href="/login" class="button" id="login-btn">Login</a>
                 </div>
             </nav>
         </header>
@@ -422,7 +420,7 @@ href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake
 Tutorial</a></li>
 <li>cmake targets and target based cmake workflow
 <ul>
-<li>create target: add_library, add_eecutable, add_custom_target</li>
+<li>create target: add_library, add_executable, add_custom_target</li>
 <li>everything in modern cmake is target focused</li>
 </ul></li>
 <li>cmake dependency providers</li>
@@ -773,6 +771,7 @@ Parallel Algorithms: Faster Data Processing</h2>
 <ul>
 <li>std::reduce</li>
 <li>std::transform</li>
+<li>std::rotate</li>
 <li>execution policies</li>
 </ul>
 <p>Example:</p>
@@ -784,7 +783,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">[]()</span> <span class="op">{</span> <span class="co">/* do something */</span> </span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="op">});</span></span></code></pre></div>
 <ul>
-<li>build an image manipulation program (using ImGUI)</li>
+<li>build an image manipulation program (using Cairo)</li>
 </ul>
 <h2 id="video-38-libraries---writing-code-that-others-can-use">Video 38:
 Libraries - Writing code that others can use</h2>
@@ -1035,6 +1034,8 @@ level</li>
 <li>More details in this awesome Book by Klaus Iglberger:
 https://amzn.eu/d/1ZK5vvy</li>
 </ul>
+<h2 id="video-41.2-dependency-injection">Video 41.2: Dependency
+Injection</h2>
 <h2
 id="video-42-software-architecture---the-design-choices-behind-designing-a-simple-game-engine">Video
 42: Software Architecture - The Design choices behind designing a simple
@@ -1110,7 +1111,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="#
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#</span><span class="er"># Video 49: Building a Web-Backend in modern C++</span></span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> CRUD app <span class="cf">for</span> something</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> probably <span class="kw">using</span> Boost<span class="op">.</span>Beast</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> probably <span class="kw">using</span> Boost<span class="op">.</span>Beast <span class="kw">or</span> POCO</span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> Crow looks very cool <span class="kw">and</span> simple<span class="op">.</span> Probably easier to use than beast</span>
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> https<span class="op">:</span><span class="co">//github.com/oatpp/oatpp - Oat++ (my favourite so far)</span></span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> https<span class="op">:</span><span class="co">//github.com/drogonframework/drogon</span></span>
