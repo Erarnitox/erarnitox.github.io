@@ -36,7 +36,7 @@ In this video I do only introduce to the youtube playlist about modern C++.
 What I love about C++ is that is YOURs (I do also use Arch btw. for the same reason).
 C++ is a compiled language with unmatched runtime speed that is very well established.
 
-<iframe width="560" height="315" 
+<iframe width="80%" height="auto" 
     src="https://www.youtube.com/embed/2O3r5qqjyiY?si=_32WcTyPNHIYDeMZ" 
     title="YouTube video player" 
     frameborder="1" 
@@ -45,13 +45,12 @@ C++ is a compiled language with unmatched runtime speed that is very well establ
     allowfullscreen>
 </iframe>
 
-
 ## Setup
 In this video I cover the setup required for Windows and Linux
 
 ### Video 2: Setup Clang on Windows (for C++ in Visual Studio Code)
 
-<iframe width="560" height="315" 
+<iframe width="80%" height="auto" 
     src="https://www.youtube.com/embed/ClpmrxDnqjw?si=A7YbURm2ckFjnzF6" 
     title="YouTube video player" 
     frameborder="1" 
@@ -83,7 +82,7 @@ In this video I use the manjaro (arch based distro) in the Xfce edition.
 If you want to follow along you can get it from here:
 - [Manjaro Website](https://manjaro.org/products/download/x86)
 
-<iframe width="560" height="315" 
+<iframe width="80%" height="auto" 
     src="https://www.youtube.com/embed/gWkAiexZGAU?si=_IZxKV-5y0stiXOX" 
     title="YouTube video player" 
     frameborder="1" 
@@ -104,7 +103,7 @@ The visual studio code extensions I installed are:
 ## Video 4: "Hello World!" using C++23 and CMake
 Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instead of `23`)
 
-<iframe width="560" height="315" 
+<iframe width="80%" height="auto" 
     src="https://www.youtube.com/embed/2m-96nNUjMw?si=P12QgE4xNxpL1vf6" 
     title="YouTube video player" 
     frameborder="1" 
@@ -113,7 +112,16 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
     allowfullscreen>
 </iframe>
 
-## Video 5: C++ Modules Basics using CMake 
+## Video 5: C++ Modules Basics using CMake
+<iframe width="80%" height="auto" 
+    src="https://www.youtube.com/embed/2m-96nNUjMw?si=Dkm0CXIlYxPykY_R" 
+    title="YouTube video player" 
+    frameborder="1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
 - What is CMake?
 - Why Modules
     - What are Header files
@@ -395,7 +403,7 @@ but it is a great read and I did have some "aha!" moments reading it:
 ### Save Memory usage in C++
 - don't write `new`
 - allocate on the stack if possible - try to avoid the heap
-- Avoid Polymorphism / Ineritance - prefer composition over inheritance
+- Avoid Polymorphism / Inheritance - prefer composition over inheritance
 - try to avoid exceptions -> if you use exceptions you HAVE to use smart pointers
 - try to work with `std::optional` or `std::expected` instead to return error codes
 - Can you make use of a custom manager / allocator / Pooling system to manage memory?
@@ -419,7 +427,6 @@ struct Lifetime {
   Lifetime() noexcept { puts("Lifetime() [default constructor]"); }
   Lifetime(const Lifetime&) noexcept {
      puts("Lifetime(const Lifetime&) [copy constructor]");
-
   }
 
   Lifetime(Lifetime&&) noexcept {
@@ -435,11 +442,30 @@ struct Lifetime {
 };
 ```
 
-## Video 23: Lambdas
-- how do lamdas work
-- templated lambda expressions
-    - lambdas can have "auto" parameters that work equivalent to templated parameters
-- function attributes for lambda functions
+## Video 23: Proper Testing and Code analysis
+- There should be a single command to run tests!
+    - Testing Framworks:
+        - Catch2
+        - doctest
+        - Google Test
+        - Boost.Test
+    - We will use Catch2 for our tests
+    - And add tests using CTest / add_test
+- Guidelines:
+    - if a component is hard to test, its not properly designed
+    - If a component is easy to test it is a good indication that it is properly designed
+
+- Static Code Analysis:
+    - clang-tidy
+    - cppcheck
+
+- Dynamic Code Analysis
+    - Valgrind
+    - ASan
+    - UBSan
+    - Thread
+    - DataFlow
+    - LibFuzzer
 
 ## Video 24: Basics of Asyncronouts Programming & Coroutines
 - background worker jobs for an UI application
@@ -457,11 +483,13 @@ struct Lifetime {
 - Sound -> use PortAudio | OpenAL for Games
 - Networking -> simple: unix sockets | secure:  openssl sockets | anonymous: minitor 
 - Math -> glm | eigen
-- libcurl - for web requests
+- libcurl - for web requests (and many more things)
 - OpenSSL - for cryptography
 
 ## Video 26: Class with value semantics
-- Rule of 5
+- Try to adhere to the Rule of 0 as much as possible!
+    - std::unique_ptr can help to adhere to the Rule of 0 (also offers a custom deleter)
+- remove any empty destructors from the code
 - spaceship operator for comparisons
 ```cpp
 #include <compare>
@@ -476,6 +504,16 @@ bool compare(S left, S right){
 	return left == right;
 }
 ```
+- If needed Rule of 5 (for manual resource management)
+```cpp
+struct S {
+    S(); // constructor
+    S(const S &); // copy constructor
+    S(S&&); // move constructor
+    S &operator=(const S &); // copy assignment operator
+    S &operator=(S &&); // move assignment operator
+};
+```
 
 ## Video 27: Filler - General Tips
 - always initialize variables
@@ -485,6 +523,12 @@ bool compare(S left, S right){
 - you can reuese others code, there is no shame in that (but make it your own)
 - freshmeat.net
 - but at the beginning: write everything yourself and make a lot of mistakes!
+- There often is an easy solution - Take your time to find it!
+
+## Video XX: Learning Rust
+- Learning Rust can make you a better C++ Developer
+- Working through the Rust-Book
+- What are the takeaways from learning Rust for your C++ Programming?
 
 ## Video 28: Filler - More General Tips
 - never trust user input
@@ -496,16 +540,26 @@ bool compare(S left, S right){
 - always check for self assignment in assignment operators
 - make everything const / constexpr by default
 
+## Video XX: Filler - Templates still useful!
+- write more Templates!
+- Don't copy-paste code! It could probably be a template!
+    - Find duplicate code: https://docs.pmd-code.org/latest/pmd_userdocs_cpd.html
+    - `pmd-cpd` Package in the AUR
+
 ## Video 29: Filler - Even More General Tips
 - ownership model (there should always only be one owner of data)
 - always use at least: -Wall -Wpedantic -Werror -Wconversion
 - use smart pointers when you can!
 - always check for null pointers
 - always convert explicitly
-
-## Video 30: Filler - "Scripting" in C++
-- #include <bits/stdc++.h>
-- my nvim config → shortcut to automatically compile and run
+- const everything that is not constexpr
+    - constexpr everything that is known at compile time
+    - consteval everything that MUST be evaluated at compile time
+- almost always auto?!
+- everytime you use a loop think: could an STL Algorithm do the same thing?
+    - probably should be replaced with an STL Algorithm
+- use ìf constexpr(...){...}` more!
+- use [[nodiscard]]
 
 ## Video 31: Filler - More Tips yt again!
 - prefer initialization over assignment
@@ -533,6 +587,18 @@ auto[a,b] = p1;
 assert(a == 100 && b == 200);
 ```
 - use cout.setf(ios::unitbuf) to disable cout buffering in debug mode
+- use stronger types:
+    - `void something(int width, int height)` -> `void something(const Area& area)`
+- never return raw pointers!
+- prefer stack over heap memory!
+    - never use "new"
+    - prefer std::array over std::vector
+- avoid using std::bind and std::function!
+- avoid usig initializer_lists for non trivial types
+    - constructs an initializer_list object
+        - calls the initializer_list constructor
+        - overhead that is often unwanted
+
 
 ## Video 33: Filler - C++ Code Smells
 - return std::move(x)
@@ -990,6 +1056,40 @@ int main() {
 - std::chrono
 
 ## Video 60: Optimize all the things! Exploring performance hacks
+### Optimizations:
+- Strings get dynamically allocated and tend to be copied around a lot. Strings are value types
+- Optimization Patterns
+    - Precomputation
+        - remove computation from the hot part of the program by performing it before execution arrives at the hot code -- earlier in the program, at link time, compile time, or design time
+    - Lazy computation
+        - Remove computation from code paths by performign the computation closer to the point where it is needed
+    - Batching
+        - perform computation on serveratl items together rather than one item at a time
+    - Caching
+        - Reduce computation by saving and reuisting the result of an expenisve computation rather than recomputing them
+    - Specialization
+        - Reduce computaiton by removeing generality taht is not used
+    - Taking bigger bites
+        - Reduce computaiton by removing generality that is not used
+    - Taking bigget bites
+        - Reduce the cost of a repeated operation by acting on bigger groups of input at a time
+    - Hinting
+        - Reduce computation by providing a hint that might improve performance
+    - Optimizing the expected path
+        - Test for inputs or events at run time in decreasing order of expected frequency
+    - Hashing
+    - Double-checking 
+        - Reduce computaiton by performing an inexepensive check, followed if necessary by an expensive check
+- Reduce the use of dynamic Variables
+- Use a master pointer to hold all dynamically allocated data in a big block
+- prefer std::async to std::thread
+- there should be as many threads as there are physical cores
+- try to avoid synchronization
+    - reduce the scope of critical sections
+    - limit the number of concurrent threads
+    - don't busy wait on a single core system
+    - don't wait forever
+
 ### Some things to consider checking for
 - No unnecessary work
     - No unnecessary copying
@@ -1067,6 +1167,7 @@ int main() {
 - rarely use comments, code should be readable by itself for the most part
 - single resposibilty (one function/class -> resposible for one thing)
 - use asserts/tests and logging
+- Null-Object/Value pattern can be used to avoid branching ("neutral element": like multiplying with 1, or subtracting 0)
 
 ## Video 63: Video Game AI Masterclass
 - state machines
@@ -1212,6 +1313,35 @@ class Animal : public Flyer<Animal> {
     void fly() const {
         std::cout << "this animal custom flying\n";
     }
+};
+```
+
+## Video XX: More Template Magic
+- Default Template parameters:
+```cpp
+#include <type_traits>
+template<typename T1, typename T2, typename RT = std::decay_t<decltype(true ? T1() : T2())>>
+RT max (T1 a, T2 b) {
+	return b < a ? a : b;
+}```
+
+- common_type decays to not become a reference type:
+```cpp
+#include <type_traits>
+template<typename T1, typename T2,
+typename RT = std::common_type_t<T1,T2>>
+RT max (T1 a, T2 b) {
+	return b < a ? a : b;
+}
+```
+
+- static asserts for readable template errors:
+```cpp
+template<typename T>
+class C {
+    static_assert(std::is_default_constructible<T>::value,
+    "Class C requires default-constructible elements");
+    //...
 };
 ```
 
