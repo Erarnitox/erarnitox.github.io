@@ -555,7 +555,7 @@ main .button {
   
 .pub-item {
     display: flex;
-    width: 45%;
+    width: 100%;
     margin: 0.2rem;
     padding: 0.1rem;
     padding-right: 0.5rem;
@@ -593,7 +593,23 @@ main .button {
     margin-left: 1rem;
     margin-right: 1rem;
 }
-  
+
+.crypto_icon {
+    position: inherit;
+    transform: translateY(20px);
+    display: inline;
+    background: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+li code {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.1rem;
+    margin: 0.1rem;
+}
+
 /* Smartphones */
 @media only screen 
 and (max-device-width : 1200px) {
