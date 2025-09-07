@@ -650,11 +650,11 @@ and (max-device-width : 750px) {
 
     /* Further adjust image/video sizing for smaller screens */
     img, video, iframe {
-        max-width: 98%;
+        max-width: 100%;
     }
 
     .logo-img {
-        height: 3rem;
+        height: 2rem;
     }
 }
 
