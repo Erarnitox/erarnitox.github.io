@@ -36,7 +36,7 @@ In this video I do only introduce to the youtube playlist about modern C++.
 What I love about C++ is that is YOURs (I do also use Arch btw. for the same reason).
 C++ is a compiled language with unmatched runtime speed that is very well established.
 
-<iframe width="80%" height="auto" 
+<iframe 
     src="https://www.youtube.com/embed/2O3r5qqjyiY?si=_32WcTyPNHIYDeMZ" 
     title="YouTube video player" 
     frameborder="1" 
@@ -50,7 +50,7 @@ In this video I cover the setup required for Windows and Linux
 
 ### Video 2: Setup Clang on Windows (for C++ in Visual Studio Code)
 
-<iframe width="80%" height="auto" 
+<iframe
     src="https://www.youtube.com/embed/ClpmrxDnqjw?si=A7YbURm2ckFjnzF6" 
     title="YouTube video player" 
     frameborder="1" 
@@ -82,7 +82,7 @@ In this video I use the manjaro (arch based distro) in the Xfce edition.
 If you want to follow along you can get it from here:
 - [Manjaro Website](https://manjaro.org/products/download/x86)
 
-<iframe width="80%" height="auto" 
+<iframe
     src="https://www.youtube.com/embed/gWkAiexZGAU?si=_IZxKV-5y0stiXOX" 
     title="YouTube video player" 
     frameborder="1" 
@@ -103,7 +103,7 @@ The visual studio code extensions I installed are:
 ## Video 4: "Hello World!" using C++23 and CMake
 Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instead of `23`)
 
-<iframe width="80%" height="auto" 
+<iframe 
     src="https://www.youtube.com/embed/2m-96nNUjMw?si=P12QgE4xNxpL1vf6" 
     title="YouTube video player" 
     frameborder="1" 
@@ -113,7 +113,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
 </iframe>
 
 ## Video 5: C++ Modules Basics using CMake
-<iframe width="80%" height="auto" 
+<iframe
     src="https://www.youtube.com/embed/2m-96nNUjMw?si=Dkm0CXIlYxPykY_R" 
     title="YouTube video player" 
     frameborder="1" 
@@ -204,9 +204,20 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
 
 
 ## Video 6: Cross-Platform File Management
-- use std::filesystem to rename files in bulk
+
+C++ is often known to be hard and low level. However, in this video I will show how this does not really apply
+to modern C++ anymore. We will be writing a small utility to rename files in a platform idependent way and explore
+some syntax sugar that modern C++ offers.
+
+<iframe src="https://www.youtube.com/embed/OXdEdhjL7pI?si=cgEFQBuDjwn4fxK1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Video 7: Basic C++ Syntax
+After all the theory and setup this video should be a jumpstart for you to start practical development.
+
+<iframe src="https://www.youtube.com/embed/bhSWl6U5k2Q?si=aQnz0iPtphLWaAA_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**Some general Notes and Takeaways:**
+
 - Variables
 - DataTypes
 - I/O
@@ -223,6 +234,9 @@ You can also find a good online book that covers all the basic C++ concepts onli
 - [LearnCPP](https://www.learncpp.com/)
 
 ## Video 8: Demystifying C++ Functions (what is std::function?)
+
+<iframe src="https://www.youtube.com/embed/6rAonzS7D2M?si=3OyQQQzOdRGRX24S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - build a simple application using functions
 - understand functions and std::function
     - implementation of lambda and function will be covered in a later video in more detail
@@ -231,6 +245,9 @@ You can also find a good online book that covers all the basic C++ concepts onli
 - make structs for large parameter lists
 
 ## Video 9: Modularize / Encapsulation
+
+<iframe src="https://www.youtube.com/embed/srlZ6fe2YHs?si=P_LqptfL8gfvcgTJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - classes
 - use const wherever you can
 - also use const on methods that do not change the object
@@ -238,6 +255,9 @@ You can also find a good online book that covers all the basic C++ concepts onli
 - Design Guidelines / how to write maintainable code / SOLID
 
 ## Video 10: Designated Initializers (for Structs and Classes):
+
+<iframe src="https://www.youtube.com/embed/4cFOtLDz6cs?si=EmdxvL5RBlxqQ8ha" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ```cpp
 struct S {
 	int i;
@@ -251,7 +271,9 @@ int main(){
 ```
 
 ## Video 11: C++ Templates in Action - Writing Generic Code that Rocks!
-- basics of Templates
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zLRYOWZ5ZPU?si=ApPYqIzHKZCEDams" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ```cpp
 template<typename T>
 T  function(T arg){
@@ -259,10 +281,13 @@ T  function(T arg){
 	return arg;	
 }
 ```
+
 - when exporting templates from a module `export` goes infront of the template declaration:
+
 ```cpp
 export template<typename T>//...
 ```
+
 - consider auto as function parameter instead of templates for a more "modern" look
 
 - cool template tricks (like CRTP)
@@ -270,6 +295,7 @@ export template<typename T>//...
     - concepts that are ready to use from the standard:
         - https://en.cppreference.com/w/cpp/concepts
 - concpets are named requirements to constrain template types
+
 ```cpp
 template<typename T>
 concept Incrementable = requires(T x){ x++; ++x; };
@@ -281,14 +307,17 @@ void foo(I t);
 //or like this:
 void foo(Incrementable auto t);
 ```
+
 - inheritance hirarchy using concepts
 
 ## Video 12: Working with Files
-- build modern file encapsulations to manage files
-- how to use RAII
-- build a csv file parser utility
+
+<iframe src="https://www.youtube.com/embed/zt0EMKtyyLc?si=Abg9i6PfE52AMjTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Video 13: Get to know the STL & `<algorithm>`
+
+<iframe src="https://www.youtube.com/embed/5W8_Yl7gj30?si=4Dhmd9V5wr1qaQLC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - common STL containers
 - algorithm
 - std::any
@@ -301,7 +330,6 @@ void foo(Incrementable auto t);
 - std::remove_if
 - std::find
 - std::find_if
-- build a storage / manager for heterogeneous data
 
 A great Overview of the STL algorithms taken from [hackingcpp.com](https://hackingcpp.com/index.html):
 ![algorithms](./res/algorithms.png)
@@ -310,6 +338,9 @@ A great Overview of the STL algorithms taken from [hackingcpp.com](https://hacki
 - a cool Cheat Sheet can be found here on: [Github](https://github.com/gibsjose/cpp-cheat-sheet/blob/master/Data%20Structures%20and%20Algorithms.md)
 
 ## Video 14: Ranges
+
+<iframe src="https://www.youtube.com/embed/eOgk5DM0Ndo?si=LIAWBSVBVKJnvHPR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - kind of like a begin and end iterator pair
 - ranges are lazily evaluated
 - std::ranges
@@ -327,12 +358,18 @@ for(const auto& val : vec | std::ranges::views::drop(2)) {
 ```
 
 ## Video 15: Basic inheritance
+
+<iframe src="https://www.youtube.com/embed/naESR6eashs?si=WeKko0FsQeXg8Xfh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - virtual functions
 - use the override keyword
 - implement a list for a todo list
 - double linked list can be achived by only storing a next^prev pointer in each node
 
 ## Video 16: Unit Tests using CTest
+
+<iframe src="https://www.youtube.com/embed/ffbKYLqYMEI?si=0AWvJowCGC2J87Sm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - test behavior not implementation
 - tests have to fail/be able to fail
 - you need to know why a test failed
@@ -341,6 +378,7 @@ for(const auto& val : vec | std::ranges::views::drop(2)) {
 - if(BUILD_TESTING) → to check in Cmake if we should build tests
 - #define private public → to be able to test for private members
 - static_assert → for precondition and postcondition assumptions to catch unwanted bahaviour in time
+
 ```cmake
 #...
 enable_testing()
@@ -350,10 +388,10 @@ add_test(Tester tester)
 ```
 - run tests with `ctest` command
 
-## Video 16.1: Using CDash
-- https://cmake.org/cmake/help/book/mastering-cmake/chapter/CDash.html
-
 ## Video 17: CMake: what you need to know
+
+<iframe src="https://www.youtube.com/embed/P62ytT1el_M?si=quNVFic-snGZEJPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
 - cmake targets and target based cmake workflow
     - create target: add_library, add_executable, add_custom_target
@@ -374,54 +412,41 @@ set(FOO OFF)
 # and subdirectories; the value in the cache stays ON
 ```
 
+<iframe src="https://www.youtube.com/embed/Go5cAZK1M7Y?si=SEzXkEOI-INbDjwg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - ChatGPT is fairly good at cmake scripting
 - More about CMake: 
     - [CMake YouTube-Playlist](https://www.youtube.com/watch?v=IZXNsim9TWI&list=PLvcRNX5OiSOoGXtLRTPyb9SNBKsw3Oucg)
 
 
-## Video 17.1: Using CCmake
-- console equivalent to cmake gui to inspect and chance cmake cache variables in a build directory
-
 ## Video 18: Using third party libraries
+
+<iframe src="https://www.youtube.com/embed/_a0d99bGqXQ?si=OG8dIbxEY8llROkT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - CPM.cmake as a package manager
 - use SDL3 and ImGUI to build a simple GUI-Application
 
 ## Video 19: GitHub - Version Control and CI/CD
+
+<iframe src="https://www.youtube.com/embed/XZDO7uaO-lQ?si=6pTjzBKa1txM_Pku" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - what is git
 - how git works
 - github
 - github actions
 - deployment to a discord webhook
 
+<iframe src="https://www.youtube.com/embed/rf-IZviehuI?si=tbmKHPLbBNi1gv_B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## (Optional) Use NVim as your personal IDE
+
+<iframe src="https://www.youtube.com/embed/JuUaqBrVnZs?si=q5Zy2HBwEu7v5TvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Video 20: Memory Management in Modern C++
-### How Memory a works
-You can read all the in depth details in this article called "What every Programmer Should know about Memory".
-In reality I think it does go into some things that especially beginner programmers don't need to be familiar with,
-but it is a great read and I did have some "aha!" moments reading it:
-- https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
+### Object Lifetimes
 
-### Save Memory usage in C++
-- don't write `new`
-- allocate on the stack if possible - try to avoid the heap
-- Avoid Polymorphism / Inheritance - prefer composition over inheritance
-- try to avoid exceptions -> if you use exceptions you HAVE to use smart pointers
-- try to work with `std::optional` or `std::expected` instead to return error codes
-- Can you make use of a custom manager / allocator / Pooling system to manage memory?
+<iframe src="https://www.youtube.com/embed/7GlW9FwUewc?si=MUGSaA9E0GgPaX4C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Modern C++
-- std::unique_ptr, std::make_unique
-- custom deleters (to close a file using RAII)
-- std::shared_ptr, std::make_shared
-- std::weak_ptr
-- only smart pointers should ever "own" data
-
-## Video 21: Working with Databases
-- sqlite setup
-- pqxx setup
-- abstractions?
-- simple example
-
-## Video 22: Exploring Lifetimes
 ```cpp
 struct Lifetime {
   Lifetime() noexcept { puts("Lifetime() [default constructor]"); }
@@ -441,6 +466,41 @@ struct Lifetime {
   }
 };
 ```
+
+### How Memory a works
+You can read all the in depth details in this article called "What every Programmer Should know about Memory".
+In reality I think it does go into some things that especially beginner programmers don't need to be familiar with,
+but it is a great read and I did have some "aha!" moments reading it:
+- https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
+
+### Save Memory usage in C++
+
+- don't write `new`
+- allocate on the stack if possible - try to avoid the heap
+- Avoid Polymorphism / Inheritance - prefer composition over inheritance
+- try to avoid exceptions -> if you use exceptions you HAVE to use smart pointers
+- try to work with `std::optional` or `std::expected` instead to return error codes
+- Can you make use of a custom manager / allocator / Pooling system to manage memory?
+
+### Modern C++
+
+<iframe src="https://www.youtube.com/embed/qRsspo5C1ng?si=C77tubhmWoJEroGJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+- std::unique_ptr, std::make_unique
+- custom deleters (to close a file using RAII)
+- std::shared_ptr, std::make_shared
+- std::weak_ptr
+- only smart pointers should ever "own" data
+
+## Lambdas Uncovered
+- templated expressions
+- auto parameters
+
+## Video 21: Working with Databases
+- sqlite setup
+- pqxx setup
+- abstractions?
+- simple example
 
 ## Video 23: Proper Testing and Code analysis
 - There should be a single command to run tests!
@@ -476,6 +536,12 @@ struct Lifetime {
 	- co_return: returns from a coroutine (normal return is not allowed)
 - async
 - futures
+
+## Video 17.1: Using CCmake
+- console equivalent to cmake gui to inspect and chance cmake cache variables in a build directory
+
+## Using CDash
+- https://cmake.org/cmake/help/book/mastering-cmake/chapter/CDash.html
 
 ## Video 25: Libraries to try
 - GUI -> use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts
@@ -800,35 +866,71 @@ find_dependency(ZLIB REQUIRED)
     - doxygen
 
 ## Video 39: Debugging effectively
-- lldb
-- gdb
-    - run - run program
-    - break - create a breakpoint
-    - list - print code
-    - print <variable> - inspect the value of a variable
-    - quit - exit vim
-    - up/down - move up/down the callstack
-    - display <variable> - keep track of the value of a variable
-    - undisplay <display_id> - stop keeping track of a value
-    - backtrace - print callstack
-    - next - next instruction
-    - step - step into next instruction
-    - continue - continue execution
-    - finish - execute to the end of current function
-    - watch <variable> - monitor variable for changes
-    - info breakpoints - list breakpoints
-    - delete <id> - delete a breakpoint
-    - delete - delete all breakpoints
+- **lldb**
+- **gdb**
+    - **run** : run program
+    - **break** : create a breakpoint
+    - **list** : print code
+    - **print <variable>** : inspect the value of a variable
+    - **quit** : exit vim
+    - **up/down** : move up/down the callstack
+    - **display <variable>** : keep track of the value of a variable
+    - **undisplay <display_id>** : stop keeping track of a value
+    - **backtrace** : print callstack
+    - **next** : next instruction
+    - **step** : step into next instruction
+    - **continue** : continue execution
+    - **finish** : execute to the end of current function
+    - **watch <variable>** : monitor variable for changes
+    - **info breakpoints** : list breakpoints
+    - **delete <id>** : delete a breakpoint
+    - **delete** : delete all breakpoints
+    - **start** : the same as setting a break at main and running
+    - **Ctrl+X+A** : open the TUI
+    - **Ctrl+L** : refresh TUI
+    - **Ctrl+X+2** : goto 2nd window
+    - **Ctrl+p** : previous command
+    - **Ctrl+n** : next command
+    - **set disassembly-flavor intel** : the single most important command!
+    - **call (void)func()** : calls the function `void func()`
 
-    - start : the same as setting a break at main and running
-    - Ctrl+X+A → open the TUI
-    - Ctrl+L → refresh TUI
-    - Ctrl+X+2 → goto 2nd window
-    - Ctrl+p → previous command
-    - Ctrl+n → next command
-- strace
-- x64dbg
-- valgrind
+GDB has great extensions. My favourite one is GEF
+
+- GDB Scripting
+
+    ```sh
+        start
+        break *main+42
+        commands
+        x/gx $rbp-0x32
+        continue
+        end
+        continue
+
+        start
+        break *main+42
+        commands
+        silent
+        set $local_variable = *(unsigned long long*)($rbp-0x32)
+        printf "Current value: %llx\n", $local_variable
+        continue
+        end
+        continue
+
+        start
+        catch syscall read
+        commands
+        silent
+        if ($rdi == 42)
+            set $rdi = 0
+        end
+        continue
+        end
+        continue
+    ```
+- **strace**
+- **x64dbg**
+- **valgrind**
 
 ## Video 40: Error Handling with std::expected
 - experimental for now... let's see
