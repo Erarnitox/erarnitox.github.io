@@ -75,6 +75,26 @@ form .button {
     align-items: center;
 }
 
+pre {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+ul, li {
+    background-color: transparent;
+}
+
+code {
+    display: inline-block;
+    color: rgb(255, 0, 128);
+    border: solid 1px;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 html {
   font-family:sans-serif;
   font-size: 1.1rem;
@@ -99,8 +119,8 @@ footer {
 
 main {
     padding-top: 3rem;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10vw;
+    padding-right: 10vw;
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -154,13 +174,13 @@ a:active, .button:active {
 }
 
 .flex-container-hz {
+    height: fit-content;
     position: fixed;
     width: 100vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    border-bottom: 5px solid black;
 }
 
 .center {
@@ -193,11 +213,23 @@ a:active, .button:active {
     align-content: center;
 }
 
+.flex-container-hz a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+}
+
 .logo-img {
-    padding: 0.5rem;
-    height: 2.5rem;
+    padding: 0.1rem;
+    margin: 0.1rem;
+    height: 3rem;
     width: auto;
     background-color: transparent;
+    display: block;
+    object-fit: contain;
 }
 
 ::selection {
@@ -244,6 +276,67 @@ aside {
     font-weight: 50;
     font-size: small;
 }
+
+blockquote {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+blockquote p {
+    background-color: var(--main-bg-color);
+    color: var(--white);
+    font-style: italic;
+    margin: 0.5rem 0;
+    border-left: 4px solid var(--form-bg-color);
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px 0 var(--black);
+}
+
+blockquote p:first-child {
+    margin-top: 0;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Centered and responsive images */
+img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+p img {
+    width: 100%;
+    margin: 2rem auto;
+    display: block;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: #000;
+}
+
+/* Centered and responsive videos */
+/* Video container aspect ratio */
+iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px; /* 16:9 ratio for 800px width */
+    margin: 2rem auto;
+    display: block;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: #000;
+}
+
 
 #user-profile {
     display: flex;
@@ -305,6 +398,7 @@ main .button {
     border-radius: 2.5rem;
     height: auto;
     background-color: transparent;
+    margin: 0; /* Override general img centering for member items */
 }
 
 #product-grid {
@@ -329,7 +423,9 @@ main .button {
     width: 100%;
     max-width: 300px;
     height: auto;
+    margin: 0; /* Override general img centering for product items */
 }
+
 .price {
     color: var(--form-bg-color);
     font-size: 1.2rem;
@@ -419,6 +515,7 @@ main .button {
     min-width: 50px;
     object-fit: cover;
     vertical-align: bottom;
+    margin: 0; /* Override general img centering for art gallery */
 }
 
 .pub-container {
@@ -454,6 +551,7 @@ main .button {
     height: 100%;
     max-height: 5.2rem;
     width: auto;
+    margin: 0; /* Override general img centering for publication images */
 }
 
 .pub-button {
@@ -496,13 +594,18 @@ and (max-device-width : 900px) {
         margin-right: 0;
         font-size-adjust: 0.40;
     }
+
+    /* Adjust image/video sizing for mobile */
+    img, video, iframe {
+        max-width: 95%;
+    }
 }
 
 @media only screen 
 and (max-device-width : 750px) {
     main {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding-left: 2%;
+        padding-right: 2%;
     }
     main * {
         font-size-adjust: 0.45;
@@ -515,8 +618,17 @@ and (max-device-width : 750px) {
     main h1 img {
         max-width: 4rem;
         max-height: 1rem;
+        margin: 0; /* Keep inline images in headers uncentered */
     }
 
+    /* Further adjust image/video sizing for smaller screens */
+    img, video, iframe {
+        max-width: 98%;
+    }
+
+    .logo-img {
+        height: 3rem;
+    }
 }
 
 @media only screen 
