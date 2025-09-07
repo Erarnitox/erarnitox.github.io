@@ -10,7 +10,8 @@ All the code for the YouTube-Playlist can be found here:
 
 ## Support Me
 If you like the content on this page and want to say "Thank you!", please check out:
-- [This Article](../thanks/index.html)
+
+**- [This Article](../thanks/index.html)**
 
 To find out how to best support me. Thank you!
 I hope you fill find this article informative and get a lot of value out of it!
@@ -23,10 +24,11 @@ I personally like C++ because it gives you more freedom than any other language 
 Another key aspect of C++ is that the standard will remain backward compatible. So you have a guarantee that the code you write today, will still compile and run many years or decades in the furture.
 
 C++ also has a big standard library that:
- - is fast
- - can do everything
- - can run everywhere
- - will be maintained and runable in the far future
+
+ - is **fast**
+ - can do **everything**
+ - can run **everywhere**
+ - will be **maintained** and runable in the far future
  - becomes faster over time due to regular optimizatios
 
 More motivation will follow in the very first video! So: get some popcorn and enjoy!
@@ -148,8 +150,10 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
 	    return "Hello Modules!";
     }
     ```
+
 - CMake file for our project
     - with header file
+
     ```cpp
     cmake_minimum_required(VERSION 3.30)
     project(project_name)
@@ -166,6 +170,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
     ```
 
     - with modules
+
     ```cpp
     cmake_minimum_required(VERSION 3.31)
     project(project_name)
@@ -180,10 +185,12 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
         ${PROJECT_SOURCE_DIR}/mod/hello_world.cpp
     )
     ```
+
 - Problems with Modules currently
     - import std; - does not work yet for me
     - we have to mix modules and header files for now
     - IDE support not great yet
+
     ```cpp
     module;
 
@@ -200,6 +207,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
         return greeting;
     }
     ```
+
     - when mixing include and import - include all headers before any imports
 
 
@@ -209,12 +217,12 @@ C++ is often known to be hard and low level. However, in this video I will show 
 to modern C++ anymore. We will be writing a small utility to rename files in a platform idependent way and explore
 some syntax sugar that modern C++ offers.
 
-<iframe src="https://www.youtube.com/embed/OXdEdhjL7pI?si=cgEFQBuDjwn4fxK1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/OXdEdhjL7pI?si=cgEFQBuDjwn4fxK1" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Video 7: Basic C++ Syntax
 After all the theory and setup this video should be a jumpstart for you to start practical development.
 
-<iframe src="https://www.youtube.com/embed/bhSWl6U5k2Q?si=aQnz0iPtphLWaAA_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/bhSWl6U5k2Q?si=aQnz0iPtphLWaAA_" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Some general Notes and Takeaways:**
 
@@ -235,7 +243,7 @@ You can also find a good online book that covers all the basic C++ concepts onli
 
 ## Video 8: Demystifying C++ Functions (what is std::function?)
 
-<iframe src="https://www.youtube.com/embed/6rAonzS7D2M?si=3OyQQQzOdRGRX24S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/6rAonzS7D2M?si=3OyQQQzOdRGRX24S" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - build a simple application using functions
 - understand functions and std::function
@@ -246,7 +254,7 @@ You can also find a good online book that covers all the basic C++ concepts onli
 
 ## Video 9: Modularize / Encapsulation
 
-<iframe src="https://www.youtube.com/embed/srlZ6fe2YHs?si=P_LqptfL8gfvcgTJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/srlZ6fe2YHs?si=P_LqptfL8gfvcgTJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - classes
 - use const wherever you can
@@ -256,7 +264,7 @@ You can also find a good online book that covers all the basic C++ concepts onli
 
 ## Video 10: Designated Initializers (for Structs and Classes):
 
-<iframe src="https://www.youtube.com/embed/4cFOtLDz6cs?si=EmdxvL5RBlxqQ8ha" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/4cFOtLDz6cs?si=EmdxvL5RBlxqQ8ha" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ```cpp
 struct S {
@@ -272,7 +280,7 @@ int main(){
 
 ## Video 11: C++ Templates in Action - Writing Generic Code that Rocks!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zLRYOWZ5ZPU?si=ApPYqIzHKZCEDams" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/zLRYOWZ5ZPU?si=ApPYqIzHKZCEDams" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ```cpp
 template<typename T>
@@ -312,11 +320,11 @@ void foo(Incrementable auto t);
 
 ## Video 12: Working with Files
 
-<iframe src="https://www.youtube.com/embed/zt0EMKtyyLc?si=Abg9i6PfE52AMjTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/zt0EMKtyyLc?si=Abg9i6PfE52AMjTA" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Video 13: Get to know the STL & `<algorithm>`
 
-<iframe src="https://www.youtube.com/embed/5W8_Yl7gj30?si=4Dhmd9V5wr1qaQLC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/5W8_Yl7gj30?si=4Dhmd9V5wr1qaQLC" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - common STL containers
 - algorithm
@@ -339,7 +347,7 @@ A great Overview of the STL algorithms taken from [hackingcpp.com](https://hacki
 
 ## Video 14: Ranges
 
-<iframe src="https://www.youtube.com/embed/eOgk5DM0Ndo?si=LIAWBSVBVKJnvHPR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/eOgk5DM0Ndo?si=LIAWBSVBVKJnvHPR" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - kind of like a begin and end iterator pair
 - ranges are lazily evaluated
@@ -359,7 +367,7 @@ for(const auto& val : vec | std::ranges::views::drop(2)) {
 
 ## Video 15: Basic inheritance
 
-<iframe src="https://www.youtube.com/embed/naESR6eashs?si=WeKko0FsQeXg8Xfh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/naESR6eashs?si=WeKko0FsQeXg8Xfh" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - virtual functions
 - use the override keyword
@@ -368,16 +376,17 @@ for(const auto& val : vec | std::ranges::views::drop(2)) {
 
 ## Video 16: Unit Tests using CTest
 
-<iframe src="https://www.youtube.com/embed/ffbKYLqYMEI?si=0AWvJowCGC2J87Sm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/ffbKYLqYMEI?si=0AWvJowCGC2J87Sm" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - test behavior not implementation
 - tests have to fail/be able to fail
 - you need to know why a test failed
 - explicit test function names
 - write end to end integration tests also
-- if(BUILD_TESTING) → to check in Cmake if we should build tests
-- #define private public → to be able to test for private members
-- static_assert → for precondition and postcondition assumptions to catch unwanted bahaviour in time
+- **if(BUILD_TESTING)** to check in Cmake if we should build tests
+- **#define private public** to be able to test for private members
+    - generally anything that is private but needs to be tested is ill designed. However, this works as a quick hack/workoround until you can redesign it properly
+- **static_assert** for precondition and postcondition assumptions to catch unwanted bahaviour in time
 
 ```cmake
 #...
@@ -412,7 +421,7 @@ set(FOO OFF)
 # and subdirectories; the value in the cache stays ON
 ```
 
-<iframe src="https://www.youtube.com/embed/Go5cAZK1M7Y?si=SEzXkEOI-INbDjwg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/Go5cAZK1M7Y?si=SEzXkEOI-INbDjwg" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - ChatGPT is fairly good at cmake scripting
 - More about CMake: 
@@ -421,14 +430,14 @@ set(FOO OFF)
 
 ## Video 18: Using third party libraries
 
-<iframe src="https://www.youtube.com/embed/_a0d99bGqXQ?si=OG8dIbxEY8llROkT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/_a0d99bGqXQ?si=OG8dIbxEY8llROkT" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - CPM.cmake as a package manager
 - use SDL3 and ImGUI to build a simple GUI-Application
 
 ## Video 19: GitHub - Version Control and CI/CD
 
-<iframe src="https://www.youtube.com/embed/XZDO7uaO-lQ?si=6pTjzBKa1txM_Pku" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/XZDO7uaO-lQ?si=6pTjzBKa1txM_Pku" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - what is git
 - how git works
@@ -436,16 +445,16 @@ set(FOO OFF)
 - github actions
 - deployment to a discord webhook
 
-<iframe src="https://www.youtube.com/embed/rf-IZviehuI?si=tbmKHPLbBNi1gv_B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/rf-IZviehuI?si=tbmKHPLbBNi1gv_B" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## (Optional) Use NVim as your personal IDE
 
-<iframe src="https://www.youtube.com/embed/JuUaqBrVnZs?si=q5Zy2HBwEu7v5TvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/JuUaqBrVnZs?si=q5Zy2HBwEu7v5TvA" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Video 20: Memory Management in Modern C++
 ### Object Lifetimes
 
-<iframe src="https://www.youtube.com/embed/7GlW9FwUewc?si=MUGSaA9E0GgPaX4C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/7GlW9FwUewc?si=MUGSaA9E0GgPaX4C" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ```cpp
 struct Lifetime {
@@ -484,7 +493,7 @@ but it is a great read and I did have some "aha!" moments reading it:
 
 ### Modern C++
 
-<iframe src="https://www.youtube.com/embed/qRsspo5C1ng?si=C77tubhmWoJEroGJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/qRsspo5C1ng?si=C77tubhmWoJEroGJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - std::unique_ptr, std::make_unique
 - custom deleters (to close a file using RAII)
@@ -756,8 +765,10 @@ std::for_each(
 - build an image manipulation program (using Cairo)
 
 ## Video 38: Libraries - Writing code that others can use
+
 - cmake config files
 - Top Level CMakeLists.txt
+
 ```cmake
 cmake_minimum_required(VERSION 3.30)
 project(MyLib LANGUAGES CXX)
@@ -808,7 +819,9 @@ install(FILES
     DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/mylib"
 )
 ```
+
 - Config.cmake.in
+
 ```cmake
 @PACKAGE_INIT@
 
@@ -894,7 +907,18 @@ find_dependency(ZLIB REQUIRED)
     - **set disassembly-flavor intel** : the single most important command!
     - **call (void)func()** : calls the function `void func()`
 
-GDB has great extensions. My favourite one is GEF
+GDB has great extensions. My favourite one is [GEF](https://github.com/hugsy/gef).
+Here are some cool features of GEF:
+
+- **hexdump byte $rsp** : a hexdump of the stack
+- **registers** : display registers and their values
+- **heap chunks** : display heap chunks
+- **elf** : view the structure of the elf binary
+- **checksec** : check the security mitigations enabled in the binary
+- **pattern create** : creates a cyclic pattern
+- **pattern search** : searches for the offset a snippet of a cyclic pattern is found at
+- **emu** : code emulation
+- **gef config** : configure / personalize GEF
 
 - GDB Scripting
 
