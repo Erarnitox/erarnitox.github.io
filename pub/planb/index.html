@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--
+ *  (c) Copyright erarnitox.de - All rights reserved
+ *  Author: Erarnitox <david@erarnitox.de>
+ *  
+-->
+<html lang="en-US">
+    <head>
+        <title>Erarnitox</title>
+        <meta name="title" content="Erarnitox" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta property="og:title" content="Erarnitox" />
+        <meta property="og:description" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://erarnitox.de/"/><meta property="og:site_name" content="Erarnitox" />
+
+        <link rel="canonical" href="https://erarnitox.de/"/>
+        <link rel="alternate" type="application/json" href="../index.json" title="Erarnitox" />
+
+        <link rel="stylesheet" href="/style.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="flex-container-hz">
+                    <a href="/index.html"><img class="logo-img" src="/logo.png" alt="erarnitox logo"></a>
+                    <ul>
+                        <li><a href="/products/">Products</a></li>
+                        <li><a href="/pub/">Publications</a></li>
+                        <li><a href="/art/">Art</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h1 id="planb---the-making-of-an-indie-fps">PlanB - The Making of an
+Indie FPS</h1>
+<iframe src="https://www.youtube.com/embed/o7NCBKNbEnA?si=9x-wbOE2lE3EC7Fs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<p>PlanB is an easy-to-pick-up FPS game, perfect for LAN parties and
+casual players.</p>
+<figure>
+<img src="/res/planb1.png" alt="Image: Screenshot PlanB" />
+<figcaption aria-hidden="true">Image: Screenshot PlanB</figcaption>
+</figure>
+<hr />
+<p>Let’s dive into the story of my very first game. Well, “first game”
+isn’t entirely true; I had dabbled with some incredibly simple games
+before starting PlanB. But, to be honest, my programming experience was
+pretty limited back then.</p>
+<h2 id="the-spark-of-motivation">The Spark of Motivation</h2>
+<p>So, what pushed me into the world of game development? Simply put, I
+was a huge fan of shooter games. At the time, my two absolute favorites
+were <strong>Call of Duty: Black Ops</strong> and <strong>Cube 2:
+Sauerbraten</strong>.</p>
+<p>I was always curious about how I could create my own maps and weapons
+for these games.</p>
+<h2 id="a-trip-down-memory-lane">A Trip Down Memory Lane</h2>
+<p>I knew Sauerbraten was open-source, and after a lot of wrestling with
+‘Make,’ I even managed to compile it myself. However, I quickly realized
+I was in over my head trying to understand its source code. My
+programming skills, limited to AutoIt and BASIC, just weren’t up to the
+task. So, I put C++ and my attempts to modify the game on the back
+burner.</p>
+<p>After a while, I stumbled upon some developers on YouTube who were
+using the <strong>Unity3D</strong> game engine. A few of the early
+pioneers who inspired me were:</p>
+<ul>
+<li><strong>OneManArmy3d:</strong> He was working on an FPS kit and used
+Call of Duty models for his video previews.</li>
+<li><strong>DrunkenLizardGames:</strong> This developer was creating an
+FPS with a seriously cool animation system and parkour elements.</li>
+<li><strong>TheLegoBobafet:</strong> He was working on an untitled FPS
+at the time, which has since been released as “Red Army.”</li>
+</ul>
+<p>These creators were the reason I decided to give Unity3D a shot, back
+when it was in version 3-something. For a good while, all I did was mess
+around with the bootcamp and the island FPS demo. Eventually, I joined
+OneManArmy’s forum, armedunity.com, and started using his FPS kit to
+learn and experiment.</p>
+<p>There were also some fantastic YouTubers creating coding tutorials
+that were perfect for a beginner like me. The most notable were:</p>
+<ul>
+<li><strong>NarutoIsGreat12345:</strong> Now known as
+HyperShadeTutorials. Sadly, the old content is gone.</li>
+<li><strong>Eetski Tutorials:</strong> Now known as MasterIndie on
+YouTube.</li>
+</ul>
+<p>But I truly learned the most from the ArmedUnity community (which, by
+the way, stands for “armed with unity”). The community was filled with
+amazing people, too many to name them all. However, a special shout-out
+goes to <strong>OcularCash</strong>, who helped me out directly a few
+times.</p>
+<p>I also have to mention <strong>theMars2011</strong>, who joined the
+forum a bit later than me but is now working on a really impressive
+title with a small team.</p>
+<p><a href="https://youtu.be/-cW7sM-0jR8">Watch his devlog</a></p>
+<iframe src="https://www.youtube.com/embed/-cW7sM-0jR8?si=TUVsuSOYOMQpoKGf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<hr />
+<h2 id="the-development-of-planb">The Development of PlanB</h2>
+<p>After building a solid foundation and understanding the theory behind
+creating an FPS, I finally felt ready to build my own from scratch. The
+structure was heavily inspired by OMA’s FPS Kit and guides from the
+community, but I was determined to create most of it myself.</p>
+<p>Without much planning, I dove straight into coding the character
+controller, weapon scripts, and even started modeling and animating the
+weapons. I think I managed to get all of this done in a single week
+before I uploaded this video:</p>
+<iframe src="https://www.youtube.com/embed/f8ZaMEcxTbc?si=BS1AUgvyumv55h35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<p>Initially, I wanted PlanB to be a story-based multiplayer FPS—a
+SciFi-WW2 shooter, to be exact. I had even modeled some weapons for
+it.</p>
+<figure>
+<img src="../../res/mp40_final.png" alt="Image: MP40 Weapon Model" />
+<figcaption aria-hidden="true">Image: MP40 Weapon Model</figcaption>
+</figure>
+<p>As you can probably guess, it was a strange idea. Realizing it didn’t
+make much sense, I scrapped the entire story and all the models.
+Instead, I decided to create a simple multiplayer game set in a
+completely fictional world.</p>
+<figure>
+<img src="../../res/Helmet.png" alt="Image: Helmet Model" />
+<figcaption aria-hidden="true">Image: Helmet Model</figcaption>
+</figure>
+<p>I ended up ditching all of the previous player and weapon models and
+decided to design my own using Krita and Gimp. Here are some of the
+designs I came up with:</p>
+<figure>
+<img src="../../res/Designs.png" alt="Image: Weapon Designs" />
+<figcaption aria-hidden="true">Image: Weapon Designs</figcaption>
+</figure>
+<p>After designing, modeling, texturing, and recording sounds for the
+weapons, I settled on a set of 10. (About 5 weapon designs got scrapped
+along the way.)</p>
+<p>Here’s a video showcasing all the weapons with their sounds in the
+game:</p>
+<iframe src="https://www.youtube.com/embed/nBXmhQrh4hk?si=b4-kq98HhhNUdXSS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<p>I wanted to focus on the gameplay first, so I implemented a simple
+zombie AI that would chase and attack the player. I also needed an easy
+way to save settings, progress, and other data. The existing tools felt
+lacking, so I created my own simple key-value store solution with some
+custom editor scripts.</p>
+<p>You can check out the tool I developed for saving the game here:</p>
+<p><a
+href="https://assetstore.unity.com/packages/tools/input-management/xenoprefs-91971">Download
+XenoPrefs</a></p>
+<p>Around this time, I also added a class editor to the game, allowing
+players to create “classes” with their preferred weapons, skins, and
+perks.</p>
+<p>After polishing most of the basic functionality, I made this
+video:</p>
+<iframe src="https://www.youtube.com/embed/QsxkRkalPYs?si=qqPPortV6JDNF1kh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<hr />
+<h2 id="procedural-generation-adventures">Procedural Generation
+Adventures</h2>
+<p>I had this idea of creating a vast, Fallout-style wasteland for a
+map. To save time on level design, I decided to go with procedural
+generation. This meant:</p>
+<ul>
+<li>Automatically generating textures and terrain materials.</li>
+<li>Automatically generating terrain height maps.</li>
+<li>Automatically applying vegetation and textures to the map.</li>
+<li>Automatically building a border around the terrain and placing
+prefabs like buildings.</li>
+</ul>
+<p>First, I needed a tool to help me create seamless PBR materials. I
+ended up writing a simple Java tool that uses some clever tricks to
+produce some pretty nice results.</p>
+<iframe src="https://www.youtube.com/embed/yUWNrMGyGKs?si=kw6CRK0O6hWwtMIa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<p>I took a trip to the woods with my camera and snapped photos of
+textures. Then, I wrote a basic terrain generation script that created a
+height map by layering Perlin noise with different frequencies and
+amplitudes.</p>
+<p>I wanted a bigger terrain than what Unity supports by default, but
+there was an easy fix: stitching multiple terrains together. By using
+the size of the terrain and an offset for the Perlin noise function, I
+could make the terrains stitch together perfectly.</p>
+<p>But it still wasn’t enough. The tiling on the terrain was too
+obvious. So, I decided to write a custom terrain shader with harder
+blending between textures and a few cheap tricks to hide the tiling.
+This included overlaying a Perlin noise texture to control the hue and
+blending with a larger version of the same terrain texture based on the
+camera’s distance.</p>
+<p>This meant that up close, you’d see the detailed, scaled-down version
+of the texture. But from a distance, the scaled-up version would become
+more opaque, hiding the seams and patterns.</p>
+<p>The last step was to correct the normals of the vertices at the edges
+of the stitched terrains. Without neighboring vertices to calculate the
+correct orientation, these edges were creating a noticeable seam.</p>
+<p>After solving this issue, the generated terrain looked like this:</p>
+<p>Note that the buildings, trees, and other vegetation were also
+procedurally placed in logical locations.</p>
+<p>This tool is also open-source, and you can get it for
+<strong>free</strong> here:</p>
+<p><a
+href="https://assetstore.unity.com/packages/tools/terrain/xenosandboxgenerator-132459">Download
+XenoSandboxGenerator</a></p>
+<p>However, after a while, I realized that while I could generate huge
+maps with this tool, they were ultimately boring to play on.</p>
+<p>So, I decided to build a map manually with the help of the Unity
+Asset Store and a friend. We ended up with this map:</p>
+<p>This is the map currently used in the game. The only things left to
+do were to enable server configuration through a <code>.conf</code> file
+and remove the claymore mines.</p>
+<p>These things were buggy, useless, and annoying in multiplayer, so I
+just got rid of them.</p>
+<hr />
+<h2 id="lan-gameplay-and-final-thoughts">LAN Gameplay and Final
+Thoughts</h2>
+<iframe src="https://www.youtube.com/embed/6T94_kIDLzY?si=HawVkQuHnk48p_VD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<p>In the end, PlanB turned out to be a really fun game for LAN parties.
+It’s available for Windows, Mac, and Linux here:</p>
+<iframe src="https://itch.io/embed/1461146?bg_color=09101b&amp;fg_color=ffffff&amp;link_color=0f587a&amp;border_color=005f9e" frameborder="1rem" class="itch_embed">
+<a href="https://erarnitox.itch.io/planb">PlanB by Erarnitox</a>
+</iframe>
+<p>I’ve discontinued the official server, but it’s really easy to host
+your own, as described on the download page. I hope you can try it out
+and enjoy the game with some friends!</p>
+<h3 id="what-i-learned">What I Learned</h3>
+<p>Even though this game didn’t turn out to be the next Call of Duty, as
+my younger self had hoped, it became a fun shooter to play at LAN
+parties. More importantly, the real value of this project lies in
+everything I learned along the way.</p>
+<p>This includes but is not limited to:</p>
+<ul>
+<li>How to program in general</li>
+<li>Using modeling software like blender</li>
+<li>How game engines work</li>
+<li>introduction to shader programming</li>
+</ul>
+        </main>
+        <footer id="home-footer">
+            <ul>
+                <li><a href="/legal/">Impressum</a></li>
+            </ul>
+            <small>© 2025 Erarnitox</small> 
+        </footer>
+    </body>
+</html>
