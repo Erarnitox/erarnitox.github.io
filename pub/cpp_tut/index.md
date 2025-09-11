@@ -1243,6 +1243,10 @@ endif()
 
 ## Video: SIMD
 
+A very good introduction to SIMD can be found in this [Article](http://const.me/articles/simd/simd.pdf).
+
+SIMD Library will come to C++26 (https://en.cppreference.com/w/cpp/experimental/simd.html)
+
 ## Video: Modern CPU Pipeline
 
 ### Modern CPU Pipeline
