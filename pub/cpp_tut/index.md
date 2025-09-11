@@ -33,7 +33,9 @@ C++ also has a big standard library that:
 
 More motivation will follow in the very first video! So: get some popcorn and enjoy!
 
-## Video 1: Learn Modern C++ in 2025 (from Scratch)
+> The C++ Standard Covered in this Tutorial is C++23, which can be found [here](https://wg21.link/std23)
+
+## Video: Learn Modern C++ in 2025 (from Scratch)
 In this video I do only introduce to the youtube playlist about modern C++.
 What I love about C++ is that is YOURs (I do also use Arch btw. for the same reason).
 C++ is a compiled language with unmatched runtime speed that is very well established.
@@ -50,7 +52,7 @@ C++ is a compiled language with unmatched runtime speed that is very well establ
 ## Setup
 In this video I cover the setup required for Windows and Linux
 
-### Video 2: Setup Clang on Windows (for C++ in Visual Studio Code)
+### Video: Setup Clang on Windows (for C++ in Visual Studio Code)
 
 <iframe
     src="https://www.youtube.com/embed/ClpmrxDnqjw?si=A7YbURm2ckFjnzF6" 
@@ -79,7 +81,7 @@ After the installation has been completed, please restart your computer for the 
 
 Congratz! The Installation is done!
 
-### Video 3: Setup Modern C++ Development Environment (on Linux)
+### Video: Setup Modern C++ Development Environment (on Linux)
 In this video I use the manjaro (arch based distro) in the Xfce edition.
 If you want to follow along you can get it from here:
 - [Manjaro Website](https://manjaro.org/products/download/x86)
@@ -102,7 +104,7 @@ The visual studio code extensions I installed are:
 - cmake-format
 - CMake-tools
 
-## Video 4: "Hello World!" using C++23 and CMake
+## Video: "Hello World!" using C++23 and CMake
 Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instead of `23`)
 
 <iframe 
@@ -114,7 +116,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
     allowfullscreen>
 </iframe>
 
-## Video 5: C++ Modules Basics using CMake
+## Video: C++ Modules Basics using CMake
 <iframe
     src="https://www.youtube.com/embed/2m-96nNUjMw?si=Dkm0CXIlYxPykY_R" 
     title="YouTube video player" 
@@ -211,7 +213,7 @@ Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instea
     - when mixing include and import - include all headers before any imports
 
 
-## Video 6: Cross-Platform File Management
+## Video: Cross-Platform File Management
 
 C++ is often known to be hard and low level. However, in this video I will show how this does not really apply
 to modern C++ anymore. We will be writing a small utility to rename files in a platform idependent way and explore
@@ -219,7 +221,7 @@ some syntax sugar that modern C++ offers.
 
 <iframe src="https://www.youtube.com/embed/OXdEdhjL7pI?si=cgEFQBuDjwn4fxK1" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Video 7: Basic C++ Syntax
+## Video: Basic C++ Syntax
 After all the theory and setup this video should be a jumpstart for you to start practical development.
 
 <iframe src="https://www.youtube.com/embed/bhSWl6U5k2Q?si=aQnz0iPtphLWaAA_" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -241,7 +243,7 @@ After all the theory and setup this video should be a jumpstart for you to start
 You can also find a good online book that covers all the basic C++ concepts online here:
 - [LearnCPP](https://www.learncpp.com/)
 
-## Video 8: Demystifying C++ Functions (what is std::function?)
+## Video: Demystifying C++ Functions (what is std::function?)
 
 <iframe src="https://www.youtube.com/embed/6rAonzS7D2M?si=3OyQQQzOdRGRX24S" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -252,7 +254,7 @@ You can also find a good online book that covers all the basic C++ concepts onli
     - lambda is a construct for defining an anonymous function in C++
 - make structs for large parameter lists
 
-## Video 9: Modularize / Encapsulation
+## Video: Modularize / Encapsulation
 
 <iframe src="https://www.youtube.com/embed/srlZ6fe2YHs?si=P_LqptfL8gfvcgTJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -262,7 +264,7 @@ You can also find a good online book that covers all the basic C++ concepts onli
 - Avoiding the preprocessor / modules & headers (common pitfalls)
 - Design Guidelines / how to write maintainable code / SOLID
 
-## Video 10: Designated Initializers (for Structs and Classes):
+## Video: Designated Initializers (for Structs and Classes):
 
 <iframe src="https://www.youtube.com/embed/4cFOtLDz6cs?si=EmdxvL5RBlxqQ8ha" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -278,7 +280,7 @@ int main(){
 }
 ```
 
-## Video 11: C++ Templates in Action - Writing Generic Code that Rocks!
+## Video: C++ Templates in Action - Writing Generic Code that Rocks!
 
 <iframe src="https://www.youtube.com/embed/zLRYOWZ5ZPU?si=ApPYqIzHKZCEDams" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -318,11 +320,11 @@ void foo(Incrementable auto t);
 
 - inheritance hirarchy using concepts
 
-## Video 12: Working with Files
+## Video: Working with Files
 
 <iframe src="https://www.youtube.com/embed/zt0EMKtyyLc?si=Abg9i6PfE52AMjTA" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Video 13: Get to know the STL & `<algorithm>`
+## Video: Get to know the STL & `<algorithm>`
 
 <iframe src="https://www.youtube.com/embed/5W8_Yl7gj30?si=4Dhmd9V5wr1qaQLC" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -345,7 +347,7 @@ A great Overview of the STL algorithms taken from [hackingcpp.com](https://hacki
 - Great Overview on [cppreference.com](https://en.cppreference.com/w/cpp/algorithm)
 - a cool Cheat Sheet can be found here on: [Github](https://github.com/gibsjose/cpp-cheat-sheet/blob/master/Data%20Structures%20and%20Algorithms.md)
 
-## Video 14: Ranges
+## Video: Ranges
 
 <iframe src="https://www.youtube.com/embed/eOgk5DM0Ndo?si=LIAWBSVBVKJnvHPR" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -365,7 +367,7 @@ for(const auto& val : vec | std::ranges::views::drop(2)) {
 }
 ```
 
-## Video 15: Basic inheritance
+## Video: Basic inheritance
 
 <iframe src="https://www.youtube.com/embed/naESR6eashs?si=WeKko0FsQeXg8Xfh" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -374,7 +376,7 @@ for(const auto& val : vec | std::ranges::views::drop(2)) {
 - implement a list for a todo list
 - double linked list can be achived by only storing a next^prev pointer in each node
 
-## Video 16: Unit Tests using CTest
+## Video: Unit Tests using CTest
 
 <iframe src="https://www.youtube.com/embed/ffbKYLqYMEI?si=0AWvJowCGC2J87Sm" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -397,7 +399,7 @@ add_test(Tester tester)
 ```
 - run tests with `ctest` command
 
-## Video 17: CMake: what you need to know
+## Video: CMake: what you need to know
 
 <iframe src="https://www.youtube.com/embed/P62ytT1el_M?si=quNVFic-snGZEJPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -428,14 +430,14 @@ set(FOO OFF)
     - [CMake YouTube-Playlist](https://www.youtube.com/watch?v=IZXNsim9TWI&list=PLvcRNX5OiSOoGXtLRTPyb9SNBKsw3Oucg)
 
 
-## Video 18: Using third party libraries
+## Video: Using third party libraries
 
 <iframe src="https://www.youtube.com/embed/_a0d99bGqXQ?si=OG8dIbxEY8llROkT" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - CPM.cmake as a package manager
 - use SDL3 and ImGUI to build a simple GUI-Application
 
-## Video 19: GitHub - Version Control and CI/CD
+## Video: GitHub - Version Control and CI/CD
 
 <iframe src="https://www.youtube.com/embed/XZDO7uaO-lQ?si=6pTjzBKa1txM_Pku" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -451,7 +453,7 @@ set(FOO OFF)
 
 <iframe src="https://www.youtube.com/embed/JuUaqBrVnZs?si=q5Zy2HBwEu7v5TvA" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Video 20: Memory Management in Modern C++
+## Video: Memory Management in Modern C++
 ### Object Lifetimes
 
 <iframe src="https://www.youtube.com/embed/7GlW9FwUewc?si=MUGSaA9E0GgPaX4C" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -491,7 +493,7 @@ but it is a great read and I did have some "aha!" moments reading it:
 - try to work with `std::optional` or `std::expected` instead to return error codes
 - Can you make use of a custom manager / allocator / Pooling system to manage memory?
 
-### Modern C++
+### Video: Memory Management in Modern C++
 
 <iframe src="https://www.youtube.com/embed/qRsspo5C1ng?si=C77tubhmWoJEroGJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -501,17 +503,45 @@ but it is a great read and I did have some "aha!" moments reading it:
 - std::weak_ptr
 - only smart pointers should ever "own" data
 
-## Lambdas Uncovered
+## Video: Lambdas Uncovered
+Lambdas are unname function objects that can capture Variables.
+They differ from:
+
+- **functions**: functions don't have captures / state / storage
+- **std::function**: std::function can wrap around **anything** that is callable (not only lambdas)
+
+### Lambda Example
+
+```cpp
+int x = 3;
+
+auto doubleX = [x] {
+    return x*2;
+}
+
+auto y = doubleX();
+```
+
+### Capture types
+
+- **`[x]`** : Capture x by **Value** 
+- **`[&x]`** : Capture x by **Reference**
+- **`[x=0]`** : Initialize x with 0 and capture it
+- **`[=]`** : Capture the enclosing scope by Value (only what is used in the lambdas body will be in the capture object)
+- **`[&]`** : Capture enclosing scope by Reference
+- **`[this]`** : Capture from Object
+
+### Notes for Myself
 - templated expressions
 - auto parameters
 
-## Video 21: Working with Databases
+## Video: Working with Databases
 - sqlite setup
 - pqxx setup
 - abstractions?
 - simple example
 
-## Video 23: Proper Testing and Code analysis
+## Video: Proper Testing and Code analysis
 - There should be a single command to run tests!
     - Testing Framworks:
         - Catch2
@@ -536,7 +566,7 @@ but it is a great read and I did have some "aha!" moments reading it:
     - DataFlow
     - LibFuzzer
 
-## Video 24: Basics of Asyncronouts Programming & Coroutines
+## Video: Basics of Asyncronouts Programming & Coroutines
 - background worker jobs for an UI application
 - std::generate
 - a function with any of these is a coroutine:
@@ -546,13 +576,13 @@ but it is a great read and I did have some "aha!" moments reading it:
 - async
 - futures
 
-## Video 17.1: Using CCmake
+## Video: Using CCmake
 - console equivalent to cmake gui to inspect and chance cmake cache variables in a build directory
 
 ## Using CDash
 - https://cmake.org/cmake/help/book/mastering-cmake/chapter/CDash.html
 
-## Video 25: Libraries to try
+## Video: Libraries to try
 - GUI -> use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts
 - Rendering: Magnum graphics
 - Sound -> use PortAudio | OpenAL for Games
@@ -560,12 +590,14 @@ but it is a great read and I did have some "aha!" moments reading it:
 - Math -> glm | eigen
 - libcurl - for web requests (and many more things)
 - OpenSSL - for cryptography
+- capstone and keystone
 
-## Video 26: Class with value semantics
+## Video: Class with value semantics
 - Try to adhere to the Rule of 0 as much as possible!
     - std::unique_ptr can help to adhere to the Rule of 0 (also offers a custom deleter)
 - remove any empty destructors from the code
 - spaceship operator for comparisons
+
 ```cpp
 #include <compare>
 
@@ -579,7 +611,9 @@ bool compare(S left, S right){
 	return left == right;
 }
 ```
+
 - If needed Rule of 5 (for manual resource management)
+
 ```cpp
 struct S {
     S(); // constructor
@@ -590,7 +624,7 @@ struct S {
 };
 ```
 
-## Video 27: Filler - General Tips
+## Video: Filler - General Tips
 - always initialize variables
 - best code is the code you never write → figure out how to get it done with less code
     - but don't try too hard to make compact. Rather keep it simple to follow
@@ -600,12 +634,12 @@ struct S {
 - but at the beginning: write everything yourself and make a lot of mistakes!
 - There often is an easy solution - Take your time to find it!
 
-## Video XX: Learning Rust
+## Video: Learning Rust
 - Learning Rust can make you a better C++ Developer
 - Working through the Rust-Book
 - What are the takeaways from learning Rust for your C++ Programming?
 
-## Video 28: Filler - More General Tips
+## Video: Filler - More General Tips
 - never trust user input
 - never ever use gets()
 - use assertions
@@ -615,13 +649,13 @@ struct S {
 - always check for self assignment in assignment operators
 - make everything const / constexpr by default
 
-## Video XX: Filler - Templates still useful!
+## Video: Filler - Templates still useful!
 - write more Templates!
 - Don't copy-paste code! It could probably be a template!
     - Find duplicate code: https://docs.pmd-code.org/latest/pmd_userdocs_cpd.html
     - `pmd-cpd` Package in the AUR
 
-## Video 29: Filler - Even More General Tips
+## Video: Filler - Even More General Tips
 - ownership model (there should always only be one owner of data)
 - always use at least: -Wall -Wpedantic -Werror -Wconversion
 - use smart pointers when you can!
@@ -636,7 +670,7 @@ struct S {
 - use ìf constexpr(...){...}` more!
 - use [[nodiscard]]
 
-## Video 31: Filler - More Tips yt again!
+## Video: Filler - More Tips yt again!
 - prefer initialization over assignment
     - in constructors
     - emplace_back over push_back
@@ -648,7 +682,7 @@ struct S {
     - never a naked new
     - never a naked delete
 
-## Video 32: Filler - Oh no! Even more tips!
+## Video: Filler - Oh no! Even more tips!
 - unique_pt should be the preferred pointer type
 - never use const_cast
 - split multi step functions
@@ -656,11 +690,13 @@ struct S {
     - what happens if your application might run for ages, does some counter overflow?
     - are there rounding errors that accumulate over time?
 - structured bindings
+
 ```cpp
 Point p1{100, 200};
 auto[a,b] = p1;
 assert(a == 100 && b == 200);
 ```
+
 - use cout.setf(ios::unitbuf) to disable cout buffering in debug mode
 - use stronger types:
     - `void something(int width, int height)` -> `void something(const Area& area)`
@@ -675,7 +711,7 @@ assert(a == 100 && b == 200);
         - overhead that is often unwanted
 
 
-## Video 33: Filler - C++ Code Smells
+## Video: Filler - C++ Code Smells
 - return std::move(x)
 - const_cast (is often a logic error)
 - static const → should be: constexpr
@@ -691,14 +727,14 @@ assert(a == 100 && b == 200);
 - raw pointers that own data
 - switch cases without break that are not marked with [[fallthrough]]
 
-## Video 34: Event Loops
+## Video: Event Loops
 - UI in imGui
 - use libcurl (probably)
 - use background workers
 - just plot some data
 - build a stock price tracker with UI
 
-## Video 35: Understanding REST
+## Video: Understanding REST
 - Theory:
     - GET - Retrieve a Resource
     - POST - Create a new resource
@@ -720,12 +756,13 @@ assert(a == 100 && b == 200);
 - Project:
     - build a postman like application to test APIs
 
-## Video 36: Building a logger library
+## Video: Building a logger library
 - Designing the logger
     - what kind of problems do we want to resolve
     - how did I get here?
     - logging format
 - use std::format (explore formatting options)
+
 ```cpp
 #include <string>
 #include <format>
@@ -734,9 +771,11 @@ int main(){
 	std::string s{ std::format("Some {} cool", 5) };
 }
 ```
+
 - std::quoted to escapte strings (from the iomaip header)
 - source location header gives runtime information about source location
 - stack trace:
+
 ```cpp
 #include <stack_trace>
 #include <print>
@@ -746,13 +785,14 @@ void my_func() {
 }
 ```
 
-## Video 37: Parallel Algorithms: Faster Data Processing
+## Video: Parallel Algorithms: Faster Data Processing
 - std::reduce
 - std::transform
 - std::rotate
 - execution policies
 
-Example:
+### Example:
+
 ```cpp
 std::for_each(
     std::execution::par_unseq, 
@@ -764,7 +804,7 @@ std::for_each(
 
 - build an image manipulation program (using Cairo)
 
-## Video 38: Libraries - Writing code that others can use
+## Video: Libraries - Writing code that others can use
 
 - cmake config files
 - Top Level CMakeLists.txt
@@ -832,22 +872,30 @@ chack_required_components(mylib)
 include(CMakeFindDependencyMacro)
 find_dependency(ZLIB REQUIRED)
 ```
+
 - CMake Takeaways
     - handle visibility well and in platform independent way.
         - default should always be "hidden"
         - make sure it is also set for "inlined"/template code (usually a different flag)
-        - CMakePresets snippet: ```cmake
+        - CMakePresets snippet: 
+
+        ```cmake
            "CMAKE_CXX_VISIBILITY_PRESET" : "hidden",
            "CMAKE_VISIBILITY_INLINES_HIDDEN" : "YES"
         ```
+
         - you can generate an export header automatically:
+
         ```cmake
         incude(GenerateExportHeader)
         generate_export_header(library_target)
         ```
-            - you can then `#include "library_target_export.h"`
-            - and use `LIBRARY_TARGET_EXPORT` to annotate functions you want to export from your library
+
+        - you can then `#include "library_target_export.h"`
+        - and use `LIBRARY_TARGET_EXPORT` to annotate functions you want to export from your library
+
     - set library version:
+
     ```cmake
     set_target_properties(
         library_target PROPERTIES
@@ -855,7 +903,9 @@ find_dependency(ZLIB REQUIRED)
             VERSION 1.2.5
     )
     ```
+
     - generate Version file
+
     ```cmake
     include(CMakePackageConfigHelpers)
 
@@ -865,7 +915,9 @@ find_dependency(ZLIB REQUIRED)
         COMPATIBILITY SameMajorVersion
     )
     ```
+
     - install targets
+
     ```cmake
     install(TARGETS library_target)
     ```
@@ -878,7 +930,7 @@ find_dependency(ZLIB REQUIRED)
 - documentation
     - doxygen
 
-## Video 39: Debugging effectively
+## Video: Debugging effectively
 - **lldb**
 - **gdb**
     - **run** : run program
@@ -952,14 +1004,14 @@ Here are some cool features of GEF:
         end
         continue
     ```
+
 - **strace**
 - **x64dbg**
 - **valgrind**
 
-## Video 40: Error Handling with std::expected
-- experimental for now... let's see
+## Video: Error Handling with std::expected
 
-## Video 41: Software Design
+## Video: Software Design
 - structure code in small single purpose modules
     - that are reusable
 - design for changes 
@@ -1015,10 +1067,10 @@ Here are some cool features of GEF:
         - Make sure abstractions are owned by the high level, not by the low level
 - More details in this awesome Book by Klaus Iglberger: https://amzn.eu/d/1ZK5vvy
 
-## Video 41.2: Dependency Injection
+## Video: Dependency Injection
 
 
-## Video 42: Software Architecture - The Design choices behind designing a simple game engine
+## Video: Software Architecture - The Design choices behind designing a simple game engine
 - Architecture Patterns
     - layered architecture
     - event driven architecture
@@ -1033,22 +1085,22 @@ Here are some cool features of GEF:
 You don't need to implement everything yourself!
 You can find some interesting libraries in [this Article](https://blog.brianna.town/c-custom-game-engine-libraries)
 
-## Video 43: Compression, Serialization and Encryption - Building a Safe file system
+## Video: Compression, Serialization and Encryption - Building a Safe file system
 - openSSL
 - cereal
 - nlohmann/json
 - zlib
 
-## Video 44: Writing Unit Tests with Catch2
+## Video: Writing Unit Tests with Catch2
 - automate test execution with CMake
 - let github actions run the tests
 
-## Video 45: Plugin System & Dynamic Libraries
+## Video: Plugin System & Dynamic Libraries
 
-## Video 46: Scripting - Lua vs Chai a comparison
+## Video: Scripting - Lua vs Chai a comparison
 - Sol2
 
-## Video 47: Gems of the STL
+## Video: Gems of the STL
 - std::optional
 - std::variant
 - `<numbers>` for mathematical constants
@@ -1056,24 +1108,25 @@ You can find some interesting libraries in [this Article](https://blog.brianna.t
 - std::span - a read and write std::view
     - std::mdspan for multidimentional data
 
-## Video 48: More Compile Time Programming
+## Video: More Compile Time Programming
 - constinit to force static initialization
     - `constinit auto a { 32 };`
 - consteval
 - compile time if clauses 
+
 ```cpp
 if constexpr(is_something()) {
 
 }```
 
-## Video 49: Building a Web-Backend in modern C++
+## Video: Building a Web-Backend in modern C++
 - CRUD app for something
 - probably using Boost.Beast or POCO
 - Crow looks very cool and simple. Probably easier to use than beast
 - https://github.com/oatpp/oatpp - Oat++ (my favourite so far)
 - https://github.com/drogonframework/drogon
 
-## Video 50: Our own std::function
+## Video: Our own std::function
 - how does function work in detail
 - std::bind and std::invoke
 - building our own std::function
@@ -1088,19 +1141,20 @@ Extra features:
     - no memory allocations
     - move-only
 
-## Video 51: Making our std::function constexpr
+## Video: Making our std::function constexpr
 
-## Video 52: Implementing small function optimization
+## Video: Implementing small function optimization
 
-## Video 53: Run code on the GPU (using OpenCL)
+## Video: Run code on the GPU (using OpenCL)
 
-## Video 54: Concurrency deep dive - Exploring more Options
+## Video: Concurrency deep dive - Exploring more Options
 - openMPI
 - HPX
 - threads
     - jthread
 - forks (might be a bad practice and ignored)
 - coroutines
+
 ```cpp
 #include <coroutine>
 
@@ -1133,13 +1187,16 @@ int main() {
 	auto c = myCoroutine();
 }
 ```
-    - coroutines are like functions that can be paused and resumed
-    - co_yield or co_await pause a coroutine
-    - co_return ends/exits a coroutine
-    - no locks needed (the coroutines decides itself when it suspends)
-    - coroutine frame holds the information about the current state of the coroutine
-        - very likely stored on the heap
-    - could replace callbacks
+
+- coroutines are like functions that can be paused and resumed
+- co_yield or co_await pause a coroutine
+- co_return ends/exits a coroutine
+- no locks needed (the coroutines decides itself when it suspends)
+- coroutine frame holds the information about the current state of the coroutine
+    - very likely stored on the heap
+- could replace callbacks
+
+
 - Asio
 - std::mutex
 - spin locks
@@ -1153,35 +1210,60 @@ int main() {
 - every access needs to be protected (with a mutex for example)
 - you can use unique_lock to pass a mutex to a function and return it again
 
-## Video 55: Thead safe logger singleton
+## Video: Thead safe logger singleton
 
-## Video 56: Networking deep dive
+## Video: Networking deep dive
 
-## Video 57: Build a web-game using emscripten
-    - is a compiler for c and c++ to WebAssembly
-    - emcc main.cpp -o hello_world.html
-    ```cpp
-    ifdef __EMSCRIPTEN__
-    #include <emscripten.h>
-    endif
-    ```
-    - cmake adjustments
-    ```cmake
-    cmake_minimum_required(VERSION 3.30 FATAL ERROR)
-    project(testing c CXX)
+## Video: Build a web-game using emscripten
 
-    if(EMSCRIPTEN)
-        set(CMAKE_EXECUTABLE_SUFFIX ".html")
-    endif()
-    ```
-    - use `emcmake` instead of `cmake` to build
+- is a compiler for c and c++ to WebAssembly
+- emcc main.cpp -o hello_world.html
 
-## Video 58: Android NDK
+```cpp
+ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+endif
+```
+- cmake adjustments
 
-## Video 59: Performance Deep dive - building a profiler
+```cmake
+cmake_minimum_required(VERSION 3.30 FATAL ERROR)
+project(testing c CXX)
+
+if(EMSCRIPTEN)
+    set(CMAKE_EXECUTABLE_SUFFIX ".html")
+endif()
+```
+- use `emcmake` instead of `cmake` to build
+
+## Video: Android NDK
+
+## Video: Performance Deep dive - building a profiler
 - std::chrono
 
-## Video 60: Optimize all the things! Exploring performance hacks
+## Video: SIMD
+
+## Video: Modern CPU Pipeline
+
+### Modern CPU Pipeline
+- Branch Prediction (lookup table: what happened in the past)
+- **Front End** (In Order)
+- **Back End** (Out of Order)
+    - dedpendency Analysis
+    - run as many instructions as possible in parallel / in advance
+- **Retirement / Commit** (In Order)
+
+You can use llvm-mca to analyze performance and instruction dependencies
+
+## Video: Use Perf
+- list all available hardware events to listen on
+    - `perf list`
+- branch prediction statistics
+    - `perf stat -e branches,branch-misses -- <program>`
+- what are we bound by (Bottleneck analysis)
+    - `perf stat --topdown --td-level=2 -- <program>`
+
+## Video: Optimize all the things! Exploring performance hacks
 ### Optimizations:
 - Strings get dynamically allocated and tend to be copied around a lot. Strings are value types
 - Optimization Patterns
@@ -1263,6 +1345,7 @@ int main() {
 - order member variables by size
 - pass almost everything by const reference
 - use move semantics correctly (no move in the return statement, this avoids RVO)
+
 ### Always test the result
 - Always test the changes you have made for an result
 - Always test performance in a production-like setting to get usable results
@@ -1280,13 +1363,13 @@ int main() {
 - use constexpr and consteval
 - never use std::accumulate
 
-## Video 61: Branchless Programming
+## Video: Branchless Programming
 - arithmetic operations on booleans to get rid of branches
 - not worth it most of the time
 - can increase speed a lot for many conditions
 - know when to use it and look at generated assembly
 
-### Video 62: Clean Code
+### Video: Clean Code
 - is faster in the long run
 - have personal quality standards
 - always use meaningful variable names
@@ -1295,18 +1378,20 @@ int main() {
 - use asserts/tests and logging
 - Null-Object/Value pattern can be used to avoid branching ("neutral element": like multiplying with 1, or subtracting 0)
 
-## Video 63: Video Game AI Masterclass
+## Video: Introduction to Planning
+
+## Video: Video Game AI Masterclass
 - state machines
 - genetic learning (NEAT)
 - A*
 - GOAP - Goal Oriented Action Planning
 
-## Video 64: Cross-Platform Applications and Cross-Compilation
+## Video: Cross-Platform Applications and Cross-Compilation
 - Configure CMake for seamless builds accross platforms
 - mingw cross compilers
 - explore CMake toolset files
 
-## Video 65: Checklist before you Release
+## Video: Checklist before you Release
 - Coninuous Build Environment
     - github
     - circle.ai
@@ -1347,12 +1432,12 @@ int main() {
         - -fsanitize-minmal-runtime (to use the minimal runtime for a smaller attack surface)
         - choose options wisely
 
-## Video 66: Versioning - Semver
+## Video: Versioning - Semver
 
-## Video 67: CPack - Package your Program for distribution
+## Video: CPack - Package your Program for distribution
 - build an inisoft installer
 
-## Video 68: How to read the old crap?
+## Video: How to read the old crap?
 In this series we have been heavily focused on learning modern C++23,
 but in production you still need to be able to read "C with Classes" and know yourself around.
 This is why we will cover "all the old crap" in this video
@@ -1361,26 +1446,30 @@ This is why we will cover "all the old crap" in this video
 - malloc / calloc
 - unions
 
-## Video 69: Bithacks
-- set 6th bit to 1 :   x = (1<<6) | x
-- clear 6th bit :       x = ~(1 << 6) & x
-- toggle 6th bit :    x = ( 1 << 6) ^ x
-- masked copy from B to A:  A = (B & M) | (A & ~M)
+## Video: Bithacks
+- set 6th bit to 1 :
+    - `x = (1<<6) | x`
+- clear 6th bit :
+    - `x = ~(1 << 6) & x`
+- toggle 6th bit :
+    - `x = ( 1 << 6) ^ x`
+- masked copy from B to A:
+    - `A = (B & M) | (A & ~M)`
 
-## Video 70: Code Review: "Cube2: Sauerbraten"
+## Video: Code Review: "Cube2: Sauerbraten"
 - understand a complex legacy C++ code base
 - use clang-tidy modernize to see suggestions
 - how to approach refactoring
 
-## Video 71: clang-tidy plugin development
-    - clang-query
-    - AST matchers
-    - fixit hints
-    - Transformer/Rewrite Rules
+## Video: clang-tidy plugin development
+- clang-query
+- AST matchers
+- fixit hints
+- Transformer/Rewrite Rules
 
-## Video 72: Understand WinAPI Code
+## Video: Understand WinAPI Code
 
-## Video 73: SOLID - Design Principles
+## Video: SOLID - Design Principles
 - Single Responsibility
     - a function should only do one thing
 - Open/Closed
@@ -1397,7 +1486,7 @@ This is why we will cover "all the old crap" in this video
         - this means the external dependency can be updated or swapped out later easily
         - internal code does not have to care about how the external dependency works
 
-## Video 74: Design Patterns
+## Video: Design Patterns
 - imply structure not implementation
 - Null Object Pattern
     - retun an Object with default values instead of null
@@ -1418,7 +1507,8 @@ This is why we will cover "all the old crap" in this video
 - Strategy Pattern
     - example implementation with Dependency injection
 
-## Video 75: CRTP - Curiously Recurring Template Pattern
+## Video: CRTP - Curiously Recurring Template Pattern
+
 ```cpp
 template<typename Animal>
 class Flyer {
@@ -1442,16 +1532,20 @@ class Animal : public Flyer<Animal> {
 };
 ```
 
-## Video XX: More Template Magic
+## Video: More Template Magic
+
 - Default Template parameters:
+
 ```cpp
 #include <type_traits>
 template<typename T1, typename T2, typename RT = std::decay_t<decltype(true ? T1() : T2())>>
 RT max (T1 a, T2 b) {
 	return b < a ? a : b;
-}```
+}
+```
 
 - common_type decays to not become a reference type:
+
 ```cpp
 #include <type_traits>
 template<typename T1, typename T2,
@@ -1462,6 +1556,7 @@ RT max (T1 a, T2 b) {
 ```
 
 - static asserts for readable template errors:
+
 ```cpp
 template<typename T>
 class C {
@@ -1471,7 +1566,8 @@ class C {
 };
 ```
 
-## Video 76: Event Driven Software Architecture
+## Video: Event Driven Software Architecture
+
 - Event Driven Architecture
     - Event
         - Something that happens
@@ -1494,8 +1590,9 @@ class C {
         - redundancy is important
 
 
-## Video 77: Review & Road Ahead
+## Video: Review & Road Ahead
 C++ is paradigm agnostic. To Master C++ you need to know and understand these, so you can always choose the right tool for the job:
+
 - imperative
 - functional
 - concurrent
