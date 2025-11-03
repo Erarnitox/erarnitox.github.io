@@ -600,39 +600,18 @@ object)</li>
 Reference</li>
 <li><strong><code>[this]</code></strong> : Capture from Object</li>
 </ul>
-<h3 id="notes-for-myself">Notes for Myself</h3>
-<ul>
-<li>templated expressions</li>
-<li>auto parameters</li>
-</ul>
 <h2 id="video-working-with-databases">Video: Working with Databases</h2>
+<iframe src="https://www.youtube.com/watch?v=Y93MSj0tPCQ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<blockquote>
+<p>TODO: 5.11.2025 ## Video: Writing Tests with Catch2 - There should be
+a single command to run tests! - Testing Framworks: - Catch2 - doctest -
+Google Test - Boost.Test - We will use Catch2 for our tests - And add
+tests using CTest / add_test - Guidelines: - if a component is hard to
+test, its not properly designed - If a component is easy to test it is a
+good indication that it is properly designed</p>
+</blockquote>
 <ul>
-<li>sqlite setup</li>
-<li>pqxx setup</li>
-<li>abstractions?</li>
-<li>simple example</li>
-</ul>
-<h2 id="video-proper-testing-and-code-analysis">Video: Proper Testing
-and Code analysis</h2>
-<ul>
-<li>There should be a single command to run tests!
-<ul>
-<li>Testing Framworks:
-<ul>
-<li>Catch2</li>
-<li>doctest</li>
-<li>Google Test</li>
-<li>Boost.Test</li>
-</ul></li>
-<li>We will use Catch2 for our tests</li>
-<li>And add tests using CTest / add_test</li>
-</ul></li>
-<li>Guidelines:
-<ul>
-<li>if a component is hard to test, its not properly designed</li>
-<li>If a component is easy to test it is a good indication that it is
-properly designed</li>
-</ul></li>
 <li>Static Code Analysis:
 <ul>
 <li>clang-tidy</li>
@@ -648,48 +627,378 @@ properly designed</li>
 <li>LibFuzzer</li>
 </ul></li>
 </ul>
-<h2 id="video-basics-of-asyncronouts-programming-coroutines">Video:
-Basics of Asyncronouts Programming &amp; Coroutines</h2>
+<blockquote>
+<p>TODO: 7.11.2025 ## Video: Debugging Effectively with gdb and lldb -
+<strong>lldb</strong> - <strong>gdb</strong> - <strong>run</strong> :
+run program - <strong>break</strong> : create a breakpoint -
+<strong>list</strong> : print code - <strong>print <variable></strong> :
+inspect the value of a variable - <strong>quit</strong> : exit vim -
+<strong>up/down</strong> : move up/down the callstack - <strong>display
+<variable></strong> : keep track of the value of a variable -
+<strong>undisplay <display_id></strong> : stop keeping track of a value
+- <strong>backtrace</strong> : print callstack - <strong>next</strong> :
+next instruction - <strong>step</strong> : step into next instruction -
+<strong>continue</strong> : continue execution - <strong>finish</strong>
+: execute to the end of current function - <strong>watch
+<variable></strong> : monitor variable for changes - <strong>info
+breakpoints</strong> : list breakpoints - <strong>delete <id></strong> :
+delete a breakpoint - <strong>delete</strong> : delete all breakpoints -
+<strong>start</strong> : the same as setting a break at main and running
+- <strong>Ctrl+X+A</strong> : open the TUI - <strong>Ctrl+L</strong> :
+refresh TUI - <strong>Ctrl+X+2</strong> : goto 2nd window -
+<strong>Ctrl+p</strong> : previous command - <strong>Ctrl+n</strong> :
+next command - <strong>set disassembly-flavor intel</strong> : the
+single most important command! - <strong>call (void)func()</strong> :
+calls the function <code>void func()</code></p>
+</blockquote>
+<p>GDB has great extensions. My favourite one is <a
+href="https://github.com/hugsy/gef">GEF</a>. Here are some cool features
+of GEF:</p>
 <ul>
-<li>background worker jobs for an UI application</li>
-<li>std::generate</li>
-<li>a function with any of these is a coroutine:
+<li><p><strong>hexdump byte $rsp</strong> : a hexdump of the
+stack</p></li>
+<li><p><strong>registers</strong> : display registers and their
+values</p></li>
+<li><p><strong>heap chunks</strong> : display heap chunks</p></li>
+<li><p><strong>elf</strong> : view the structure of the elf
+binary</p></li>
+<li><p><strong>checksec</strong> : check the security mitigations
+enabled in the binary</p></li>
+<li><p><strong>pattern create</strong> : creates a cyclic
+pattern</p></li>
+<li><p><strong>pattern search</strong> : searches for the offset a
+snippet of a cyclic pattern is found at</p></li>
+<li><p><strong>emu</strong> : code emulation</p></li>
+<li><p><strong>gef config</strong> : configure / personalize
+GEF</p></li>
+<li><p>GDB Scripting</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">start</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span> <span class="ex">*main+42</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">x/gx</span> <span class="va">$rbp</span>-0x32</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">end</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">start</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span> <span class="ex">*main+42</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">silent</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">set</span> <span class="va">$local_variable</span> = <span class="pp">*(</span>unsigned long long<span class="pp">*)</span><span class="er">(</span><span class="va">$rbp</span><span class="ex">-0x32</span><span class="kw">)</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">printf</span> <span class="st">&quot;Current value: %llx\n&quot;</span>, <span class="va">$local_variable</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">end</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">start</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">catch</span> syscall read</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="ex">silent</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">(</span><span class="va">$rdi</span> == 42<span class="kw">)</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">set</span> <span class="va">$rdi</span> = 0</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    <span class="ex">end</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="ex">end</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span></code></pre></div></li>
+<li><p><strong>strace</strong></p></li>
+<li><p><strong>x64dbg</strong></p></li>
+<li><p><strong>valgrind</strong></p></li>
+</ul>
+<blockquote>
+<p>TODO: 30.11.2025 ## Video: Finding hidden Features in C++ Programs
+### Code smells (where to look closer) - return std::move(x) -
+const_cast (is often a logic error) - static const → should be:
+constexpr - extern const - raw new/delete → should be: make_unique() -
+using namespace in gloal scope - std::endl in a loop → use instead - for
+loop with index → range based for loop -
+<code>for(const auto&amp; x : y){}</code> - []operator inserts a new
+entry into a std::map - not using const or assertions - not using
+override - raw pointers that own data - switch cases without break that
+are not marked with [[fallthrough]]</p>
+</blockquote>
+<blockquote>
+<p>TODO: 9.11.2025 ## Video: Basics of Asyncronouts and Parallel
+Programming - background worker jobs for an UI application -
+std::generate - a function with any of these is a coroutine: - co_await
+: suspends coroutine while waiting for another computation to finish -
+co_yield: returns a value from a coroutine to the caller and suspends
+the coroutine, subsequently calling the coroutine agian continues its
+execution - co_return: returns from a coroutine (normal return is not
+allowed) - async - futures - std::mutex - spin locks - lock_guard -
+semaphores - std::counting_semaphore - std::atomic - atomic_shared_ptr
+for threadsafe shared pointers - never use volatile values - how to
+desing worker threads - every access needs to be protected (with a mutex
+for example) - you can use unique_lock to pass a mutex to a function and
+return it again</p>
+</blockquote>
+<h3 id="algorithms">Algorithms</h3>
 <ul>
-<li>co_await : suspends coroutine while waiting for another computation
-to finish</li>
-<li>co_yield: returns a value from a coroutine to the caller and
-suspends the coroutine, subsequently calling the coroutine agian
-continues its execution</li>
-<li>co_return: returns from a coroutine (normal return is not
-allowed)</li>
+<li>std::reduce</li>
+<li>std::transform</li>
+<li>std::rotate</li>
+<li>execution policies</li>
+</ul>
+<h3 id="example">Example:</h3>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>for_each<span class="op">(</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>execution::par_unseq<span class="op">,</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>begin<span class="op">(</span>data<span class="op">),</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>end<span class="op">(</span>data<span class="op">),</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">[]()</span> <span class="op">{</span> <span class="co">/* do something */</span> </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="op">});</span></span></code></pre></div>
+<blockquote>
+<p>TODO: 11.11.2025 ## Video: Coroutines</p>
+</blockquote>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;coroutine&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Task <span class="op">{</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> <span class="dt">promise_type</span><span class="op">{</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    Task get_return_object<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">{};</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>suspend_never initial_suspend<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">{};</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>suspend_never final_suspend<span class="op">()</span> <span class="kw">noexcept</span> <span class="op">{</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">{};</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> return_void<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> unhandled_exception<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>Task myCorutine<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">co_return</span><span class="op">;</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> c <span class="op">=</span> myCoroutine<span class="op">();</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>coroutines are like functions that can be paused and resumed</li>
+<li>co_yield or co_await pause a coroutine</li>
+<li>co_return ends/exits a coroutine</li>
+<li>no locks needed (the coroutines decides itself when it
+suspends)</li>
+<li>coroutine frame holds the information about the current state of the
+coroutine
+<ul>
+<li>very likely stored on the heap</li>
 </ul></li>
-<li>async</li>
-<li>futures</li>
+<li>could replace callbacks</li>
 </ul>
-<h2 id="video-using-ccmake">Video: Using CCmake</h2>
+<blockquote>
+<p>TODO: 13.11.2025 ## Video: Using CCmake - console equivalent to cmake
+gui to inspect and chance cmake cache variables in a build directory</p>
+</blockquote>
+<blockquote>
+<p>TODO: 15.11.2025 ## Video: Top 10 C++ Libraries - GUI -&gt; use FLTK
+or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts -
+Rendering: Magnum graphics - Sound -&gt; use PortAudio | OpenAL for
+Games - Networking -&gt; simple: unix sockets | secure: openssl sockets
+| anonymous: minitor - Math -&gt; glm | eigen - libcurl - for web
+requests (and many more things) - OpenSSL - for cryptography - capstone
+and keystone</p>
+</blockquote>
+<blockquote>
+<p>TODO: 17.11.2025 ## Video: Software design in C++ ### Software
+Architecture - The Design choices behind designing a simple game engine
+- Architecture Patterns - layered architecture - event driven
+architecture - microkernel architecture - microservice architecture -
+monolithic architecture - modular monolith - What is an ECS - Gang of
+four book patterns in C++ - Different programming paradigms that C++
+offers</p>
+</blockquote>
+<p>You don’t need to implement everything yourself! You can find some
+interesting libraries in <a
+href="https://blog.brianna.town/c-custom-game-engine-libraries">this
+Article</a></p>
+<h2 id="video-solid---design-principles">Video: SOLID - Design
+Principles</h2>
 <ul>
-<li>console equivalent to cmake gui to inspect and chance cmake cache
-variables in a build directory</li>
-</ul>
-<h2 id="using-cdash">Using CDash</h2>
+<li>Single Responsibility
 <ul>
-<li>https://cmake.org/cmake/help/book/mastering-cmake/chapter/CDash.html</li>
-</ul>
-<h2 id="video-libraries-to-try">Video: Libraries to try</h2>
+<li>a function should only do one thing</li>
+</ul></li>
+<li>Open/Closed
 <ul>
-<li>GUI -&gt; use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more
-unusual widgts</li>
-<li>Rendering: Magnum graphics</li>
-<li>Sound -&gt; use PortAudio | OpenAL for Games</li>
-<li>Networking -&gt; simple: unix sockets | secure: openssl sockets |
-anonymous: minitor</li>
-<li>Math -&gt; glm | eigen</li>
-<li>libcurl - for web requests (and many more things)</li>
-<li>OpenSSL - for cryptography</li>
-<li>capstone and keystone</li>
+<li>everything we write should be
+<ul>
+<li>open for extension</li>
+<li>but closed for modification</li>
+</ul></li>
+</ul></li>
+<li>Liskov Substitution
+<ul>
+<li>If S is subtype of T, then objects of type T may be replaced with
+objects of type S</li>
+</ul></li>
+<li>Interface Segregation
+<ul>
+<li>a Subclass that is subscribed to an Interface has to implement
+everything the Interface required properly</li>
+<li>Interfaces might be broken up into smaller interfaces so every
+subscriber makes good use of the required properties</li>
+</ul></li>
+<li>Dependency Inversion
+<ul>
+<li>Implement a “middle man” that abstracts external dependencies away
+from inner code and provides a simple API
+<ul>
+<li>this means the external dependency can be updated or swapped out
+later easily</li>
+<li>internal code does not have to care about how the external
+dependency works</li>
+</ul></li>
+</ul></li>
 </ul>
-<h2 id="video-class-with-value-semantics">Video: Class with value
-semantics</h2>
+<h2 id="video-design-patterns">Video: Design Patterns</h2>
+<ul>
+<li>imply structure not implementation</li>
+<li>Null Object Pattern
+<ul>
+<li>retun an Object with default values instead of null</li>
+</ul></li>
+<li>Builder Pattern
+<ul>
+<li>function used to create hard to construct objects</li>
+</ul></li>
+<li>Singleton Pattern
+<ul>
+<li>Object that only has a single instance</li>
+<li>holds shared resources (like a database connection)</li>
+</ul></li>
+<li>Facade Pattern
+<ul>
+<li>hide complex details behind a facade</li>
+<li>offer a simple and intuitive API</li>
+<li>details can be changed later behind the facade
+<ul>
+<li>the API stays stable</li>
+</ul></li>
+</ul></li>
+<li>Command Pattern
+<ul>
+<li>put functions into their own classes/objects</li>
+<li>each command class has a do and undo method
+<ul>
+<li>commands perfomed can easily be un-done</li>
+</ul></li>
+</ul></li>
+<li>Strategy Pattern
+<ul>
+<li>example implementation with Dependency injection</li>
+</ul></li>
+</ul>
+<h3 id="software-design-guideline">Software Design Guideline</h3>
+<ul>
+<li>structure code in small single purpose modules
+<ul>
+<li>that are reusable</li>
+</ul></li>
+<li>design for changes</li>
+<li>design for extension</li>
+<li>design for testability</li>
+<li>Make Software Design for Humans!</li>
+<li>Some guidelines to achive that:
+<ul>
+<li>Guideline 1: Understand the importance of Software Design
+<ul>
+<li>Treat Software design as an essential part of wrting Software</li>
+<li>Focus less on C++ language details and more on software design</li>
+<li>Avoid unnecessary coupling and dependencies to make software more
+adaptable to frquent changes</li>
+<li>Understand software design as the art of managing dependencies and
+abstractions</li>
+<li>Consider the boundary between software design and software
+architecture as fluid</li>
+</ul></li>
+<li>Guideline 2: Design for Change
+<ul>
+<li>expect changes in software</li>
+<li>Design for easy change and make software more adaptable</li>
+<li>avoid combining unrelated, orthogonal aspects to prevent
+coupling</li>
+<li>Coupling makes changes harder and more likely</li>
+<li>Use Sing Responsibility Principle</li>
+<li>Follow the “Don’t Repeat Yourself” Principle</li>
+<li>Make Changes as they are needed and not prematurely
+<ul>
+<li>to allow maintainability, not to adhere to SOLID</li>
+</ul></li>
+</ul></li>
+<li>Guideline 3: Separate Interfaces to Avoid Artificial Coupling
+<ul>
+<li>Be aware that coupling also affect interfaces</li>
+<li>Adhere to the Interface Segregation Principle to separe concerns in
+interfaces</li>
+<li>ISP is a special case of the SRP</li>
+<li>ISP helps for inheritance and also templates</li>
+</ul></li>
+<li>Guideline 4: Design for Testability
+<ul>
+<li>Tests are the protection layer against accidentally breaking
+things</li>
+<li>Tests are essential!</li>
+<li>Separete concerns for the sake of testability</li>
+<li>Consider private member functions that need testing to be
+misplaces</li>
+<li>Prefer non-member non-friend functions to member functions</li>
+</ul></li>
+<li>Guideline 5: Design for Extension
+<ul>
+<li>Favor design that makes it easy to extend code</li>
+<li>Adhere to the Open-Close Principle to keep code open for extension
+but closed for modifications</li>
+<li>Design the code additions by means of base classes, templates,
+functionoverloading or template specialization</li>
+<li>Avoid premature abstraction if you are not sure about the next
+addition</li>
+</ul></li>
+<li>Guideline 6: Adhere to the Expected Behaviour of Abstractions
+<ul>
+<li>An abstraction represents a set of requirements and
+expectations</li>
+<li>Follow the Liskov Substitution Principle to adhere to the expected
+behavior of abstactions</li>
+<li>Make sure that derived classes adhere to the expected behavior of
+their base classes</li>
+<li>Communicate the expectations of an abstraction</li>
+</ul></li>
+<li>Guideline 7: Pay Attentions to the Ownership of Abstractions
+<ul>
+<li>low level impementation details should depend on high levle
+abstractions</li>
+<li>Adhere to the Dependency iversion Principle (DIP), and assign
+abstractions to the high level of an arhitecture</li>
+<li>Make sure abstractions are owned by the high level, not by the low
+level</li>
+</ul></li>
+</ul></li>
+<li>More details in this awesome Book by Klaus Iglberger:
+https://amzn.eu/d/1ZK5vvy</li>
+</ul>
+<blockquote>
+<p>TODO: 19.11.2025 ## Video: Top 40 Tips to write better C++ Code 1)
+always initialize variables 2) best code is the code you never write →
+figure out how to get it done with less code - but don’t try too hard to
+make compact. Rather keep it simple to follow - clear code &gt; optimal
+code 3) you can reuese others code, there is no shame in that (but make
+it your own) - freshmeat.net - but at the beginning: write everything
+yourself and make a lot of mistakes! 4) There often is an easy solution
+- Take your time to find it!</p>
+</blockquote>
+<ol start="5" type="1">
+<li>Use Value semantics</li>
+</ol>
+<h3 id="class-with-value-semantics">Class with value semantics</h3>
 <ul>
 <li>Try to adhere to the Rule of 0 as much as possible!
 <ul>
@@ -699,58 +1008,34 @@ custom deleter)</li>
 <li>remove any empty destructors from the code</li>
 <li>spaceship operator for comparisons</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;compare&gt;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> S <span class="op">{</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">;</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> j<span class="op">;</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">constexpr</span> <span class="kw">auto</span> <span class="kw">operator</span><span class="op">&lt;=&gt;(</span><span class="at">const</span> S<span class="op">&amp;)</span> <span class="at">const</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> compare<span class="op">(</span>S left<span class="op">,</span> S right<span class="op">){</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> left <span class="op">==</span> right<span class="op">;</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;compare&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> S <span class="op">{</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> j<span class="op">;</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">constexpr</span> <span class="kw">auto</span> <span class="kw">operator</span><span class="op">&lt;=&gt;(</span><span class="at">const</span> S<span class="op">&amp;)</span> <span class="at">const</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> compare<span class="op">(</span>S left<span class="op">,</span> S right<span class="op">){</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> left <span class="op">==</span> right<span class="op">;</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>If needed Rule of 5 (for manual resource management)</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> S <span class="op">{</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    S<span class="op">();</span> <span class="co">// constructor</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    S<span class="op">(</span><span class="at">const</span> S <span class="op">&amp;);</span> <span class="co">// copy constructor</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    S<span class="op">(</span>S<span class="op">&amp;&amp;);</span> <span class="co">// move constructor</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    S <span class="op">&amp;</span><span class="kw">operator</span><span class="op">=(</span><span class="at">const</span> S <span class="op">&amp;);</span> <span class="co">// copy assignment operator</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    S <span class="op">&amp;</span><span class="kw">operator</span><span class="op">=(</span>S <span class="op">&amp;&amp;);</span> <span class="co">// move assignment operator</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
-<h2 id="video-filler---general-tips">Video: Filler - General Tips</h2>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> S <span class="op">{</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    S<span class="op">();</span> <span class="co">// constructor</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    S<span class="op">(</span><span class="at">const</span> S <span class="op">&amp;);</span> <span class="co">// copy constructor</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    S<span class="op">(</span>S<span class="op">&amp;&amp;);</span> <span class="co">// move constructor</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    S <span class="op">&amp;</span><span class="kw">operator</span><span class="op">=(</span><span class="at">const</span> S <span class="op">&amp;);</span> <span class="co">// copy assignment operator</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    S <span class="op">&amp;</span><span class="kw">operator</span><span class="op">=(</span>S <span class="op">&amp;&amp;);</span> <span class="co">// move assignment operator</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+<ol start="6" type="1">
+<li>never trust user input
 <ul>
-<li>always initialize variables</li>
-<li>best code is the code you never write → figure out how to get it
-done with less code
-<ul>
-<li>but don’t try too hard to make compact. Rather keep it simple to
-follow</li>
-<li>clear code &gt; optimal code</li>
-</ul></li>
-<li>you can reuese others code, there is no shame in that (but make it
-your own)</li>
-<li>freshmeat.net</li>
-<li>but at the beginning: write everything yourself and make a lot of
-mistakes!</li>
-<li>There often is an easy solution - Take your time to find it!</li>
-</ul>
-<h2 id="video-learning-rust">Video: Learning Rust</h2>
-<ul>
-<li>Learning Rust can make you a better C++ Developer</li>
-<li>Working through the Rust-Book</li>
-<li>What are the takeaways from learning Rust for your C++
-Programming?</li>
-</ul>
-<h2 id="video-filler---more-general-tips">Video: Filler - More General
-Tips</h2>
-<ul>
-<li>never trust user input</li>
 <li>never ever use gets()</li>
+</ul></li>
 <li>use assertions
 <ul>
 <li>cassert</li>
@@ -759,21 +1044,12 @@ Tips</h2>
 <li>always keep your design extendable</li>
 <li>always check for self assignment in assignment operators</li>
 <li>make everything const / constexpr by default</li>
-</ul>
-<h2 id="video-filler---templates-still-useful">Video: Filler - Templates
-still useful!</h2>
-<ul>
-<li>write more Templates!</li>
 <li>Don’t copy-paste code! It could probably be a template!
 <ul>
 <li>Find duplicate code:
 https://docs.pmd-code.org/latest/pmd_userdocs_cpd.html</li>
 <li><code>pmd-cpd</code> Package in the AUR</li>
 </ul></li>
-</ul>
-<h2 id="video-filler---even-more-general-tips">Video: Filler - Even More
-General Tips</h2>
-<ul>
 <li>ownership model (there should always only be one owner of data)</li>
 <li>always use at least: -Wall -Wpedantic -Werror -Wconversion</li>
 <li>use smart pointers when you can!</li>
@@ -792,10 +1068,6 @@ thing?
 </ul></li>
 <li>use ìf constexpr(…){…}` more!</li>
 <li>use [[nodiscard]]</li>
-</ul>
-<h2 id="video-filler---more-tips-yt-again">Video: Filler - More Tips yt
-again!</h2>
-<ul>
 <li>prefer initialization over assignment
 <ul>
 <li>in constructors</li>
@@ -812,10 +1084,6 @@ again!</h2>
 <li>never a naked new</li>
 <li>never a naked delete</li>
 </ul></li>
-</ul>
-<h2 id="video-filler---oh-no-even-more-tips">Video: Filler - Oh no! Even
-more tips!</h2>
-<ul>
 <li>unique_pt should be the preferred pointer type</li>
 <li>never use const_cast</li>
 <li>split multi step functions</li>
@@ -826,12 +1094,12 @@ counter overflow?</li>
 <li>are there rounding errors that accumulate over time?</li>
 </ul></li>
 <li>structured bindings</li>
-</ul>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Point p1<span class="op">{</span><span class="dv">100</span><span class="op">,</span> <span class="dv">200</span><span class="op">};</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span><span class="op">[</span>a<span class="op">,</span>b<span class="op">]</span> <span class="op">=</span> p1<span class="op">;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ot">assert</span><span class="op">(</span>a <span class="op">==</span> <span class="dv">100</span> <span class="op">&amp;&amp;</span> b <span class="op">==</span> <span class="dv">200</span><span class="op">);</span></span></code></pre></div>
-<ul>
+</ol>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Point p1<span class="op">{</span><span class="dv">100</span><span class="op">,</span> <span class="dv">200</span><span class="op">};</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span><span class="op">[</span>a<span class="op">,</span>b<span class="op">]</span> <span class="op">=</span> p1<span class="op">;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ot">assert</span><span class="op">(</span>a <span class="op">==</span> <span class="dv">100</span> <span class="op">&amp;&amp;</span> b <span class="op">==</span> <span class="dv">200</span><span class="op">);</span></span></code></pre></div>
+<ol start="32" type="1">
 <li>use cout.setf(ios::unitbuf) to disable cout buffering in debug
 mode</li>
 <li>use stronger types:
@@ -846,6 +1114,7 @@ mode</li>
 <li>prefer std::array over std::vector</li>
 </ul></li>
 <li>avoid using std::bind and std::function!</li>
+<li>Error Handling with std::expected</li>
 <li>avoid usig initializer_lists for non trivial types
 <ul>
 <li>constructs an initializer_list object
@@ -854,118 +1123,11 @@ mode</li>
 <li>overhead that is often unwanted</li>
 </ul></li>
 </ul></li>
-</ul>
-<h2 id="video-filler---c-code-smells">Video: Filler - C++ Code
-Smells</h2>
-<ul>
-<li>return std::move(x)</li>
-<li>const_cast (is often a logic error)</li>
-<li>static const → should be: constexpr</li>
-<li>extern const</li>
-<li>raw new/delete → should be: make_unique()</li>
-<li>using namespace in gloal scope</li>
-<li>std::endl in a loop → use instead</li>
-<li>for loop with index → range based for loop
-<ul>
-<li><code>for(const auto&amp; x : y){}</code></li>
-</ul></li>
-<li>[]operator inserts a new entry into a std::map</li>
-<li>not using const or assertions</li>
-<li>not using override</li>
-<li>raw pointers that own data</li>
-<li>switch cases without break that are not marked with
-[[fallthrough]]</li>
-</ul>
-<h2 id="video-event-loops">Video: Event Loops</h2>
-<ul>
-<li>UI in imGui</li>
-<li>use libcurl (probably)</li>
-<li>use background workers</li>
-<li>just plot some data</li>
-<li>build a stock price tracker with UI</li>
-</ul>
-<h2 id="video-understanding-rest">Video: Understanding REST</h2>
-<ul>
-<li>Theory:
-<ul>
-<li>GET - Retrieve a Resource</li>
-<li>POST - Create a new resource</li>
-<li>PUT - Update an existing resource entirely</li>
-<li>PATCH - Update an existing resouce partially</li>
-<li>DELETE - Delete a resource</li>
-<li>The URI / enpoint should represent the resource
-<ul>
-<li>egs: /api/users</li>
-</ul></li>
-<li>Status Code:
-<ul>
-<li>OK - 200</li>
-<li>Created - 201</li>
-<li>No Content - 204</li>
-<li>400 - Bad requests</li>
-<li>401 - Unauthorized</li>
-<li>403 - Forbidden</li>
-<li>404 - Not found</li>
-<li>500 - Internal Server error</li>
-</ul></li>
-</ul></li>
-<li>Project:
-<ul>
-<li>build a postman like application to test APIs</li>
-</ul></li>
-</ul>
-<h2 id="video-building-a-logger-library">Video: Building a logger
-library</h2>
-<ul>
-<li>Designing the logger
-<ul>
-<li>what kind of problems do we want to resolve</li>
-<li>how did I get here?</li>
-<li>logging format</li>
-</ul></li>
-<li>use std::format (explore formatting options)</li>
-</ul>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;format&gt;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(){</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>string s<span class="op">{</span> <span class="bu">std::</span>format<span class="op">(</span><span class="st">&quot;Some </span><span class="sc">{}</span><span class="st"> cool&quot;</span><span class="op">,</span> <span class="dv">5</span><span class="op">)</span> <span class="op">};</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<ul>
-<li>std::quoted to escapte strings (from the iomaip header)</li>
-<li>source location header gives runtime information about source
-location</li>
-<li>stack trace:</li>
-</ul>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stack_trace&gt;</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;print&gt;</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> my_func<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>println<span class="op">(</span><span class="bu">std::</span>stacktrace::current<span class="op">())</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<h2 id="video-parallel-algorithms-faster-data-processing">Video:
-Parallel Algorithms: Faster Data Processing</h2>
-<ul>
-<li>std::reduce</li>
-<li>std::transform</li>
-<li>std::rotate</li>
-<li>execution policies</li>
-</ul>
-<h3 id="example">Example:</h3>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>for_each<span class="op">(</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>execution::par_unseq<span class="op">,</span> </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>begin<span class="op">(</span>data<span class="op">),</span> </span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>end<span class="op">(</span>data<span class="op">),</span> </span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">[]()</span> <span class="op">{</span> <span class="co">/* do something */</span> </span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="op">});</span></span></code></pre></div>
-<ul>
-<li>build an image manipulation program (using Cairo)</li>
-</ul>
-<h2 id="video-libraries---writing-code-that-others-can-use">Video:
-Libraries - Writing code that others can use</h2>
+</ol>
+<blockquote>
+<p>TODO: 23.11.2025 ## Video: Libraries - Writing code that others can
+use</p>
+</blockquote>
 <ul>
 <li>cmake config files</li>
 <li>Top Level CMakeLists.txt</li>
@@ -1092,497 +1254,123 @@ used</li>
 <li>doxygen</li>
 </ul></li>
 </ul>
-<h2 id="video-debugging-effectively">Video: Debugging effectively</h2>
-<ul>
-<li><strong>lldb</strong></li>
-<li><strong>gdb</strong>
-<ul>
-<li><strong>run</strong> : run program</li>
-<li><strong>break</strong> : create a breakpoint</li>
-<li><strong>list</strong> : print code</li>
-<li><strong>print <variable></strong> : inspect the value of a
-variable</li>
-<li><strong>quit</strong> : exit vim</li>
-<li><strong>up/down</strong> : move up/down the callstack</li>
-<li><strong>display <variable></strong> : keep track of the value of a
-variable</li>
-<li><strong>undisplay <display_id></strong> : stop keeping track of a
-value</li>
-<li><strong>backtrace</strong> : print callstack</li>
-<li><strong>next</strong> : next instruction</li>
-<li><strong>step</strong> : step into next instruction</li>
-<li><strong>continue</strong> : continue execution</li>
-<li><strong>finish</strong> : execute to the end of current
-function</li>
-<li><strong>watch <variable></strong> : monitor variable for
-changes</li>
-<li><strong>info breakpoints</strong> : list breakpoints</li>
-<li><strong>delete <id></strong> : delete a breakpoint</li>
-<li><strong>delete</strong> : delete all breakpoints</li>
-<li><strong>start</strong> : the same as setting a break at main and
-running</li>
-<li><strong>Ctrl+X+A</strong> : open the TUI</li>
-<li><strong>Ctrl+L</strong> : refresh TUI</li>
-<li><strong>Ctrl+X+2</strong> : goto 2nd window</li>
-<li><strong>Ctrl+p</strong> : previous command</li>
-<li><strong>Ctrl+n</strong> : next command</li>
-<li><strong>set disassembly-flavor intel</strong> : the single most
-important command!</li>
-<li><strong>call (void)func()</strong> : calls the function
-<code>void func()</code></li>
-</ul></li>
-</ul>
-<p>GDB has great extensions. My favourite one is <a
-href="https://github.com/hugsy/gef">GEF</a>. Here are some cool features
-of GEF:</p>
-<ul>
-<li><p><strong>hexdump byte $rsp</strong> : a hexdump of the
-stack</p></li>
-<li><p><strong>registers</strong> : display registers and their
-values</p></li>
-<li><p><strong>heap chunks</strong> : display heap chunks</p></li>
-<li><p><strong>elf</strong> : view the structure of the elf
-binary</p></li>
-<li><p><strong>checksec</strong> : check the security mitigations
-enabled in the binary</p></li>
-<li><p><strong>pattern create</strong> : creates a cyclic
-pattern</p></li>
-<li><p><strong>pattern search</strong> : searches for the offset a
-snippet of a cyclic pattern is found at</p></li>
-<li><p><strong>emu</strong> : code emulation</p></li>
-<li><p><strong>gef config</strong> : configure / personalize
-GEF</p></li>
-<li><p>GDB Scripting</p>
+<blockquote>
+<p>TODO: 25.11.2025 ## Video: Understanding REST - Making Plain Text
+HTTP Requests using a simple TCP client - Theory: - GET - Retrieve a
+Resource - POST - Create a new resource - PUT - Update an existing
+resource entirely - PATCH - Update an existing resouce partially -
+DELETE - Delete a resource - The URI / enpoint should represent the
+resource - egs: /api/users - Status Code: - OK - 200 - Created - 201 -
+No Content - 204 - 400 - Bad requests - 401 - Unauthorized - 403 -
+Forbidden - 404 - Not found - 500 - Internal Server error</p>
+</blockquote>
+<blockquote>
+<p>TODO: 27.11.2025 ## Video: Building a simple Networking Library</p>
+</blockquote>
+<blockquote>
+<p>TODO: 1.12.2025 ## Video: Postman-Clone Project</p>
+</blockquote>
+<blockquote>
+<p>TODO: 2.12.2025 ## Video: Math Library Project</p>
+</blockquote>
+<blockquote>
+<p>TODO: 3.12.2025 ## Video: Building a custom C2 Framework</p>
+</blockquote>
+<blockquote>
+<p>TODO: 4.12.2025 ## Video: Structuring a Core / Game Engine Library
+Project ### Utility Libraries #### Building a logger library - Designing
+the logger - what kind of problems do we want to resolve - how did I get
+here? - logging format - use std::format (explore formatting
+options)</p>
+</blockquote>
 <div class="sourceCode" id="cb27"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">start</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span> <span class="ex">*main+42</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">x/gx</span> <span class="va">$rbp</span>-0x32</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">end</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">start</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span> <span class="ex">*main+42</span></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">silent</span></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">set</span> <span class="va">$local_variable</span> = <span class="pp">*(</span>unsigned long long<span class="pp">*)</span><span class="er">(</span><span class="va">$rbp</span><span class="ex">-0x32</span><span class="kw">)</span></span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">printf</span> <span class="st">&quot;Current value: %llx\n&quot;</span>, <span class="va">$local_variable</span></span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">end</span></span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">start</span></span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">catch</span> syscall read</span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span></span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    <span class="ex">silent</span></span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">(</span><span class="va">$rdi</span> == 42<span class="kw">)</span></span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">set</span> <span class="va">$rdi</span> = 0</span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    <span class="ex">end</span></span>
-<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
-<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>    <span class="ex">end</span></span>
-<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span></code></pre></div></li>
-<li><p><strong>strace</strong></p></li>
-<li><p><strong>x64dbg</strong></p></li>
-<li><p><strong>valgrind</strong></p></li>
-</ul>
-<h2 id="video-error-handling-with-stdexpected">Video: Error Handling
-with std::expected</h2>
-<h2 id="video-software-design">Video: Software Design</h2>
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;format&gt;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(){</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>string s<span class="op">{</span> <span class="bu">std::</span>format<span class="op">(</span><span class="st">&quot;Some </span><span class="sc">{}</span><span class="st"> cool&quot;</span><span class="op">,</span> <span class="dv">5</span><span class="op">)</span> <span class="op">};</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
-<li>structure code in small single purpose modules
-<ul>
-<li>that are reusable</li>
-</ul></li>
-<li>design for changes</li>
-<li>design for extension</li>
-<li>design for testability</li>
-<li>Make Software Design for Humans!</li>
-<li>Some guidelines to achive that:
-<ul>
-<li>Guideline 1: Understand the importance of Software Design
-<ul>
-<li>Treat Software design as an essential part of wrting Software</li>
-<li>Focus less on C++ language details and more on software design</li>
-<li>Avoid unnecessary coupling and dependencies to make software more
-adaptable to frquent changes</li>
-<li>Understand software design as the art of managing dependencies and
-abstractions</li>
-<li>Consider the boundary between software design and software
-architecture as fluid</li>
-</ul></li>
-<li>Guideline 2: Design for Change
-<ul>
-<li>expect changes in software</li>
-<li>Design for easy change and make software more adaptable</li>
-<li>avoid combining unrelated, orthogonal aspects to prevent
-coupling</li>
-<li>Coupling makes changes harder and more likely</li>
-<li>Use Sing Responsibility Principle</li>
-<li>Follow the “Don’t Repeat Yourself” Principle</li>
-<li>Make Changes as they are needed and not prematurely
-<ul>
-<li>to allow maintainability, not to adhere to SOLID</li>
-</ul></li>
-</ul></li>
-<li>Guideline 3: Separate Interfaces to Avoid Artificial Coupling
-<ul>
-<li>Be aware that coupling also affect interfaces</li>
-<li>Adhere to the Interface Segregation Principle to separe concerns in
-interfaces</li>
-<li>ISP is a special case of the SRP</li>
-<li>ISP helps for inheritance and also templates</li>
-</ul></li>
-<li>Guideline 4: Design for Testability
-<ul>
-<li>Tests are the protection layer against accidentally breaking
-things</li>
-<li>Tests are essential!</li>
-<li>Separete concerns for the sake of testability</li>
-<li>Consider private member functions that need testing to be
-misplaces</li>
-<li>Prefer non-member non-friend functions to member functions</li>
-</ul></li>
-<li>Guideline 5: Design for Extension
-<ul>
-<li>Favor design that makes it easy to extend code</li>
-<li>Adhere to the Open-Close Principle to keep code open for extension
-but closed for modifications</li>
-<li>Design the code additions by means of base classes, templates,
-functionoverloading or template specialization</li>
-<li>Avoid premature abstraction if you are not sure about the next
-addition</li>
-</ul></li>
-<li>Guideline 6: Adhere to the Expected Behaviour of Abstractions
-<ul>
-<li>An abstraction represents a set of requirements and
-expectations</li>
-<li>Follow the Liskov Substitution Principle to adhere to the expected
-behavior of abstactions</li>
-<li>Make sure that derived classes adhere to the expected behavior of
-their base classes</li>
-<li>Communicate the expectations of an abstraction</li>
-</ul></li>
-<li>Guideline 7: Pay Attentions to the Ownership of Abstractions
-<ul>
-<li>low level impementation details should depend on high levle
-abstractions</li>
-<li>Adhere to the Dependency iversion Principle (DIP), and assign
-abstractions to the high level of an arhitecture</li>
-<li>Make sure abstractions are owned by the high level, not by the low
-level</li>
-</ul></li>
-</ul></li>
-<li>More details in this awesome Book by Klaus Iglberger:
-https://amzn.eu/d/1ZK5vvy</li>
-</ul>
-<h2 id="video-dependency-injection">Video: Dependency Injection</h2>
-<h2
-id="video-software-architecture---the-design-choices-behind-designing-a-simple-game-engine">Video:
-Software Architecture - The Design choices behind designing a simple
-game engine</h2>
-<ul>
-<li>Architecture Patterns
-<ul>
-<li>layered architecture</li>
-<li>event driven architecture</li>
-<li>microkernel architecture</li>
-<li>microservice architecture</li>
-<li>monolithic architecture
-<ul>
-<li>modular monolith</li>
-</ul></li>
-</ul></li>
-<li>What is an ECS</li>
-<li>Gang of four book patterns in C++</li>
-<li>Different programming paradigms that C++ offers</li>
-</ul>
-<p>You don’t need to implement everything yourself! You can find some
-interesting libraries in <a
-href="https://blog.brianna.town/c-custom-game-engine-libraries">this
-Article</a></p>
-<h2
-id="video-compression-serialization-and-encryption---building-a-safe-file-system">Video:
-Compression, Serialization and Encryption - Building a Safe file
-system</h2>
-<ul>
-<li>openSSL</li>
-<li>cereal</li>
-<li>nlohmann/json</li>
-<li>zlib</li>
-</ul>
-<h2 id="video-writing-unit-tests-with-catch2">Video: Writing Unit Tests
-with Catch2</h2>
-<ul>
-<li>automate test execution with CMake</li>
-<li>let github actions run the tests</li>
-</ul>
-<h2 id="video-plugin-system-dynamic-libraries">Video: Plugin System
-&amp; Dynamic Libraries</h2>
-<h2 id="video-scripting---lua-vs-chai-a-comparison">Video: Scripting -
-Lua vs Chai a comparison</h2>
-<ul>
-<li>Sol2</li>
-</ul>
-<h2 id="video-gems-of-the-stl">Video: Gems of the STL</h2>
-<ul>
-<li>std::optional</li>
-<li>std::variant</li>
-<li><code>&lt;numbers&gt;</code> for mathematical constants</li>
-<li>how to use variant instead of inheritance</li>
-<li>std::span - a read and write std::view
-<ul>
-<li>std::mdspan for multidimentional data</li>
-</ul></li>
-</ul>
-<h2 id="video-more-compile-time-programming">Video: More Compile Time
-Programming</h2>
-<ul>
-<li>constinit to force static initialization
-<ul>
-<li><code>constinit auto a { 32 };</code></li>
-</ul></li>
-<li>consteval</li>
-<li>compile time if clauses</li>
+<li>std::quoted to escapte strings (from the iomaip header)</li>
+<li>source location header gives runtime information about source
+location</li>
+<li>stack trace:</li>
 </ul>
 <div class="sourceCode" id="cb28"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">constexpr</span><span class="op">(</span>is_something<span class="op">())</span> <span class="op">{</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span><span class="er">```</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#</span><span class="er"># Video: Building a Web-Backend in modern C++</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> CRUD app <span class="cf">for</span> something</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> probably <span class="kw">using</span> Boost<span class="op">.</span>Beast <span class="kw">or</span> POCO</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> Crow looks very cool <span class="kw">and</span> simple<span class="op">.</span> Probably easier to use than beast</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> https<span class="op">:</span><span class="co">//github.com/oatpp/oatpp - Oat++ (my favourite so far)</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> https<span class="op">:</span><span class="co">//github.com/drogonframework/drogon</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="pp">#</span><span class="er"># Video: Our own std::function</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> how does function work in detail</span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> <span class="bu">std::</span>bind <span class="kw">and</span> <span class="bu">std::</span>invoke</span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> building our own <span class="bu">std::</span>function</span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>Simple impl<span class="op">:</span></span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="er">```</span>cpp</span></code></pre></div>
-<p>Extra features: - no locks - no memory allocations - move-only</p>
-<h2 id="video-making-our-stdfunction-constexpr">Video: Making our
-std::function constexpr</h2>
-<h2 id="video-implementing-small-function-optimization">Video:
-Implementing small function optimization</h2>
-<h2 id="video-run-code-on-the-gpu-using-opencl">Video: Run code on the
-GPU (using OpenCL)</h2>
-<h2 id="video-concurrency-deep-dive---exploring-more-options">Video:
-Concurrency deep dive - Exploring more Options</h2>
-<ul>
-<li>openMPI</li>
-<li>HPX</li>
-<li>threads
-<ul>
-<li>jthread</li>
-</ul></li>
-<li>forks (might be a bad practice and ignored)</li>
-<li>coroutines</li>
-</ul>
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stack_trace&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;print&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> my_func<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>println<span class="op">(</span><span class="bu">std::</span>stacktrace::current<span class="op">())</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<blockquote>
+<p>TODO: 5.12.2025 ## Video: Writing an AI-Library</p>
+</blockquote>
+<blockquote>
+<p>TODO: 6.12.2025 ## Video: Writing a Crypto Trading Bot using our Core
+Library</p>
+</blockquote>
+<blockquote>
+<p>TODO: 7.12.2025 ## CPack - Packaging C++ Software for
+Distribution</p>
+</blockquote>
+<blockquote>
+<p>TODO: 8.12.2025 ## Build Web-Frontends in C++ using EMSCRIPTEN - is a
+compiler for c and c++ to WebAssembly - emcc main.cpp -o
+hello_world.html</p>
+</blockquote>
 <div class="sourceCode" id="cb29"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;coroutine&gt;</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Task <span class="op">{</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> <span class="dt">promise_type</span><span class="op">{</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    Task get_return_object<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">{};</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>suspend_never initial_suspend<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">{};</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>suspend_never final_suspend<span class="op">()</span> <span class="kw">noexcept</span> <span class="op">{</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">{};</span></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> return_void<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> unhandled_exception<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>Task myCorutine<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">co_return</span><span class="op">;</span></span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> c <span class="op">=</span> myCoroutine<span class="op">();</span></span>
-<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<ul>
-<li><p>coroutines are like functions that can be paused and
-resumed</p></li>
-<li><p>co_yield or co_await pause a coroutine</p></li>
-<li><p>co_return ends/exits a coroutine</p></li>
-<li><p>no locks needed (the coroutines decides itself when it
-suspends)</p></li>
-<li><p>coroutine frame holds the information about the current state of
-the coroutine</p>
-<ul>
-<li>very likely stored on the heap</li>
-</ul></li>
-<li><p>could replace callbacks</p></li>
-<li><p>Asio</p></li>
-<li><p>std::mutex</p></li>
-<li><p>spin locks</p></li>
-<li><p>lock_guard</p></li>
-<li><p>semaphores</p>
-<ul>
-<li>std::counting_semaphore</li>
-</ul></li>
-<li><p>std::atomic</p></li>
-<li><p>atomic_shared_ptr for threadsafe shared pointers</p></li>
-<li><p>never use volatile values</p></li>
-<li><p>how to desing worker threads</p></li>
-<li><p>every access needs to be protected (with a mutex for
-example)</p></li>
-<li><p>you can use unique_lock to pass a mutex to a function and return
-it again</p></li>
-</ul>
-<h2 id="video-thead-safe-logger-singleton">Video: Thead safe logger
-singleton</h2>
-<h2 id="video-networking-deep-dive">Video: Networking deep dive</h2>
-<h2 id="video-build-a-web-game-using-emscripten">Video: Build a web-game
-using emscripten</h2>
-<ul>
-<li>is a compiler for c and c++ to WebAssembly</li>
-<li>emcc main.cpp -o hello_world.html</li>
-</ul>
-<div class="sourceCode" id="cb30"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>ifdef __EMSCRIPTEN__</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;emscripten.h&gt;</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>endif</span></code></pre></div>
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ifdef __EMSCRIPTEN__</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;emscripten.h&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>endif</span></code></pre></div>
 <ul>
 <li>cmake adjustments</li>
 </ul>
-<div class="sourceCode" id="cb31"><pre
-class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">cmake_minimum_required</span>(<span class="ot">VERSION</span> <span class="dt">3.30</span> FATAL ERROR)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="kw">project</span>(testing c <span class="ot">CXX</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(EMSCRIPTEN)</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">set</span>(<span class="dv">CMAKE_EXECUTABLE_SUFFIX</span> <span class="st">&quot;.html&quot;</span>)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="cf">endif</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">cmake_minimum_required</span>(<span class="ot">VERSION</span> <span class="dt">3.30</span> FATAL ERROR)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">project</span>(testing c <span class="ot">CXX</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(EMSCRIPTEN)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">set</span>(<span class="dv">CMAKE_EXECUTABLE_SUFFIX</span> <span class="st">&quot;.html&quot;</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="cf">endif</span>()</span></code></pre></div>
 <ul>
 <li>use <code>emcmake</code> instead of <code>cmake</code> to build</li>
 </ul>
-<h2 id="video-android-ndk">Video: Android NDK</h2>
-<h2 id="video-performance-deep-dive---building-a-profiler">Video:
-Performance Deep dive - building a profiler</h2>
-<ul>
-<li>std::chrono</li>
-</ul>
-<h2 id="video-simd">Video: SIMD</h2>
-<p>A very good introduction to SIMD can be found in this <a
-href="http://const.me/articles/simd/simd.pdf">Article</a>.</p>
-<p>SIMD Library will come to C++26
-(https://en.cppreference.com/w/cpp/experimental/simd.html)</p>
-<h2 id="video-modern-cpu-pipeline">Video: Modern CPU Pipeline</h2>
-<h3 id="modern-cpu-pipeline">Modern CPU Pipeline</h3>
-<ul>
-<li>Branch Prediction (lookup table: what happened in the past)</li>
-<li><strong>Front End</strong> (In Order)</li>
-<li><strong>Back End</strong> (Out of Order)
-<ul>
-<li>dedpendency Analysis</li>
-<li>run as many instructions as possible in parallel / in advance</li>
-</ul></li>
-<li><strong>Retirement / Commit</strong> (In Order)</li>
-</ul>
-<p>You can use llvm-mca to analyze performance and instruction
-dependencies</p>
-<h2 id="video-use-perf">Video: Use Perf</h2>
-<ul>
-<li>list all available hardware events to listen on
-<ul>
-<li><code>perf list</code></li>
-</ul></li>
-<li>branch prediction statistics
-<ul>
-<li><code>perf stat -e branches,branch-misses -- &lt;program&gt;</code></li>
-</ul></li>
-<li>what are we bound by (Bottleneck analysis)
-<ul>
-<li><code>perf stat --topdown --td-level=2 -- &lt;program&gt;</code></li>
-</ul></li>
-</ul>
-<h2
-id="video-optimize-all-the-things-exploring-performance-hacks">Video:
-Optimize all the things! Exploring performance hacks</h2>
-<h3 id="optimizations">Optimizations:</h3>
-<ul>
-<li>Strings get dynamically allocated and tend to be copied around a
-lot. Strings are value types</li>
-<li>Optimization Patterns
-<ul>
-<li>Precomputation
-<ul>
-<li>remove computation from the hot part of the program by performing it
+<blockquote>
+<p>TODO: 9.12.2025 ## Utilizing Perf for performance insights - list all
+available hardware events to listen on - <code>perf list</code> - branch
+prediction statistics -
+<code>perf stat -e branches,branch-misses -- &lt;program&gt;</code> -
+what are we bound by (Bottleneck analysis) -
+<code>perf stat --topdown --td-level=2 -- &lt;program&gt;</code></p>
+</blockquote>
+<blockquote>
+<p>TODO: 10.12.2025 ## C++ - Performance Deep Dive ### Optimizations: -
+Strings get dynamically allocated and tend to be copied around a lot.
+Strings are value types - Optimization Patterns - Precomputation -
+remove computation from the hot part of the program by performing it
 before execution arrives at the hot code – earlier in the program, at
-link time, compile time, or design time</li>
-</ul></li>
-<li>Lazy computation
-<ul>
-<li>Remove computation from code paths by performign the computation
-closer to the point where it is needed</li>
-</ul></li>
-<li>Batching
-<ul>
-<li>perform computation on serveratl items together rather than one item
-at a time</li>
-</ul></li>
-<li>Caching
-<ul>
-<li>Reduce computation by saving and reuisting the result of an
-expenisve computation rather than recomputing them</li>
-</ul></li>
-<li>Specialization
-<ul>
-<li>Reduce computaiton by removeing generality taht is not used</li>
-</ul></li>
-<li>Taking bigger bites
-<ul>
-<li>Reduce computaiton by removing generality that is not used</li>
-</ul></li>
-<li>Taking bigget bites
-<ul>
-<li>Reduce the cost of a repeated operation by acting on bigger groups
-of input at a time</li>
-</ul></li>
-<li>Hinting
-<ul>
-<li>Reduce computation by providing a hint that might improve
-performance</li>
-</ul></li>
-<li>Optimizing the expected path
-<ul>
-<li>Test for inputs or events at run time in decreasing order of
-expected frequency</li>
-</ul></li>
-<li>Hashing</li>
-<li>Double-checking
-<ul>
-<li>Reduce computaiton by performing an inexepensive check, followed if
-necessary by an expensive check</li>
-</ul></li>
-</ul></li>
-<li>Reduce the use of dynamic Variables</li>
-<li>Use a master pointer to hold all dynamically allocated data in a big
-block</li>
-<li>prefer std::async to std::thread</li>
-<li>there should be as many threads as there are physical cores</li>
-<li>try to avoid synchronization
-<ul>
-<li>reduce the scope of critical sections</li>
-<li>limit the number of concurrent threads</li>
-<li>don’t busy wait on a single core system</li>
-<li>don’t wait forever</li>
-</ul></li>
-</ul>
+link time, compile time, or design time - Lazy computation - Remove
+computation from code paths by performign the computation closer to the
+point where it is needed - Batching - perform computation on serveratl
+items together rather than one item at a time - Caching - Reduce
+computation by saving and reuisting the result of an expenisve
+computation rather than recomputing them - Specialization - Reduce
+computaiton by removeing generality taht is not used - Taking bigger
+bites - Reduce computaiton by removing generality that is not used -
+Taking bigget bites - Reduce the cost of a repeated operation by acting
+on bigger groups of input at a time - Hinting - Reduce computation by
+providing a hint that might improve performance - Optimizing the
+expected path - Test for inputs or events at run time in decreasing
+order of expected frequency - Hashing - Double-checking - Reduce
+computaiton by performing an inexepensive check, followed if necessary
+by an expensive check - Reduce the use of dynamic Variables - Use a
+master pointer to hold all dynamically allocated data in a big block -
+prefer std::async to std::thread - there should be as many threads as
+there are physical cores - try to avoid synchronization - reduce the
+scope of critical sections - limit the number of concurrent threads -
+don’t busy wait on a single core system - don’t wait forever</p>
+</blockquote>
 <h3 id="some-things-to-consider-checking-for">Some things to consider
 checking for</h3>
 <ul>
@@ -1683,121 +1471,39 @@ results</li>
 <li>use constexpr and consteval</li>
 <li>never use std::accumulate</li>
 </ul>
-<h2 id="video-branchless-programming">Video: Branchless Programming</h2>
-<ul>
-<li>arithmetic operations on booleans to get rid of branches</li>
-<li>not worth it most of the time</li>
-<li>can increase speed a lot for many conditions</li>
-<li>know when to use it and look at generated assembly</li>
-</ul>
-<h3 id="video-clean-code">Video: Clean Code</h3>
-<ul>
-<li>is faster in the long run</li>
-<li>have personal quality standards</li>
-<li>always use meaningful variable names</li>
-<li>rarely use comments, code should be readable by itself for the most
-part</li>
-<li>single resposibilty (one function/class -&gt; resposible for one
-thing)</li>
-<li>use asserts/tests and logging</li>
-<li>Null-Object/Value pattern can be used to avoid branching (“neutral
-element”: like multiplying with 1, or subtracting 0)</li>
-</ul>
-<h2 id="video-introduction-to-planning">Video: Introduction to
-Planning</h2>
-<h2 id="video-video-game-ai-masterclass">Video: Video Game AI
-Masterclass</h2>
-<ul>
-<li>state machines</li>
-<li>genetic learning (NEAT)</li>
-<li>A*</li>
-<li>GOAP - Goal Oriented Action Planning</li>
-</ul>
-<h2 id="video-cross-platform-applications-and-cross-compilation">Video:
-Cross-Platform Applications and Cross-Compilation</h2>
-<ul>
-<li>Configure CMake for seamless builds accross platforms</li>
-<li>mingw cross compilers</li>
-<li>explore CMake toolset files</li>
-</ul>
-<h2 id="video-checklist-before-you-release">Video: Checklist before you
-Release</h2>
-<ul>
-<li>Coninuous Build Environment
-<ul>
-<li>github</li>
-<li>circle.ai</li>
-<li>gitlab</li>
-<li>jenkins</li>
-</ul></li>
-<li>Check if the code compiles using multiple compilers:
-<ul>
-<li>gcc</li>
-<li>clang</li>
-<li>msvc</li>
-<li>clang-cl</li>
-<li>(Different Compilers can find different Warnings!)</li>
-</ul></li>
-<li>Organized Testing Framework
-<ul>
-<li>doc test</li>
-<li>catch2</li>
-<li>gtest</li>
-<li>boosttest</li>
-</ul></li>
-<li>Test Coverage Analysis</li>
-<li>As much static code analysis as possible
-<ul>
-<li>-Wall -Wextra -Wshaddow -Wconversion -Wpedantic -Werror</li>
-<li>gcc -fanalyzer</li>
-<li>cppcheck</li>
-<li>clang-tidy</li>
-</ul></li>
-<li>Runtime Analysis during Testing
-<ul>
-<li>Address Sanitizer</li>
-<li>Undefined Behavior Sanitizer</li>
-<li>Memory Sanitizer</li>
-<li>Thread Sanitizer</li>
-<li>Dr. Memory</li>
-<li>valgrind</li>
-<li>Debug Checked ierators</li>
-</ul></li>
-<li>Fuzz Testing
-<ul>
-<li>libfuzz</li>
-</ul></li>
-<li>Ship with hardening Enabled
-<ul>
-<li>Control Flow Guard (Windows)</li>
-<li><code>_FORTIFY_SOURCE</code></li>
-<li>Stack Protector</li>
-<li>UBSan
-<ul>
-<li>-fsanitize-minmal-runtime (to use the minimal runtime for a smaller
-attack surface)</li>
-<li>choose options wisely</li>
-</ul></li>
-</ul></li>
-</ul>
-<h2 id="video-versioning---semver">Video: Versioning - Semver</h2>
-<h2 id="video-cpack---package-your-program-for-distribution">Video:
-CPack - Package your Program for distribution</h2>
-<ul>
-<li>build an inisoft installer</li>
-</ul>
-<h2 id="video-how-to-read-the-old-crap">Video: How to read the old
-crap?</h2>
-<p>In this series we have been heavily focused on learning modern C++23,
-but in production you still need to be able to read “C with Classes” and
-know yourself around. This is why we will cover “all the old crap” in
-this video</p>
+<blockquote>
+<p>TODO: 11.12.2025 ## Video Game AI-Programming - state machines -
+genetic learning (NEAT) - A* - GOAP - Goal Oriented Action Planning</p>
+</blockquote>
+<blockquote>
+<p>TODO: 12.12.2025 ## C++ Checklist - Before you Release - Coninuous
+Build Environment - github - circle.ai - gitlab - jenkins - Check if the
+code compiles using multiple compilers: - gcc - clang - msvc - clang-cl
+- (Different Compilers can find different Warnings!) - Organized Testing
+Framework - doc test - catch2 - gtest - boosttest - Test Coverage
+Analysis - As much static code analysis as possible - -Wall -Wextra
+-Wshaddow -Wconversion -Wpedantic -Werror - gcc -fanalyzer - cppcheck -
+clang-tidy - Runtime Analysis during Testing - Address Sanitizer -
+Undefined Behavior Sanitizer - Memory Sanitizer - Thread Sanitizer -
+Dr. Memory - valgrind - Debug Checked ierators - Fuzz Testing - libfuzz
+- Ship with hardening Enabled - Control Flow Guard (Windows) -
+<code>_FORTIFY_SOURCE</code> - Stack Protector - UBSan -
+-fsanitize-minmal-runtime (to use the minimal runtime for a smaller
+attack surface) - choose options wisely</p>
+</blockquote>
+<blockquote>
+<p>TODO: 13.12.2025 ## Code Review &amp; Refactoring - Cube Engine ###
+How to read the old crap? In this series we have been heavily focused on
+learning modern C++23, but in production you still need to be able to
+read “C with Classes” and know yourself around. This is why we will
+cover “all the old crap” in this video</p>
+</blockquote>
 <ul>
 <li>pointers</li>
 <li>malloc / calloc</li>
 <li>unions</li>
 </ul>
-<h2 id="video-bithacks">Video: Bithacks</h2>
+<h4 id="bithacks">Bithacks</h4>
 <ul>
 <li>set 6th bit to 1 :
 <ul>
@@ -1816,191 +1522,26 @@ this video</p>
 <li><code>A = (B &amp; M) | (A &amp; ~M)</code></li>
 </ul></li>
 </ul>
-<h2 id="video-code-review-cube2-sauerbraten">Video: Code Review: “Cube2:
-Sauerbraten”</h2>
+<h4 id="code-review-cube2-sauerbraten">Code Review: “Cube2:
+Sauerbraten”</h4>
 <ul>
 <li>understand a complex legacy C++ code base</li>
 <li>use clang-tidy modernize to see suggestions</li>
 <li>how to approach refactoring</li>
 </ul>
-<h2 id="video-clang-tidy-plugin-development">Video: clang-tidy plugin
-development</h2>
+<h4 id="clang-tidy-plugin-development">clang-tidy plugin
+development</h4>
 <ul>
 <li>clang-query</li>
 <li>AST matchers</li>
 <li>fixit hints</li>
 <li>Transformer/Rewrite Rules</li>
 </ul>
-<h2 id="video-understand-winapi-code">Video: Understand WinAPI Code</h2>
-<h2 id="video-solid---design-principles">Video: SOLID - Design
-Principles</h2>
-<ul>
-<li>Single Responsibility
-<ul>
-<li>a function should only do one thing</li>
-</ul></li>
-<li>Open/Closed
-<ul>
-<li>everything we write should be
-<ul>
-<li>open for extension</li>
-<li>but closed for modification</li>
-</ul></li>
-</ul></li>
-<li>Liskov Substitution
-<ul>
-<li>If S is subtype of T, then objects of type T may be replaced with
-objects of type S</li>
-</ul></li>
-<li>Interface Segregation
-<ul>
-<li>a Subclass that is subscribed to an Interface has to implement
-everything the Interface required properly</li>
-<li>Interfaces might be broken up into smaller interfaces so every
-subscriber makes good use of the required properties</li>
-</ul></li>
-<li>Dependency Inversion
-<ul>
-<li>Implement a “middle man” that abstracts external dependencies away
-from inner code and provides a simple API
-<ul>
-<li>this means the external dependency can be updated or swapped out
-later easily</li>
-<li>internal code does not have to care about how the external
-dependency works</li>
-</ul></li>
-</ul></li>
-</ul>
-<h2 id="video-design-patterns">Video: Design Patterns</h2>
-<ul>
-<li>imply structure not implementation</li>
-<li>Null Object Pattern
-<ul>
-<li>retun an Object with default values instead of null</li>
-</ul></li>
-<li>Builder Pattern
-<ul>
-<li>function used to create hard to construct objects</li>
-</ul></li>
-<li>Singleton Pattern
-<ul>
-<li>Object that only has a single instance</li>
-<li>holds shared resources (like a database connection)</li>
-</ul></li>
-<li>Facade Pattern
-<ul>
-<li>hide complex details behind a facade</li>
-<li>offer a simple and intuitive API</li>
-<li>details can be changed later behind the facade
-<ul>
-<li>the API stays stable</li>
-</ul></li>
-</ul></li>
-<li>Command Pattern
-<ul>
-<li>put functions into their own classes/objects</li>
-<li>each command class has a do and undo method
-<ul>
-<li>commands perfomed can easily be un-done</li>
-</ul></li>
-</ul></li>
-<li>Strategy Pattern
-<ul>
-<li>example implementation with Dependency injection</li>
-</ul></li>
-</ul>
-<h2 id="video-crtp---curiously-recurring-template-pattern">Video: CRTP -
-Curiously Recurring Template Pattern</h2>
-<div class="sourceCode" id="cb32"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> Animal<span class="op">&gt;</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Flyer <span class="op">{</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span><span class="op">:</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>        Flyer<span class="op">()</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>       <span class="op">~</span>Flyer<span class="op">()</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>       <span class="kw">friend</span> Animal<span class="op">;</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span><span class="op">:</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">void</span> fly<span class="op">()</span> <span class="at">const</span> <span class="op">{</span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">static_cast</span><span class="op">&lt;</span>Animal <span class="at">const</span><span class="op">&amp;&gt;(*</span><span class="kw">this</span><span class="op">).</span>fly<span class="op">();</span></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal <span class="op">:</span> <span class="kw">public</span> Flyer<span class="op">&lt;</span>Animal<span class="op">&gt;</span> <span class="op">{</span></span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span><span class="op">:</span></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> fly<span class="op">()</span> <span class="at">const</span> <span class="op">{</span></span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">&quot;this animal custom flying</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
-<h2 id="video-more-template-magic">Video: More Template Magic</h2>
-<ul>
-<li>Default Template parameters:</li>
-</ul>
-<div class="sourceCode" id="cb33"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;type_traits&gt;</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T1<span class="op">,</span> <span class="kw">typename</span> T2<span class="op">,</span> <span class="kw">typename</span> RT <span class="op">=</span> <span class="bu">std::</span>decay_t<span class="op">&lt;</span><span class="kw">decltype</span><span class="op">(</span><span class="kw">true</span> <span class="op">?</span> T1<span class="op">()</span> <span class="op">:</span> T2<span class="op">())&gt;&gt;</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>RT max <span class="op">(</span>T1 a<span class="op">,</span> T2 b<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> b <span class="op">&lt;</span> a <span class="op">?</span> a <span class="op">:</span> b<span class="op">;</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<ul>
-<li>common_type decays to not become a reference type:</li>
-</ul>
-<div class="sourceCode" id="cb34"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;type_traits&gt;</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T1<span class="op">,</span> <span class="kw">typename</span> T2<span class="op">,</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="kw">typename</span> RT <span class="op">=</span> <span class="bu">std::</span>common_type_t<span class="op">&lt;</span>T1<span class="op">,</span>T2<span class="op">&gt;&gt;</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>RT max <span class="op">(</span>T1 a<span class="op">,</span> T2 b<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> b <span class="op">&lt;</span> a <span class="op">?</span> a <span class="op">:</span> b<span class="op">;</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<ul>
-<li>static asserts for readable template errors:</li>
-</ul>
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> C <span class="op">{</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static_assert</span><span class="op">(</span><span class="bu">std::</span>is_default_constructible<span class="op">&lt;</span>T<span class="op">&gt;::</span>value<span class="op">,</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Class C requires default-constructible elements&quot;</span><span class="op">);</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
-<h2 id="video-event-driven-software-architecture">Video: Event Driven
-Software Architecture</h2>
-<ul>
-<li>Event Driven Architecture
-<ul>
-<li>Event
-<ul>
-<li>Something that happens</li>
-<li>Event Notification</li>
-</ul></li>
-<li>Command
-<ul>
-<li>An Order</li>
-<li>Expects Response</li>
-<li>Message</li>
-</ul></li>
-<li>Events and Commands
-<ul>
-<li>Can contain data or just notify something happened</li>
-<li>need to be Immutable</li>
-</ul></li>
-<li>Flow
-<ol type="1">
-<li>Producer: Produces Event</li>
-<li>Broker: Delegates Event</li>
-<li>Consumer: Handles Event</li>
-</ol></li>
-<li>When to use?
-<ul>
-<li>if scalability is more important than performance</li>
-<li>decoupling is important</li>
-<li>redundancy is important</li>
-</ul></li>
-</ul></li>
-</ul>
-<h2 id="video-review-road-ahead">Video: Review &amp; Road Ahead</h2>
-<p>C++ is paradigm agnostic. To Master C++ you need to know and
-understand these, so you can always choose the right tool for the
-job:</p>
+<blockquote>
+<p>TODO: 14.12.2025 ## End of Playlist &amp; Further Learning C++ is
+paradigm agnostic. To Master C++ you need to know and understand these,
+so you can always choose the right tool for the job:</p>
+</blockquote>
 <ul>
 <li>imperative</li>
 <li>functional</li>
