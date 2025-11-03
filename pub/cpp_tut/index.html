@@ -601,17 +601,32 @@ Reference</li>
 <li><strong><code>[this]</code></strong> : Capture from Object</li>
 </ul>
 <h2 id="video-working-with-databases">Video: Working with Databases</h2>
-<iframe src="https://www.youtube.com/watch?v=Y93MSj0tPCQ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe src="https://www.youtube.com/embed/Y93MSj0tPCQ?si=pbFrz63KnfOVG6uu" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <blockquote>
-<p>TODO: 5.11.2025 ## Video: Writing Tests with Catch2 - There should be
-a single command to run tests! - Testing Framworks: - Catch2 - doctest -
-Google Test - Boost.Test - We will use Catch2 for our tests - And add
-tests using CTest / add_test - Guidelines: - if a component is hard to
-test, its not properly designed - If a component is easy to test it is a
-good indication that it is properly designed</p>
+<p>TODO: 5.11.2025</p>
 </blockquote>
+<h2 id="video-writing-tests-with-catch2">Video: Writing Tests with
+Catch2</h2>
 <ul>
+<li>There should be a single command to run tests!
+<ul>
+<li>Testing Framworks:
+<ul>
+<li>Catch2</li>
+<li>doctest</li>
+<li>Google Test</li>
+<li>Boost.Test</li>
+</ul></li>
+<li>We will use Catch2 for our tests</li>
+<li>And add tests using CTest / add_test</li>
+</ul></li>
+<li>Guidelines:
+<ul>
+<li>if a component is hard to test, its not properly designed</li>
+<li>If a component is easy to test it is a good indication that it is
+properly designed</li>
+</ul></li>
 <li>Static Code Analysis:
 <ul>
 <li>clang-tidy</li>
@@ -628,29 +643,49 @@ good indication that it is properly designed</p>
 </ul></li>
 </ul>
 <blockquote>
-<p>TODO: 7.11.2025 ## Video: Debugging Effectively with gdb and lldb -
-<strong>lldb</strong> - <strong>gdb</strong> - <strong>run</strong> :
-run program - <strong>break</strong> : create a breakpoint -
-<strong>list</strong> : print code - <strong>print <variable></strong> :
-inspect the value of a variable - <strong>quit</strong> : exit vim -
-<strong>up/down</strong> : move up/down the callstack - <strong>display
-<variable></strong> : keep track of the value of a variable -
-<strong>undisplay <display_id></strong> : stop keeping track of a value
-- <strong>backtrace</strong> : print callstack - <strong>next</strong> :
-next instruction - <strong>step</strong> : step into next instruction -
-<strong>continue</strong> : continue execution - <strong>finish</strong>
-: execute to the end of current function - <strong>watch
-<variable></strong> : monitor variable for changes - <strong>info
-breakpoints</strong> : list breakpoints - <strong>delete <id></strong> :
-delete a breakpoint - <strong>delete</strong> : delete all breakpoints -
-<strong>start</strong> : the same as setting a break at main and running
-- <strong>Ctrl+X+A</strong> : open the TUI - <strong>Ctrl+L</strong> :
-refresh TUI - <strong>Ctrl+X+2</strong> : goto 2nd window -
-<strong>Ctrl+p</strong> : previous command - <strong>Ctrl+n</strong> :
-next command - <strong>set disassembly-flavor intel</strong> : the
-single most important command! - <strong>call (void)func()</strong> :
-calls the function <code>void func()</code></p>
+<p>TODO: 7.11.2025</p>
 </blockquote>
+<h2 id="video-debugging-effectively-with-gdb-and-lldb">Video: Debugging
+Effectively with gdb and lldb</h2>
+<ul>
+<li><strong>lldb</strong></li>
+<li><strong>gdb</strong>
+<ul>
+<li><strong>run</strong> : run program</li>
+<li><strong>break</strong> : create a breakpoint</li>
+<li><strong>list</strong> : print code</li>
+<li><strong>print <variable></strong> : inspect the value of a
+variable</li>
+<li><strong>quit</strong> : exit vim</li>
+<li><strong>up/down</strong> : move up/down the callstack</li>
+<li><strong>display <variable></strong> : keep track of the value of a
+variable</li>
+<li><strong>undisplay <display_id></strong> : stop keeping track of a
+value</li>
+<li><strong>backtrace</strong> : print callstack</li>
+<li><strong>next</strong> : next instruction</li>
+<li><strong>step</strong> : step into next instruction</li>
+<li><strong>continue</strong> : continue execution</li>
+<li><strong>finish</strong> : execute to the end of current
+function</li>
+<li><strong>watch <variable></strong> : monitor variable for
+changes</li>
+<li><strong>info breakpoints</strong> : list breakpoints</li>
+<li><strong>delete <id></strong> : delete a breakpoint</li>
+<li><strong>delete</strong> : delete all breakpoints</li>
+<li><strong>start</strong> : the same as setting a break at main and
+running</li>
+<li><strong>Ctrl+X+A</strong> : open the TUI</li>
+<li><strong>Ctrl+L</strong> : refresh TUI</li>
+<li><strong>Ctrl+X+2</strong> : goto 2nd window</li>
+<li><strong>Ctrl+p</strong> : previous command</li>
+<li><strong>Ctrl+n</strong> : next command</li>
+<li><strong>set disassembly-flavor intel</strong> : the single most
+important command!</li>
+<li><strong>call (void)func()</strong> : calls the function
+<code>void func()</code></li>
+</ul></li>
+</ul>
 <p>GDB has great extensions. My favourite one is <a
 href="https://github.com/hugsy/gef">GEF</a>. Here are some cool features
 of GEF:</p>
@@ -706,32 +741,66 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#
 <li><p><strong>valgrind</strong></p></li>
 </ul>
 <blockquote>
-<p>TODO: 30.11.2025 ## Video: Finding hidden Features in C++ Programs
-### Code smells (where to look closer) - return std::move(x) -
-const_cast (is often a logic error) - static const → should be:
-constexpr - extern const - raw new/delete → should be: make_unique() -
-using namespace in gloal scope - std::endl in a loop → use instead - for
-loop with index → range based for loop -
-<code>for(const auto&amp; x : y){}</code> - []operator inserts a new
-entry into a std::map - not using const or assertions - not using
-override - raw pointers that own data - switch cases without break that
-are not marked with [[fallthrough]]</p>
+<p>TODO: 30.11.2025</p>
 </blockquote>
+<h2 id="video-finding-hidden-features-in-c-programs">Video: Finding
+hidden Features in C++ Programs</h2>
+<h3 id="code-smells-where-to-look-closer">Code smells (where to look
+closer)</h3>
+<ul>
+<li>return std::move(x)</li>
+<li>const_cast (is often a logic error)</li>
+<li>static const → should be: constexpr</li>
+<li>extern const</li>
+<li>raw new/delete → should be: make_unique()</li>
+<li>using namespace in gloal scope</li>
+<li>std::endl in a loop → use instead</li>
+<li>for loop with index → range based for loop
+<ul>
+<li><code>for(const auto&amp; x : y){}</code></li>
+</ul></li>
+<li>[]operator inserts a new entry into a std::map</li>
+<li>not using const or assertions</li>
+<li>not using override</li>
+<li>raw pointers that own data</li>
+<li>switch cases without break that are not marked with
+[[fallthrough]]</li>
+</ul>
 <blockquote>
-<p>TODO: 9.11.2025 ## Video: Basics of Asyncronouts and Parallel
-Programming - background worker jobs for an UI application -
-std::generate - a function with any of these is a coroutine: - co_await
-: suspends coroutine while waiting for another computation to finish -
-co_yield: returns a value from a coroutine to the caller and suspends
-the coroutine, subsequently calling the coroutine agian continues its
-execution - co_return: returns from a coroutine (normal return is not
-allowed) - async - futures - std::mutex - spin locks - lock_guard -
-semaphores - std::counting_semaphore - std::atomic - atomic_shared_ptr
-for threadsafe shared pointers - never use volatile values - how to
-desing worker threads - every access needs to be protected (with a mutex
-for example) - you can use unique_lock to pass a mutex to a function and
-return it again</p>
+<p>TODO: 9.11.2025</p>
 </blockquote>
+<h2 id="video-basics-of-asyncronouts-and-parallel-programming">Video:
+Basics of Asyncronouts and Parallel Programming</h2>
+<ul>
+<li>background worker jobs for an UI application</li>
+<li>std::generate</li>
+<li>a function with any of these is a coroutine:
+<ul>
+<li>co_await : suspends coroutine while waiting for another computation
+to finish</li>
+<li>co_yield: returns a value from a coroutine to the caller and
+suspends the coroutine, subsequently calling the coroutine agian
+continues its execution</li>
+<li>co_return: returns from a coroutine (normal return is not
+allowed)</li>
+</ul></li>
+<li>async</li>
+<li>futures</li>
+<li>std::mutex</li>
+<li>spin locks</li>
+<li>lock_guard</li>
+<li>semaphores
+<ul>
+<li>std::counting_semaphore</li>
+</ul></li>
+<li>std::atomic</li>
+<li>atomic_shared_ptr for threadsafe shared pointers</li>
+<li>never use volatile values</li>
+<li>how to desing worker threads</li>
+<li>every access needs to be protected (with a mutex for example)</li>
+<li>you can use unique_lock to pass a mutex to a function and return it
+again</li>
+</ul>
 <h3 id="algorithms">Algorithms</h3>
 <ul>
 <li>std::reduce</li>
@@ -748,8 +817,9 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">[]()</span> <span class="op">{</span> <span class="co">/* do something */</span> </span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="op">});</span></span></code></pre></div>
 <blockquote>
-<p>TODO: 11.11.2025 ## Video: Coroutines</p>
+<p>TODO: 11.11.2025</p>
 </blockquote>
+<h2 id="video-coroutines">Video: Coroutines</h2>
 <div class="sourceCode" id="cb16"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;coroutine&gt;</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -795,27 +865,53 @@ coroutine
 <li>could replace callbacks</li>
 </ul>
 <blockquote>
-<p>TODO: 13.11.2025 ## Video: Using CCmake - console equivalent to cmake
-gui to inspect and chance cmake cache variables in a build directory</p>
+<p>TODO: 13.11.2025</p>
 </blockquote>
+<h2 id="video-using-ccmake">Video: Using CCmake</h2>
+<ul>
+<li>console equivalent to cmake gui to inspect and chance cmake cache
+variables in a build directory</li>
+</ul>
 <blockquote>
-<p>TODO: 15.11.2025 ## Video: Top 10 C++ Libraries - GUI -&gt; use FLTK
-or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts -
-Rendering: Magnum graphics - Sound -&gt; use PortAudio | OpenAL for
-Games - Networking -&gt; simple: unix sockets | secure: openssl sockets
-| anonymous: minitor - Math -&gt; glm | eigen - libcurl - for web
-requests (and many more things) - OpenSSL - for cryptography - capstone
-and keystone</p>
+<p>TODO: 15.11.2025</p>
 </blockquote>
+<h2 id="video-top-10-c-libraries">Video: Top 10 C++ Libraries</h2>
+<ul>
+<li>GUI -&gt; use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more
+unusual widgts</li>
+<li>Rendering: Magnum graphics</li>
+<li>Sound -&gt; use PortAudio | OpenAL for Games</li>
+<li>Networking -&gt; simple: unix sockets | secure: openssl sockets |
+anonymous: minitor</li>
+<li>Math -&gt; glm | eigen</li>
+<li>libcurl - for web requests (and many more things)</li>
+<li>OpenSSL - for cryptography</li>
+<li>capstone and keystone</li>
+</ul>
 <blockquote>
-<p>TODO: 17.11.2025 ## Video: Software design in C++ ### Software
-Architecture - The Design choices behind designing a simple game engine
-- Architecture Patterns - layered architecture - event driven
-architecture - microkernel architecture - microservice architecture -
-monolithic architecture - modular monolith - What is an ECS - Gang of
-four book patterns in C++ - Different programming paradigms that C++
-offers</p>
+<p>TODO: 17.11.2025</p>
 </blockquote>
+<h2 id="video-software-design-in-c">Video: Software design in C++</h2>
+<h3
+id="software-architecture---the-design-choices-behind-designing-a-simple-game-engine">Software
+Architecture - The Design choices behind designing a simple game
+engine</h3>
+<ul>
+<li>Architecture Patterns
+<ul>
+<li>layered architecture</li>
+<li>event driven architecture</li>
+<li>microkernel architecture</li>
+<li>microservice architecture</li>
+<li>monolithic architecture
+<ul>
+<li>modular monolith</li>
+</ul></li>
+</ul></li>
+<li>What is an ECS</li>
+<li>Gang of four book patterns in C++</li>
+<li>Different programming paradigms that C++ offers</li>
+</ul>
 <p>You don’t need to implement everything yourself! You can find some
 interesting libraries in <a
 href="https://blog.brianna.town/c-custom-game-engine-libraries">this
@@ -986,17 +1082,29 @@ level</li>
 https://amzn.eu/d/1ZK5vvy</li>
 </ul>
 <blockquote>
-<p>TODO: 19.11.2025 ## Video: Top 40 Tips to write better C++ Code 1)
-always initialize variables 2) best code is the code you never write →
-figure out how to get it done with less code - but don’t try too hard to
-make compact. Rather keep it simple to follow - clear code &gt; optimal
-code 3) you can reuese others code, there is no shame in that (but make
-it your own) - freshmeat.net - but at the beginning: write everything
-yourself and make a lot of mistakes! 4) There often is an easy solution
-- Take your time to find it!</p>
+<p>TODO: 19.11.2025</p>
 </blockquote>
-<ol start="5" type="1">
-<li>Use Value semantics</li>
+<h2 id="video-top-40-tips-to-write-better-c-code">Video: Top 40 Tips to
+write better C++ Code</h2>
+<ol type="1">
+<li><p>always initialize variables</p></li>
+<li><p>best code is the code you never write → figure out how to get it
+done with less code</p>
+<ul>
+<li>but don’t try too hard to make compact. Rather keep it simple to
+follow</li>
+<li>clear code &gt; optimal code</li>
+</ul></li>
+<li><p>you can reuese others code, there is no shame in that (but make
+it your own)</p>
+<ul>
+<li>freshmeat.net</li>
+<li>but at the beginning: write everything yourself and make a lot of
+mistakes!</li>
+</ul></li>
+<li><p>There often is an easy solution - Take your time to find
+it!</p></li>
+<li><p>Use Value semantics</p></li>
 </ol>
 <h3 id="class-with-value-semantics">Class with value semantics</h3>
 <ul>
@@ -1125,9 +1233,10 @@ mode</li>
 </ul></li>
 </ol>
 <blockquote>
-<p>TODO: 23.11.2025 ## Video: Libraries - Writing code that others can
-use</p>
+<p>TODO: 23.11.2025</p>
 </blockquote>
+<h2 id="video-libraries---writing-code-that-others-can-use">Video:
+Libraries - Writing code that others can use</h2>
 <ul>
 <li>cmake config files</li>
 <li>Top Level CMakeLists.txt</li>
@@ -1255,34 +1364,69 @@ used</li>
 </ul></li>
 </ul>
 <blockquote>
-<p>TODO: 25.11.2025 ## Video: Understanding REST - Making Plain Text
-HTTP Requests using a simple TCP client - Theory: - GET - Retrieve a
-Resource - POST - Create a new resource - PUT - Update an existing
-resource entirely - PATCH - Update an existing resouce partially -
-DELETE - Delete a resource - The URI / enpoint should represent the
-resource - egs: /api/users - Status Code: - OK - 200 - Created - 201 -
-No Content - 204 - 400 - Bad requests - 401 - Unauthorized - 403 -
-Forbidden - 404 - Not found - 500 - Internal Server error</p>
+<p>TODO: 25.11.2025</p>
 </blockquote>
+<h2 id="video-understanding-rest">Video: Understanding REST</h2>
+<ul>
+<li>Making Plain Text HTTP Requests using a simple TCP client</li>
+<li>Theory:
+<ul>
+<li>GET - Retrieve a Resource</li>
+<li>POST - Create a new resource</li>
+<li>PUT - Update an existing resource entirely</li>
+<li>PATCH - Update an existing resouce partially</li>
+<li>DELETE - Delete a resource</li>
+<li>The URI / enpoint should represent the resource
+<ul>
+<li>egs: /api/users</li>
+</ul></li>
+<li>Status Code:
+<ul>
+<li>OK - 200</li>
+<li>Created - 201</li>
+<li>No Content - 204</li>
+<li>400 - Bad requests</li>
+<li>401 - Unauthorized</li>
+<li>403 - Forbidden</li>
+<li>404 - Not found</li>
+<li>500 - Internal Server error</li>
+</ul></li>
+</ul></li>
+</ul>
 <blockquote>
-<p>TODO: 27.11.2025 ## Video: Building a simple Networking Library</p>
+<p>TODO: 27.11.2025</p>
 </blockquote>
+<h2 id="video-building-a-simple-networking-library">Video: Building a
+simple Networking Library</h2>
 <blockquote>
-<p>TODO: 1.12.2025 ## Video: Postman-Clone Project</p>
+<p>TODO: 1.12.2025</p>
 </blockquote>
+<h2 id="video-postman-clone-project">Video: Postman-Clone Project</h2>
 <blockquote>
-<p>TODO: 2.12.2025 ## Video: Math Library Project</p>
+<p>TODO: 2.12.2025</p>
 </blockquote>
+<h2 id="video-math-library-project">Video: Math Library Project</h2>
 <blockquote>
-<p>TODO: 3.12.2025 ## Video: Building a custom C2 Framework</p>
+<p>TODO: 3.12.2025</p>
 </blockquote>
+<h2 id="video-building-a-custom-c2-framework">Video: Building a custom
+C2 Framework</h2>
 <blockquote>
-<p>TODO: 4.12.2025 ## Video: Structuring a Core / Game Engine Library
-Project ### Utility Libraries #### Building a logger library - Designing
-the logger - what kind of problems do we want to resolve - how did I get
-here? - logging format - use std::format (explore formatting
-options)</p>
+<p>TODO: 4.12.2025</p>
 </blockquote>
+<h2 id="video-structuring-a-core-game-engine-library-project">Video:
+Structuring a Core / Game Engine Library Project</h2>
+<h3 id="utility-libraries">Utility Libraries</h3>
+<h4 id="building-a-logger-library">Building a logger library</h4>
+<ul>
+<li>Designing the logger
+<ul>
+<li>what kind of problems do we want to resolve</li>
+<li>how did I get here?</li>
+<li>logging format</li>
+</ul></li>
+<li>use std::format (explore formatting options)</li>
+</ul>
 <div class="sourceCode" id="cb27"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;format&gt;</span></span>
@@ -1304,21 +1448,29 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb28-1"><a href="#
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>println<span class="op">(</span><span class="bu">std::</span>stacktrace::current<span class="op">())</span></span>
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
-<p>TODO: 5.12.2025 ## Video: Writing an AI-Library</p>
+<p>TODO: 5.12.2025</p>
 </blockquote>
+<h2 id="video-writing-an-ai-library">Video: Writing an AI-Library</h2>
 <blockquote>
-<p>TODO: 6.12.2025 ## Video: Writing a Crypto Trading Bot using our Core
-Library</p>
+<p>TODO: 6.12.2025</p>
 </blockquote>
+<h2
+id="video-writing-a-crypto-trading-bot-using-our-core-library">Video:
+Writing a Crypto Trading Bot using our Core Library</h2>
 <blockquote>
-<p>TODO: 7.12.2025 ## CPack - Packaging C++ Software for
-Distribution</p>
+<p>TODO: 7.12.2025</p>
 </blockquote>
+<h2 id="cpack---packaging-c-software-for-distribution">CPack - Packaging
+C++ Software for Distribution</h2>
 <blockquote>
-<p>TODO: 8.12.2025 ## Build Web-Frontends in C++ using EMSCRIPTEN - is a
-compiler for c and c++ to WebAssembly - emcc main.cpp -o
-hello_world.html</p>
+<p>TODO: 8.12.2025</p>
 </blockquote>
+<h2 id="build-web-frontends-in-c-using-emscripten">Build Web-Frontends
+in C++ using EMSCRIPTEN</h2>
+<ul>
+<li>is a compiler for c and c++ to WebAssembly</li>
+<li>emcc main.cpp -o hello_world.html</li>
+</ul>
 <div class="sourceCode" id="cb29"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ifdef __EMSCRIPTEN__</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;emscripten.h&gt;</span></span>
@@ -1337,40 +1489,98 @@ class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb30-1"><a hre
 <li>use <code>emcmake</code> instead of <code>cmake</code> to build</li>
 </ul>
 <blockquote>
-<p>TODO: 9.12.2025 ## Utilizing Perf for performance insights - list all
-available hardware events to listen on - <code>perf list</code> - branch
-prediction statistics -
-<code>perf stat -e branches,branch-misses -- &lt;program&gt;</code> -
-what are we bound by (Bottleneck analysis) -
-<code>perf stat --topdown --td-level=2 -- &lt;program&gt;</code></p>
+<p>TODO: 9.12.2025</p>
 </blockquote>
+<h2 id="utilizing-perf-for-performance-insights">Utilizing Perf for
+performance insights</h2>
+<ul>
+<li>list all available hardware events to listen on
+<ul>
+<li><code>perf list</code></li>
+</ul></li>
+<li>branch prediction statistics
+<ul>
+<li><code>perf stat -e branches,branch-misses -- &lt;program&gt;</code></li>
+</ul></li>
+<li>what are we bound by (Bottleneck analysis)
+<ul>
+<li><code>perf stat --topdown --td-level=2 -- &lt;program&gt;</code></li>
+</ul></li>
+</ul>
 <blockquote>
-<p>TODO: 10.12.2025 ## C++ - Performance Deep Dive ### Optimizations: -
-Strings get dynamically allocated and tend to be copied around a lot.
-Strings are value types - Optimization Patterns - Precomputation -
-remove computation from the hot part of the program by performing it
-before execution arrives at the hot code – earlier in the program, at
-link time, compile time, or design time - Lazy computation - Remove
-computation from code paths by performign the computation closer to the
-point where it is needed - Batching - perform computation on serveratl
-items together rather than one item at a time - Caching - Reduce
-computation by saving and reuisting the result of an expenisve
-computation rather than recomputing them - Specialization - Reduce
-computaiton by removeing generality taht is not used - Taking bigger
-bites - Reduce computaiton by removing generality that is not used -
-Taking bigget bites - Reduce the cost of a repeated operation by acting
-on bigger groups of input at a time - Hinting - Reduce computation by
-providing a hint that might improve performance - Optimizing the
-expected path - Test for inputs or events at run time in decreasing
-order of expected frequency - Hashing - Double-checking - Reduce
-computaiton by performing an inexepensive check, followed if necessary
-by an expensive check - Reduce the use of dynamic Variables - Use a
-master pointer to hold all dynamically allocated data in a big block -
-prefer std::async to std::thread - there should be as many threads as
-there are physical cores - try to avoid synchronization - reduce the
-scope of critical sections - limit the number of concurrent threads -
-don’t busy wait on a single core system - don’t wait forever</p>
+<p>TODO: 10.12.2025</p>
 </blockquote>
+<h2 id="c---performance-deep-dive">C++ - Performance Deep Dive</h2>
+<h3 id="optimizations">Optimizations:</h3>
+<ul>
+<li>Strings get dynamically allocated and tend to be copied around a
+lot. Strings are value types</li>
+<li>Optimization Patterns
+<ul>
+<li>Precomputation
+<ul>
+<li>remove computation from the hot part of the program by performing it
+before execution arrives at the hot code – earlier in the program, at
+link time, compile time, or design time</li>
+</ul></li>
+<li>Lazy computation
+<ul>
+<li>Remove computation from code paths by performign the computation
+closer to the point where it is needed</li>
+</ul></li>
+<li>Batching
+<ul>
+<li>perform computation on serveratl items together rather than one item
+at a time</li>
+</ul></li>
+<li>Caching
+<ul>
+<li>Reduce computation by saving and reuisting the result of an
+expenisve computation rather than recomputing them</li>
+</ul></li>
+<li>Specialization
+<ul>
+<li>Reduce computaiton by removeing generality taht is not used</li>
+</ul></li>
+<li>Taking bigger bites
+<ul>
+<li>Reduce computaiton by removing generality that is not used</li>
+</ul></li>
+<li>Taking bigget bites
+<ul>
+<li>Reduce the cost of a repeated operation by acting on bigger groups
+of input at a time</li>
+</ul></li>
+<li>Hinting
+<ul>
+<li>Reduce computation by providing a hint that might improve
+performance</li>
+</ul></li>
+<li>Optimizing the expected path
+<ul>
+<li>Test for inputs or events at run time in decreasing order of
+expected frequency</li>
+</ul></li>
+<li>Hashing</li>
+<li>Double-checking
+<ul>
+<li>Reduce computaiton by performing an inexepensive check, followed if
+necessary by an expensive check</li>
+</ul></li>
+</ul></li>
+<li>Reduce the use of dynamic Variables</li>
+<li>Use a master pointer to hold all dynamically allocated data in a big
+block</li>
+<li>prefer std::async to std::thread</li>
+<li>there should be as many threads as there are physical cores</li>
+<li>try to avoid synchronization
+<ul>
+<li>reduce the scope of critical sections</li>
+<li>limit the number of concurrent threads</li>
+<li>don’t busy wait on a single core system</li>
+<li>don’t wait forever</li>
+</ul></li>
+</ul>
 <h3 id="some-things-to-consider-checking-for">Some things to consider
 checking for</h3>
 <ul>
@@ -1472,32 +1682,88 @@ results</li>
 <li>never use std::accumulate</li>
 </ul>
 <blockquote>
-<p>TODO: 11.12.2025 ## Video Game AI-Programming - state machines -
-genetic learning (NEAT) - A* - GOAP - Goal Oriented Action Planning</p>
+<p>TODO: 11.12.2025</p>
 </blockquote>
+<h2 id="video-game-ai-programming">Video Game AI-Programming</h2>
+<ul>
+<li>state machines</li>
+<li>genetic learning (NEAT)</li>
+<li>A*</li>
+<li>GOAP - Goal Oriented Action Planning</li>
+</ul>
 <blockquote>
-<p>TODO: 12.12.2025 ## C++ Checklist - Before you Release - Coninuous
-Build Environment - github - circle.ai - gitlab - jenkins - Check if the
-code compiles using multiple compilers: - gcc - clang - msvc - clang-cl
-- (Different Compilers can find different Warnings!) - Organized Testing
-Framework - doc test - catch2 - gtest - boosttest - Test Coverage
-Analysis - As much static code analysis as possible - -Wall -Wextra
--Wshaddow -Wconversion -Wpedantic -Werror - gcc -fanalyzer - cppcheck -
-clang-tidy - Runtime Analysis during Testing - Address Sanitizer -
-Undefined Behavior Sanitizer - Memory Sanitizer - Thread Sanitizer -
-Dr. Memory - valgrind - Debug Checked ierators - Fuzz Testing - libfuzz
-- Ship with hardening Enabled - Control Flow Guard (Windows) -
-<code>_FORTIFY_SOURCE</code> - Stack Protector - UBSan -
--fsanitize-minmal-runtime (to use the minimal runtime for a smaller
-attack surface) - choose options wisely</p>
+<p>TODO: 12.12.2025</p>
 </blockquote>
+<h2 id="c-checklist---before-you-release">C++ Checklist - Before you
+Release</h2>
+<ul>
+<li>Coninuous Build Environment
+<ul>
+<li>github</li>
+<li>circle.ai</li>
+<li>gitlab</li>
+<li>jenkins</li>
+</ul></li>
+<li>Check if the code compiles using multiple compilers:
+<ul>
+<li>gcc</li>
+<li>clang</li>
+<li>msvc</li>
+<li>clang-cl</li>
+<li>(Different Compilers can find different Warnings!)</li>
+</ul></li>
+<li>Organized Testing Framework
+<ul>
+<li>doc test</li>
+<li>catch2</li>
+<li>gtest</li>
+<li>boosttest</li>
+</ul></li>
+<li>Test Coverage Analysis</li>
+<li>As much static code analysis as possible
+<ul>
+<li>-Wall -Wextra -Wshaddow -Wconversion -Wpedantic -Werror</li>
+<li>gcc -fanalyzer</li>
+<li>cppcheck</li>
+<li>clang-tidy</li>
+</ul></li>
+<li>Runtime Analysis during Testing
+<ul>
+<li>Address Sanitizer</li>
+<li>Undefined Behavior Sanitizer</li>
+<li>Memory Sanitizer</li>
+<li>Thread Sanitizer</li>
+<li>Dr. Memory</li>
+<li>valgrind</li>
+<li>Debug Checked ierators</li>
+</ul></li>
+<li>Fuzz Testing
+<ul>
+<li>libfuzz</li>
+</ul></li>
+<li>Ship with hardening Enabled
+<ul>
+<li>Control Flow Guard (Windows)</li>
+<li><code>_FORTIFY_SOURCE</code></li>
+<li>Stack Protector</li>
+<li>UBSan
+<ul>
+<li>-fsanitize-minmal-runtime (to use the minimal runtime for a smaller
+attack surface)</li>
+<li>choose options wisely</li>
+</ul></li>
+</ul></li>
+</ul>
 <blockquote>
-<p>TODO: 13.12.2025 ## Code Review &amp; Refactoring - Cube Engine ###
-How to read the old crap? In this series we have been heavily focused on
-learning modern C++23, but in production you still need to be able to
-read “C with Classes” and know yourself around. This is why we will
-cover “all the old crap” in this video</p>
+<p>TODO: 13.12.2025</p>
 </blockquote>
+<h2 id="code-review-refactoring---cube-engine">Code Review &amp;
+Refactoring - Cube Engine</h2>
+<h3 id="how-to-read-the-old-crap">How to read the old crap?</h3>
+<p>In this series we have been heavily focused on learning modern C++23,
+but in production you still need to be able to read “C with Classes” and
+know yourself around. This is why we will cover “all the old crap” in
+this video</p>
 <ul>
 <li>pointers</li>
 <li>malloc / calloc</li>
@@ -1538,10 +1804,13 @@ development</h4>
 <li>Transformer/Rewrite Rules</li>
 </ul>
 <blockquote>
-<p>TODO: 14.12.2025 ## End of Playlist &amp; Further Learning C++ is
-paradigm agnostic. To Master C++ you need to know and understand these,
-so you can always choose the right tool for the job:</p>
+<p>TODO: 14.12.2025</p>
 </blockquote>
+<h2 id="end-of-playlist-further-learning">End of Playlist &amp; Further
+Learning</h2>
+<p>C++ is paradigm agnostic. To Master C++ you need to know and
+understand these, so you can always choose the right tool for the
+job:</p>
 <ul>
 <li>imperative</li>
 <li>functional</li>

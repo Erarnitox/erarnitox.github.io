@@ -532,9 +532,10 @@ auto y = doubleX();
 - **`[this]`** : Capture from Object
 
 ## Video: Working with Databases
-<iframe src="https://www.youtube.com/watch?v=Y93MSj0tPCQ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/Y93MSj0tPCQ?si=pbFrz63KnfOVG6uu" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 > TODO: 5.11.2025
+
 ## Video: Writing Tests with Catch2 
 - There should be a single command to run tests!
     - Testing Framworks:
@@ -561,6 +562,7 @@ auto y = doubleX();
     - LibFuzzer
 
 > TODO: 7.11.2025
+
 ## Video: Debugging Effectively with gdb and lldb
 - **lldb**
 - **gdb**
@@ -641,6 +643,7 @@ Here are some cool features of GEF:
 - **valgrind**
 
 > TODO: 30.11.2025
+
 ## Video: Finding hidden Features in C++ Programs
 ### Code smells (where to look closer)
 - return std::move(x)
@@ -659,6 +662,7 @@ Here are some cool features of GEF:
 - switch cases without break that are not marked with [[fallthrough]]
 
 > TODO: 9.11.2025
+
 ## Video: Basics of Asyncronouts and Parallel Programming
 - background worker jobs for an UI application
 - std::generate
@@ -698,6 +702,7 @@ std::for_each(
 ```
 
 > TODO: 11.11.2025
+
 ## Video: Coroutines
 ```cpp
 #include <coroutine>
@@ -741,10 +746,12 @@ int main() {
 - could replace callbacks
 
 > TODO: 13.11.2025
+
 ## Video: Using CCmake
 - console equivalent to cmake gui to inspect and chance cmake cache variables in a build directory
 
 > TODO: 15.11.2025
+
 ## Video: Top 10 C++ Libraries 
 - GUI -> use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts
 - Rendering: Magnum graphics
@@ -756,6 +763,7 @@ int main() {
 - capstone and keystone
 
 > TODO: 17.11.2025
+
 ## Video: Software design in C++
 ### Software Architecture - The Design choices behind designing a simple game engine
 - Architecture Patterns
@@ -867,6 +875,7 @@ You can find some interesting libraries in [this Article](https://blog.brianna.t
 - More details in this awesome Book by Klaus Iglberger: https://amzn.eu/d/1ZK5vvy
 
 > TODO: 19.11.2025
+
 ## Video: Top 40 Tips to write better C++ Code 
 1) always initialize variables
 2) best code is the code you never write → figure out how to get it done with less code
@@ -973,6 +982,7 @@ assert(a == 100 && b == 200);
         - overhead that is often unwanted
 
 > TODO: 23.11.2025
+
 ## Video: Libraries - Writing code that others can use
 
 - cmake config files
@@ -1099,6 +1109,7 @@ find_dependency(ZLIB REQUIRED)
     - doxygen
 
 > TODO: 25.11.2025
+
 ## Video: Understanding REST
 - Making Plain Text HTTP Requests using a simple TCP client
 - Theory:
@@ -1120,18 +1131,23 @@ find_dependency(ZLIB REQUIRED)
         - 500 - Internal Server error
 
 > TODO: 27.11.2025
+
 ## Video: Building a simple Networking Library
 
 > TODO: 1.12.2025
+
 ## Video: Postman-Clone Project
 
 > TODO: 2.12.2025
+
 ## Video: Math Library Project
 
 > TODO: 3.12.2025
+
 ## Video: Building a custom C2 Framework
 
 > TODO: 4.12.2025
+
 ## Video: Structuring a Core / Game Engine Library Project
 ### Utility Libraries
 #### Building a logger library
@@ -1164,15 +1180,19 @@ void my_func() {
 ```
 
 > TODO: 5.12.2025
+
 ## Video: Writing an AI-Library
 
 > TODO: 6.12.2025
+
 ## Video: Writing a Crypto Trading Bot using our Core Library
 
 > TODO: 7.12.2025
+
 ## CPack - Packaging C++ Software for Distribution
 
 > TODO: 8.12.2025
+
 ## Build Web-Frontends in C++ using EMSCRIPTEN
 - is a compiler for c and c++ to WebAssembly
 - emcc main.cpp -o hello_world.html
@@ -1195,6 +1215,7 @@ endif()
 - use `emcmake` instead of `cmake` to build
 
 > TODO: 9.12.2025
+
 ## Utilizing Perf for performance insights
 - list all available hardware events to listen on
     - `perf list`
@@ -1204,6 +1225,7 @@ endif()
     - `perf stat --topdown --td-level=2 -- <program>`
 
 > TODO: 10.12.2025
+
 ## C++ - Performance Deep Dive
 ### Optimizations:
 - Strings get dynamically allocated and tend to be copied around a lot. Strings are value types
@@ -1305,6 +1327,7 @@ endif()
 - never use std::accumulate
 
 > TODO: 11.12.2025
+
 ## Video Game AI-Programming
 - state machines
 - genetic learning (NEAT)
@@ -1312,6 +1335,7 @@ endif()
 - GOAP - Goal Oriented Action Planning
 
 > TODO: 12.12.2025
+
 ## C++ Checklist - Before you Release
 - Coninuous Build Environment
     - github
@@ -1354,6 +1378,7 @@ endif()
         - choose options wisely
 
 > TODO: 13.12.2025
+
 ## Code Review & Refactoring - Cube Engine
 ### How to read the old crap?
 In this series we have been heavily focused on learning modern C++23,
@@ -1386,6 +1411,7 @@ This is why we will cover "all the old crap" in this video
 - Transformer/Rewrite Rules
 
 > TODO: 14.12.2025
+
 ## End of Playlist & Further Learning
 C++ is paradigm agnostic. To Master C++ you need to know and understand these, so you can always choose the right tool for the job:
 
