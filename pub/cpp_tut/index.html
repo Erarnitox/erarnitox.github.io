@@ -568,6 +568,8 @@ in Modern C++</h3>
 <li>only smart pointers should ever “own” data</li>
 </ul>
 <h2 id="video-lambdas-uncovered">Video: Lambdas Uncovered</h2>
+<iframe src="https://www.youtube.com/embed/-oAIBPxUUEc?si=-P6ejQx3xvKWWOcp" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
 <p>Lambdas are unname function objects that can capture Variables. They
 differ from:</p>
 <ul>
@@ -603,11 +605,10 @@ Reference</li>
 <h2 id="video-working-with-databases">Video: Working with Databases</h2>
 <iframe src="https://www.youtube.com/embed/Y93MSj0tPCQ?si=pbFrz63KnfOVG6uu" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
-<blockquote>
-<p>TODO: 5.11.2025</p>
-</blockquote>
 <h2 id="video-writing-tests-with-catch2">Video: Writing Tests with
 Catch2</h2>
+<iframe src="https://www.youtube.com/embed/KVol2TzP8P0?si=rUnxXi8M1mCKz98t" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
 <ul>
 <li>There should be a single command to run tests!
 <ul>
@@ -627,6 +628,15 @@ Catch2</h2>
 <li>If a component is easy to test it is a good indication that it is
 properly designed</li>
 </ul></li>
+</ul>
+<blockquote>
+<p>TODO: 7.11.2025</p>
+</blockquote>
+<h2 id="video-debugging-effectively-with-gdb-and-lldb">Video: Debugging
+Effectively with gdb and lldb</h2>
+<h3 id="catching-things-automatically-before-manual-debugging">Catching
+things automatically before manual debugging</h3>
+<ul>
 <li>Static Code Analysis:
 <ul>
 <li>clang-tidy</li>
@@ -639,15 +649,10 @@ properly designed</li>
 <li>UBSan</li>
 <li>Thread</li>
 <li>DataFlow</li>
-<li>LibFuzzer</li>
+<li>LibFuzzer ### Debugging</li>
 </ul></li>
-</ul>
-<blockquote>
-<p>TODO: 7.11.2025</p>
-</blockquote>
-<h2 id="video-debugging-effectively-with-gdb-and-lldb">Video: Debugging
-Effectively with gdb and lldb</h2>
-<ul>
+<li>printf-Debugging and Logging</li>
+<li>custom Tooling</li>
 <li><strong>lldb</strong></li>
 <li><strong>gdb</strong>
 <ul>
@@ -741,32 +746,6 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#
 <li><p><strong>valgrind</strong></p></li>
 </ul>
 <blockquote>
-<p>TODO: 30.11.2025</p>
-</blockquote>
-<h2 id="video-finding-hidden-features-in-c-programs">Video: Finding
-hidden Features in C++ Programs</h2>
-<h3 id="code-smells-where-to-look-closer">Code smells (where to look
-closer)</h3>
-<ul>
-<li>return std::move(x)</li>
-<li>const_cast (is often a logic error)</li>
-<li>static const → should be: constexpr</li>
-<li>extern const</li>
-<li>raw new/delete → should be: make_unique()</li>
-<li>using namespace in gloal scope</li>
-<li>std::endl in a loop → use instead</li>
-<li>for loop with index → range based for loop
-<ul>
-<li><code>for(const auto&amp; x : y){}</code></li>
-</ul></li>
-<li>[]operator inserts a new entry into a std::map</li>
-<li>not using const or assertions</li>
-<li>not using override</li>
-<li>raw pointers that own data</li>
-<li>switch cases without break that are not marked with
-[[fallthrough]]</li>
-</ul>
-<blockquote>
 <p>TODO: 9.11.2025</p>
 </blockquote>
 <h2 id="video-basics-of-asyncronouts-and-parallel-programming">Video:
@@ -820,6 +799,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#
 <p>TODO: 11.11.2025</p>
 </blockquote>
 <h2 id="video-coroutines">Video: Coroutines</h2>
+<h3 id="minimal-example">Minimal Example</h3>
 <div class="sourceCode" id="cb16"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;coroutine&gt;</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -851,25 +831,29 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#
 <span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
 <span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> c <span class="op">=</span> myCoroutine<span class="op">();</span></span>
 <span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="notes">Notes</h3>
 <ul>
-<li>coroutines are like functions that can be paused and resumed</li>
-<li>co_yield or co_await pause a coroutine</li>
-<li>co_return ends/exits a coroutine</li>
-<li>no locks needed (the coroutines decides itself when it
-suspends)</li>
-<li>coroutine frame holds the information about the current state of the
-coroutine
+<li><p>coroutines are like functions that can be paused and
+resumed</p></li>
+<li><p>co_yield or co_await pause a coroutine</p></li>
+<li><p>co_return ends/exits a coroutine</p></li>
+<li><p>no locks needed (the coroutines decides itself when it
+suspends)</p></li>
+<li><p>coroutine frame holds the information about the current state of
+the coroutine</p>
 <ul>
 <li>very likely stored on the heap</li>
 </ul></li>
-<li>could replace callbacks</li>
+<li><p>could replace callbacks</p></li>
+<li><p>useful for code that is often waiting and many things happen in
+parallel</p></li>
 </ul>
 <blockquote>
 <p>TODO: 13.11.2025</p>
 </blockquote>
 <h2 id="video-using-ccmake">Video: Using CCmake</h2>
 <ul>
-<li>console equivalent to cmake gui to inspect and chance cmake cache
+<li>console equivalent to cmake gui to inspect and change cmake cache
 variables in a build directory</li>
 </ul>
 <blockquote>
@@ -1804,7 +1788,33 @@ development</h4>
 <li>Transformer/Rewrite Rules</li>
 </ul>
 <blockquote>
-<p>TODO: 14.12.2025</p>
+<p>TODO: 24.12.2025</p>
+</blockquote>
+<h2 id="video-finding-hidden-features-in-c-programs">Video: Finding
+hidden Features in C++ Programs</h2>
+<h3 id="code-smells-where-to-look-closer">Code smells (where to look
+closer)</h3>
+<ul>
+<li>return std::move(x)</li>
+<li>const_cast (is often a logic error)</li>
+<li>static const → should be: constexpr</li>
+<li>extern const</li>
+<li>raw new/delete → should be: make_unique()</li>
+<li>using namespace in gloal scope</li>
+<li>std::endl in a loop → use instead</li>
+<li>for loop with index → range based for loop
+<ul>
+<li><code>for(const auto&amp; x : y){}</code></li>
+</ul></li>
+<li>[]operator inserts a new entry into a std::map</li>
+<li>not using const or assertions</li>
+<li>not using override</li>
+<li>raw pointers that own data</li>
+<li>switch cases without break that are not marked with
+[[fallthrough]]</li>
+</ul>
+<blockquote>
+<p>TODO: 30.12.2025</p>
 </blockquote>
 <h2 id="end-of-playlist-further-learning">End of Playlist &amp; Further
 Learning</h2>

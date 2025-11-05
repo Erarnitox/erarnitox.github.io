@@ -504,6 +504,9 @@ but it is a great read and I did have some "aha!" moments reading it:
 - only smart pointers should ever "own" data
 
 ## Video: Lambdas Uncovered
+
+<iframe src="https://www.youtube.com/embed/-oAIBPxUUEc?si=-P6ejQx3xvKWWOcp" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Lambdas are unname function objects that can capture Variables.
 They differ from:
 
@@ -534,9 +537,10 @@ auto y = doubleX();
 ## Video: Working with Databases
 <iframe src="https://www.youtube.com/embed/Y93MSj0tPCQ?si=pbFrz63KnfOVG6uu" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-> TODO: 5.11.2025
-
 ## Video: Writing Tests with Catch2 
+
+<iframe src="https://www.youtube.com/embed/KVol2TzP8P0?si=rUnxXi8M1mCKz98t" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - There should be a single command to run tests!
     - Testing Framworks:
         - Catch2
@@ -549,6 +553,11 @@ auto y = doubleX();
     - if a component is hard to test, its not properly designed
     - If a component is easy to test it is a good indication that it is properly designed
 
+
+> TODO: 7.11.2025
+
+## Video: Debugging Effectively with gdb and lldb
+### Catching things automatically before manual debugging
 - Static Code Analysis:
     - clang-tidy
     - cppcheck
@@ -560,10 +569,9 @@ auto y = doubleX();
     - Thread
     - DataFlow
     - LibFuzzer
-
-> TODO: 7.11.2025
-
-## Video: Debugging Effectively with gdb and lldb
+### Debugging
+- printf-Debugging and Logging
+- custom Tooling
 - **lldb**
 - **gdb**
     - **run** : run program
@@ -642,24 +650,6 @@ Here are some cool features of GEF:
 - **x64dbg**
 - **valgrind**
 
-> TODO: 30.11.2025
-
-## Video: Finding hidden Features in C++ Programs
-### Code smells (where to look closer)
-- return std::move(x)
-- const_cast (is often a logic error)
-- static const → should be: constexpr
-- extern const
-- raw new/delete → should be: make_unique()
-- using namespace in gloal scope
-- std::endl in a loop → use \n instead
-- for loop with index → range based for loop
-    - `for(const auto& x : y){}`
-- []operator inserts a new entry into a std::map
-- not using const or assertions
-- not using override
-- raw pointers that own data
-- switch cases without break that are not marked with [[fallthrough]]
 
 > TODO: 9.11.2025
 
@@ -704,6 +694,7 @@ std::for_each(
 > TODO: 11.11.2025
 
 ## Video: Coroutines
+### Minimal Example
 ```cpp
 #include <coroutine>
 
@@ -737,6 +728,8 @@ int main() {
 }
 ```
 
+### Notes
+
 - coroutines are like functions that can be paused and resumed
 - co_yield or co_await pause a coroutine
 - co_return ends/exits a coroutine
@@ -745,10 +738,12 @@ int main() {
     - very likely stored on the heap
 - could replace callbacks
 
+- useful for code that is often waiting and many things happen in parallel
+
 > TODO: 13.11.2025
 
 ## Video: Using CCmake
-- console equivalent to cmake gui to inspect and chance cmake cache variables in a build directory
+- console equivalent to cmake gui to inspect and change cmake cache variables in a build directory
 
 > TODO: 15.11.2025
 
@@ -1410,7 +1405,26 @@ This is why we will cover "all the old crap" in this video
 - fixit hints
 - Transformer/Rewrite Rules
 
-> TODO: 14.12.2025
+> TODO: 24.12.2025
+
+## Video: Finding hidden Features in C++ Programs
+### Code smells (where to look closer)
+- return std::move(x)
+- const_cast (is often a logic error)
+- static const → should be: constexpr
+- extern const
+- raw new/delete → should be: make_unique()
+- using namespace in gloal scope
+- std::endl in a loop → use \n instead
+- for loop with index → range based for loop
+    - `for(const auto& x : y){}`
+- []operator inserts a new entry into a std::map
+- not using const or assertions
+- not using override
+- raw pointers that own data
+- switch cases without break that are not marked with [[fallthrough]]
+
+> TODO: 30.12.2025
 
 ## End of Playlist & Further Learning
 C++ is paradigm agnostic. To Master C++ you need to know and understand these, so you can always choose the right tool for the job:
