@@ -553,10 +553,9 @@ auto y = doubleX();
     - if a component is hard to test, its not properly designed
     - If a component is easy to test it is a good indication that it is properly designed
 
-
-> TODO: 7.11.2025
-
 ## Video: Debugging Effectively with gdb and lldb
+<iframe src="https://www.youtube.com/embed/TXO14955gdE?si=5k726RoFDaT-sWC7" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Catching things automatically before manual debugging
 - Static Code Analysis:
     - clang-tidy
@@ -650,10 +649,9 @@ Here are some cool features of GEF:
 - **x64dbg**
 - **valgrind**
 
-
-> TODO: 9.11.2025
-
 ## Video: Basics of Asyncronouts and Parallel Programming
+<iframe src="https://www.youtube.com/embed/h6lOalIjYQE?si=G6SJTOSRHIBQvGaw" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - background worker jobs for an UI application
 - std::generate
 - a function with any of these is a coroutine:
@@ -690,10 +688,9 @@ std::for_each(
     []() { /* do something */ 
 });
 ```
-
-> TODO: 11.11.2025
-
 ## Video: Coroutines
+<iframe src="https://www.youtube.com/embed/cfvHPpjcnuc?si=k3lTRh4yoKOh4PhJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Minimal Example
 ```cpp
 #include <coroutine>
@@ -728,6 +725,8 @@ int main() {
 }
 ```
 
+### 
+
 ### Notes
 
 - coroutines are like functions that can be paused and resumed
@@ -740,14 +739,14 @@ int main() {
 
 - useful for code that is often waiting and many things happen in parallel
 
-> TODO: 13.11.2025
-
 ## Video: Using CCmake
+<iframe src="https://www.youtube.com/embed/EjD2SPuTrOI?si=MhiDheC4WicFs62m" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - console equivalent to cmake gui to inspect and change cmake cache variables in a build directory
 
-> TODO: 15.11.2025
+## Video: Top 30 C++ Libraries 
+<iframe src="https://www.youtube.com/embed/J2vGPrVeXig?si=bqUswd9U2nYNSppG" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Video: Top 10 C++ Libraries 
 - GUI -> use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts
 - Rendering: Magnum graphics
 - Sound -> use PortAudio | OpenAL for Games
@@ -757,226 +756,7 @@ int main() {
 - OpenSSL - for cryptography
 - capstone and keystone
 
-> TODO: 17.11.2025
-
-## Video: Software design in C++
-### Software Architecture - The Design choices behind designing a simple game engine
-- Architecture Patterns
-    - layered architecture
-    - event driven architecture
-    - microkernel architecture
-    - microservice architecture
-    - monolithic architecture
-        - modular monolith
-- What is an ECS
-- Gang of four book patterns in C++
-- Different programming paradigms that C++ offers
-
-You don't need to implement everything yourself!
-You can find some interesting libraries in [this Article](https://blog.brianna.town/c-custom-game-engine-libraries)
-
-## Video: SOLID - Design Principles
-- Single Responsibility
-    - a function should only do one thing
-- Open/Closed
-    - everything we write should be
-        - open for extension
-        - but closed for modification
-- Liskov Substitution
-    - If S is subtype of T, then objects of type T may be replaced with objects of type S
-- Interface Segregation
-    - a Subclass that is subscribed to an Interface has to implement everything the Interface required properly
-    - Interfaces might be broken up into smaller interfaces so every subscriber makes good use of the required properties
-- Dependency Inversion
-    - Implement a "middle man" that abstracts external dependencies away from inner code and provides a simple API
-        - this means the external dependency can be updated or swapped out later easily
-        - internal code does not have to care about how the external dependency works
-
-## Video: Design Patterns
-- imply structure not implementation
-- Null Object Pattern
-    - retun an Object with default values instead of null
-- Builder Pattern
-    - function used to create hard to construct objects
-- Singleton Pattern
-    - Object that only has a single instance
-    - holds shared resources (like a database connection)
-- Facade Pattern
-    - hide complex details behind a facade
-    - offer a simple and intuitive API
-    - details can be changed later behind the facade
-        - the API stays stable
-- Command Pattern
-    - put functions into their own classes/objects
-    - each command class has a do and undo method
-        - commands perfomed can easily be un-done
-- Strategy Pattern
-    - example implementation with Dependency injection
-
-### Software Design Guideline
-- structure code in small single purpose modules
-    - that are reusable
-- design for changes 
-- design for extension
-- design for testability
-- Make Software Design for Humans!
-- Some guidelines to achive that:
-    - Guideline 1: Understand the importance of Software Design
-        - Treat Software design as an essential part of wrting Software
-        - Focus less on C++ language details and more on software design
-        - Avoid unnecessary coupling and dependencies to make software more adaptable to frquent changes 
-        - Understand software design as the art of managing dependencies and abstractions
-        - Consider the boundary between software design and software architecture as fluid
-
-    - Guideline 2: Design for Change
-        - expect changes in software
-        - Design for easy change and make software more adaptable
-        - avoid combining unrelated, orthogonal aspects to prevent coupling
-        - Coupling makes changes harder and more likely
-        - Use Sing Responsibility Principle
-        - Follow the “Don't Repeat Yourself” Principle
-        - Make Changes as they are needed and not prematurely
-            - to allow maintainability, not to adhere to SOLID
-
-    - Guideline 3: Separate Interfaces to Avoid Artificial Coupling
-        - Be aware that coupling also affect interfaces
-        - Adhere to the Interface Segregation Principle to separe concerns in interfaces
-        - ISP is a special case of the SRP
-        - ISP helps for inheritance and also templates
-
-    - Guideline 4: Design for Testability
-        - Tests are the protection layer against accidentally breaking things
-        - Tests are essential!
-        - Separete concerns for the sake of testability
-        - Consider private member functions that need testing to be misplaces
-        - Prefer non-member non-friend functions to member functions
-
-    - Guideline 5: Design for Extension
-        - Favor design that makes it easy to extend code
-        - Adhere to the Open-Close Principle to keep code open for extension but closed for modifications
-        - Design the code additions by means of base classes, templates, functionoverloading or template specialization
-        - Avoid premature abstraction if you are not sure about the next addition
-
-    - Guideline 6: Adhere to the Expected Behaviour of Abstractions
-        - An abstraction represents a set of requirements and expectations
-        - Follow the Liskov Substitution Principle to adhere to the expected behavior of abstactions
-        - Make sure that derived classes adhere to the expected behavior of their base classes
-        - Communicate the expectations of an abstraction
-
-    - Guideline 7: Pay Attentions to the Ownership of Abstractions
-        - low level impementation details should depend on high levle abstractions
-        - Adhere to the Dependency iversion Principle (DIP), and assign abstractions to the high level of an arhitecture
-        - Make sure abstractions are owned by the high level, not by the low level
-- More details in this awesome Book by Klaus Iglberger: https://amzn.eu/d/1ZK5vvy
-
-> TODO: 19.11.2025
-
-## Video: Top 40 Tips to write better C++ Code 
-1) always initialize variables
-2) best code is the code you never write → figure out how to get it done with less code
-    - but don't try too hard to make compact. Rather keep it simple to follow
-    - clear code > optimal code
-3) you can reuese others code, there is no shame in that (but make it your own)
-    - freshmeat.net
-    - but at the beginning: write everything yourself and make a lot of mistakes!
-4) There often is an easy solution - Take your time to find it!
-
-5) Use Value semantics
-
-### Class with value semantics
-- Try to adhere to the Rule of 0 as much as possible!
-    - std::unique_ptr can help to adhere to the Rule of 0 (also offers a custom deleter)
-- remove any empty destructors from the code
-- spaceship operator for comparisons
-
-```cpp
-#include <compare>
-
-struct S {
-	int i;
-	int j;
-	constexpr auto operator<=>(const S&) const = default;
-}
-
-bool compare(S left, S right){
-	return left == right;
-}
-```
-
-- If needed Rule of 5 (for manual resource management)
-
-```cpp
-struct S {
-    S(); // constructor
-    S(const S &); // copy constructor
-    S(S&&); // move constructor
-    S &operator=(const S &); // copy assignment operator
-    S &operator=(S &&); // move assignment operator
-};
-```
-6) never trust user input
-    - never ever use gets()
-7) use assertions
-    - cassert
-    - static_assert
-8) always keep your design extendable
-9) always check for self assignment in assignment operators
-10) make everything const / constexpr by default
-11) Don't copy-paste code! It could probably be a template!
-    - Find duplicate code: https://docs.pmd-code.org/latest/pmd_userdocs_cpd.html
-    - `pmd-cpd` Package in the AUR
-12) ownership model (there should always only be one owner of data)
-13) always use at least: -Wall -Wpedantic -Werror -Wconversion
-14) use smart pointers when you can!
-15) always check for null pointers
-16) always convert explicitly
-17) const everything that is not constexpr
-    - constexpr everything that is known at compile time
-    - consteval everything that MUST be evaluated at compile time
-18) almost always auto?!
-19) everytime you use a loop think: could an STL Algorithm do the same thing?
-    - probably should be replaced with an STL Algorithm
-20) use ìf constexpr(...){...}` more!
-21) use [[nodiscard]]
-22) prefer initialization over assignment
-    - in constructors
-    - emplace_back over push_back
-23) never transfer ownership by/to a raw pointer
-    - use an ownership pointer like unique_ptr
-24) declare a pointer that is not "optional" as not_null
-25) never pass an array as a pointer → use std::array&
-26) use RAII
-    - never a naked new
-    - never a naked delete
-27) unique_pt should be the preferred pointer type
-28) never use const_cast
-29) split multi step functions
-30) be aware of int overflows/underflows
-    - what happens if your application might run for ages, does some counter overflow?
-    - are there rounding errors that accumulate over time?
-31) structured bindings
-
-```cpp
-Point p1{100, 200};
-auto[a,b] = p1;
-assert(a == 100 && b == 200);
-```
-
-32) use cout.setf(ios::unitbuf) to disable cout buffering in debug mode
-33) use stronger types:
-    - `void something(int width, int height)` -> `void something(const Area& area)`
-34) never return raw pointers!
-35) prefer stack over heap memory!
-    - never use "new"
-    - prefer std::array over std::vector
-36) avoid using std::bind and std::function!
-37) Error Handling with std::expected
-38) avoid usig initializer_lists for non trivial types
-    - constructs an initializer_list object
-        - calls the initializer_list constructor
-        - overhead that is often unwanted
-
-> TODO: 23.11.2025
+> TODO: 25.11.2025
 
 ## Video: Libraries - Writing code that others can use
 
@@ -1103,7 +883,7 @@ find_dependency(ZLIB REQUIRED)
 - documentation
     - doxygen
 
-> TODO: 25.11.2025
+> TODO: 26.11.2025
 
 ## Video: Understanding REST
 - Making Plain Text HTTP Requests using a simple TCP client
@@ -1141,7 +921,232 @@ find_dependency(ZLIB REQUIRED)
 
 ## Video: Building a custom C2 Framework
 
-> TODO: 4.12.2025
+> TODO: 
+
+## Video: SOLID - Design Principles
+- Single Responsibility
+    - a function should only do one thing
+- Open/Closed
+    - everything we write should be
+        - open for extension
+        - but closed for modification
+- Liskov Substitution
+    - If S is subtype of T, then objects of type T may be replaced with objects of type S
+- Interface Segregation
+    - a Subclass that is subscribed to an Interface has to implement everything the Interface required properly
+    - Interfaces might be broken up into smaller interfaces so every subscriber makes good use of the required properties
+- Dependency Inversion
+    - Implement a "middle man" that abstracts external dependencies away from inner code and provides a simple API
+        - this means the external dependency can be updated or swapped out later easily
+        - internal code does not have to care about how the external dependency works
+
+> TODO:
+
+## Video: Design Patterns
+- imply structure not implementation
+- Null Object Pattern
+    - retun an Object with default values instead of null
+- Builder Pattern
+    - function used to create hard to construct objects
+- Singleton Pattern
+    - Object that only has a single instance
+    - holds shared resources (like a database connection)
+- Facade Pattern
+    - hide complex details behind a facade
+    - offer a simple and intuitive API
+    - details can be changed later behind the facade
+        - the API stays stable
+- Command Pattern
+    - put functions into their own classes/objects
+    - each command class has a do and undo method
+        - commands perfomed can easily be un-done
+- Strategy Pattern
+    - example implementation with Dependency injection
+
+### Software Design Guideline
+- structure code in small single purpose modules
+    - that are reusable
+- design for changes 
+- design for extension
+- design for testability
+- Make Software Design for Humans!
+- Some guidelines to achive that:
+    - Guideline 1: Understand the importance of Software Design
+        - Treat Software design as an essential part of wrting Software
+        - Focus less on C++ language details and more on software design
+        - Avoid unnecessary coupling and dependencies to make software more adaptable to frquent changes 
+        - Understand software design as the art of managing dependencies and abstractions
+        - Consider the boundary between software design and software architecture as fluid
+
+    - Guideline 2: Design for Change
+        - expect changes in software
+        - Design for easy change and make software more adaptable
+        - avoid combining unrelated, orthogonal aspects to prevent coupling
+        - Coupling makes changes harder and more likely
+        - Use Sing Responsibility Principle
+        - Follow the “Don't Repeat Yourself” Principle
+        - Make Changes as they are needed and not prematurely
+            - to allow maintainability, not to adhere to SOLID
+
+    - Guideline 3: Separate Interfaces to Avoid Artificial Coupling
+        - Be aware that coupling also affect interfaces
+        - Adhere to the Interface Segregation Principle to separe concerns in interfaces
+        - ISP is a special case of the SRP
+        - ISP helps for inheritance and also templates
+
+    - Guideline 4: Design for Testability
+        - Tests are the protection layer against accidentally breaking things
+        - Tests are essential!
+        - Separete concerns for the sake of testability
+        - Consider private member functions that need testing to be misplaces
+        - Prefer non-member non-friend functions to member functions
+
+    - Guideline 5: Design for Extension
+        - Favor design that makes it easy to extend code
+        - Adhere to the Open-Close Principle to keep code open for extension but closed for modifications
+        - Design the code additions by means of base classes, templates, functionoverloading or template specialization
+        - Avoid premature abstraction if you are not sure about the next addition
+
+    - Guideline 6: Adhere to the Expected Behaviour of Abstractions
+        - An abstraction represents a set of requirements and expectations
+        - Follow the Liskov Substitution Principle to adhere to the expected behavior of abstactions
+        - Make sure that derived classes adhere to the expected behavior of their base classes
+        - Communicate the expectations of an abstraction
+
+    - Guideline 7: Pay Attentions to the Ownership of Abstractions
+        - low level impementation details should depend on high levle abstractions
+        - Adhere to the Dependency iversion Principle (DIP), and assign abstractions to the high level of an arhitecture
+        - Make sure abstractions are owned by the high level, not by the low level
+- More details in this awesome Book by Klaus Iglberger: https://amzn.eu/d/1ZK5vvy
+
+> TODO:
+
+## Video: Top 40 Tips to write better C++ Code 
+1) always initialize variables
+2) best code is the code you never write → figure out how to get it done with less code
+    - but don't try too hard to make compact. Rather keep it simple to follow
+    - clear code > optimal code
+3) you can reuese others code, there is no shame in that (but make it your own)
+    - freshmeat.net
+    - but at the beginning: write everything yourself and make a lot of mistakes!
+4) There often is an easy solution - Take your time to find it!
+
+5) Use Value semantics
+
+### Class with value semantics
+- Try to adhere to the Rule of 0 as much as possible!
+    - std::unique_ptr can help to adhere to the Rule of 0 (also offers a custom deleter)
+- remove any empty destructors from the code
+- spaceship operator for comparisons
+
+```cpp
+#include <compare>
+
+struct S {
+	int i;
+	int j;
+	constexpr auto operator<=>(const S&) const = default;
+}
+
+bool compare(S left, S right){
+	return left == right;
+}
+```
+
+- If needed Rule of 5 (for manual resource management)
+
+```cpp
+struct S {
+    S(); // constructor
+    S(const S &); // copy constructor
+    S(S&&); // move constructor
+    S &operator=(const S &); // copy assignment operator
+    S &operator=(S &&); // move assignment operator
+};
+```
+6) never trust user input
+    - never ever use gets()
+7) use assertions
+    - cassert
+    - static_assert
+8) always keep your design extendable
+9) always check for self assignment in assignment operators
+10) make everything const / constexpr by default
+11) Don't copy-paste code! It could probably be a template!
+    - Find duplicate code: https://docs.pmd-code.org/latest/pmd_userdocs_cpd.html
+    - `pmd-cpd` Package in the AUR
+12) ownership model (there should always only be one owner of data)
+13) always use at least: -Wall -Wpedantic -Werror -Wconversion
+14) use smart pointers when you can!
+15) always check for null pointers
+16) always convert explicitly
+17) const everything that is not constexpr
+    - constexpr everything that is known at compile time
+    - consteval everything that MUST be evaluated at compile time
+18) almost always auto?!
+19) everytime you use a loop think: could an STL Algorithm do the same thing?
+    - probably should be replaced with an STL Algorithm
+20) use ìf constexpr(...){...}` more!
+21) use [[nodiscard]]
+22) prefer initialization over assignment
+    - in constructors
+    - emplace_back over push_back
+23) never transfer ownership by/to a raw pointer
+    - use an ownership pointer like unique_ptr
+24) declare a pointer that is not "optional" as not_null
+25) never pass an array as a pointer → use std::array&
+26) use RAII
+    - never a naked new
+    - never a naked delete
+27) unique_pt should be the preferred pointer type
+28) never use const_cast
+29) split multi step functions
+30) be aware of int overflows/underflows
+    - what happens if your application might run for ages, does some counter overflow?
+    - are there rounding errors that accumulate over time?
+31) structured bindings
+
+```cpp
+Point p1{100, 200};
+auto[a,b] = p1;
+assert(a == 100 && b == 200);
+```
+
+32) use cout.setf(ios::unitbuf) to disable cout buffering in debug mode
+33) use stronger types:
+    - `void something(int width, int height)` -> `void something(const Area& area)`
+34) never return raw pointers!
+35) prefer stack over heap memory!
+    - never use "new"
+    - prefer std::array over std::vector
+36) avoid using std::bind and std::function!
+37) Error Handling with std::expected
+38) avoid usig initializer_lists for non trivial types
+    - constructs an initializer_list object
+        - calls the initializer_list constructor
+        - overhead that is often unwanted
+39) `if consteval { ... }` in constexpressions
+40)
+
+> TODO:
+
+## Video: Software design in C++
+### Software Architecture - The Design choices behind designing a modern game engine
+- Architecture Patterns
+    - layered architecture
+    - event driven architecture
+    - microkernel architecture
+    - microservice architecture
+    - monolithic architecture
+        - modular monolith
+- What is an ECS
+- Gang of four book patterns in C++
+- Different programming paradigms that C++ offers
+
+You don't need to implement everything yourself!
+You can find some interesting libraries in [this Article](https://blog.brianna.town/c-custom-game-engine-libraries)
+
+> TODO:
 
 ## Video: Structuring a Core / Game Engine Library Project
 ### Utility Libraries
@@ -1174,19 +1179,34 @@ void my_func() {
 }
 ```
 
-> TODO: 5.12.2025
+## Using Default Parameters
+```cpp
+void Log(std::string_view msg, std::source_location loc = std::source_location::current(), std::stacktrace stack = std::stacktrace::current()) {
+    std::println("[{}:{}] {}\n---STACKTRACE:----\n{}\n",
+        loc.file_name(), loc.line(), 
+        msg, stack
+    );
+}
+```
+
+> TODO:
 
 ## Video: Writing an AI-Library
 
-> TODO: 6.12.2025
+> TODO:
 
 ## Video: Writing a Crypto Trading Bot using our Core Library
+- use the game engines core / job System etc.
+- gRPC based microservices
+- postgresql or mongodb for coin data
+- AI-Library for base strategy
+- "reflex" system that communicates the strategy with smart contracts 
 
-> TODO: 7.12.2025
+> TODO:
 
 ## CPack - Packaging C++ Software for Distribution
 
-> TODO: 8.12.2025
+> TODO:
 
 ## Build Web-Frontends in C++ using EMSCRIPTEN
 - is a compiler for c and c++ to WebAssembly
@@ -1209,7 +1229,7 @@ endif()
 ```
 - use `emcmake` instead of `cmake` to build
 
-> TODO: 9.12.2025
+> TODO:
 
 ## Utilizing Perf for performance insights
 - list all available hardware events to listen on
@@ -1219,7 +1239,7 @@ endif()
 - what are we bound by (Bottleneck analysis)
     - `perf stat --topdown --td-level=2 -- <program>`
 
-> TODO: 10.12.2025
+> TODO:
 
 ## C++ - Performance Deep Dive
 ### Optimizations:
@@ -1321,7 +1341,7 @@ endif()
 - use constexpr and consteval
 - never use std::accumulate
 
-> TODO: 11.12.2025
+> TODO:
 
 ## Video Game AI-Programming
 - state machines
@@ -1329,7 +1349,7 @@ endif()
 - A*
 - GOAP - Goal Oriented Action Planning
 
-> TODO: 12.12.2025
+> TODO:
 
 ## C++ Checklist - Before you Release
 - Coninuous Build Environment
@@ -1372,7 +1392,7 @@ endif()
         - -fsanitize-minmal-runtime (to use the minimal runtime for a smaller attack surface)
         - choose options wisely
 
-> TODO: 13.12.2025
+> TODO:
 
 ## Code Review & Refactoring - Cube Engine
 ### How to read the old crap?
@@ -1405,7 +1425,7 @@ This is why we will cover "all the old crap" in this video
 - fixit hints
 - Transformer/Rewrite Rules
 
-> TODO: 24.12.2025
+> TODO:
 
 ## Video: Finding hidden Features in C++ Programs
 ### Code smells (where to look closer)
@@ -1424,7 +1444,7 @@ This is why we will cover "all the old crap" in this video
 - raw pointers that own data
 - switch cases without break that are not marked with [[fallthrough]]
 
-> TODO: 30.12.2025
+> TODO:
 
 ## End of Playlist & Further Learning
 C++ is paradigm agnostic. To Master C++ you need to know and understand these, so you can always choose the right tool for the job:
