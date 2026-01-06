@@ -40,12 +40,12 @@ In this video I do only introduce to the youtube playlist about modern C++.
 What I love about C++ is that is YOURs (I do also use Arch btw. for the same reason).
 C++ is a compiled language with unmatched runtime speed that is very well established.
 
-<iframe 
-    src="https://www.youtube.com/embed/2O3r5qqjyiY?si=_32WcTyPNHIYDeMZ" 
-    title="YouTube video player" 
-    frameborder="1" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
+<iframe
+    src="https://www.youtube.com/embed/2O3r5qqjyiY?si=_32WcTyPNHIYDeMZ"
+    title="YouTube video player"
+    frameborder="1"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
 </iframe>
 
@@ -55,11 +55,11 @@ In this video I cover the setup required for Windows and Linux
 ### Video: Setup Clang on Windows (for C++ in Visual Studio Code)
 
 <iframe
-    src="https://www.youtube.com/embed/ClpmrxDnqjw?si=A7YbURm2ckFjnzF6" 
-    title="YouTube video player" 
-    frameborder="1" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
+    src="https://www.youtube.com/embed/ClpmrxDnqjw?si=A7YbURm2ckFjnzF6"
+    title="YouTube video player"
+    frameborder="1"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
 </iframe>
 
@@ -87,11 +87,11 @@ If you want to follow along you can get it from here:
 - [Manjaro Website](https://manjaro.org/products/download/x86)
 
 <iframe
-    src="https://www.youtube.com/embed/gWkAiexZGAU?si=_IZxKV-5y0stiXOX" 
-    title="YouTube video player" 
-    frameborder="1" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
+    src="https://www.youtube.com/embed/gWkAiexZGAU?si=_IZxKV-5y0stiXOX"
+    title="YouTube video player"
+    frameborder="1"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
 </iframe>
 
@@ -107,22 +107,22 @@ The visual studio code extensions I installed are:
 ## Video: "Hello World!" using C++23 and CMake
 Please note that the `CMAKE_CXX_STANDARD_REQUIRED` should be set to `ON` (instead of `23`)
 
-<iframe 
-    src="https://www.youtube.com/embed/2m-96nNUjMw?si=P12QgE4xNxpL1vf6" 
-    title="YouTube video player" 
-    frameborder="1" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
+<iframe
+    src="https://www.youtube.com/embed/2m-96nNUjMw?si=P12QgE4xNxpL1vf6"
+    title="YouTube video player"
+    frameborder="1"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
 </iframe>
 
 ## Video: C++ Modules Basics using CMake
 <iframe
-    src="https://www.youtube.com/embed/2m-96nNUjMw?si=Dkm0CXIlYxPykY_R" 
-    title="YouTube video player" 
-    frameborder="1" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
+    src="https://www.youtube.com/embed/2m-96nNUjMw?si=Dkm0CXIlYxPykY_R"
+    title="YouTube video player"
+    frameborder="1"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
 </iframe>
 
@@ -288,7 +288,7 @@ int main(){
 template<typename T>
 T  function(T arg){
 	//implementation
-	return arg;	
+	return arg;
 }
 ```
 
@@ -426,7 +426,7 @@ set(FOO OFF)
 <iframe src="https://www.youtube.com/embed/Go5cAZK1M7Y?si=SEzXkEOI-INbDjwg" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - ChatGPT is fairly good at cmake scripting
-- More about CMake: 
+- More about CMake:
     - [CMake YouTube-Playlist](https://www.youtube.com/watch?v=IZXNsim9TWI&list=PLvcRNX5OiSOoGXtLRTPyb9SNBKsw3Oucg)
 
 
@@ -527,7 +527,7 @@ auto y = doubleX();
 
 ### Capture types
 
-- **`[x]`** : Capture x by **Value** 
+- **`[x]`** : Capture x by **Value**
 - **`[&x]`** : Capture x by **Reference**
 - **`[x=0]`** : Initialize x with 0 and capture it
 - **`[=]`** : Capture the enclosing scope by Value (only what is used in the lambdas body will be in the capture object)
@@ -537,7 +537,7 @@ auto y = doubleX();
 ## Video: Working with Databases
 <iframe src="https://www.youtube.com/embed/Y93MSj0tPCQ?si=pbFrz63KnfOVG6uu" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Video: Writing Tests with Catch2 
+## Video: Writing Tests with Catch2
 
 <iframe src="https://www.youtube.com/embed/KVol2TzP8P0?si=rUnxXi8M1mCKz98t" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -682,10 +682,10 @@ Here are some cool features of GEF:
 
 ```cpp
 std::for_each(
-    std::execution::par_unseq, 
-    std::begin(data), 
-    std::end(data), 
-    []() { /* do something */ 
+    std::execution::par_unseq,
+    std::begin(data),
+    std::end(data),
+    []() { /* do something */
 });
 ```
 ## Video: Coroutines
@@ -700,15 +700,15 @@ struct promise_type{
 	Task get_return_object() {
 		return {};
 	}
-	
+
 	std::suspend_never initial_suspend() {
 		return {};
 	}
-	
+
 	std::suspend_never final_suspend() noexcept {
 		return {};
 	}
-	
+
 	void return_void() {
 	}
 	void unhandled_exception() {
@@ -725,7 +725,7 @@ int main() {
 }
 ```
 
-### 
+###
 
 ### Notes
 
@@ -744,94 +744,29 @@ int main() {
 
 - console equivalent to cmake gui to inspect and change cmake cache variables in a build directory
 
-## Video: Top 30 C++ Libraries 
+## Video: Top 30 C++ Libraries
 <iframe src="https://www.youtube.com/embed/J2vGPrVeXig?si=bqUswd9U2nYNSppG" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - GUI -> use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more unusual widgts
 - Rendering: Magnum graphics
 - Sound -> use PortAudio | OpenAL for Games
-- Networking -> simple: unix sockets | secure:  openssl sockets | anonymous: minitor 
+- Networking -> simple: unix sockets | secure:  openssl sockets | anonymous: minitor
 - Math -> glm | eigen
 - libcurl - for web requests (and many more things)
 - OpenSSL - for cryptography
 - capstone and keystone
 
-> TODO: 25.11.2025
-
 ## Video: Libraries - Writing code that others can use
+<iframe src="https://www.youtube.com/embed/TSCF-tFW8NU?si=fZHRmAGoz6ZjmWfQ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-- cmake config files
 - Top Level CMakeLists.txt
-
-```cmake
-cmake_minimum_required(VERSION 3.30)
-project(MyLib LANGUAGES CXX)
-
-add_library(mylib 
-    "src/library.cpp"
-)
-
-set_target_properties(mylib
-    PROPERTIES 
-    CMAKE_CXX_STANDARD 23
-    CMAKE_CXX_STANDARD_REQUIRED ON
-    CMAKE_CXX_EXTENSIONS OFF
-)
-
-include(GNUInstallDirs)
-
-target_include_directories(mylib
-    PUBLIC
-    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
-    "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
-)
-
-install(TARGETS mylib 
-    EXPORT DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-
-install(FILES "src/library.hpp DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-
-install(EXPORT mylibTargets
-    FILE mylibTargets.cmake
-    NAMESPACE mylib::
-    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/mylib"
-)
-
-include(CMakePackageConfigHelpers)
-
-configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/Config.cmake.in
-    "${CMAKE_CURRENT_BINARY_DIR}/mylibConfig.cmake"
-    INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/mylib"
-)
-
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/mylibConfig.cmake"
-    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/mylib"
-)
-```
-
-- Config.cmake.in
-
-```cmake
-@PACKAGE_INIT@
-
-include("${CMAKE_CURRENT_LIST_DIR}/mylibTargets.cmake")
-
-chack_required_components(mylib)
-
-include(CMakeFindDependencyMacro)
-find_dependency(ZLIB REQUIRED)
-```
+- cmake config files
 
 - CMake Takeaways
     - handle visibility well and in platform independent way.
         - default should always be "hidden"
         - make sure it is also set for "inlined"/template code (usually a different flag)
-        - CMakePresets snippet: 
+        - CMakePresets snippet:
 
         ```cmake
            "CMAKE_CXX_VISIBILITY_PRESET" : "hidden",
@@ -883,16 +818,26 @@ find_dependency(ZLIB REQUIRED)
 - documentation
     - doxygen
 
-> TODO: 26.11.2025
+## Video: Building a custom C2 Framework
+<iframe src="https://www.youtube.com/embed/7qDOVCeM70o?si=GYLOE_fRfyEo7-7-" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Video: Understanding REST
-- Making Plain Text HTTP Requests using a simple TCP client
+### Architecture
+### Understanding REST
+- REST interfaces:
+    - Client-Server
+    - Uniform Interface
+    - Stateless
+    - Cacheable
+    - Layered System
+    - (Code on Demand)
+
 - Theory:
-    - GET - Retrieve a Resource
-    - POST - Create a new resource
-    - PUT - Update an existing resource entirely
+    - GET (Read) - Retrieve a Resource
+    - POST (Create) - Create a new resource
+    - PUT (Update) - Update an existing resource entirely
+    - DELETE (Delete) - Delete a resource
+
     - PATCH - Update an existing resouce partially
-    - DELETE - Delete a resource
     - The URI / enpoint should represent the resource
         - egs: /api/users
     - Status Code:
@@ -905,23 +850,7 @@ find_dependency(ZLIB REQUIRED)
         - 404 - Not found
         - 500 - Internal Server error
 
-> TODO: 27.11.2025
-
-## Video: Building a simple Networking Library
-
-> TODO: 1.12.2025
-
-## Video: Postman-Clone Project
-
-> TODO: 2.12.2025
-
-## Video: Math Library Project
-
-> TODO: 3.12.2025
-
-## Video: Building a custom C2 Framework
-
-> TODO: 
+> TODO:
 
 ## Video: SOLID - Design Principles
 - Single Responsibility
@@ -966,7 +895,7 @@ find_dependency(ZLIB REQUIRED)
 ### Software Design Guideline
 - structure code in small single purpose modules
     - that are reusable
-- design for changes 
+- design for changes
 - design for extension
 - design for testability
 - Make Software Design for Humans!
@@ -974,7 +903,7 @@ find_dependency(ZLIB REQUIRED)
     - Guideline 1: Understand the importance of Software Design
         - Treat Software design as an essential part of wrting Software
         - Focus less on C++ language details and more on software design
-        - Avoid unnecessary coupling and dependencies to make software more adaptable to frquent changes 
+        - Avoid unnecessary coupling and dependencies to make software more adaptable to frquent changes
         - Understand software design as the art of managing dependencies and abstractions
         - Consider the boundary between software design and software architecture as fluid
 
@@ -983,7 +912,7 @@ find_dependency(ZLIB REQUIRED)
         - Design for easy change and make software more adaptable
         - avoid combining unrelated, orthogonal aspects to prevent coupling
         - Coupling makes changes harder and more likely
-        - Use Sing Responsibility Principle
+        - Use Single Responsibility Principle
         - Follow the “Don't Repeat Yourself” Principle
         - Make Changes as they are needed and not prematurely
             - to allow maintainability, not to adhere to SOLID
@@ -991,8 +920,8 @@ find_dependency(ZLIB REQUIRED)
     - Guideline 3: Separate Interfaces to Avoid Artificial Coupling
         - Be aware that coupling also affect interfaces
         - Adhere to the Interface Segregation Principle to separe concerns in interfaces
-        - ISP is a special case of the SRP
-        - ISP helps for inheritance and also templates
+        - LSP is a special case of the SRP
+        - LSP helps for inheritance and also templates
 
     - Guideline 4: Design for Testability
         - Tests are the protection layer against accidentally breaking things
@@ -1021,12 +950,12 @@ find_dependency(ZLIB REQUIRED)
 
 > TODO:
 
-## Video: Top 40 Tips to write better C++ Code 
+## Video: Top 40 Tips to write better C++ Code
 1) always initialize variables
 2) best code is the code you never write → figure out how to get it done with less code
     - but don't try too hard to make compact. Rather keep it simple to follow
     - clear code > optimal code
-3) you can reuese others code, there is no shame in that (but make it your own)
+3) you can re-use others code, there is no shame in that (but make it your own)
     - freshmeat.net
     - but at the beginning: write everything yourself and make a lot of mistakes!
 4) There often is an easy solution - Take your time to find it!
@@ -1098,7 +1027,7 @@ struct S {
 26) use RAII
     - never a naked new
     - never a naked delete
-27) unique_pt should be the preferred pointer type
+27) unique_ptr should be the preferred pointer type
 28) never use const_cast
 29) split multi step functions
 30) be aware of int overflows/underflows
@@ -1120,13 +1049,14 @@ assert(a == 100 && b == 200);
     - never use "new"
     - prefer std::array over std::vector
 36) avoid using std::bind and std::function!
+    - prefer lambdas
 37) Error Handling with std::expected
 38) avoid usig initializer_lists for non trivial types
     - constructs an initializer_list object
         - calls the initializer_list constructor
         - overhead that is often unwanted
 39) `if consteval { ... }` in constexpressions
-40)
+40) always keep learning and actively trying to improve
 
 > TODO:
 
@@ -1146,9 +1076,7 @@ assert(a == 100 && b == 200);
 You don't need to implement everything yourself!
 You can find some interesting libraries in [this Article](https://blog.brianna.town/c-custom-game-engine-libraries)
 
-> TODO:
-
-## Video: Structuring a Core / Game Engine Library Project
+### Structuring a Core / Game Engine Library Project
 ### Utility Libraries
 #### Building a logger library
 - Designing the logger
@@ -1183,7 +1111,7 @@ void my_func() {
 ```cpp
 void Log(std::string_view msg, std::source_location loc = std::source_location::current(), std::stacktrace stack = std::stacktrace::current()) {
     std::println("[{}:{}] {}\n---STACKTRACE:----\n{}\n",
-        loc.file_name(), loc.line(), 
+        loc.file_name(), loc.line(),
         msg, stack
     );
 }
@@ -1197,10 +1125,9 @@ void Log(std::string_view msg, std::source_location loc = std::source_location::
 
 ## Video: Writing a Crypto Trading Bot using our Core Library
 - use the game engines core / job System etc.
-- gRPC based microservices
-- postgresql or mongodb for coin data
+- postgresql for coin data
 - AI-Library for base strategy
-- "reflex" system that communicates the strategy with smart contracts 
+- "reflex" system that communicates the strategy with smart contracts
 
 > TODO:
 
@@ -1254,7 +1181,7 @@ endif()
     - Caching
         - Reduce computation by saving and reuisting the result of an expenisve computation rather than recomputing them
     - Specialization
-        - Reduce computaiton by removeing generality taht is not used
+        - Reduce computaiton by removing generality taht is not used
     - Taking bigger bites
         - Reduce computaiton by removing generality that is not used
     - Taking bigget bites
@@ -1264,7 +1191,7 @@ endif()
     - Optimizing the expected path
         - Test for inputs or events at run time in decreasing order of expected frequency
     - Hashing
-    - Double-checking 
+    - Double-checking
         - Reduce computaiton by performing an inexepensive check, followed if necessary by an expensive check
 - Reduce the use of dynamic Variables
 - Use a master pointer to hold all dynamically allocated data in a big block
@@ -1381,7 +1308,7 @@ endif()
     - Thread Sanitizer
     - Dr. Memory
     - valgrind
-    - Debug Checked ierators
+    - Debug Checked iterators
 - Fuzz Testing
     - libfuzz
 - Ship with hardening Enabled
@@ -1389,7 +1316,7 @@ endif()
     - `_FORTIFY_SOURCE`
     - Stack Protector
     - UBSan
-        - -fsanitize-minmal-runtime (to use the minimal runtime for a smaller attack surface)
+        - -fsanitize-minimal-runtime (to use the minimal runtime for a smaller attack surface)
         - choose options wisely
 
 > TODO:
