@@ -855,6 +855,8 @@ int main() {
 ## Video: SOLID - Design Principles
 - Single Responsibility
     - a function should only do one thing
+    - we want to design components that are self contained: independent and with a single well defined purpose
+    - when components are isolated form one antoehr you know that you can change one without having to worry about the rest
 - Open/Closed
     - everything we write should be
         - open for extension
@@ -1119,18 +1121,6 @@ void Log(std::string_view msg, std::source_location loc = std::source_location::
 
 > TODO:
 
-## Video: Writing an AI-Library
-
-> TODO:
-
-## Video: Writing a Crypto Trading Bot using our Core Library
-- use the game engines core / job System etc.
-- postgresql for coin data
-- AI-Library for base strategy
-- "reflex" system that communicates the strategy with smart contracts
-
-> TODO:
-
 ## CPack - Packaging C++ Software for Distribution
 
 > TODO:
@@ -1165,6 +1155,14 @@ endif()
     - `perf stat -e branches,branch-misses -- <program>`
 - what are we bound by (Bottleneck analysis)
     - `perf stat --topdown --td-level=2 -- <program>`
+    
+> TODO:
+
+## Video Game AI-Programming
+- state machines
+- genetic learning (NEAT)
+- A*
+- GOAP - Goal Oriented Action Planning
 
 > TODO:
 
@@ -1270,14 +1268,6 @@ endif()
 
 > TODO:
 
-## Video Game AI-Programming
-- state machines
-- genetic learning (NEAT)
-- A*
-- GOAP - Goal Oriented Action Planning
-
-> TODO:
-
 ## C++ Checklist - Before you Release
 - Coninuous Build Environment
     - github
@@ -1351,6 +1341,8 @@ This is why we will cover "all the old crap" in this video
 - AST matchers
 - fixit hints
 - Transformer/Rewrite Rules
+
+### Using AI Tools
 
 > TODO:
 

@@ -2,46 +2,46 @@
 <!--
  *  (c) Copyright erarnitox.de - All rights reserved
  *  Author: Erarnitox <david@erarnitox.de>
- *  
+ *
 -->
 <html lang="en-US">
     <head>
-        <title>Erarnitox</title>
-        <meta name="title" content="Erarnitox" />
-
+        <title>Erarnitox — Modern C++ Tutorial</title>
+        <meta name="title" content="Erarnitox — Modern C++ Tutorial" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta property="og:title" content="Erarnitox" />
-        <meta property="og:description" content="" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://erarnitox.de/"/><meta property="og:site_name" content="Erarnitox" />
+        <meta property="og:title" content="Erarnitox — Modern C++ Tutorial" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Erarnitox" />
 
-        <link rel="canonical" href="https://erarnitox.de/"/>
-        <link rel="alternate" type="application/json" href="../index.json" title="Erarnitox" />
+        <link rel="stylesheet" href="../../style.css" />
+        <link rel="stylesheet" href="../../res/pandoc-highlight.css" />
 
-        <link rel="stylesheet" href="/style.css">
-
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png" />
+        <link rel="manifest" href="../../site.webmanifest" />
     </head>
-    <body>
-        <header>
-            <nav>
-                <div class="flex-container-hz">
-                    <a href="/index.html"><img class="logo-img" src="/logo.png" alt="erarnitox logo"></a>
-                    <ul>
-                        <li><a href="/products/">Products</a></li>
-                        <li><a href="/pub/">Publications</a></li>
-                        <li><a href="/art/">Art</a></li>
-                    </ul>
-                </div>
+    <body class="article">
+        <header class="site-header">
+            <nav class="site-nav">
+                <a class="nav-brand" href="../../index.html">
+                    <img class="logo-img" src="../../logo.png" alt="Erarnitox" />
+                </a>
+                <ul>
+                    <li><a href="../../products/">Products</a></li>
+                    <li><a href="../../pub/">Publications</a></li>
+                    <li><a href="../../art/">Art</a></li>
+                    <li><a href="../../index.html#contact">Contact</a></li>
+                </ul>
             </nav>
         </header>
         <main>
-            <h1 id="modern-c-tutorial">Modern C++ Tutorial</h1>
+            <div class="page-shell">
+                <a class="article-back" href="../">← Publications</a>
+                <article class="prose">
+<h1 id="modern-c-tutorial">Modern C++ Tutorial</h1>
 <blockquote>
 <p>Note: This article will be updated regularely. If something is
 missing there is a good chance it will be added soon!</p>
@@ -88,19 +88,23 @@ popcorn and enjoy!</p>
 <p>The C++ Standard Covered in this Tutorial is C++23, which can be
 found <a href="https://wg21.link/std23">here</a></p>
 </blockquote>
-<h2 id="video-learn-modern-c-in-2025-from-scratch">Video: Learn Modern
-C++ in 2025 (from Scratch)</h2>
+<details class="chapter">
+<summary>Video: Learn Modern C++ in 2025 (from Scratch)</summary>
+
 <p>In this video I do only introduce to the youtube playlist about
 modern C++. What I love about C++ is that is YOURs (I do also use Arch
 btw. for the same reason). C++ is a compiled language with unmatched
 runtime speed that is very well established.</p>
-<iframe src="https://www.youtube.com/embed/2O3r5qqjyiY?si=_32WcTyPNHIYDeMZ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/2O3r5qqjyiY?si=_32WcTyPNHIYDeMZ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
-<h2 id="setup">Setup</h2>
+</details>
+<details class="chapter">
+<summary>Setup</summary>
+
 <p>In this video I cover the setup required for Windows and Linux</p>
 <h3 id="video-setup-clang-on-windows-for-c-in-visual-studio-code">Video:
 Setup Clang on Windows (for C++ in Visual Studio Code)</h3>
-<iframe src="https://www.youtube.com/embed/ClpmrxDnqjw?si=A7YbURm2ckFjnzF6" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/ClpmrxDnqjw?si=A7YbURm2ckFjnzF6" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <h4 id="install-cmake">Install CMake</h4>
 <p>Downlaod the installer from the Link below and follow the installers
@@ -123,21 +127,25 @@ Setup Modern C++ Development Environment (on Linux)</h3>
 <p>In this video I use the manjaro (arch based distro) in the Xfce
 edition. If you want to follow along you can get it from here: - <a
 href="https://manjaro.org/products/download/x86">Manjaro Website</a></p>
-<iframe src="https://www.youtube.com/embed/gWkAiexZGAU?si=_IZxKV-5y0stiXOX" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/gWkAiexZGAU?si=_IZxKV-5y0stiXOX" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <p>To install the tools needed provide the command: -
 <code>sudo pacman -Syyu &amp;&amp; sudo pacman -Sy code cmake clang ninja</code></p>
 <p>The visual studio code extensions I installed are: - Clangd - CMake -
 cmake-format - CMake-tools</p>
-<h2 id="video-hello-world-using-c23-and-cmake">Video: “Hello World!”
-using C++23 and CMake</h2>
+</details>
+<details class="chapter">
+<summary>Video: “Hello World!” using C++23 and CMake</summary>
+
 <p>Please note that the <code>CMAKE_CXX_STANDARD_REQUIRED</code> should
 be set to <code>ON</code> (instead of <code>23</code>)</p>
-<iframe src="https://www.youtube.com/embed/2m-96nNUjMw?si=P12QgE4xNxpL1vf6" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/2m-96nNUjMw?si=P12QgE4xNxpL1vf6" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
-<h2 id="video-c-modules-basics-using-cmake">Video: C++ Modules Basics
-using CMake</h2>
-<iframe src="https://www.youtube.com/embed/2m-96nNUjMw?si=Dkm0CXIlYxPykY_R" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: C++ Modules Basics using CMake</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/2m-96nNUjMw?si=Dkm0CXIlYxPykY_R" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>What is CMake?</li>
@@ -233,18 +241,23 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#c
 imports</li>
 </ul></li>
 </ul>
-<h2 id="video-cross-platform-file-management">Video: Cross-Platform File
-Management</h2>
+</details>
+<details class="chapter">
+<summary>Video: Cross-Platform File Management</summary>
+
 <p>C++ is often known to be hard and low level. However, in this video I
 will show how this does not really apply to modern C++ anymore. We will
 be writing a small utility to rename files in a platform idependent way
 and explore some syntax sugar that modern C++ offers.</p>
-<iframe src="https://www.youtube.com/embed/OXdEdhjL7pI?si=cgEFQBuDjwn4fxK1" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/OXdEdhjL7pI?si=cgEFQBuDjwn4fxK1" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
-<h2 id="video-basic-c-syntax">Video: Basic C++ Syntax</h2>
+</details>
+<details class="chapter">
+<summary>Video: Basic C++ Syntax</summary>
+
 <p>After all the theory and setup this video should be a jumpstart for
 you to start practical development.</p>
-<iframe src="https://www.youtube.com/embed/bhSWl6U5k2Q?si=aQnz0iPtphLWaAA_" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/bhSWl6U5k2Q?si=aQnz0iPtphLWaAA_" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <p><strong>Some general Notes and Takeaways:</strong></p>
 <ul>
@@ -269,9 +282,11 @@ auto</li>
 <p>You can also find a good online book that covers all the basic C++
 concepts online here: - <a
 href="https://www.learncpp.com/">LearnCPP</a></p>
-<h2 id="video-demystifying-c-functions-what-is-stdfunction">Video:
-Demystifying C++ Functions (what is std::function?)</h2>
-<iframe src="https://www.youtube.com/embed/6rAonzS7D2M?si=3OyQQQzOdRGRX24S" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Demystifying C++ Functions (what is std::function?)</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/6rAonzS7D2M?si=3OyQQQzOdRGRX24S" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>build a simple application using functions</li>
@@ -285,9 +300,11 @@ a “callable”)</li>
 </ul></li>
 <li>make structs for large parameter lists</li>
 </ul>
-<h2 id="video-modularize-encapsulation">Video: Modularize /
-Encapsulation</h2>
-<iframe src="https://www.youtube.com/embed/srlZ6fe2YHs?si=P_LqptfL8gfvcgTJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Modularize / Encapsulation</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/srlZ6fe2YHs?si=P_LqptfL8gfvcgTJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>classes</li>
@@ -297,9 +314,11 @@ Encapsulation</h2>
 pitfalls)</li>
 <li>Design Guidelines / how to write maintainable code / SOLID</li>
 </ul>
-<h2 id="video-designated-initializers-for-structs-and-classes">Video:
-Designated Initializers (for Structs and Classes):</h2>
-<iframe src="https://www.youtube.com/embed/4cFOtLDz6cs?si=EmdxvL5RBlxqQ8ha" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Designated Initializers (for Structs and Classes):</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/4cFOtLDz6cs?si=EmdxvL5RBlxqQ8ha" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <div class="sourceCode" id="cb5"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> S <span class="op">{</span></span>
@@ -311,10 +330,11 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#c
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(){</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    S s<span class="op">{.</span>i <span class="op">=</span> <span class="dv">2</span><span class="op">,</span> <span class="op">.</span>j <span class="op">=</span> <span class="dv">42</span><span class="op">,</span> <span class="op">.</span>f <span class="op">=</span> <span class="fl">2.34</span><span class="bu">f</span> <span class="op">};</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<h2
-id="video-c-templates-in-action---writing-generic-code-that-rocks">Video:
-C++ Templates in Action - Writing Generic Code that Rocks!</h2>
-<iframe src="https://www.youtube.com/embed/zLRYOWZ5ZPU?si=ApPYqIzHKZCEDams" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: C++ Templates in Action - Writing Generic Code that Rocks!</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/zLRYOWZ5ZPU?si=ApPYqIzHKZCEDams" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <div class="sourceCode" id="cb6"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
@@ -355,12 +375,17 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="#c
 <ul>
 <li>inheritance hirarchy using concepts</li>
 </ul>
-<h2 id="video-working-with-files">Video: Working with Files</h2>
-<iframe src="https://www.youtube.com/embed/zt0EMKtyyLc?si=Abg9i6PfE52AMjTA" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Working with Files</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/zt0EMKtyyLc?si=Abg9i6PfE52AMjTA" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
-<h2 id="video-get-to-know-the-stl-algorithm">Video: Get to know the STL
-&amp; <code>&lt;algorithm&gt;</code></h2>
-<iframe src="https://www.youtube.com/embed/5W8_Yl7gj30?si=4Dhmd9V5wr1qaQLC" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Get to know the STL &amp;amp; &amp;lt;algorithm&amp;gt;</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/5W8_Yl7gj30?si=4Dhmd9V5wr1qaQLC" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>common STL containers</li>
@@ -385,8 +410,11 @@ href="https://en.cppreference.com/w/cpp/algorithm">cppreference.com</a></li>
 <li>a cool Cheat Sheet can be found here on: <a
 href="https://github.com/gibsjose/cpp-cheat-sheet/blob/master/Data%20Structures%20and%20Algorithms.md">Github</a></li>
 </ul>
-<h2 id="video-ranges">Video: Ranges</h2>
-<iframe src="https://www.youtube.com/embed/eOgk5DM0Ndo?si=LIAWBSVBVKJnvHPR" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Ranges</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/eOgk5DM0Ndo?si=LIAWBSVBVKJnvHPR" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>kind of like a begin and end iterator pair</li>
@@ -404,8 +432,11 @@ href="https://github.com/gibsjose/cpp-cheat-sheet/blob/master/Data%20Structures%
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// start iterating over the vec on the 3rd element</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span><span class="at">const</span> <span class="kw">auto</span><span class="op">&amp;</span> val <span class="op">:</span> vec <span class="op">|</span> <span class="bu">std::</span>ranges::views::drop<span class="op">(</span><span class="dv">2</span><span class="op">))</span> <span class="op">{</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<h2 id="video-basic-inheritance">Video: Basic inheritance</h2>
-<iframe src="https://www.youtube.com/embed/naESR6eashs?si=WeKko0FsQeXg8Xfh" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Basic inheritance</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/naESR6eashs?si=WeKko0FsQeXg8Xfh" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>virtual functions</li>
@@ -414,8 +445,11 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="#c
 <li>double linked list can be achived by only storing a next^prev
 pointer in each node</li>
 </ul>
-<h2 id="video-unit-tests-using-ctest">Video: Unit Tests using CTest</h2>
-<iframe src="https://www.youtube.com/embed/ffbKYLqYMEI?si=0AWvJowCGC2J87Sm" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Unit Tests using CTest</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/ffbKYLqYMEI?si=0AWvJowCGC2J87Sm" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>test behavior not implementation</li>
@@ -444,9 +478,11 @@ class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb10-1"><a hre
 <ul>
 <li>run tests with <code>ctest</code> command</li>
 </ul>
-<h2 id="video-cmake-what-you-need-to-know">Video: CMake: what you need
-to know</h2>
-<iframe src="https://www.youtube.com/embed/P62ytT1el_M?si=quNVFic-snGZEJPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: CMake: what you need to know</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/P62ytT1el_M?si=quNVFic-snGZEJPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li><a
@@ -477,7 +513,7 @@ class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb11-1"><a hre
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(FOO <span class="ot">OFF</span>)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># sets foo to OFF for processing this CMakeLists file</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># and subdirectories; the value in the cache stays ON</span></span></code></pre></div>
-<iframe src="https://www.youtube.com/embed/Go5cAZK1M7Y?si=SEzXkEOI-INbDjwg" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/Go5cAZK1M7Y?si=SEzXkEOI-INbDjwg" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>ChatGPT is fairly good at cmake scripting</li>
@@ -488,17 +524,21 @@ href="https://www.youtube.com/watch?v=IZXNsim9TWI&amp;list=PLvcRNX5OiSOoGXtLRTPy
 YouTube-Playlist</a></li>
 </ul></li>
 </ul>
-<h2 id="video-using-third-party-libraries">Video: Using third party
-libraries</h2>
-<iframe src="https://www.youtube.com/embed/_a0d99bGqXQ?si=OG8dIbxEY8llROkT" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Using third party libraries</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/_a0d99bGqXQ?si=OG8dIbxEY8llROkT" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>CPM.cmake as a package manager</li>
 <li>use SDL3 and ImGUI to build a simple GUI-Application</li>
 </ul>
-<h2 id="video-github---version-control-and-cicd">Video: GitHub - Version
-Control and CI/CD</h2>
-<iframe src="https://www.youtube.com/embed/XZDO7uaO-lQ?si=6pTjzBKa1txM_Pku" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: GitHub - Version Control and CI/CD</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/XZDO7uaO-lQ?si=6pTjzBKa1txM_Pku" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>what is git</li>
@@ -507,16 +547,20 @@ Control and CI/CD</h2>
 <li>github actions</li>
 <li>deployment to a discord webhook</li>
 </ul>
-<iframe src="https://www.youtube.com/embed/rf-IZviehuI?si=tbmKHPLbBNi1gv_B" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/rf-IZviehuI?si=tbmKHPLbBNi1gv_B" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
-<h2 id="optional-use-nvim-as-your-personal-ide">(Optional) Use NVim as
-your personal IDE</h2>
-<iframe src="https://www.youtube.com/embed/JuUaqBrVnZs?si=q5Zy2HBwEu7v5TvA" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>(Optional) Use NVim as your personal IDE</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/JuUaqBrVnZs?si=q5Zy2HBwEu7v5TvA" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
-<h2 id="video-memory-management-in-modern-c">Video: Memory Management in
-Modern C++</h2>
+</details>
+<details class="chapter">
+<summary>Video: Memory Management in Modern C++</summary>
+
 <h3 id="object-lifetimes">Object Lifetimes</h3>
-<iframe src="https://www.youtube.com/embed/7GlW9FwUewc?si=MUGSaA9E0GgPaX4C" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/7GlW9FwUewc?si=MUGSaA9E0GgPaX4C" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <div class="sourceCode" id="cb12"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Lifetime <span class="op">{</span></span>
@@ -558,7 +602,7 @@ manage memory?</li>
 </ul>
 <h3 id="video-memory-management-in-modern-c-1">Video: Memory Management
 in Modern C++</h3>
-<iframe src="https://www.youtube.com/embed/qRsspo5C1ng?si=C77tubhmWoJEroGJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe loading="lazy" src="https://www.youtube.com/embed/qRsspo5C1ng?si=C77tubhmWoJEroGJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>std::unique_ptr, std::make_unique</li>
@@ -567,8 +611,11 @@ in Modern C++</h3>
 <li>std::weak_ptr</li>
 <li>only smart pointers should ever “own” data</li>
 </ul>
-<h2 id="video-lambdas-uncovered">Video: Lambdas Uncovered</h2>
-<iframe src="https://www.youtube.com/embed/-oAIBPxUUEc?si=-P6ejQx3xvKWWOcp" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Lambdas Uncovered</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/-oAIBPxUUEc?si=-P6ejQx3xvKWWOcp" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <p>Lambdas are unname function objects that can capture Variables. They
 differ from:</p>
@@ -602,12 +649,17 @@ object)</li>
 Reference</li>
 <li><strong><code>[this]</code></strong> : Capture from Object</li>
 </ul>
-<h2 id="video-working-with-databases">Video: Working with Databases</h2>
-<iframe src="https://www.youtube.com/embed/Y93MSj0tPCQ?si=pbFrz63KnfOVG6uu" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Working with Databases</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/Y93MSj0tPCQ?si=pbFrz63KnfOVG6uu" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
-<h2 id="video-writing-tests-with-catch2">Video: Writing Tests with
-Catch2</h2>
-<iframe src="https://www.youtube.com/embed/KVol2TzP8P0?si=rUnxXi8M1mCKz98t" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Writing Tests with Catch2</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/KVol2TzP8P0?si=rUnxXi8M1mCKz98t" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>There should be a single command to run tests!
@@ -629,9 +681,11 @@ Catch2</h2>
 properly designed</li>
 </ul></li>
 </ul>
-<h2 id="video-debugging-effectively-with-gdb-and-lldb">Video: Debugging
-Effectively with gdb and lldb</h2>
-<iframe src="https://www.youtube.com/embed/TXO14955gdE?si=5k726RoFDaT-sWC7" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Debugging Effectively with gdb and lldb</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/TXO14955gdE?si=5k726RoFDaT-sWC7" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <h3 id="catching-things-automatically-before-manual-debugging">Catching
 things automatically before manual debugging</h3>
@@ -744,9 +798,11 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#
 <li><p><strong>x64dbg</strong></p></li>
 <li><p><strong>valgrind</strong></p></li>
 </ul>
-<h2 id="video-basics-of-asyncronouts-and-parallel-programming">Video:
-Basics of Asyncronouts and Parallel Programming</h2>
-<iframe src="https://www.youtube.com/embed/h6lOalIjYQE?si=G6SJTOSRHIBQvGaw" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Basics of Asyncronouts and Parallel Programming</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/h6lOalIjYQE?si=G6SJTOSRHIBQvGaw" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>background worker jobs for an UI application</li>
@@ -793,8 +849,11 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>end<span class="op">(</span>data<span class="op">),</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">[]()</span> <span class="op">{</span> <span class="co">/* do something */</span></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="op">});</span></span></code></pre></div>
-<h2 id="video-coroutines">Video: Coroutines</h2>
-<iframe src="https://www.youtube.com/embed/cfvHPpjcnuc?si=k3lTRh4yoKOh4PhJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Coroutines</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/cfvHPpjcnuc?si=k3lTRh4yoKOh4PhJ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <h3 id="minimal-example">Minimal Example</h3>
 <div class="sourceCode" id="cb16"><pre
@@ -846,15 +905,21 @@ the coroutine</p>
 <li><p>useful for code that is often waiting and many things happen in
 parallel</p></li>
 </ul>
-<h2 id="video-using-ccmake">Video: Using CCmake</h2>
-<iframe src="https://www.youtube.com/embed/EjD2SPuTrOI?si=MhiDheC4WicFs62m" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Using CCmake</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/EjD2SPuTrOI?si=MhiDheC4WicFs62m" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>console equivalent to cmake gui to inspect and change cmake cache
 variables in a build directory</li>
 </ul>
-<h2 id="video-top-30-c-libraries">Video: Top 30 C++ Libraries</h2>
-<iframe src="https://www.youtube.com/embed/J2vGPrVeXig?si=bqUswd9U2nYNSppG" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Top 30 C++ Libraries</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/J2vGPrVeXig?si=bqUswd9U2nYNSppG" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li>GUI -&gt; use FLTK or SDL3 (+OpenGL) | wxWidgets, if you need more
@@ -868,9 +933,11 @@ anonymous: minitor</li>
 <li>OpenSSL - for cryptography</li>
 <li>capstone and keystone</li>
 </ul>
-<h2 id="video-libraries---writing-code-that-others-can-use">Video:
-Libraries - Writing code that others can use</h2>
-<iframe src="https://www.youtube.com/embed/TSCF-tFW8NU?si=fZHRmAGoz6ZjmWfQ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Libraries - Writing code that others can use</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/TSCF-tFW8NU?si=fZHRmAGoz6ZjmWfQ" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <ul>
 <li><p>Top Level CMakeLists.txt</p></li>
@@ -935,9 +1002,11 @@ used</li>
 <li>doxygen</li>
 </ul></li>
 </ul>
-<h2 id="video-building-a-custom-c2-framework">Video: Building a custom
-C2 Framework</h2>
-<iframe src="https://www.youtube.com/embed/7qDOVCeM70o?si=GYLOE_fRfyEo7-7-" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</details>
+<details class="chapter">
+<summary>Video: Building a custom C2 Framework</summary>
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/7qDOVCeM70o?si=GYLOE_fRfyEo7-7-" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 <h3 id="architecture">Architecture</h3>
 <h3 id="understanding-rest">Understanding REST</h3>
@@ -978,12 +1047,18 @@ C2 Framework</h2>
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="video-solid---design-principles">Video: SOLID - Design
-Principles</h2>
+</details>
+<details class="chapter">
+<summary>Video: SOLID - Design Principles</summary>
+
 <ul>
 <li>Single Responsibility
 <ul>
 <li>a function should only do one thing</li>
+<li>we want to design components that are self contained: independent
+and with a single well defined purpose</li>
+<li>when components are isolated form one antoehr you know that you can
+change one without having to worry about the rest</li>
 </ul></li>
 <li>Open/Closed
 <ul>
@@ -1020,7 +1095,10 @@ dependency works</li>
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="video-design-patterns">Video: Design Patterns</h2>
+</details>
+<details class="chapter">
+<summary>Video: Design Patterns</summary>
+
 <ul>
 <li>imply structure not implementation</li>
 <li>Null Object Pattern
@@ -1149,8 +1227,10 @@ https://amzn.eu/d/1ZK5vvy</li>
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="video-top-40-tips-to-write-better-c-code">Video: Top 40 Tips to
-write better C++ Code</h2>
+</details>
+<details class="chapter">
+<summary>Video: Top 40 Tips to write better C++ Code</summary>
+
 <ol type="1">
 <li><p>always initialize variables</p></li>
 <li><p>best code is the code you never write → figure out how to get it
@@ -1305,7 +1385,10 @@ mode</li>
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="video-software-design-in-c">Video: Software design in C++</h2>
+</details>
+<details class="chapter">
+<summary>Video: Software design in C++</summary>
+
 <h3
 id="software-architecture---the-design-choices-behind-designing-a-modern-game-engine">Software
 Architecture - The Design choices behind designing a modern game
@@ -1363,7 +1446,10 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb26-1"><a href="#
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> my_func<span class="op">()</span> <span class="op">{</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>println<span class="op">(</span><span class="bu">std::</span>stacktrace::current<span class="op">())</span></span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<h2 id="using-default-parameters">Using Default Parameters</h2>
+</details>
+<details class="chapter">
+<summary>Using Default Parameters</summary>
+
 <div class="sourceCode" id="cb27"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Log<span class="op">(</span><span class="bu">std::</span>string_view msg<span class="op">,</span> <span class="bu">std::</span>source_location loc <span class="op">=</span> <span class="bu">std::</span>source_location::current<span class="op">(),</span> <span class="bu">std::</span>stacktrace stack <span class="op">=</span> <span class="bu">std::</span>stacktrace::current<span class="op">())</span> <span class="op">{</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>println<span class="op">(</span><span class="st">&quot;[</span><span class="sc">{}</span><span class="st">:</span><span class="sc">{}</span><span class="st">] </span><span class="sc">{}\n</span><span class="st">---STACKTRACE:----</span><span class="sc">\n{}\n</span><span class="st">&quot;</span><span class="op">,</span></span>
@@ -1374,30 +1460,17 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb27-1"><a href="#
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="video-writing-an-ai-library">Video: Writing an AI-Library</h2>
+</details>
+<details class="chapter">
+<summary>CPack - Packaging C++ Software for Distribution</summary>
+
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2
-id="video-writing-a-crypto-trading-bot-using-our-core-library">Video:
-Writing a Crypto Trading Bot using our Core Library</h2>
-<ul>
-<li>use the game engines core / job System etc.</li>
-<li>postgresql for coin data</li>
-<li>AI-Library for base strategy</li>
-<li>“reflex” system that communicates the strategy with smart
-contracts</li>
-</ul>
-<blockquote>
-<p>TODO:</p>
-</blockquote>
-<h2 id="cpack---packaging-c-software-for-distribution">CPack - Packaging
-C++ Software for Distribution</h2>
-<blockquote>
-<p>TODO:</p>
-</blockquote>
-<h2 id="build-web-frontends-in-c-using-emscripten">Build Web-Frontends
-in C++ using EMSCRIPTEN</h2>
+</details>
+<details class="chapter">
+<summary>Build Web-Frontends in C++ using EMSCRIPTEN</summary>
+
 <ul>
 <li>is a compiler for c and c++ to WebAssembly</li>
 <li>emcc main.cpp -o hello_world.html</li>
@@ -1422,8 +1495,10 @@ class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb29-1"><a hre
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="utilizing-perf-for-performance-insights">Utilizing Perf for
-performance insights</h2>
+</details>
+<details class="chapter">
+<summary>Utilizing Perf for performance insights</summary>
+
 <ul>
 <li>list all available hardware events to listen on
 <ul>
@@ -1441,7 +1516,23 @@ performance insights</h2>
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="c---performance-deep-dive">C++ - Performance Deep Dive</h2>
+</details>
+<details class="chapter">
+<summary>Video Game AI-Programming</summary>
+
+<ul>
+<li>state machines</li>
+<li>genetic learning (NEAT)</li>
+<li>A*</li>
+<li>GOAP - Goal Oriented Action Planning</li>
+</ul>
+<blockquote>
+<p>TODO:</p>
+</blockquote>
+</details>
+<details class="chapter">
+<summary>C++ - Performance Deep Dive</summary>
+
 <h3 id="optimizations">Optimizations:</h3>
 <ul>
 <li>Strings get dynamically allocated and tend to be copied around a
@@ -1615,18 +1706,10 @@ results</li>
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="video-game-ai-programming">Video Game AI-Programming</h2>
-<ul>
-<li>state machines</li>
-<li>genetic learning (NEAT)</li>
-<li>A*</li>
-<li>GOAP - Goal Oriented Action Planning</li>
-</ul>
-<blockquote>
-<p>TODO:</p>
-</blockquote>
-<h2 id="c-checklist---before-you-release">C++ Checklist - Before you
-Release</h2>
+</details>
+<details class="chapter">
+<summary>C++ Checklist - Before you Release</summary>
+
 <ul>
 <li>Coninuous Build Environment
 <ul>
@@ -1688,8 +1771,10 @@ attack surface)</li>
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="code-review-refactoring---cube-engine">Code Review &amp;
-Refactoring - Cube Engine</h2>
+</details>
+<details class="chapter">
+<summary>Code Review &amp;amp; Refactoring - Cube Engine</summary>
+
 <h3 id="how-to-read-the-old-crap">How to read the old crap?</h3>
 <p>In this series we have been heavily focused on learning modern C++23,
 but in production you still need to be able to read “C with Classes” and
@@ -1734,11 +1819,14 @@ development</h4>
 <li>fixit hints</li>
 <li>Transformer/Rewrite Rules</li>
 </ul>
+<h3 id="using-ai-tools">Using AI Tools</h3>
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="video-finding-hidden-features-in-c-programs">Video: Finding
-hidden Features in C++ Programs</h2>
+</details>
+<details class="chapter">
+<summary>Video: Finding hidden Features in C++ Programs</summary>
+
 <h3 id="code-smells-where-to-look-closer">Code smells (where to look
 closer)</h3>
 <ul>
@@ -1763,8 +1851,10 @@ closer)</h3>
 <blockquote>
 <p>TODO:</p>
 </blockquote>
-<h2 id="end-of-playlist-further-learning">End of Playlist &amp; Further
-Learning</h2>
+</details>
+<details class="chapter">
+<summary>End of Playlist &amp;amp; Further Learning</summary>
+
 <p>C++ is paradigm agnostic. To Master C++ you need to know and
 understand these, so you can always choose the right tool for the
 job:</p>
@@ -1781,12 +1871,16 @@ job:</p>
 href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">Core
 Guidelines</a></p>
 <p>Stay up to date on isocpp.org</p>
+</details>
+
+                </article>
+            </div>
         </main>
-        <footer id="home-footer">
+        <footer class="site-footer">
             <ul>
-                <li><a href="/legal/">Impressum</a></li>
+                <li><a href="../../legal/">Impressum</a></li>
             </ul>
-            <small>© 2025 Erarnitox</small> 
+            <small>© 2026 Erarnitox</small>
         </footer>
     </body>
 </html>

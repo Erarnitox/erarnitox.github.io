@@ -6,59 +6,76 @@
 -->
 <html lang="en-US">
     <head>
-        <title>Erarnitox</title>
-        <meta name="title" content="Erarnitox" />
+        <title>Erarnitox — Publications</title>
+        <meta name="title" content="Erarnitox — Publications" />
+        <meta name="description" content="Tutorials, writing, and project notes by David Partsch (Erarnitox)." />
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta property="og:title" content="Erarnitox" />
-        <meta property="og:description" content="" />
+        <meta property="og:title" content="Erarnitox — Publications" />
+        <meta property="og:description" content="Tutorials, writing, and project notes by David Partsch (Erarnitox)." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://erarnitox.de/" /><meta property="og:site_name" content="Erarnitox" />
+        <meta property="og:url" content="https://erarnitox.de/pub/" />
+        <meta property="og:site_name" content="Erarnitox" />
 
-        <link rel="canonical" href="https://erarnitox.de/" />
-        <link rel="alternate" type="application/json" href="../index.json" title="Erarnitox" />
-
-        <link rel="stylesheet" href="../style.css">
-        <!--<script src="../login.js"></script>-->
+        <link rel="canonical" href="https://erarnitox.de/pub/" />
+        <link rel="stylesheet" href="../style.css" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
         <link rel="manifest" href="../site.webmanifest" />
     </head>
-    <body>
-        <header>
-            <nav>
-                <div class="flex-container-hz">
-                    <a href="/index.html"><img class="logo-img" src="../logo.png" alt="erarnitox logo"></a>
-                    <ul>
-                        <li><a href="/products/">Products</a></li>
-                        <li><a href="/pub/">Publications</a></li>
-                        <li><a href="/art/">Art</a></li>
-                    </ul>
-                    <!--<a href="/login" class="button" id="login-btn">Login</a>-->
-                </div>
+    <body class="page">
+        <header class="site-header">
+            <nav class="site-nav">
+                <a class="nav-brand" href="../index.html">
+                    <img class="logo-img" src="../logo.png" alt="Erarnitox" />
+                </a>
+                <ul>
+                    <li><a href="../products/">Products</a></li>
+                    <li><a href="../pub/">Publications</a></li>
+                    <li><a href="../art/">Art</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
             </nav>
         </header>
+
         <main>
-            <h1>Publications:</h1>
-            <div class="pub-container">
-                <!--generated code:-->
-
-
-<!--<div class="pub-item"><img class="pub-image" src="/res/book.png" alt="image"><div><h2 class="pub-heading">Test Publication</h2><p class="pub-description">2024-12-02 23:25:36</p><a href="././test" class="pub-button">Read</a></div></div>-->
-<div class="pub-item"><img class="pub-image" src="/res/book.png" alt="image"><div><h2 class="pub-heading">Modern C++ Tutorial</h2><p class="pub-description">2025-01-05 23:08:11</p><a href="././cpp_tut" class="pub-button">Read</a></div></div>
-<div class="pub-item"><img class="pub-image" src="/res/book.png" alt="image"><div><h2 class="pub-heading">Support Me</h2><p class="pub-description">2025-01-22 22:23:30</p><a href="././thanks" class="pub-button">Read</a></div></div>
-<div class="pub-item"><img class="pub-image" src="/res/book.png" alt="image"><div><h2 class="pub-heading">PlanB - The Making of an Indie FPS</h2><p class="pub-description">2025-09-07 10:02:00</p><a href="././planb" class="pub-button">Read</a></div></div>
-                <!--ends here-->
-                <!--
-                <div class="pub-item"><img class="pub-image" src="/res/bg.png" alt="image"><div><h2 class="pub-heading">$HTML_TITLE</h2><p class="pub-description">$HTML_DESC</p><a href="./$HTML_DIR" class="pub-button">Read</a></div></div>
-                -->
+            <div class="page-shell">
+                <h1 class="page-title">Publications</h1>
+                <p class="page-intro">
+                    Teaching, shipping notes, and writing — companion material for modern C++
+                    and the projects behind the work.
+                </p>
+                <ul class="pub-list">
+                    <li class="pub-list-item">
+                        <a href="./cpp_tut/">
+                            <span class="pub-list-name">Modern C++ Tutorial</span>
+                            <span class="pub-list-desc">Companion notes for the YouTube series on modern C++23.</span>
+                            <span class="pub-list-cta">Read</span>
+                        </a>
+                    </li>
+                    <li class="pub-list-item">
+                        <a href="./planb/">
+                            <span class="pub-list-name">PlanB — The Making of an Indie FPS</span>
+                            <span class="pub-list-desc">Design and engineering notes from building a multiplayer shooter.</span>
+                            <span class="pub-list-cta">Read</span>
+                        </a>
+                    </li>
+                    <li class="pub-list-item">
+                        <a href="./thanks/">
+                            <span class="pub-list-name">Support Me</span>
+                            <span class="pub-list-desc">Ways to support tutorials, tools, and open work.</span>
+                            <span class="pub-list-cta">Read</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </main>
-        <footer id="home-footer">
+
+        <footer class="site-footer">
             <ul>
                 <li><a href="../legal/">Impressum</a></li>
             </ul>

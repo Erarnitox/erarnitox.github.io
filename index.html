@@ -6,98 +6,251 @@
 -->
 <html lang="en-US">
     <head>
-        <title>Erarnitox</title>
-        <meta name="title" content="Erarnitox" />
+        <title>Erarnitox — C++ engineer</title>
+        <meta name="title" content="Erarnitox — C++ engineer" />
+        <meta name="description" content="David Partsch (Erarnitox) — modern C++ engineer focused on performance, architecture, and security. Feel free to reach out." />
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta property="og:title" content="Erarnitox" />
-        <meta property="og:description" content="Erarnitox's home on the Internet: C++ Developer and Reverse-Engineer" />
-        <meta property="og:image" content="./res/pfp.png" />
+        <meta property="og:title" content="Erarnitox — C++ engineer" />
+        <meta property="og:description" content="C++ engineer — performance, architecture, security. HPC, quant, red team, and product C++." />
+        <meta property="og:image" content="./res/hero.jpg" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://erarnitox.de/" /><meta property="og:site_name" content="Erarnitox" />
+        <meta property="og:url" content="https://erarnitox.de/" />
+        <meta property="og:site_name" content="Erarnitox" />
 
         <link rel="canonical" href="https://erarnitox.de/" />
         <link rel="alternate" type="application/json" href="/index.json" title="Erarnitox" />
 
-        <link rel="stylesheet" href="./style.css">
-        <!--<script src="./login.js"></script>-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./style.css" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
         <link rel="manifest" href="./site.webmanifest" />
     </head>
-    <body>
-        <header>
-            <nav>
-                <div class="flex-container-hz">
-                    <a href="./index.html"><img class="logo-img" src="./logo.png" alt="erarnitox logo"></a>
-                    <ul>
-                        <li><a href="./products/">Products</a></li>
-                        <li><a href="./pub/">Publications</a></li>
-                        <li><a href="./art/">Art</a></li>
-                    </ul>
-                    <!--<a href="./login" class="button" id="login-btn">Login</a>-->
-                </div>
+    <body class="home">
+        <header class="site-header">
+            <nav class="site-nav">
+                <a class="nav-brand" href="./index.html">
+                    <img class="logo-img" src="./logo.png" alt="Erarnitox" />
+                </a>
+                <ul>
+                    <li><a href="./products/">Products</a></li>
+                    <li><a href="./pub/">Publications</a></li>
+                    <li><a href="./art/">Art</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </nav>
         </header>
+
         <main>
-            <div class="flex-center-hz">
-                <h1 class="flex-center">
-                    <img style="height: 2rem; width: 8rem; display:inline; background-color: transparent;" src="./logo.png" alt="icon">'s home on the Internet
-                </h1>
-                <h4>C++ Developer | Reverse-Engineer | Artist</h4>
-            </div>
-
-            <div>
-                Passionate about game development and reverse engineering since early on.  After Initially beeing inspired by geohot's PS3 jailbreak in 2009, I explored game hacking, coding, and security.
-                Now, I focus on creating high-quality software that prioritizes functionality and user experience.
-            </div>
-
-            <div class="flex-center-hz">
-                <a href="./products/" class="button">View Products</a>
-            </div>
-
-            <div class="home-container">
-                <div class="home-item">
-                    <h2>Find Me!</h2>
-                    You can find me in some places on the web. Among them are YouTube, where I upload videos about anything I am interested in.
-                    X, where I give updates about my projects. Github, where you can find all the code of projects I made open source. I do also have a small Discord server
-                    where I answer questions and also hang out to chat.
-                    <a class="button" href="https://www.youtube.com/@Erarnitox">YouTube Channel</a>
-                    <a class="button" href="https://x.com/erarnitox">X Profile</a>
-                    <a class="button" href="https://github.com/Erarnitox">GitHub Profile</a>
-                    <a class="button" href="https://discord.gg/MjkwgNpFWX">Discord Server</a>
+            <section class="hero" aria-label="Introduction">
+                <div class="hero-atmosphere" aria-hidden="true">
+                    <img class="hero-media" src="./res/hero.jpg" alt="" width="1680" height="1120" />
                 </div>
-
-                <div class="home-item">
-                    <h2>Guided Hacking</h2>
-                    You can also find me in other places on the web.
-                    Posting about programming and hacking.
-                    One of the most noteable is <a href="https://guidedhacking.com?referralcode=JM5dz">GuidedHacking</a> which is the best website to learn game hacking to date.
-                    <a class="button" href="https://guidedhacking.com/members/erarnitox.94488?referralcode=JM5dz">Profile on GuidedHacking</a>
-                    <a class="button" href="https://guidedhacking.com/threads/how-to-make-an-mmo-bot-mmorpg-bot-automation.15173?referralcode=JM5dz">MMO Hacking Guide</a>
-                    <a class="button" href="https://guidedhacking.com/threads/game-hacking-fundamentals-the-game-hacking-book.16550?referralcode=JM5dz">Game Hacking Fundamentals Book</a>
+                <div class="hero-inner">
+                    <p class="hero-kicker">David Partsch</p>
+                    <h1 class="hero-brand">Erarnitox</h1>
+                    <p class="hero-tagline">C++ engineer — performance, architecture, security</p>
+                    <p class="hero-lead">
+                        I write modern C++ for systems that need to be fast and solid — parallel runtimes,
+                        careful architecture, and security work grounded in reverse engineering,
+                        exploits, and CTFs. Teaching and writing matter to me too: helping others build
+                        with the same freedom C++ gives me.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#work">View selected work</a>
+                        <a class="button button-ghost" href="https://github.com/Erarnitox">GitHub</a>
+                    </div>
                 </div>
-                <div class="home-item">
-                    <h2>Contact</h2>
-                    Feel free to reach out for any inquiries, project requests, or support.
-                    Whether you're looking for collaboration, custom software solutions,
-                    or help with existing projects, I'm here to assist!
-                    I aim to respond promptly to all messages.
+            </section>
 
-                    <a class="button" href="mailto:david@erarnitox.de">Send E-Mail</a>
-                    <a class="button" href="https://discordapp.com/users/461930808479842304">Discord</a>
+            <section class="section work" id="work">
+                <h2 class="section-title">Selected work</h2>
+                <p class="section-intro">Projects that best represent how I think about systems and software.</p>
+                <ul class="work-list">
+                    <li class="work-item reveal">
+                        <a href="https://droplet.erarnitox.de/">
+                            <span class="work-name">Droplet</span>
+                            <span class="work-desc">Scalable C++ Discord bot with modular architecture, CMake, and CPM.</span>
+                        </a>
+                    </li>
+                    <li class="work-item reveal">
+                        <a href="https://github.com/Erarnitox/dropMath">
+                            <span class="work-name">dropMath</span>
+                            <span class="work-desc">Single-header modern C++ math library focused on linear algebra.</span>
+                        </a>
+                    </li>
+                    <li class="work-item reveal">
+                        <a href="https://guidedhacking.com/threads/game-hacking-fundamentals-the-game-hacking-book.16550?referralcode=JM5dz">
+                            <span class="work-name">Game Hacking Fundamentals</span>
+                            <span class="work-desc">Published book on reverse engineering and game systems internals.</span>
+                        </a>
+                    </li>
+                    <li class="work-item reveal">
+                        <a href="https://www.youtube.com/@Erarnitox">
+                            <span class="work-name">Modern C++ on YouTube</span>
+                            <span class="work-desc">Tutorials on modern C++ with companion code on GitHub.</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section about" id="about">
+                <h2 class="section-title">Off the clock</h2>
+                <p class="section-intro">
+                    Away from the compiler, I’m usually outdoors on a hike, deep in a history
+                    book or documentary, or listening to Falling in Reverse. When I game, I
+                    still go back to story-driven classics like Uncharted, Metal Gear Solid,
+                    and Assassin’s Creed I &amp; II — worlds and systems that are as carefully
+                    built as good software.
+                </p>
+                <dl class="about-list">
+                    <div class="about-row">
+                        <dt>Outdoors</dt>
+                        <dd>Hiking and time in nature</dd>
+                    </div>
+                    <div class="about-row">
+                        <dt>Curiosity</dt>
+                        <dd>History — books, documentaries, and the long view</dd>
+                    </div>
+                    <div class="about-row">
+                        <dt>Music</dt>
+                        <dd>Falling in Reverse</dd>
+                    </div>
+                    <div class="about-row">
+                        <dt>Games</dt>
+                        <dd>Uncharted, Metal Gear Solid, Assassin’s Creed I &amp; II</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="section shelf" id="shelf">
+                <h2 class="section-title">On my shelf</h2>
+                <p class="section-intro">
+                    A few teachers and texts that shaped how I write and think about C++ —
+                    practical, modern, and respectful of the reader’s time.
+                </p>
+                <dl class="about-list shelf-list">
+                    <div class="about-row">
+                        <dt>Jason Turner</dt>
+                        <dd>
+                            <a href="https://www.amazon.com/dp/B0B1CDKZXL"><em>C++ Best Practices</em></a>
+                            and the
+                            <a href="https://www.amazon.com/dp/B09NGXZNNR">Puzzler books</a>
+                        </dd>
+                    </div>
+                    <div class="about-row">
+                        <dt>Rainer Grimm</dt>
+                        <dd>
+                            <a href="https://www.amazon.com/dp/B0CT41Q1FF"><em>Concurrency with Modern C++</em></a>
+                            — his work on asynchronous
+                            programming in modern C++. Rainer recently passed after living with ALS;
+                            <a href="https://www.modernescpp.com">modernescpp.com</a> remains one of
+                            the finest C++ blogs ever written.
+                        </dd>
+                    </div>
+                    <div class="about-row">
+                        <dt>Klaus Iglberger</dt>
+                        <dd>
+                            <a href="https://www.amazon.com/dp/1098113160"><em>C++ Software Design</em></a>
+                            — software architecture done the C++ way
+                        </dd>
+                    </div>
+                    <div class="about-row">
+                        <dt>Jason Gregory</dt>
+                        <dd>
+                            <a href="https://www.amazon.com/dp/1138035459"><em>Game Engine Architecture</em></a>
+                            — still the gold-standard systems view of engines
+                        </dd>
+                    </div>
+                    <div class="about-row">
+                        <dt>Torsten T. Will</dt>
+                        <dd>
+                            <a href="https://www.amazon.de/dp/3836226774"><em>Einführung in C++</em></a>
+                            and
+                            <a href="https://www.amazon.de/dp/3836298538"><em>C++: Das umfassende Handbuch</em></a>
+                            —
+                            the handbook builds on the Einführung in its opening chapters, then goes
+                            much deeper into the language; among the best German introductions and
+                            a lasting reference
+                        </dd>
+                    </div>
+                    <div class="about-row">
+                        <dt>Kate Gregory</dt>
+                        <dd>
+                            Pluralsight courses — a clear, calm teaching style that leads with modern C++
+                            and never overcomplicates the path in
+                        </dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="section elsewhere">
+                <h2 class="section-title">Elsewhere</h2>
+                <ul class="elsewhere-list">
+                    <li><a href="https://github.com/Erarnitox">GitHub</a></li>
+                    <li><a href="https://www.youtube.com/@Erarnitox">YouTube</a></li>
+                    <li><a href="https://x.com/erarnitox">X</a></li>
+                    <li><a href="https://discord.gg/MjkwgNpFWX">Discord</a></li>
+                </ul>
+            </section>
+
+            <section class="section community">
+                <h2 class="section-title">Background</h2>
+                <p class="section-intro">
+                    Inspired early by systems exploration and security research, I write and teach
+                    about programming and reverse engineering — including work with
+                    <a href="https://guidedhacking.com?referralcode=JM5dz">GuidedHacking</a>.
+                </p>
+                <ul class="link-row">
+                    <li><a href="https://guidedhacking.com/members/erarnitox.94488?referralcode=JM5dz">GuidedHacking profile</a></li>
+                    <li><a href="https://guidedhacking.com/threads/how-to-make-an-mmo-bot-mmorpg-bot-automation.15173?referralcode=JM5dz">MMO hacking guide</a></li>
+                    <li><a href="https://guidedhacking.com/threads/game-hacking-fundamentals-the-game-hacking-book.16550?referralcode=JM5dz">The book</a></li>
+                </ul>
+            </section>
+
+            <section class="section contact" id="contact">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-intro">
+                    Got an interesting problem, or just want to say hi? I’d love to hear from you.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="mailto:david@erarnitox.de">david@erarnitox.de</a>
+                    <a class="button button-ghost" href="https://discordapp.com/users/461930808479842304">Discord</a>
                 </div>
-            </div>
+            </section>
         </main>
-        <footer id="home-footer">
+
+        <footer class="site-footer" id="home-footer">
             <ul>
                 <li><a href="./legal/">Impressum</a></li>
             </ul>
             <small>© 2026 Erarnitox</small>
         </footer>
+
+        <script>
+            (function () {
+                var items = document.querySelectorAll(".reveal");
+                if (!("IntersectionObserver" in window) || !items.length) {
+                    items.forEach(function (el) { el.classList.add("is-visible"); });
+                    return;
+                }
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                items.forEach(function (el) { io.observe(el); });
+            })();
+        </script>
     </body>
 </html>
